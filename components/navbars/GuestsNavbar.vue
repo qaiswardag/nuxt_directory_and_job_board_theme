@@ -1,0 +1,121 @@
+<script setup>
+import SlideOverPrimaryMenu from '../components/sidebars/SlideOverPrimaryMenu.vue';
+
+import { ref } from 'vue';
+
+const route = useRoute();
+const routeName = route.name;
+
+const showPrimaryMenuSlideOver = ref(false);
+
+// handle primary slideoer menu
+const handlePrimaryMenuSlideOver = function () {
+  showPrimaryMenuSlideOver.value = true;
+};
+
+// handle primary menu window
+const primaryMenuSlideOverButton = function () {
+  showPrimaryMenuSlideOver.value = false;
+};
+</script>
+<template>
+  <SlideOverPrimaryMenu
+    :open="showPrimaryMenuSlideOver"
+    @primaryMenuSlideOverButton="primaryMenuSlideOverButton"
+  >
+  </SlideOverPrimaryMenu>
+  <header class="w-full text-sm">
+    <nav
+      class="mx-auto flex myPrimaryGap items-center justify-end px-6 lg:px-8"
+      aria-label="Global"
+    >
+      <div class="flex myPrimaryGap items-center mx-auto">
+        <div
+          class="text-black lg:flex lg:gap-2 lg:items-center hidden focus:outline-none cursor-pointer rounded-full px-1.5 py-1.5 hover:ring-2 hover:ring-myPrimaryBrandColor font-medium"
+        >
+          <NuxtLink
+            to="/stores"
+            class="text-myPrimaryDarkGrayColor"
+            :class="{
+              'text-myPrimaryLinkColor': routeName === 'stores',
+            }"
+          >
+            Stores
+          </NuxtLink>
+        </div>
+        <div
+          class="text-black lg:flex lg:gap-2 lg:items-center hidden focus:outline-none cursor-pointer rounded-full px-1.5 py-1.5 hover:ring-2 hover:ring-myPrimaryBrandColor font-medium"
+        >
+          <NuxtLink
+            to="/jobs"
+            class="text-myPrimaryDarkGrayColor"
+            :class="{
+              'text-myPrimaryLinkColor': routeName === 'jobs',
+            }"
+          >
+            Jobs
+          </NuxtLink>
+        </div>
+        <div
+          class="text-black lg:flex lg:gap-2 lg:items-center hidden focus:outline-none cursor-pointer rounded-full px-1.5 py-1.5 hover:ring-2 hover:ring-myPrimaryBrandColor font-medium"
+        >
+          <NuxtLink
+            to="/campaigns"
+            class="text-myPrimaryDarkGrayColor"
+            :class="{
+              'text-myPrimaryLinkColor': routeName === 'campaigns',
+            }"
+          >
+            Campaigns
+          </NuxtLink>
+        </div>
+      </div>
+
+      <button
+        type="button"
+        class="h-10 w-10 cursor-pointer rounded-full flex items-center border-none justify-center bg-gray-50 aspect-square hover:bg-myPrimaryLinkColor hover:text-white focus-visible:ring-0"
+      >
+        <span class="myMediumIcon material-symbols-outlined"> person </span>
+      </button>
+
+      <div class="flex myPrimaryGap items-center">
+        <div>
+          <button
+            type="button"
+            class="h-10 w-10 cursor-pointer rounded-full flex items-center border-none justify-center bg-gray-50 aspect-square hover:bg-myPrimaryLinkColor hover:text-white focus-visible:ring-0"
+          >
+            <span class="material-symbols-outlined"> play_shapes </span>
+          </button>
+        </div>
+        <div>
+          <button
+            type="button"
+            class="h-10 w-10 cursor-pointer rounded-full flex items-center border-none justify-center bg-gray-50 aspect-square hover:bg-myPrimaryLinkColor hover:text-white focus-visible:ring-0"
+          >
+            <span class="material-symbols-outlined"> arrow_right_alt </span>
+          </button>
+        </div>
+
+        <div>
+          <button
+            type="button"
+            class="h-10 w-10 cursor-pointer rounded-full flex items-center border-none justify-center bg-gray-50 aspect-square hover:bg-myPrimaryLinkColor hover:text-white focus-visible:ring-0"
+          >
+            <span class="material-symbols-outlined"> person_add </span>
+          </button>
+        </div>
+      </div>
+
+      <button
+        @click="handlePrimaryMenuSlideOver"
+        type="button"
+        class="h-10 w-10 cursor-pointer rounded-full flex items-center border-none justify-center bg-gray-50 aspect-square hover:bg-myPrimaryLinkColor hover:text-white focus-visible:ring-0"
+      >
+        <span class="sr-only">View Menu</span>
+        <span class="myMediumIcon material-symbols-outlined">
+          drag_handle
+        </span>
+      </button>
+    </nav>
+  </header>
+</template>

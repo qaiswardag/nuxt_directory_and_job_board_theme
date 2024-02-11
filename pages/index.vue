@@ -18,7 +18,7 @@ const faqs = [
   },
 ];
 
-const getLaravelImageUrl = function (path) {
+const getAppUrl = function (path) {
   return runtimeConfig.public.LARAVEL_APP_URL + '/' + path;
 };
 </script>
@@ -30,9 +30,7 @@ const getLaravelImageUrl = function (path) {
         <div class="w-full relative h-[32rem]">
           <img
             class="top-0 left-0 w-full object-cover h-[32rem]"
-            :src="
-              getLaravelImageUrl('brand-images/pink-lady-high-resolution.jpg')
-            "
+            :src="getAppUrl('brand-images/pink-lady-high-resolution.jpg')"
             alt="Image"
           />
           <div class="bg-black/20 absolute top-0 left-0 w-full h-[32rem]"></div>
@@ -71,9 +69,7 @@ const getLaravelImageUrl = function (path) {
             >
               <img
                 class="top-0 left-0 w-full object-cover lg:h-[30rem] h-[22rem] rounded-lg"
-                :src="
-                  getLaravelImageUrl('app-images/pages/home/fashion_show.jpg')
-                "
+                :src="getAppUrl('app-images/pages/home/fashion_show.jpg')"
                 alt="image"
               />
 
@@ -96,7 +92,7 @@ const getLaravelImageUrl = function (path) {
             >
               <img
                 class="top-0 left-0 w-full object-cover lg:h-[30rem] h-[22rem] rounded-lg"
-                :src="getLaravelImageUrl('app-images/pages/home/orange_bg.jpg')"
+                :src="getAppUrl('app-images/pages/home/orange_bg.jpg')"
                 alt="/"
               />
 
@@ -119,9 +115,7 @@ const getLaravelImageUrl = function (path) {
             >
               <img
                 class="top-0 left-0 w-full object-cover lg:h-[30rem] h-[22rem] rounded-lg"
-                :src="
-                  getLaravelImageUrl('app-images/pages/home/girl_light_bg.jpg')
-                "
+                :src="getAppUrl('app-images/pages/home/girl_light_bg.jpg')"
                 alt="/"
               />
 
@@ -143,7 +137,7 @@ const getLaravelImageUrl = function (path) {
             >
               <img
                 class="top-0 left-0 w-full object-cover lg:h-[30rem] h-[22rem] rounded-lg"
-                :src="getLaravelImageUrl('app-images/pages/home/three.jpg')"
+                :src="getAppUrl('app-images/pages/home/three.jpg')"
                 alt="/"
               />
 
@@ -187,11 +181,7 @@ const getLaravelImageUrl = function (path) {
           <div class="w-full relative">
             <img
               class="top-0 left-0 w-full object-cover rounded-lg"
-              :src="
-                getLaravelImageUrl(
-                  'app-images/pages/home/edit_or_add_designs.jpg'
-                )
-              "
+              :src="getAppUrl('app-images/pages/home/edit_or_add_designs.jpg')"
               alt="image"
             />
             <div
@@ -227,9 +217,7 @@ const getLaravelImageUrl = function (path) {
                 >
                   <img
                     class="object-cover w-28 h-28 rounded-full"
-                    :src="
-                      getLaravelImageUrl('app-images/pages/home/woman_1.jpg')
-                    "
+                    :src="getAppUrl('app-images/pages/home/woman_1.jpg')"
                     alt="image"
                   />
                 </div>
@@ -266,9 +254,7 @@ const getLaravelImageUrl = function (path) {
                 >
                   <img
                     class="object-cover w-28 h-28 rounded-full"
-                    :src="
-                      getLaravelImageUrl('app-images/pages/home/woman_2.jpg')
-                    "
+                    :src="getAppUrl('app-images/pages/home/woman_2.jpg')"
                     alt="image"
                   />
                 </div>
@@ -305,9 +291,7 @@ const getLaravelImageUrl = function (path) {
                 >
                   <img
                     class="object-cover w-28 h-28 rounded-full"
-                    :src="
-                      getLaravelImageUrl('app-images/pages/home/woman_3.jpg')
-                    "
+                    :src="getAppUrl('app-images/pages/home/woman_3.jpg')"
                     alt="image"
                   />
                 </div>
@@ -344,9 +328,7 @@ const getLaravelImageUrl = function (path) {
                 >
                   <img
                     class="object-cover w-28 h-28 rounded-full"
-                    :src="
-                      getLaravelImageUrl('app-images/pages/home/woman_4.jpg')
-                    "
+                    :src="getAppUrl('app-images/pages/home/woman_4.jpg')"
                     alt="image"
                   />
                 </div>
@@ -436,7 +418,7 @@ const getLaravelImageUrl = function (path) {
             <img
               class="w-full object-cover lg:col-span-6 rounded-lg"
               :src="
-                getLaravelImageUrl(
+                getAppUrl(
                   'app-images/pages/home/frequently_asked_questions.jpg'
                 )
               "
