@@ -55,6 +55,13 @@ const navigation = [
 
     children: [
       {
+        label: 'Stores',
+        route: {
+          name: 'stores',
+          parameters: [],
+        },
+      },
+      {
         label: 'Terms of Service',
       },
       {
@@ -196,9 +203,20 @@ const navigation = [
                                             : '',
                                         ]"
                                       >
-                                        <div class="block py-3 pl-3 pr-1">
-                                          {{ subItem.label }}
-                                        </div>
+                                        <NuxtLink
+                                          :to="
+                                            subItem.route && subItem.route.name
+                                          "
+                                          class="text-myPrimaryDarkGrayColor"
+                                          :class="{
+                                            'text-myPrimaryLinkColor':
+                                              routeName === subItem.route?.name,
+                                          }"
+                                        >
+                                          <div class="block py-3 pl-3 pr-1">
+                                            {{ subItem.label }}
+                                          </div>
+                                        </NuxtLink>
                                       </DisclosureButton>
                                     </li>
                                   </DisclosurePanel>
