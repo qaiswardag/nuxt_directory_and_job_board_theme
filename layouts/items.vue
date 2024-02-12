@@ -9,6 +9,7 @@ import MainLayout from '../layouts/MainLayout.vue';
 import { parseISO, format } from 'date-fns';
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue';
 import ItemDisplaySelection from '../layouts/items/ItemDisplaySelection.vue';
+import { TailwindPagination } from 'laravel-vue-pagination';
 
 const props = defineProps({
   nameList: {
@@ -42,21 +43,55 @@ const stateSelected = ref([]);
 const goToSinglePost = function () {
   console.log(`click.....`);
 };
+
+const search_query = ref('');
+const tags_or_content = ref(false);
+
 const fetchComponents = function (page) {
   //remember old search value while paginating
-  // if (fetchedDataPosts.value?.oldInput?.search_query) {
-  //   searchForm.search_query = fetchedDataPosts.value?.oldInput?.search_query;
-  // }
+  if (fetchedDataPosts.value?.oldInput?.search_query) {
+    search_query.value = fetchedDataPosts.value?.oldInput?.search_query;
+  }
 
-  handleGetPosts(props.pathList, {
+  const params = new URLSearchParams({
     page: page,
-    // search_query: searchForm.search_query,
-    // tags_or_content: searchForm.tags_or_content,
+    search_query: search_query.value,
+    tags_or_content: tags_or_content.value,
     type: typeSelected.value,
     category: categorySelected.value,
     country: countrySelected.value,
     state: stateSelected.value,
   });
+
+  const url = `${props.pathList}?${params.toString()}`;
+  handleGetPosts(url);
+};
+
+const handleSearch = function () {
+  const params = new URLSearchParams({
+    search_query: search_query.value,
+    tags_or_content: tags_or_content.value,
+    type: typeSelected.value,
+    category: categorySelected.value,
+    country: countrySelected.value,
+    state: stateSelected.value,
+  });
+
+  const url = `${props.pathList}?${params.toString()}`;
+  handleGetPosts(url);
+};
+
+// Scroll to the top of the page
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
+}
+// get result for "laravel pagination" package
+const getResultsForPage = (page = 1) => {
+  fetchComponents(page);
+  scrollToTop();
 };
 
 const handleRemoveState = function (selectedItem) {};
@@ -76,33 +111,180 @@ onMounted(() => {
       :headerArea="false"
     >
       <template #content>
-        <div class="flex flex-col gap-2 border-b border-gray-200 pb-2 mb-8">
-          <!-- error # start -->
-          <template v-if="!isLoadingPosts && isErrorPosts">
-            <p class="myPrimaryParagraphError">
-              {{ errorPosts }}
-            </p>
-          </template>
-          <!-- error # end -->
+        <!-- Search in Tags Or Content # start -->
+        <div class="py-2 px-2 mb-4 rounded-md' border border-red-300">
+          <div
+            class="pb-2"
+            v-if="fetchedDataPosts && fetchedDataPosts.posts"
+          >
+            <!-- options dropdow # start -->
+            <Menu
+              as="div"
+              class="relative inline-block text-left"
+            >
+              <div>
+                <MenuButton
+                  class="myPrimaryParagraph pl-3 pr-3 py-2 text-xs font-medium inline-flex w-full items-center justify-center gap-2 rounded-md bg-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                >
+                  <span class="material-symbols-outlined"> filter_alt </span>
+                  <span> Filter </span>
+                  <span class="material-symbols-outlined">
+                    arrow_drop_down
+                  </span>
+                </MenuButton>
+              </div>
 
-          <!-- Loading # start -->
-          <template v-if="isLoadingPosts">
-            <SmallUniversalSpinner
-              width="w-8"
-              height="h-8"
-              border="border-4"
-            ></SmallUniversalSpinner>
-          </template>
-          <!-- Loading # end -->
+              <transition
+                enter-active-class="transition ease-out duration-100"
+                enter-from-class="transform opacity-0 scale-95"
+                enter-to-class="transform opacity-100 scale-100"
+                leave-active-class="transition ease-in duration-75"
+                leave-from-class="transform opacity-100 scale-100"
+                leave-to-class="transform opacity-0 scale-95"
+              >
+                <MenuItems
+                  class="absolute left-0 z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                >
+                  <div class="py-1">
+                    <!-- Search in tags and content # start -->
+                    <div class="py-1">
+                      <div
+                        class="pl-4 pr-2 pt-2 pb-2 w-full text-sm flex items-center justify-start gap-2 my-2 hover:bg-myPrimaryLightGrayColor"
+                      >
+                        <div class="relative flex items-center">
+                          <div class="flex h-6 items-center">
+                            <input
+                              id="show_seach_in_tags_content"
+                              name="show_seach_in_tags_content"
+                              v-model="searchInTagsAndContent"
+                              type="checkbox"
+                              class="h-5 w-5 rounded border-gray-300 text-myPrimaryBrandColor focus:ring-myPrimaryBrandColor"
+                            />
+                          </div>
+                          <div class="ml-3 min-w-0 flex-1 text-sm leading-6">
+                            <label
+                              for="show_seach_in_tags_content"
+                              class="select-none font-medium text-gray-900"
+                            >
+                              Search in Tags & Content
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Search in tags and content # end -->
+                  </div>
 
-          <!-- Successfull data # start -->
-          <!-- <div class="py-12 remove-this-div">
-            fetchedDataPosts: {{ fetchedDataPosts }}
-          </div> -->
-          <!-- Successfull data # end -->
+                  <template v-if="nameList === 'jobs'">
+                    <div class="py-1">
+                      <div
+                        class="pl-4 pr-2 pt-2 pb-2 w-full text-sm flex items-center justify-start gap-2 my-2 hover:bg-myPrimaryLightGrayColor"
+                      >
+                        <div class="relative flex items-center">
+                          <div class="flex h-6 items-center">
+                            <input
+                              id="show_countries"
+                              name="show_countries"
+                              v-model="showJobCountriesAndTypes"
+                              type="checkbox"
+                              class="h-5 w-5 rounded border-gray-300 text-myPrimaryBrandColor focus:ring-myPrimaryBrandColor"
+                            />
+                          </div>
+                          <div class="ml-3 min-w-0 flex-1 text-sm leading-6">
+                            <label
+                              for="show_countries"
+                              class="select-none font-medium text-gray-900"
+                              >Countries & Job Type
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </template>
+                </MenuItems>
+              </transition>
+            </Menu>
+          </div>
+          <!-- options dropdow # end -->
+          <!-- Search in Tags Or Content # end -->
+
+          <div class="flex md:flex-row flex-col myPrimaryGap">
+            <div
+              v-if="fetchedDataPosts && fetchedDataPosts.posts"
+              class="w-full"
+              :class="[
+                {
+                  'md:w-1/3': nameList !== 'posts',
+                },
+                {
+                  'md:w-1/2': nameList === 'posts',
+                },
+              ]"
+            >
+              <!-- Search # start -->
+
+              <form @submit.prevent="handleSearch">
+                <div class="relative w-full">
+                  <div
+                    class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none"
+                  >
+                    <span class="material-symbols-outlined"> search </span>
+                  </div>
+                  <input
+                    v-model="search_query"
+                    type="search"
+                    id="search_query"
+                    class="myPrimaryInput pl-10 shadow-none min-h-[3.5rem] h-[3.5rem]"
+                    autocomplete="off"
+                    :placeholder="`${
+                      nameList === 'stores'
+                        ? 'Company or Brand name'
+                        : `Search ${nameList}`
+                    }..`"
+                  />
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
+        <!-- Search in Tags Or Content # end -->
+
+        <!-- error # start -->
+        <template v-if="!isLoadingPosts && isErrorPosts">
+          <p class="myPrimaryParagraphError">
+            {{ errorPosts }}
+          </p>
+        </template>
+        <!-- error # end -->
+
+        <!-- Loading # start -->
+        <template v-if="isLoadingPosts">
+          <SmallUniversalSpinner
+            width="w-8"
+            height="h-8"
+            border="border-4"
+          ></SmallUniversalSpinner>
+        </template>
+        <!-- Loading # end -->
 
         <template v-if="!isLoadingPosts && !isErrorPosts && isSuccessPosts">
+          <!-- If posts is empty array # start -->
+          <template
+            v-if="
+              fetchedDataPosts &&
+              fetchedDataPosts.posts &&
+              Array.isArray(fetchedDataPosts.posts.data) &&
+              fetchedDataPosts.posts.data.length === 0 &&
+              !isLoadingPosts
+            "
+          >
+            <h1 class="myTertiaryHeader text-center">No results</h1>
+            <p class="myPrimaryParagraph text-center">
+              Unfortunately, no results were found.
+            </p>
+          </template>
+          <!-- If posts is empty array # end -->
+
           <!-- List Grid # start -->
           <div v-if="fetchedDataPosts && fetchedDataPosts.posts">
             <ul
@@ -264,10 +446,48 @@ onMounted(() => {
             </ul>
           </div>
           <!-- List Grid # end -->
-        </template>
-        <!-- Pagination # start -->
 
-        <!-- Pagination # end -->
+          <!-- Pagination # start -->
+          <div
+            v-if="fetchedDataPosts && fetchedDataPosts.posts"
+            class="flex items-center justify-center bg-white py-3 mt-4 gap-2"
+          >
+            <TailwindPagination
+              :limit="1"
+              :keepLength="true"
+              :class="[
+                'space-x-1',
+                'shadow-none',
+                'tailwind-pagination-package',
+              ]"
+              :active-classes="[
+                'bg-myPrimaryLinkColor',
+                'text-white',
+                'rounded-full',
+              ]"
+              :item-classes="[
+                'p-0',
+                'm-0',
+                'border-none',
+                'bg-myPrimaryLightGrayColor',
+                'shadow-sm',
+                'hover:bg-gray-300',
+                'text-myPrimaryDarkGrayColor',
+                'rounded-full',
+              ]"
+              :data="fetchedDataPosts.posts"
+              @pagination-change-page="getResultsForPage"
+            >
+              <template #prev-nav>
+                <span> Prev </span>
+              </template>
+              <template #next-nav>
+                <span>Next</span>
+              </template>
+            </TailwindPagination>
+          </div>
+          <!-- Pagination # end -->
+        </template>
       </template>
     </FullWidthElement>
   </div>
