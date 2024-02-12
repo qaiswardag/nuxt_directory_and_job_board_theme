@@ -3,11 +3,7 @@ import { ref, computed, watch, onMounted } from 'vue';
 import FullScreenSpinner from '../components/loaders/FullScreenSpinner.vue';
 import { delay } from '../helpers/delay';
 
-const isLoading = ref(false);
-
-onBeforeMount(() => {
-  isLoading.value = true;
-});
+const isLoading = ref(true);
 
 onMounted(async () => {
   await delay(500);
