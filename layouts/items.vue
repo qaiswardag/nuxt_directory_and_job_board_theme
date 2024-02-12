@@ -56,7 +56,7 @@ const fetchComponents = function (page) {
   const params = new URLSearchParams({
     page: page,
     search_query: search_query.value,
-    tags_or_content: tags_or_content.value,
+    tags_or_content: tags_or_content.value ? 1 : 0,
     type: typeSelected.value,
     category: categorySelected.value,
     country: countrySelected.value,
@@ -70,7 +70,36 @@ const fetchComponents = function (page) {
 const handleSearch = function () {
   const params = new URLSearchParams({
     search_query: search_query.value,
-    tags_or_content: tags_or_content.value,
+    tags_or_content: tags_or_content.value ? 1 : 0,
+    type: typeSelected.value,
+    category: categorySelected.value,
+    country: countrySelected.value,
+    state: stateSelected.value,
+  });
+
+  const url = `${props.pathList}?${params.toString()}`;
+  handleGetPosts(url);
+};
+
+const searchInTagsAndContent = ref(false);
+const showJobCountriesAndTypes = ref(false);
+
+watch(searchInTagsAndContent, (newValue) => {
+  if (newValue) {
+    tags_or_content.value = true;
+    searchTagsOrContent();
+  }
+  if (!newValue) {
+    tags_or_content.value = false;
+    searchTagsOrContent();
+  }
+});
+
+const searchTagsOrContent = function () {
+  const params = new URLSearchParams({
+    page: 1,
+    search_query: search_query.value,
+    tags_or_content: tags_or_content.value ? 1 : 0,
     type: typeSelected.value,
     category: categorySelected.value,
     country: countrySelected.value,
