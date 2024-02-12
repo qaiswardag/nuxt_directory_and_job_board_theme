@@ -30,45 +30,58 @@ const primaryMenuSlideOverButton = function () {
       aria-label="Global"
     >
       <div class="flex myPrimaryGap items-center mx-auto">
-        <div
-          class="text-black lg:flex lg:gap-2 lg:items-center hidden focus:outline-none cursor-pointer rounded-full px-1.5 py-1.5 hover:ring-2 hover:ring-myPrimaryBrandColor font-medium"
+        <NuxtLink
+          to="/"
+          class="text-myPrimaryDarkGrayColor"
+          :class="{
+            'text-myPrimaryLinkColor': routeName === 'index',
+          }"
         >
-          <NuxtLink
-            to="/stores"
-            class="text-myPrimaryDarkGrayColor"
-            :class="{
-              'text-myPrimaryLinkColor': routeName === 'stores',
-            }"
+          <div
+            class="bg-gray-50 lg:flex lg:gap-2 lg:items-center hidden focus:outline-none cursor-pointer rounded-full px-1.5 py-1.5 font-medium"
+          >
+            Home
+          </div>
+        </NuxtLink>
+        <NuxtLink
+          to="/stores"
+          class="text-myPrimaryDarkGrayColor"
+          :class="{
+            'text-myPrimaryLinkColor': routeName === 'stores',
+          }"
+        >
+          <div
+            class="bg-gray-50 lg:flex lg:gap-2 lg:items-center hidden focus:outline-none cursor-pointer rounded-full px-1.5 py-1.5 font-medium"
           >
             Stores
-          </NuxtLink>
-        </div>
-        <div
-          class="text-black lg:flex lg:gap-2 lg:items-center hidden focus:outline-none cursor-pointer rounded-full px-1.5 py-1.5 hover:ring-2 hover:ring-myPrimaryBrandColor font-medium"
+          </div>
+        </NuxtLink>
+        <NuxtLink
+          to="/jobs"
+          class="text-myPrimaryDarkGrayColor"
+          :class="{
+            'text-myPrimaryLinkColor': routeName === 'jobs',
+          }"
         >
-          <NuxtLink
-            to="/jobs"
-            class="text-myPrimaryDarkGrayColor"
-            :class="{
-              'text-myPrimaryLinkColor': routeName === 'jobs',
-            }"
+          <div
+            class="bg-gray-50 lg:flex lg:gap-2 lg:items-center hidden focus:outline-none cursor-pointer rounded-full px-1.5 py-1.5 font-medium"
           >
             Jobs
-          </NuxtLink>
-        </div>
-        <div
-          class="text-black lg:flex lg:gap-2 lg:items-center hidden focus:outline-none cursor-pointer rounded-full px-1.5 py-1.5 hover:ring-2 hover:ring-myPrimaryBrandColor font-medium"
+          </div>
+        </NuxtLink>
+        <NuxtLink
+          to="/campaigns"
+          class="text-myPrimaryDarkGrayColor"
+          :class="{
+            'text-myPrimaryLinkColor': routeName === 'campaigns',
+          }"
         >
-          <NuxtLink
-            to="/campaigns"
-            class="text-myPrimaryDarkGrayColor"
-            :class="{
-              'text-myPrimaryLinkColor': routeName === 'campaigns',
-            }"
+          <div
+            class="bg-gray-50 lg:flex lg:gap-2 lg:items-center hidden focus:outline-none cursor-pointer rounded-full px-1.5 py-1.5 font-medium"
           >
             Campaigns
-          </NuxtLink>
-        </div>
+          </div>
+        </NuxtLink>
       </div>
 
       <button
