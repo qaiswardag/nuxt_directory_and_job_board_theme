@@ -23,8 +23,6 @@ const props = defineProps({
   },
 });
 
-console.log(`den er::`, props.pathList);
-
 const {
   handleData: handleGetPosts,
   fetchedData: fetchedDataPosts,
