@@ -6,7 +6,7 @@ import { delay } from '../helpers/delay';
 const isLoading = ref(true);
 
 onMounted(async () => {
-  await delay(500);
+  await delay(100);
   isLoading.value = false;
 });
 </script>

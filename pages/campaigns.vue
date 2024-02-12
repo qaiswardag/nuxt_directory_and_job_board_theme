@@ -3,6 +3,7 @@ import MainLayout from '../layouts/MainLayout.vue';
 import GuestsLayout from '../layouts/GuestsLayout.vue';
 import FullWidthElement from '../components/layouts/FullWidthElement.vue';
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue';
+import PageHeader from '../components/headers/PageHeader.vue';
 
 const runtimeConfig = useRuntimeConfig();
 
@@ -14,7 +15,9 @@ const getAppUrl = function (path) {
 <template>
   <MainLayout>
     <GuestsLayout>
-      <template #header> campaigns </template>
+      <template #header>
+        <PageHeader title="Campaigns"></PageHeader>
+      </template>
       this is campaigns layout
     </GuestsLayout>
   </MainLayout>

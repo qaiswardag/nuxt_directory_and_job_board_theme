@@ -73,19 +73,21 @@ const getAppUrl = function (path) {
                 alt="image"
               />
 
-              <div
-                class="bg-black/10 absolute top-0 left-0 w-full h-full rounded-lg"
-              ></div>
-              <div class="px-2 pt-8 absolute top-0 w-full">
-                <p class="text-white mySecondaryHeader">Find stores</p>
-                <p
-                  class="myPrimaryParagraph text-white font-medium drop-shadow-sm"
-                >
-                  myself is the largest and most exclusive fashion directory in
-                  the United Arab Emirates, gathering all fashion brands and
-                  stores in one searchable solution.
-                </p>
-              </div>
+              <NuxtLink to="/stores">
+                <div
+                  class="bg-black/10 absolute top-0 left-0 w-full h-full rounded-lg"
+                ></div>
+                <div class="px-2 pt-8 absolute top-0 w-full">
+                  <p class="text-white mySecondaryHeader">Find stores</p>
+                  <p
+                    class="myPrimaryParagraph text-white font-medium drop-shadow-sm"
+                  >
+                    myself is the largest and most exclusive fashion directory
+                    in the United Arab Emirates, gathering all fashion brands
+                    and stores in one searchable solution.
+                  </p>
+                </div>
+              </NuxtLink>
             </div>
             <div
               class="w-full lg:h-[30rem] h-[22rem] relative col-span-1 flex flex-col bg-red-100 text-center shadow rounded-lg"
@@ -95,20 +97,21 @@ const getAppUrl = function (path) {
                 :src="getAppUrl('app-images/pages/home/orange_bg.jpg')"
                 alt="/"
               />
+              <NuxtLink to="/campaigns">
+                <div
+                  class="bg-black/10 absolute top-0 left-0 w-full h-full rounded-lg"
+                ></div>
 
-              <div
-                class="bg-black/10 absolute top-0 left-0 w-full h-full rounded-lg"
-              ></div>
-
-              <div class="px-2 pt-8 absolute top-0 w-full">
-                <p class="text-white mySecondaryHeader">Campaigns</p>
-                <p
-                  class="myPrimaryParagraph text-white font-medium drop-shadow-sm"
-                >
-                  Fashion campaigns in the United Arab Emirates. Discover new
-                  products or get inspired.
-                </p>
-              </div>
+                <div class="px-2 pt-8 absolute top-0 w-full">
+                  <p class="text-white mySecondaryHeader">Campaigns</p>
+                  <p
+                    class="myPrimaryParagraph text-white font-medium drop-shadow-sm"
+                  >
+                    Fashion campaigns in the United Arab Emirates. Discover new
+                    products or get inspired.
+                  </p>
+                </div>
+              </NuxtLink>
             </div>
             <div
               class="w-full lg:h-[30rem] h-[22rem] relative col-span-1 flex flex-col bg-red-100 text-center shadow rounded-lg"
@@ -119,18 +122,20 @@ const getAppUrl = function (path) {
                 alt="/"
               />
 
-              <div
-                class="bg-black/10 absolute top-0 left-0 w-full h-full rounded-lg"
-              ></div>
-              <div class="px-2 pt-8 absolute top-0 w-full">
-                <p class="text-white mySecondaryHeader">Jobs in UAE</p>
-                <p
-                  class="myPrimaryParagraph text-white font-medium drop-shadow-sm"
-                >
-                  Find the right job for you in the fashion industry in the
-                  United Arab Emirates.
-                </p>
-              </div>
+              <NuxtLink to="/jobs">
+                <div
+                  class="bg-black/10 absolute top-0 left-0 w-full h-full rounded-lg"
+                ></div>
+                <div class="px-2 pt-8 absolute top-0 w-full">
+                  <p class="text-white mySecondaryHeader">Jobs in UAE</p>
+                  <p
+                    class="myPrimaryParagraph text-white font-medium drop-shadow-sm"
+                  >
+                    Find the right job for you in the fashion industry in the
+                    United Arab Emirates.
+                  </p>
+                </div>
+              </NuxtLink>
             </div>
             <div
               class="w-full lg:h-[30rem] h-[22rem] relative col-span-1 flex flex-col bg-red-100 text-center shadow rounded-lg"
@@ -141,18 +146,20 @@ const getAppUrl = function (path) {
                 alt="/"
               />
 
-              <div
-                class="bg-black/10 absolute top-0 left-0 w-full h-full rounded-lg"
-              ></div>
-              <div class="px-2 pt-8 absolute top-0 w-full">
-                <p class="text-white mySecondaryHeader">Professional</p>
-                <p
-                  class="myPrimaryParagraph text-white font-medium drop-shadow-sm"
-                >
-                  myself is like a digital shopping window, focusing on your
-                  brand image, authenticity and credibility.
-                </p>
-              </div>
+              <NuxtLink to="/professional">
+                <div
+                  class="bg-black/10 absolute top-0 left-0 w-full h-full rounded-lg"
+                ></div>
+                <div class="px-2 pt-8 absolute top-0 w-full">
+                  <p class="text-white mySecondaryHeader">Professional</p>
+                  <p
+                    class="myPrimaryParagraph text-white font-medium drop-shadow-sm"
+                  >
+                    myself is like a digital shopping window, focusing on your
+                    brand image, authenticity and credibility.
+                  </p>
+                </div>
+              </NuxtLink>
             </div>
           </div>
         </template>

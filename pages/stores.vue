@@ -3,6 +3,7 @@ import MainLayout from '../layouts/MainLayout.vue';
 import GuestsLayout from '../layouts/GuestsLayout.vue';
 import FullWidthElement from '../components/layouts/FullWidthElement.vue';
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue';
+import PageHeader from '../components/headers/PageHeader.vue';
 
 const runtimeConfig = useRuntimeConfig();
 
@@ -14,7 +15,9 @@ const getAppUrl = function (path) {
 <template>
   <MainLayout>
     <GuestsLayout>
-      <template #header> stores </template>
+      <template #header>
+        <PageHeader title="Stores"></PageHeader>
+      </template>
       this is stores layout
     </GuestsLayout>
   </MainLayout>

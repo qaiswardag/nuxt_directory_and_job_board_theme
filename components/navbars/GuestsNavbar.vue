@@ -84,13 +84,6 @@ const primaryMenuSlideOverButton = function () {
         </NuxtLink>
       </div>
 
-      <button
-        type="button"
-        class="h-10 w-10 cursor-pointer rounded-full flex items-center border-none justify-center bg-gray-50 aspect-square hover:bg-myPrimaryLinkColor hover:text-white focus-visible:ring-0"
-      >
-        <span class="myMediumIcon material-symbols-outlined"> person </span>
-      </button>
-
       <div class="flex myPrimaryGap items-center">
         <div>
           <button
@@ -100,24 +93,14 @@ const primaryMenuSlideOverButton = function () {
             <span class="material-symbols-outlined"> play_shapes </span>
           </button>
         </div>
-        <div>
-          <button
-            type="button"
-            class="h-10 w-10 cursor-pointer rounded-full flex items-center border-none justify-center bg-gray-50 aspect-square hover:bg-myPrimaryLinkColor hover:text-white focus-visible:ring-0"
-          >
-            <span class="material-symbols-outlined"> arrow_right_alt </span>
-          </button>
-        </div>
-
-        <div>
-          <button
-            type="button"
-            class="h-10 w-10 cursor-pointer rounded-full flex items-center border-none justify-center bg-gray-50 aspect-square hover:bg-myPrimaryLinkColor hover:text-white focus-visible:ring-0"
-          >
-            <span class="material-symbols-outlined"> person_add </span>
-          </button>
-        </div>
       </div>
+
+      <button
+        type="button"
+        class="h-10 w-10 cursor-pointer rounded-full flex items-center border-none justify-center bg-gray-50 aspect-square hover:bg-myPrimaryLinkColor hover:text-white focus-visible:ring-0"
+      >
+        <span class="myMediumIcon material-symbols-outlined"> person </span>
+      </button>
 
       <button
         @click="handlePrimaryMenuSlideOver"
