@@ -69,8 +69,31 @@ onMounted(() => {
       :headerArea="false"
     >
       <template #content>
-        <p class="py-12">Content here</p>
-        <p class="py-12">fetchedDataPosts: {{ fetchedDataPosts }}</p>
+        <div class="flex flex-col gap-2 border-b border-gray-200 pb-2 mb-8">
+          <!-- error # start -->
+          <template v-if="!isLoadingPosts && isErrorPosts">
+            <p class="myPrimaryParagraphError">
+              {{ errorPosts }}
+            </p>
+          </template>
+          <!-- error # end -->
+
+          <!-- Loading # start -->
+          <template v-if="isLoadingPosts">
+            <SmallUniversalSpinner
+              width="w-8"
+              height="h-8"
+              border="border-4"
+            ></SmallUniversalSpinner>
+          </template>
+          <!-- Loading # end -->
+
+          <!-- Successfull data # start -->
+          <div class="py-12 remove-this-div">
+            fetchedDataPosts: {{ fetchedDataPosts }}
+          </div>
+          <!-- Successfull data # end -->
+        </div>
       </template>
 
       <!-- List Grid # start -->
