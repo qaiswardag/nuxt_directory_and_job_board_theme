@@ -4,6 +4,7 @@ import GuestsLayout from '../layouts/GuestsLayout.vue';
 import FullWidthElement from '../components/layouts/FullWidthElement.vue';
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue';
 import PageHeader from '../components/headers/PageHeader.vue';
+import Items from '../layouts/items.vue';
 
 const runtimeConfig = useRuntimeConfig();
 
@@ -18,7 +19,10 @@ const getAppUrl = function (path) {
       <template #header>
         <PageHeader title="Stores"></PageHeader>
       </template>
-      this is stores layout
+      <Items
+        :pathList="`${getAppUrl('api/guest/stores/index')}`"
+        nameList="stores"
+      ></Items>
     </GuestsLayout>
   </MainLayout>
 </template>
