@@ -49,6 +49,10 @@ const navigation = [
   },
   {
     label: 'Professional',
+    route: {
+      name: 'professional',
+      parameters: [],
+    },
   },
   {
     label: 'Resources',
@@ -57,7 +61,7 @@ const navigation = [
       {
         label: 'Stores',
         route: {
-          name: 'stores',
+          name: 'professional',
           parameters: [],
         },
       },
