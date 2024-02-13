@@ -17,6 +17,15 @@ import PageHeader from '../components/headers/PageHeader.vue';
 
 const runtimeConfig = useRuntimeConfig();
 
+useSeoMeta({
+  title: `${runtimeConfig.public.APP_NAME} | Professional`,
+  ogTitle: `${runtimeConfig.public.APP_NAME} | Professional`,
+  description:
+    "Join Fashion's most comprehensive marketing platform in the UAE. Showcase stores to local consumers, find professionals and post fashion jobs. View Prices!",
+  ogDescription:
+    "Join Fashion's most comprehensive marketing platform in the UAE. Showcase stores to local consumers, find professionals and post fashion jobs. View Prices!",
+});
+
 const getAppUrl = function (path) {
   return runtimeConfig.public.LARAVEL_APP_URL + '/' + path;
 };

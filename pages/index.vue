@@ -6,6 +6,15 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue';
 
 const runtimeConfig = useRuntimeConfig();
 
+useSeoMeta({
+  title: `${runtimeConfig.public.APP_NAME} | Home`,
+  ogTitle: `${runtimeConfig.public.APP_NAME} | Home`,
+  description:
+    'Search for everything you need in the world of fashion within the United Arab Emirates. From fashion Stores and Jobs to Campaigns.',
+  ogDescription:
+    'Search for everything you need in the world of fashion within the United Arab Emirates. From fashion Stores and Jobs to Campaigns.',
+});
+
 const faqs = [
   {
     question: 'Pricing',

@@ -3,18 +3,14 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       LARAVEL_APP_URL: process.env.LARAVEL_APP_URL,
+      APP_NAME: process.env.APP_NAME,
     },
   },
   devtools: { enabled: true },
-  css: ['~/assets/css/main.css'],
-  postcss: {
-    plugins: {
-      tailwindcss: {},
-      autoprefixer: {},
-    },
-  },
   app: {
     head: {
+      charset: 'utf-8',
+      viewport: 'width=device-width, initial-scale=1',
       link: [
         {
           rel: 'stylesheet',
@@ -29,6 +25,13 @@ export default defineNuxtConfig({
           href: 'https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap',
         },
       ],
+    },
+  },
+  css: ['~/assets/css/main.css'],
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
     },
   },
 });
