@@ -9,6 +9,8 @@ import MainLayout from '../layouts/MainLayout.vue';
 import { parseISO, format } from 'date-fns';
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue';
 import ItemDisplaySelection from '../layouts/items/ItemDisplaySelection.vue';
+import ItemsFilterSelection from '../layouts/items/ItemsFilterSelection.vue';
+
 import { TailwindPagination } from 'laravel-vue-pagination';
 
 const props = defineProps({
@@ -100,14 +102,9 @@ const searchTagsOrContent = function () {
     page: 1,
     search_query: search_query.value,
     tags_or_content: tags_or_content.value ? 1 : 0,
-    type: typeSelected.value,
-    category: categorySelected.value,
-    country: countrySelected.value,
-    state: stateSelected.value,
   });
 
-  const url = `${props.pathList}?${params.toString()}`;
-  handleGetPosts(url);
+  appendSelectedParams(params);
 };
 
 // Scroll to the top of the page
@@ -123,10 +120,172 @@ const getResultsForPage = (page = 1) => {
   scrollToTop();
 };
 
-const handleRemoveState = function (selectedItem) {};
-const handleSelectState = function (selectedItem) {};
-const handleSelectCategory = function (selectedItem) {};
-const handleRemoveCategory = function (selectedItem) {};
+// handle category # start
+const handleSelection = function (selectedItem, nameOfSelection) {
+  if (!selectedItem) {
+    return;
+  }
+
+  // Check if there is no object with the same id
+  if (nameOfSelection === 'Categories') {
+    if (categorySelected.value.some((item) => item.id === selectedItem.id)) {
+      return;
+    }
+
+    categorySelected.value.push(selectedItem);
+
+    // Save only categories ids
+    categorySelected.value = categorySelected.value.map((item) => ({
+      id: item.id,
+      name: item.name,
+    }));
+  }
+
+  if (nameOfSelection === 'Types') {
+    if (typeSelected.value.some((item) => item.id === selectedItem.id)) {
+      return;
+    }
+
+    typeSelected.value.push(selectedItem);
+
+    // Save only categories ids
+    typeSelected.value = typeSelected.value.map((item) => ({
+      id: item.id,
+      name: item.name,
+    }));
+  }
+
+  if (nameOfSelection === 'Countries') {
+    if (countrySelected.value.some((item) => item.id === selectedItem.id)) {
+      return;
+    }
+    countrySelected.value.push(selectedItem);
+
+    // Save only categories ids
+    countrySelected.value = countrySelected.value.map((item) => ({
+      id: item.id,
+      name: item.name,
+    }));
+  }
+
+  if (nameOfSelection === 'States') {
+    if (stateSelected.value.some((item) => item.id === selectedItem.id)) {
+      return;
+    }
+    stateSelected.value.push(selectedItem);
+
+    // Save only categories ids
+    stateSelected.value = stateSelected.value.map((item) => ({
+      id: item.id,
+      name: item.name,
+    }));
+  }
+
+  const params = new URLSearchParams({
+    page: 1,
+    search_query: search_query.value,
+    tags_or_content: tags_or_content.value ? 1 : 0,
+  });
+
+  appendSelectedParams(params);
+};
+const handleRemoveSelection = function (selectedItem, nameOfSelection) {
+  if (!selectedItem) {
+    return;
+  }
+
+  if (nameOfSelection === 'Categories') {
+    // Find the index of the selected item in categorySelected.value
+    const index = categorySelected.value.findIndex(
+      (item) => item.id === selectedItem.id
+    );
+
+    // If the item is found, remove it from the array
+    if (index !== -1) {
+      categorySelected.value.splice(index, 1);
+    }
+  }
+  if (nameOfSelection === 'Types') {
+    // Find the index of the selected item in categorySelected.value
+    const index = typeSelected.value.findIndex(
+      (item) => item.id === selectedItem.id
+    );
+
+    // If the item is found, remove it from the array
+    if (index !== -1) {
+      typeSelected.value.splice(index, 1);
+    }
+  }
+
+  if (nameOfSelection === 'Countries') {
+    // Find the index of the selected item in categorySelected.value
+    const index = countrySelected.value.findIndex(
+      (item) => item.id === selectedItem.id
+    );
+
+    // If the item is found, remove it from the array
+    if (index !== -1) {
+      countrySelected.value.splice(index, 1);
+    }
+  }
+
+  if (nameOfSelection === 'States') {
+    // Find the index of the selected item in categorySelected.value
+    const index = stateSelected.value.findIndex(
+      (item) => item.id === selectedItem.id
+    );
+
+    // If the item is found, remove it from the array
+    if (index !== -1) {
+      stateSelected.value.splice(index, 1);
+    }
+  }
+
+  const params = new URLSearchParams({
+    page: 1,
+    search_query: search_query.value,
+    tags_or_content: tags_or_content.value ? 1 : 0,
+  });
+
+  appendSelectedParams(params);
+};
+// handle category # end
+
+//
+//
+//
+const appendSelectedParams = function (params) {
+  categorySelected.value.forEach((item) => {
+    params.append(`category[0][id]`, item.id);
+  });
+
+  typeSelected.value.forEach((item) => {
+    params.append(`type[0][id]`, item.id);
+  });
+
+  countrySelected.value.forEach((item) => {
+    params.append(`country[0][id]`, item.id);
+  });
+
+  stateSelected.value.forEach((item) => {
+    params.append(`state[0][id]`, item.id);
+  });
+
+  const url = `${props.pathList}?${params.toString()}`;
+
+  handleGetPosts(url);
+};
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 onMounted(() => {
   fetchComponents(1);
@@ -274,6 +433,116 @@ onMounted(() => {
                 </div>
               </form>
             </div>
+
+            <!-- Categories # start -->
+            <div
+              class="w-full"
+              :class="[
+                {
+                  'md:w-1/3': nameList !== 'posts',
+                },
+                {
+                  'md:w-1/2': nameList === 'posts',
+                },
+              ]"
+              v-if="
+                categorySelected &&
+                Array.isArray(categorySelected) &&
+                fetchedDataPosts &&
+                Array.isArray(fetchedDataPosts.categories)
+              "
+            >
+              <ItemsFilterSelection
+                nameOfList="Categories"
+                :list="fetchedDataPosts.categories"
+                :listSelected="categorySelected"
+                icon="interests"
+                @removeItem="handleRemoveSelection"
+                @selectItem="handleSelection"
+              ></ItemsFilterSelection>
+            </div>
+            <!-- Categories # end -->
+
+            <!-- State # start -->
+            <div
+              class="md:w-1/3 w-full"
+              v-if="
+                stateSelected &&
+                Array.isArray(stateSelected) &&
+                fetchedDataPosts &&
+                Array.isArray(fetchedDataPosts.states)
+              "
+            >
+              <ItemsFilterSelection
+                nameOfList="States"
+                :list="fetchedDataPosts.states"
+                :listSelected="stateSelected"
+                icon="MapPinIcon"
+                @removeItem="handleRemoveSelection"
+                @selectItem="handleSelection"
+              ></ItemsFilterSelection>
+            </div>
+            <!-- State # end -->
+
+            <template
+              v-if="
+                (countrySelected &&
+                  Array.isArray(countrySelected) &&
+                  fetchedDataPosts &&
+                  Array.isArray(fetchedDataPosts.countries)) ||
+                (typeSelected &&
+                  Array.isArray(typeSelected) &&
+                  fetchedDataPosts &&
+                  Array.isArray(fetchedDataPosts.types))
+              "
+            >
+              <div class="flex md:flex-row flex-col myPrimaryGap">
+                <!-- Country # start -->
+                <template v-if="showJobCountriesAndTypes">
+                  <div
+                    class="md:w-1/2 w-full"
+                    v-if="
+                      countrySelected &&
+                      Array.isArray(countrySelected) &&
+                      fetchedDataPosts &&
+                      Array.isArray(fetchedDataPosts.countries)
+                    "
+                  >
+                    <ItemsFilterSelection
+                      nameOfList="Countries"
+                      :list="fetchedDataPosts.countries"
+                      :listSelected="countrySelected"
+                      icon="GlobeAmericasIcon"
+                      @removeItem="handleRemoveSelection"
+                      @selectItem="handleSelection"
+                    ></ItemsFilterSelection>
+                  </div>
+
+                  <!-- Country # end -->
+
+                  <!-- Type # start -->
+                  <div
+                    class="md:w-1/2 w-full"
+                    v-if="
+                      typeSelected &&
+                      Array.isArray(typeSelected) &&
+                      fetchedDataPosts &&
+                      Array.isArray(fetchedDataPosts.types)
+                    "
+                  >
+                    <ItemsFilterSelection
+                      nameOfList="Types"
+                      :list="fetchedDataPosts.types"
+                      :listSelected="typeSelected"
+                      icon="NewspaperIcon"
+                      @removeItem="handleRemoveSelection"
+                      @selectItem="handleSelection"
+                    ></ItemsFilterSelection>
+                  </div>
+                </template>
+                <!-- Type # end -->
+              </div>
+            </template>
           </div>
         </div>
         <!-- Search in Tags Or Content # end -->
@@ -425,11 +694,12 @@ onMounted(() => {
                     <!-- Country # start -->
                     <template v-if="post.countries">
                       <ItemDisplaySelection
+                        nameOfList="Countries"
                         :list="post.countries"
                         :listSelected="countrySelected"
                         icon="GlobeAmericasIcon"
-                        @removeItem="handleRemoveCountry"
-                        @selectItem="handleSelectCountry"
+                        @removeItem="handleRemoveSelection"
+                        @selectItem="handleSelection"
                       ></ItemDisplaySelection>
                     </template>
                     <!-- Country # end -->
@@ -437,11 +707,12 @@ onMounted(() => {
                     <!-- State # start -->
                     <template v-if="post.states">
                       <ItemDisplaySelection
+                        nameOfList="States"
                         :list="post.states"
                         :listSelected="stateSelected"
                         icon="MapPinIcon"
-                        @removeItem="handleRemoveState"
-                        @selectItem="handleSelectState"
+                        @removeItem="handleRemoveSelection"
+                        @selectItem="handleSelection"
                       ></ItemDisplaySelection>
                     </template>
                     <!-- State # end -->
@@ -449,11 +720,12 @@ onMounted(() => {
                     <!-- Type # start -->
                     <template v-if="post.types">
                       <ItemDisplaySelection
+                        nameOfList="Types"
                         :list="post.types"
                         :listSelected="typeSelected"
                         icon="NewspaperIcon"
-                        @removeItem="handleRemoveType"
-                        @selectItem="handleSelectType"
+                        @removeItem="handleRemoveSelection"
+                        @selectItem="handleSelection"
                       ></ItemDisplaySelection>
                     </template>
                     <!-- Type # end -->
@@ -461,11 +733,12 @@ onMounted(() => {
                     <!-- Category # start -->
                     <template v-if="post.categories">
                       <ItemDisplaySelection
+                        nameOfList="Categories"
                         :list="post.categories"
                         :listSelected="categorySelected"
                         icon="interests"
-                        @removeItem="handleRemoveCategory"
-                        @selectItem="handleSelectCategory"
+                        @removeItem="handleRemoveSelection"
+                        @selectItem="handleSelection"
                       ></ItemDisplaySelection>
                     </template>
                     <!-- Category # end -->

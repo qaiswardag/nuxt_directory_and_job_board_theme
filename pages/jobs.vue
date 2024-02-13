@@ -1,9 +1,8 @@
 <script setup>
 import MainLayout from '../layouts/MainLayout.vue';
 import GuestsLayout from '../layouts/GuestsLayout.vue';
-import FullWidthElement from '../components/layouts/FullWidthElement.vue';
-import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue';
 import PageHeader from '../components/headers/PageHeader.vue';
+import Items from '../layouts/Items.vue';
 
 const runtimeConfig = useRuntimeConfig();
 
@@ -18,7 +17,10 @@ const getAppUrl = function (path) {
       <template #header>
         <PageHeader title="Jobs"></PageHeader>
       </template>
-      this is jobs layout
+      <Items
+        :pathList="`${getAppUrl('api/guest/jobs/index')}`"
+        nameList="jobs"
+      ></Items>
     </GuestsLayout>
   </MainLayout>
 </template>

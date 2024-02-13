@@ -1,6 +1,9 @@
 <script setup>
 const emit = defineEmits(['selectItem', 'removeItem']);
 const props = defineProps({
+  nameOfList: {
+    required: true,
+  },
   list: {
     required: true,
   },
@@ -15,10 +18,10 @@ const props = defineProps({
 });
 
 const handleSelectItem = function (selectedItem) {
-  emit('selectItem', selectedItem);
+  emit('selectItem', selectedItem, props.nameOfList);
 };
 const handleRemoveItem = function (selectedItem) {
-  emit('removeItem', selectedItem);
+  emit('removeItem', selectedItem, props.nameOfList);
 };
 </script>
 
