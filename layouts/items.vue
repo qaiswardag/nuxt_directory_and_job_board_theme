@@ -4,8 +4,6 @@ import { onMounted, ref, watch } from 'vue';
 import SmallUniversalSpinner from '../components/loaders/SmallUniversalSpinner.vue';
 import FullWidthElement from '../components/layouts/FullWidthElement.vue';
 import ThumbnailSmallImageSlider from '../components/sliders/ThumbnailSmallImageSlider.vue';
-import GuestsLayout from '../layouts/GuestsLayout.vue';
-import MainLayout from '../layouts/MainLayout.vue';
 import { parseISO, format } from 'date-fns';
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue';
 import ItemDisplaySelection from '../layouts/items/ItemDisplaySelection.vue';
@@ -85,6 +83,21 @@ const handleSearch = function () {
 
 const searchInTagsAndContent = ref(false);
 const showJobCountriesAndTypes = ref(false);
+
+watch(showJobCountriesAndTypes, (newValue) => {
+  if (!newValue) {
+    typeSelected.value = [];
+    countrySelected.value = [];
+
+    const params = new URLSearchParams({
+      page: 1,
+      search_query: search_query.value,
+      tags_or_content: tags_or_content.value ? 1 : 0,
+    });
+
+    appendSelectedParams(params);
+  }
+});
 
 watch(searchInTagsAndContent, (newValue) => {
   if (newValue) {
@@ -300,11 +313,8 @@ onMounted(() => {
     >
       <template #content>
         <!-- Search in Tags Or Content # start -->
-        <div class="py-2 px-2 mb-4 rounded-md' border border-red-300">
-          <div
-            class="pb-2"
-            v-if="fetchedDataPosts && fetchedDataPosts.posts"
-          >
+        <div class="py-2 px-2 rounded-xl bg-gray-100 grid gap-8 mb-8">
+          <div v-if="fetchedDataPosts && fetchedDataPosts.posts">
             <!-- options dropdow # start -->
             <Menu
               as="div"
@@ -483,67 +493,67 @@ onMounted(() => {
               ></ItemsFilterSelection>
             </div>
             <!-- State # end -->
-
-            <template
-              v-if="
-                (countrySelected &&
-                  Array.isArray(countrySelected) &&
-                  fetchedDataPosts &&
-                  Array.isArray(fetchedDataPosts.countries)) ||
-                (typeSelected &&
-                  Array.isArray(typeSelected) &&
-                  fetchedDataPosts &&
-                  Array.isArray(fetchedDataPosts.types))
-              "
-            >
-              <div class="flex md:flex-row flex-col myPrimaryGap">
-                <!-- Country # start -->
-                <template v-if="showJobCountriesAndTypes">
-                  <div
-                    class="md:w-1/2 w-full"
-                    v-if="
-                      countrySelected &&
-                      Array.isArray(countrySelected) &&
-                      fetchedDataPosts &&
-                      Array.isArray(fetchedDataPosts.countries)
-                    "
-                  >
-                    <ItemsFilterSelection
-                      nameOfList="Countries"
-                      :list="fetchedDataPosts.countries"
-                      :listSelected="countrySelected"
-                      icon="GlobeAmericasIcon"
-                      @removeItem="handleRemoveSelection"
-                      @selectItem="handleSelection"
-                    ></ItemsFilterSelection>
-                  </div>
-
-                  <!-- Country # end -->
-
-                  <!-- Type # start -->
-                  <div
-                    class="md:w-1/2 w-full"
-                    v-if="
-                      typeSelected &&
-                      Array.isArray(typeSelected) &&
-                      fetchedDataPosts &&
-                      Array.isArray(fetchedDataPosts.types)
-                    "
-                  >
-                    <ItemsFilterSelection
-                      nameOfList="Types"
-                      :list="fetchedDataPosts.types"
-                      :listSelected="typeSelected"
-                      icon="NewspaperIcon"
-                      @removeItem="handleRemoveSelection"
-                      @selectItem="handleSelection"
-                    ></ItemsFilterSelection>
-                  </div>
-                </template>
-                <!-- Type # end -->
-              </div>
-            </template>
           </div>
+
+          <template
+            v-if="
+              (countrySelected &&
+                Array.isArray(countrySelected) &&
+                fetchedDataPosts &&
+                Array.isArray(fetchedDataPosts.countries)) ||
+              (typeSelected &&
+                Array.isArray(typeSelected) &&
+                fetchedDataPosts &&
+                Array.isArray(fetchedDataPosts.types))
+            "
+          >
+            <div class="flex md:flex-row flex-col myPrimaryGap">
+              <!-- Country # start -->
+              <template v-if="showJobCountriesAndTypes">
+                <div
+                  class="md:w-1/2 w-full"
+                  v-if="
+                    countrySelected &&
+                    Array.isArray(countrySelected) &&
+                    fetchedDataPosts &&
+                    Array.isArray(fetchedDataPosts.countries)
+                  "
+                >
+                  <ItemsFilterSelection
+                    nameOfList="Countries"
+                    :list="fetchedDataPosts.countries"
+                    :listSelected="countrySelected"
+                    icon="GlobeAmericasIcon"
+                    @removeItem="handleRemoveSelection"
+                    @selectItem="handleSelection"
+                  ></ItemsFilterSelection>
+                </div>
+
+                <!-- Country # end -->
+
+                <!-- Type # start -->
+                <div
+                  class="md:w-1/2 w-full"
+                  v-if="
+                    typeSelected &&
+                    Array.isArray(typeSelected) &&
+                    fetchedDataPosts &&
+                    Array.isArray(fetchedDataPosts.types)
+                  "
+                >
+                  <ItemsFilterSelection
+                    nameOfList="Types"
+                    :list="fetchedDataPosts.types"
+                    :listSelected="typeSelected"
+                    icon="NewspaperIcon"
+                    @removeItem="handleRemoveSelection"
+                    @selectItem="handleSelection"
+                  ></ItemsFilterSelection>
+                </div>
+              </template>
+              <!-- Type # end -->
+            </div>
+          </template>
         </div>
         <!-- Search in Tags Or Content # end -->
 

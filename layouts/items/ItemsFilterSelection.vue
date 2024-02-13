@@ -47,7 +47,7 @@ const handleRemoveItem = function (selectedItem) {
       <div class="relative">
         <!-- Selected list # Start -->
         <ListboxButton
-          class="border border-gray-300 shadow-sm rounded-md w-full min-h-[3.5rem] h-[3.5rem] pt-2 pb-0 pr-8 pl-2 text-left text-sm"
+          class="border border-gray-300 shadow-sm rounded-md w-full min-h-[3.5rem] h-[3.5rem] pt-2 pb-0 pr-8 pl-2 text-left text-sm bg-white"
         >
           <span
             v-if="listSelected.length === 0"
