@@ -6,6 +6,14 @@ export default defineNuxtConfig({
       APP_NAME: process.env.APP_NAME,
     },
   },
+  imports: {
+    transform: {
+      // headless ui issue
+      // you could also add the path of your built library to prevent this happening
+      // for your users, but the issue is probably only replicable in your monorepo
+      exclude: [/\bsfui\b/],
+    },
+  },
   devtools: { enabled: false },
   app: {
     head: {
