@@ -64,8 +64,6 @@ const fetchComponents = function (page) {
   });
 
   const url = `${props.pathList}?${params.toString()}`;
-  console.log(`url:`, url);
-
   handleGetPosts(url);
 };
 

@@ -4,7 +4,7 @@ import PageHeader from '../../../../../../components/headers/PageHeader.vue';
 import MainLayout from '../../../../../../layouts/MainLayout.vue';
 import GuestsLayout from '../../../../../../layouts/GuestsLayout.vue';
 import { vueFetch } from '../../../../../../../../resources/js/composables/vueFetch';
-
+import SmallUniversalSpinner from '../../../../../../components/loaders/SmallUniversalSpinner.vue';
 const route = useRoute();
 const teamSlug = route.params.team_slug;
 const resource = route.params.resource;
@@ -40,12 +40,9 @@ const getAppUrl = function (path) {
 };
 
 onMounted(() => {
-  console.log(`resource:`, resource);
   const url = getAppUrl(
     `api/${teamSlug}/${resource}/${postSlug}/${id_description}/${postId}`
   );
-
-  console.log(`url:`, url);
   handleGetPost(url);
 });
 </script>
@@ -60,19 +57,38 @@ onMounted(() => {
       </template>
       <!-- Show Unique Resorce - start -->
       <main class="myPrimaryContentSection">
-        <p class="py-12">fetchedDataPost: {{ fetchedDataPost }}</p>
-        <UniqueResource>
-          <!-- :post="post"
-					:onlyForCurrentTeam="false"
-          :team="team"
-          :authors="authors"
-          :countries="countries"
-          :states="states"
-          :jobTypes="jobTypes"
-          :categories="categories"
-          :stores="stores"
-          :postType="postType" -->
-        </UniqueResource>
+        <!-- error # start -->
+        <template v-if="!isLoadingPost && isErrorPost">
+          <p class="myPrimaryParagraphError">
+            {{ errorPost }}
+          </p>
+        </template>
+        <!-- error # end -->
+
+        <!-- Loading # start -->
+        <template v-if="isLoadingPost">
+          <SmallUniversalSpinner
+            width="w-8"
+            height="h-8"
+            border="border-4"
+          ></SmallUniversalSpinner>
+        </template>
+        <!-- Loading # end -->
+        <template v-if="fetchedDataPost">
+          <UniqueResource
+            :post="fetchedDataPost.post"
+            :onlyForCurrentTeam="false"
+            :team="fetchedDataPost.team"
+            :authors="fetchedDataPost.authors"
+            :countries="fetchedDataPost.countries"
+            :states="fetchedDataPost.states"
+            :jobTypes="fetchedDataPost.jobTypes"
+            :categories="fetchedDataPost.categories"
+            :stores="fetchedDataPost.stores"
+            :postType="fetchedDataPost.postType"
+          >
+          </UniqueResource>
+        </template>
       </main>
       <!-- sShow Unique Post - end -->
     </GuestsLayout>
