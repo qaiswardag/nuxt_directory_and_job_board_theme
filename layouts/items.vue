@@ -506,9 +506,9 @@ onMounted(() => {
                 Array.isArray(fetchedDataPosts.types))
             "
           >
-            <div class="flex md:flex-row flex-col myPrimaryGap">
-              <!-- Country # start -->
-              <template v-if="showJobCountriesAndTypes">
+            <template v-if="showJobCountriesAndTypes">
+              <div class="flex md:flex-row flex-col myPrimaryGap">
+                <!-- Country # start -->
                 <div
                   class="md:w-1/2 w-full"
                   v-if="
@@ -549,9 +549,9 @@ onMounted(() => {
                     @selectItem="handleSelection"
                   ></ItemsFilterSelection>
                 </div>
-              </template>
-              <!-- Type # end -->
-            </div>
+                <!-- Type # end -->
+              </div>
+            </template>
           </template>
         </div>
         <!-- Search in Tags Or Content # end -->
