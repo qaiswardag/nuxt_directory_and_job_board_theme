@@ -8,11 +8,6 @@ export default defineNuxtConfig({
   },
 
   devtools: { enabled: false },
-
-  modules: ['nuxt-headlessui'],
-  headlessui: {
-    prefix: 'Headless',
-  },
   app: {
     head: {
       charset: 'utf-8',

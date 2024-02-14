@@ -5,14 +5,6 @@ import jobPrices from '../utils/pricing/job-prices';
 import MainLayout from '../layouts/MainLayout.vue';
 import GuestsLayout from '../layouts/GuestsLayout.vue';
 import FullWidthElement from '../components/layouts/FullWidthElement.vue';
-import {
-  Disclosure,
-  DisclosureButton,
-  DisclosurePanel,
-  RadioGroup,
-  RadioGroupLabel,
-  RadioGroupOption,
-} from '@headlessui/vue';
 import PageHeader from '../components/headers/PageHeader.vue';
 
 const runtimeConfig = useRuntimeConfig();
