@@ -28,7 +28,7 @@ const getAppUrl = function (path) {
       </template>
       <Items
         :pathList="`${getAppUrl('api/guest/jobs/index')}`"
-        nameList="jobs"
+        nameList="job"
       ></Items>
     </GuestsLayout>
   </MainLayout>

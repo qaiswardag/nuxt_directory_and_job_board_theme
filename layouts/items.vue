@@ -64,6 +64,8 @@ const fetchComponents = function (page) {
   });
 
   const url = `${props.pathList}?${params.toString()}`;
+  console.log(`url:`, url);
+
   handleGetPosts(url);
 };
 
@@ -285,7 +287,6 @@ const appendSelectedParams = function (params) {
   });
 
   const url = `${props.pathList}?${params.toString()}`;
-
   handleGetPosts(url);
 };
 //
@@ -373,7 +374,7 @@ onMounted(() => {
                     <!-- Search in tags and content # end -->
                   </div>
 
-                  <template v-if="nameList === 'jobs'">
+                  <template v-if="nameList === 'job'">
                     <div class="py-1">
                       <div
                         class="pl-4 pr-2 pt-2 pb-2 w-full text-sm flex items-center justify-start gap-2 my-2 hover:bg-myPrimaryLightGrayColor"
@@ -412,10 +413,10 @@ onMounted(() => {
               class="w-full"
               :class="[
                 {
-                  'md:w-1/3': nameList !== 'posts',
+                  'md:w-1/3': nameList !== 'campaign',
                 },
                 {
-                  'md:w-1/2': nameList === 'posts',
+                  'md:w-1/2': nameList === 'campaign',
                 },
               ]"
             >
@@ -435,7 +436,7 @@ onMounted(() => {
                     class="myPrimaryInput pl-10 shadow-none min-h-[3.5rem] h-[3.5rem]"
                     autocomplete="off"
                     :placeholder="`${
-                      nameList === 'stores'
+                      nameList === 'store'
                         ? 'Company or Brand name'
                         : `Search ${nameList}`
                     }..`"
@@ -449,10 +450,10 @@ onMounted(() => {
               class="w-full"
               :class="[
                 {
-                  'md:w-1/3': nameList !== 'posts',
+                  'md:w-1/3': nameList !== 'campaign',
                 },
                 {
-                  'md:w-1/2': nameList === 'posts',
+                  'md:w-1/2': nameList === 'campaign',
                 },
               ]"
               v-if="
@@ -635,9 +636,22 @@ onMounted(() => {
                       type="button"
                       class="w-full text-left"
                     >
-                      <p class="myQuaternaryHeader">
-                        {{ post.title }}
-                      </p>
+                      <NuxtLink
+                        :to="{
+                          name: 'team_slug-resource-slug-id_description-id',
+                          params: {
+                            team_slug: post.team.slug,
+                            resource: nameList,
+                            slug: post.slug,
+                            id_description: 'view',
+                            id: post.id,
+                          },
+                        }"
+                      >
+                        <p class="myQuaternaryHeader">
+                          {{ post.title }}
+                        </p>
+                      </NuxtLink>
                     </button>
 
                     <template
@@ -660,7 +674,9 @@ onMounted(() => {
 
                     <template
                       v-if="
-                        post.started_at && post.ended_at && nameList === 'posts'
+                        post.started_at &&
+                        post.ended_at &&
+                        nameList === 'campaign'
                       "
                     >
                       <div class="flex gap-4">

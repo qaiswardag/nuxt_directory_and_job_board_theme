@@ -6,7 +6,7 @@ export default defineNuxtConfig({
       APP_NAME: process.env.APP_NAME,
     },
   },
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   app: {
     head: {
       charset: 'utf-8',
