@@ -1,18 +1,5 @@
 <script setup>
 import { ref, computed } from 'vue';
-import {
-  Combobox,
-  ComboboxInput,
-  ComboboxButton,
-  ComboboxOptions,
-  ComboboxOption,
-  TransitionRoot,
-  Listbox,
-  ListboxButton,
-  ListboxLabel,
-  ListboxOptions,
-  ListboxOption,
-} from '@headlessui/vue';
 
 const emit = defineEmits(['selectItem', 'removeItem']);
 const props = defineProps({
