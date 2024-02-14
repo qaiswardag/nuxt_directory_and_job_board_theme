@@ -6,7 +6,13 @@ export default defineNuxtConfig({
       APP_NAME: process.env.APP_NAME,
     },
   },
+
   devtools: { enabled: false },
+
+  modules: ['nuxt-headlessui'],
+  headlessui: {
+    prefix: 'Headless',
+  },
   app: {
     head: {
       charset: 'utf-8',
