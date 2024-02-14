@@ -1,5 +1,5 @@
 <script setup>
-import { vueFetch } from '../../../resources/js/composables/vueFetch';
+import { vueFetch } from '../composables/vueFetch';
 import { onMounted, ref, watch } from 'vue';
 import SmallUniversalSpinner from '../components/loaders/SmallUniversalSpinner.vue';
 import FullWidthElement from '../components/layouts/FullWidthElement.vue';
