@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue';
-import storeSubscriptionPrices from '../../../resources/js/utils/pricing/store-subscription-prices';
-import jobPrices from '../../../resources/js/utils/pricing/job-prices';
+import storeSubscriptionPrices from '../utils/pricing/store-subscription-prices';
+import jobPrices from '../utils/pricing/job-prices';
 import MainLayout from '../layouts/MainLayout.vue';
 import GuestsLayout from '../layouts/GuestsLayout.vue';
 import FullWidthElement from '../components/layouts/FullWidthElement.vue';

@@ -59,7 +59,7 @@ const navigation = [
 
     children: [
       {
-        label: 'Stores',
+        label: 'Professional',
         route: {
           name: 'professional',
           parameters: [],
@@ -144,7 +144,7 @@ const navigation = [
                                 :key="item.label"
                               >
                                 <NuxtLink
-                                  :to="item.route && item.route.name"
+                                  :to="item.route && `/${item.route.name}`"
                                   class="text-myPrimaryDarkGrayColor"
                                   :class="{
                                     'text-myPrimaryLinkColor':
@@ -209,7 +209,8 @@ const navigation = [
                                       >
                                         <NuxtLink
                                           :to="
-                                            subItem.route && subItem.route.name
+                                            subItem.route &&
+                                            `/${subItem.route.name}`
                                           "
                                           class="text-myPrimaryDarkGrayColor"
                                           :class="{
