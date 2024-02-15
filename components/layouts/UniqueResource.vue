@@ -54,7 +54,6 @@ const getAppUrl = function (path) {
   return runtimeConfig.public.LARAVEL_APP_URL + '/' + path;
 };
 
-console.log(`postType:`, props.postType);
 useSeoMeta({
   title: `${runtimeConfig.public.APP_NAME} | ${
     props.postType[0].toUpperCase() + props.postType.slice(1)

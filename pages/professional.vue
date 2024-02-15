@@ -9,6 +9,10 @@ import PageHeader from '../components/headers/PageHeader.vue';
 
 const runtimeConfig = useRuntimeConfig();
 
+const getAppUrl = function (path) {
+  return runtimeConfig.public.LARAVEL_APP_URL + '/' + path;
+};
+
 useSeoMeta({
   title: `${runtimeConfig.public.APP_NAME} | Professional`,
   ogTitle: `${runtimeConfig.public.APP_NAME} | Professional`,
@@ -16,11 +20,8 @@ useSeoMeta({
     "Join Fashion's most comprehensive marketing platform in the UAE. Showcase stores to local consumers, find professionals and post fashion jobs. View Prices!",
   ogDescription:
     "Join Fashion's most comprehensive marketing platform in the UAE. Showcase stores to local consumers, find professionals and post fashion jobs. View Prices!",
+  ogImage: getAppUrl('brand-images/pink-lady-high-resolution.jpg'),
 });
-
-const getAppUrl = function (path) {
-  return runtimeConfig.public.LARAVEL_APP_URL + '/' + path;
-};
 </script>
 
 <template>

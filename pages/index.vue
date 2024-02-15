@@ -5,6 +5,10 @@ import FullWidthElement from '../components/layouts/FullWidthElement.vue';
 
 const runtimeConfig = useRuntimeConfig();
 
+const getAppUrl = function (path) {
+  return runtimeConfig.public.LARAVEL_APP_URL + '/' + path;
+};
+
 useSeoMeta({
   title: `${runtimeConfig.public.APP_NAME} | Home`,
   ogTitle: `${runtimeConfig.public.APP_NAME} | Home`,
@@ -12,6 +16,7 @@ useSeoMeta({
     'Search for everything you need in the world of fashion within the United Arab Emirates. From fashion Stores and Jobs to Campaigns.',
   ogDescription:
     'Search for everything you need in the world of fashion within the United Arab Emirates. From fashion Stores and Jobs to Campaigns.',
+  ogImage: getAppUrl('brand-images/pink-lady-high-resolution.jpg'),
 });
 
 const faqs = [
@@ -25,10 +30,6 @@ const faqs = [
       'Our services include job posting, product in-store campaigns, and store posting.',
   },
 ];
-
-const getAppUrl = function (path) {
-  return runtimeConfig.public.LARAVEL_APP_URL + '/' + path;
-};
 </script>
 
 <template>
@@ -39,7 +40,7 @@ const getAppUrl = function (path) {
           <img
             class="top-0 left-0 w-full object-cover h-[32rem]"
             :src="getAppUrl('brand-images/pink-lady-high-resolution.jpg')"
-            alt="Image"
+            alt="myself.ae fashion & jobs"
           />
           <div class="bg-black/20 absolute top-0 left-0 w-full h-[32rem]"></div>
           <div
@@ -78,7 +79,7 @@ const getAppUrl = function (path) {
               <img
                 class="top-0 left-0 w-full object-cover lg:h-[30rem] h-[22rem] rounded-lg"
                 :src="getAppUrl('app-images/pages/home/fashion_show.jpg')"
-                alt="image"
+                alt="myself.ae fashion & jobs"
               />
 
               <NuxtLink to="/stores">
@@ -197,7 +198,7 @@ const getAppUrl = function (path) {
             <img
               class="top-0 left-0 w-full object-cover rounded-lg"
               :src="getAppUrl('app-images/pages/home/edit_or_add_designs.jpg')"
-              alt="image"
+              alt="myself.ae fashion & jobs"
             />
             <div
               class="bg-black/0 absolute top-0 left-0 w-full h-full rounded-lg"
@@ -233,7 +234,7 @@ const getAppUrl = function (path) {
                   <img
                     class="object-cover w-28 h-28 rounded-full"
                     :src="getAppUrl('app-images/pages/home/woman_1.jpg')"
-                    alt="image"
+                    alt="myself.ae fashion & jobs"
                   />
                 </div>
 
@@ -270,7 +271,7 @@ const getAppUrl = function (path) {
                   <img
                     class="object-cover w-28 h-28 rounded-full"
                     :src="getAppUrl('app-images/pages/home/woman_2.jpg')"
-                    alt="image"
+                    alt="myself.ae fashion & jobs"
                   />
                 </div>
 
@@ -307,7 +308,7 @@ const getAppUrl = function (path) {
                   <img
                     class="object-cover w-28 h-28 rounded-full"
                     :src="getAppUrl('app-images/pages/home/woman_3.jpg')"
-                    alt="image"
+                    alt="myself.ae fashion & jobs"
                   />
                 </div>
 
@@ -344,7 +345,7 @@ const getAppUrl = function (path) {
                   <img
                     class="object-cover w-28 h-28 rounded-full"
                     :src="getAppUrl('app-images/pages/home/woman_4.jpg')"
-                    alt="image"
+                    alt="myself.ae fashion & jobs"
                   />
                 </div>
 
