@@ -1,1 +1,32 @@
-npx nuxi build
+npm run build
+
+Symlink to .env file from public folder:
+ln -s /home/master/applications/jwehvzxtuk/private_html/.env .env
+
+
+Deploy Nuxt 3 on Cloudways
+Add a PHP Stack application on the existing server.
+For that, here is the guide you can follow:
+https://support.cloudways.com/en/articles/5124126-how-to-add-an-application-on-the-cloudways-platform#h_538b13428a
+SSH into the server
+For that here is the guide you can follow:
+https://support.cloudways.com/en/articles/5119485-guide-to-connecting-to-your-application-using-ssh-sftp
+Go to your webroot of the app (public_html folder ) and initiate the Nuxt installation with NPM as:
+npm init nuxt-app@latest my-nuxt-app
+It will present with the list of choices to make regarding different component of the project as can be see in the screenshot below:
+
+Choose the options as shown here.
+Once the installation is finished, go to the newly created project directory and add the following code inside the nuxt.config.js file
+server: {    
+host: '0.0.0.0',    
+port: 3000  
+},
+Make sure you add the above code as a property of the configuration object separated from other properties by a comma:
+Run the following commands while still being in the project directory:
+
+npm run buildnpm run start
+Add the following code in the .htaccess of the application
+RewriteEngine On
+RewriteBase /
+RewriteRule ^(.*)?$ http://127.0.0.1:3000/$1 [P,L]
+Now you should be able to access the Nuxtjs app through browser.

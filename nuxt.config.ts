@@ -6,7 +6,6 @@ export default defineNuxtConfig({
       APP_NAME: process.env.APP_NAME,
     },
   },
-
   devtools: { enabled: false },
   app: {
     head: {
