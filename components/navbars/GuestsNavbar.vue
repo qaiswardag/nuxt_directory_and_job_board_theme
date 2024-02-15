@@ -18,6 +18,11 @@ const primaryMenuSlideOverButton = function () {
 };
 </script>
 <template>
+  <SlideOverPrimaryMenu
+    :open="showPrimaryMenuSlideOver"
+    @primaryMenuSlideOverButton="primaryMenuSlideOverButton"
+  >
+  </SlideOverPrimaryMenu>
   <header class="w-full text-sm">
     <nav
       class="mx-auto flex myPrimaryGap items-center justify-end px-6 lg:px-8"

@@ -19,3 +19,21 @@ module.exports = {
     }
   ]
 }
+
+
+CHECK PORT:
+Identify the process using port 3000. 
+lsof -i :3000
+
+Output:
+COMMAND   PID    USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+node    21995 myissue   19u  IPv6 986387      0t0  TCP *:3000 (LISTEN)
+
+Kill:
+kill -9 21995
+
+-9
+The -9 is the signal number that corresponds to the SIGKILL signal in Unix-like operating systems. 
+The SIGKILL signal is a special signal that forcefully terminates a process. 
+It does not allow the process to perform any cleanup or 
+handle the signal in any way – it immediately terminates the process.
