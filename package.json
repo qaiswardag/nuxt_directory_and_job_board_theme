@@ -9,6 +9,9 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
+  "engines": {
+    "node": "20.x"
+  },
   "dependencies": {
     "date-fns": "^2.30.0",
     "laravel-vue-pagination": "^4.1.3",
