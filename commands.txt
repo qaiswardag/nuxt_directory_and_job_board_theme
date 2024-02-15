@@ -3,17 +3,19 @@ npm run build
 Symlink to .env file from public folder:
 ln -s /home/master/applications/jwehvzxtuk/private_html/.env .env
 
+PM2
+PM2 (Process Manager 2) is a fast and easy solution for hosting your Nuxt application on your server or VM.
+To use pm2, use an ecosystem.config.cjs:
+ecosystem.config.cjs
 
-Deploy Nuxt 3 on Cloudways
-TERMINAL:
-cd && echo "export PATH='$PATH:/home/master/bin/npm'" >> .bash_aliases
-cd ~ && echo "export NODE_PATH='$NODE_PATH:/home/master/bin/npm/lib/node_modules'" >> .bash_aliases
-npm config set prefix "/home/master/bin/npm/lib/node_modules"
-cd && echo "alias pm2='/home/master/node_modules/pm2/bin/pm2'" >> .bash_aliases
-npm install pm2@latest
-
-Once done, I started the site with PM2 using the following command:
-pm2 start "npm run start" --name "myself_ae_nuxt_frontend"
-
-You can learn more on running PM2 from here:
-https://pm2.keymetrics.io/docs/usage/quick-start/
+module.exports = {
+  apps: [
+    {
+      name: 'NuxtAppName',
+      port: '3000',
+      exec_mode: 'cluster',
+      instances: 'max',
+      script: './.output/server/index.mjs'
+    }
+  ]
+}
