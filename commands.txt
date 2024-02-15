@@ -1,5 +1,3 @@
-npm run build
-
 Symlink to .env file from public folder:
 ln -s /home/master/applications/jwehvzxtuk/private_html/.env .env
 
@@ -19,6 +17,10 @@ module.exports = {
     }
   ]
 }
+
+
+
+npm run build
 
 
 CHECK PORT:
