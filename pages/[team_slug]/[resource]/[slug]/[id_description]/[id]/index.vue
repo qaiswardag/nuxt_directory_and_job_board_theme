@@ -5,6 +5,7 @@ import MainLayout from '../../../../../../layouts/MainLayout.vue';
 import GuestsLayout from '../../../../../../layouts/GuestsLayout.vue';
 import { vueFetch } from '../../../../../../composables/vueFetch';
 import SmallUniversalSpinner from '../../../../../../components/loaders/SmallUniversalSpinner.vue';
+import { extractTextContentHTML } from '../../../../../../helpers/extract-text-content-html';
 const route = useRoute();
 const teamSlug = route.params.team_slug;
 const resource = route.params.resource;
@@ -15,6 +16,9 @@ const postId = route.params.id;
 const runtimeConfig = useRuntimeConfig();
 
 const getAppUrl = function (path) {
+  if (!path) {
+    return;
+  }
   return runtimeConfig.public.LARAVEL_APP_URL + '/' + path;
 };
 
@@ -28,11 +32,33 @@ const {
   isSuccess: isSuccessPost,
 } = vueFetch();
 
-onMounted(() => {
+onMounted(async () => {
   const url = getAppUrl(
     `api/${teamSlug}/${resource}/${postSlug}/${id_description}/${postId}`
   );
-  handleGetPost(url);
+
+  await handleGetPost(url);
+
+  if (fetchedDataPost.value && fetchedDataPost.value.post) {
+    useSeoMeta({
+      title: `${runtimeConfig.public.APP_NAME} | ${fetchedDataPost.value.post.title}`,
+      ogTitle: `${runtimeConfig.public.APP_NAME} | ${fetchedDataPost.value.post.title}`,
+
+      description: extractTextContentHTML(
+        fetchedDataPost.value.post.content,
+        200
+      ),
+      ogDescription: extractTextContentHTML(
+        fetchedDataPost.value.post.content,
+        200
+      ),
+
+      ogImage: getAppUrl(
+        fetchedDataPost.value.post?.cover_images &&
+          `storage/uploads/${fetchedDataPost.value.post.cover_images[0].path}`
+      ),
+    });
+  }
 });
 </script>
 

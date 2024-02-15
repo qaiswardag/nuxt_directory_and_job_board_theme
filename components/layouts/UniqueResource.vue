@@ -53,22 +53,6 @@ const runtimeConfig = useRuntimeConfig();
 const getAppUrl = function (path) {
   return runtimeConfig.public.LARAVEL_APP_URL + '/' + path;
 };
-
-useSeoMeta({
-  title: `${runtimeConfig.public.APP_NAME} | ${
-    props.postType[0].toUpperCase() + props.postType.slice(1)
-  }`,
-  ogTitle: `${runtimeConfig.public.APP_NAME} | ${
-    props.postType[0].toUpperCase() + props.postType.slice(1)
-  }`,
-  description: 'Looking for a job in fashion? myself.ae ',
-  ogDescription: 'Looking for a job in fashion? myself.ae ',
-
-  ogImage: getAppUrl(
-    props.post.cover_images &&
-      `storage/uploads/${props.post.cover_images[0].path}`
-  ),
-});
 </script>
 
 <template>
