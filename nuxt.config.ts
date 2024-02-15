@@ -27,9 +27,6 @@ export default defineNuxtConfig({
       ],
     },
   },
-
-  modules: ['nuxt-headlessui'],
-
   css: ['~/assets/css/main.css'],
   postcss: {
     plugins: {
