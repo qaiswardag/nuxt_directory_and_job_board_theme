@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue';
+import SlideOverPrimaryMenu from '../components/sidebars/SlideOverPrimaryMenu.vue';
 
 const route = useRoute();
 const routeName = route.name;
