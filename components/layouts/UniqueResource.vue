@@ -5,7 +5,7 @@ import UserTag from '../users/UserTag.vue';
 import ThumbnailSmallImageSlider from '../sliders/ThumbnailSmallImageSlider.vue';
 import { parseISO, format } from 'date-fns';
 
-defineProps({
+const props = defineProps({
   onlyForCurrentTeam: {
     required: true,
   },
@@ -47,6 +47,29 @@ const goToSingleStoreFromInSale = function (
   return;
   router.get(route(routeName, [storeTeamSlug, storeSlug, storeId]));
 };
+
+const runtimeConfig = useRuntimeConfig();
+
+const getAppUrl = function (path) {
+  return runtimeConfig.public.LARAVEL_APP_URL + '/' + path;
+};
+
+console.log(`postType:`, props.postType);
+useSeoMeta({
+  title: `${runtimeConfig.public.APP_NAME} | ${
+    props.postType[0].toUpperCase() + props.postType.slice(1)
+  }`,
+  ogTitle: `${runtimeConfig.public.APP_NAME} | ${
+    props.postType[0].toUpperCase() + props.postType.slice(1)
+  }`,
+  description: 'Looking for a job in fashion? myself.ae ',
+  ogDescription: 'Looking for a job in fashion? myself.ae ',
+
+  ogImage: getAppUrl(
+    props.post.cover_images &&
+      `storage/uploads/${props.post.cover_images[0].path}`
+  ),
+});
 </script>
 
 <template>

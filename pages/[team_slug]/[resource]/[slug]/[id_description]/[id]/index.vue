@@ -14,16 +14,9 @@ const postId = route.params.id;
 
 const runtimeConfig = useRuntimeConfig();
 
-useSeoMeta({
-  title: `${runtimeConfig.public.APP_NAME} | ${
-    resource[0].toUpperCase() + resource.slice(1)
-  }`,
-  ogTitle: `${runtimeConfig.public.APP_NAME} | ${
-    resource[0].toUpperCase() + resource.slice(1)
-  }`,
-  description: 'Looking for a job in fashion? myself.ae ',
-  ogDescription: 'Looking for a job in fashion? myself.ae ',
-});
+const getAppUrl = function (path) {
+  return runtimeConfig.public.LARAVEL_APP_URL + '/' + path;
+};
 
 const {
   handleData: handleGetPost,
@@ -34,10 +27,6 @@ const {
   isLoading: isLoadingPost,
   isSuccess: isSuccessPost,
 } = vueFetch();
-
-const getAppUrl = function (path) {
-  return runtimeConfig.public.LARAVEL_APP_URL + '/' + path;
-};
 
 onMounted(() => {
   const url = getAppUrl(
