@@ -33,12 +33,10 @@ const {
 } = vueFetch();
 
 useSeoMeta({
-  title: `${runtimeConfig.public.APP_NAME} | Stores`,
-  ogTitle: `${runtimeConfig.public.APP_NAME} | Stores`,
-  description:
-    'Find fashion stores and discover everything you need in the world of fashion within the United Arab Emirates — all in one place.',
-  ogDescription:
-    'Find fashion stores and discover everything you need in the world of fashion within the United Arab Emirates — all in one place.',
+  title: `Hello World title`,
+  ogTitle: `Hello World title`,
+  description: 'Hello World Description.',
+  ogDescription: 'Hello World Description.',
   ogImage: getAppUrl('brand-images/pink-lady-high-resolution.jpg'),
 });
 
