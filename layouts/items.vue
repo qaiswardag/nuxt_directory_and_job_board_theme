@@ -8,7 +8,7 @@ import { parseISO, format } from 'date-fns';
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue';
 import ItemDisplaySelection from '../layouts/items/ItemDisplaySelection.vue';
 import ItemsFilterSelection from '../layouts/items/ItemsFilterSelection.vue';
-import { TailwindPagination } from 'laravel-vue-pagination';
+import TailwindPagination from '../components/pagination/TailwindPagination.vue';
 
 const props = defineProps({
   nameList: {
