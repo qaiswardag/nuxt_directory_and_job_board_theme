@@ -32,14 +32,6 @@ const {
   isSuccess: isSuccessPost,
 } = vueFetch();
 
-useSeoMeta({
-  title: `Hello World title`,
-  ogTitle: `Hello World title`,
-  description: 'Hello World Description.',
-  ogDescription: 'Hello World Description.',
-  ogImage: getAppUrl('brand-images/pink-lady-high-resolution.jpg'),
-});
-
 onMounted(async () => {
   const url = getAppUrl(
     `api/${teamSlug}/${resource}/${postSlug}/${id_description}/${postId}`
@@ -47,7 +39,7 @@ onMounted(async () => {
 
   await handleGetPost(url);
 
-  if (false && fetchedDataPost.value && fetchedDataPost.value.post) {
+  if (fetchedDataPost.value && fetchedDataPost.value.post) {
     useSeoMeta({
       title: `${runtimeConfig.public.APP_NAME} | ${fetchedDataPost.value.post.title}`,
       ogTitle: `${runtimeConfig.public.APP_NAME} | ${fetchedDataPost.value.post.title}`,
