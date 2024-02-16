@@ -1,3 +1,14 @@
+# CHECK SERVER RENDERED CONTENT
+window.__NUXT__.serverRendered
+// if true, the hole site is server rendered
+// What content of it is actually server rendered
+Right click and click: View Page Source
+// Everything which is showen is actually server rendered
+
+# CHECK SERVER RENDERED CONTENT VIA API CALLS
+1. Right click and click: View Page Source
+2. Then search for specific text
+
 Symlink to .env file from public folder:
 ln -s /home/master/applications/jwehvzxtuk/private_html/.env .env
 
@@ -39,3 +50,28 @@ The -9 is the signal number that corresponds to the SIGKILL signal in Unix-like 
 The SIGKILL signal is a special signal that forcefully terminates a process. 
 It does not allow the process to perform any cleanup or 
 handle the signal in any way – it immediately terminates the process.
+
+
+
+
+// MainLayout.vue
+Width fullscreen spinner:
+<script setup>
+import { ref, computed, watch, onMounted } from 'vue';
+import FullScreenSpinner from '../components/loaders/FullScreenSpinner.vue';
+import { delay } from '../helpers/delay';
+
+const isLoading = ref(true);
+
+onMounted(async () => {
+  await delay(100);
+  isLoading.value = false;
+});
+</script>
+
+<template>
+  <template v-if="isLoading">
+    <FullScreenSpinner></FullScreenSpinner>
+  </template>
+  <slot />
+</template>
