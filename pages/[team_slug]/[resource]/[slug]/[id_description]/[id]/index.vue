@@ -32,6 +32,16 @@ const {
   isSuccess: isSuccessPost,
 } = vueFetch();
 
+useSeoMeta({
+  title: `${runtimeConfig.public.APP_NAME} | Stores`,
+  ogTitle: `${runtimeConfig.public.APP_NAME} | Stores`,
+  description:
+    'Find fashion stores and discover everything you need in the world of fashion within the United Arab Emirates — all in one place.',
+  ogDescription:
+    'Find fashion stores and discover everything you need in the world of fashion within the United Arab Emirates — all in one place.',
+  ogImage: getAppUrl('brand-images/pink-lady-high-resolution.jpg'),
+});
+
 onMounted(async () => {
   const url = getAppUrl(
     `api/${teamSlug}/${resource}/${postSlug}/${id_description}/${postId}`
@@ -39,7 +49,7 @@ onMounted(async () => {
 
   await handleGetPost(url);
 
-  if (fetchedDataPost.value && fetchedDataPost.value.post) {
+  if (false && fetchedDataPost.value && fetchedDataPost.value.post) {
     useSeoMeta({
       title: `${runtimeConfig.public.APP_NAME} | ${fetchedDataPost.value.post.title}`,
       ogTitle: `${runtimeConfig.public.APP_NAME} | ${fetchedDataPost.value.post.title}`,

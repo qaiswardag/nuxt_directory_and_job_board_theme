@@ -6,6 +6,10 @@ import Items from '../layouts/Items.vue';
 
 const runtimeConfig = useRuntimeConfig();
 
+const getAppUrl = function (path) {
+  return runtimeConfig.public.LARAVEL_APP_URL + '/' + path;
+};
+
 useSeoMeta({
   title: `${runtimeConfig.public.APP_NAME} | Campaigns`,
   ogTitle: `${runtimeConfig.public.APP_NAME} | Campaigns`,
@@ -13,11 +17,8 @@ useSeoMeta({
     'Looking for in-store campaigns? myself.ae is the best site in the United Arab Emirates for finding product promotions.',
   ogDescription:
     'Looking for in-store campaigns? myself.ae is the best site in the United Arab Emirates for finding product promotions.',
+  ogImage: getAppUrl('brand-images/pink-lady-high-resolution.jpg'),
 });
-
-const getAppUrl = function (path) {
-  return runtimeConfig.public.LARAVEL_APP_URL + '/' + path;
-};
 </script>
 
 <template>

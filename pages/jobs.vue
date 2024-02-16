@@ -6,6 +6,10 @@ import Items from '../layouts/Items.vue';
 
 const runtimeConfig = useRuntimeConfig();
 
+const getAppUrl = function (path) {
+  return runtimeConfig.public.LARAVEL_APP_URL + '/' + path;
+};
+
 useSeoMeta({
   title: `${runtimeConfig.public.APP_NAME} | Jobs`,
   ogTitle: `${runtimeConfig.public.APP_NAME} | Jobs`,
@@ -13,11 +17,8 @@ useSeoMeta({
     'Looking for a job in fashion? myself.ae is the United Arab Emirates best site for finding jobs in the fashion, luxury and retail industries. Start your career here!',
   ogDescription:
     'Looking for a job in fashion? myself.ae is the United Arab Emirates best site for finding jobs in the fashion, luxury and retail industries. Start your career here!',
+  ogImage: getAppUrl('brand-images/pink-lady-high-resolution.jpg'),
 });
-
-const getAppUrl = function (path) {
-  return runtimeConfig.public.LARAVEL_APP_URL + '/' + path;
-};
 </script>
 
 <template>
