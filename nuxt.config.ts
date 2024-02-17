@@ -7,11 +7,15 @@ export default defineNuxtConfig({
     },
   },
   devtools: { enabled: true },
-
+  modules: ['@nuxtjs/sitemap', 'nuxt-gtag'],
+  gtag: {
+    id: 'G-XXXXXXXXXX',
+  },
   app: {
     head: {
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
+
       link: [
         {
           rel: 'stylesheet',
