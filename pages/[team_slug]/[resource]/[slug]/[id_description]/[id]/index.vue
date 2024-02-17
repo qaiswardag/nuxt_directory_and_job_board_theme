@@ -35,8 +35,6 @@ const {
 );
 
 if (fetchedDataPost.value && fetchedDataPost.value.post) {
-  console.log(`fetchedDataPost:`, fetchedDataPost.value.post.title);
-
   useSeoMeta({
     title: () => {
       return `${runtimeConfig.public.APP_NAME} | ${fetchedDataPost.value.post.title}`;
@@ -46,19 +44,12 @@ if (fetchedDataPost.value && fetchedDataPost.value.post) {
     },
 
     description: () => {
-      return extractTextContentHTML(
-        fetchedDataPost.value.post.content,
-        200,
-        resource
-      );
+      return extractTextContentHTML(fetchedDataPost.value.post.content, 200);
     },
     ogDescription: () => {
-      return extractTextContentHTML(
-        fetchedDataPost.value.post.content,
-        200,
-        resource
-      );
+      return extractTextContentHTML(fetchedDataPost.value.post.content, 200);
     },
+
     articlePublishedTime: () => {
       return fetchedDataPost.value.post.created_at;
     },
@@ -69,17 +60,16 @@ if (fetchedDataPost.value && fetchedDataPost.value.post) {
     ogType: 'article',
 
     ogImage: () => {
-      return getAppUrl(
-        fetchedDataPost.value.post.cover_images &&
+      if (
+        Array.isArray(fetchedDataPost.value.post.cover_images) &&
+        fetchedDataPost.value.post.cover_images.length >= 1
+      ) {
+        return getAppUrl(
           `storage/uploads/${fetchedDataPost.value.post.cover_images[0]?.path}`
-      );
+        );
+      }
     },
   });
-
-  console.log(
-    `Errr:`,
-    extractTextContentHTML(fetchedDataPost.value.post.content, 200, resource)
-  );
 }
 </script>
 
