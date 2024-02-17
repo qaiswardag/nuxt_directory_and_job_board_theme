@@ -50,6 +50,27 @@ const goToSingleStoreFromInSale = function (
 
 const runtimeConfig = useRuntimeConfig();
 
+const processedPostContent = function () {
+  // Find all image tags with src attribute
+  const modifiedContent = props.post.content.replace(
+    /<img([^>]*)src="([^"]*)"/g,
+    (match, attributes, src) => {
+      // Check if the src is a relative path and does not start with the main domain
+      if (
+        src.startsWith('/') &&
+        !src.startsWith(runtimeConfig.public.LARAVEL_APP_URL)
+      ) {
+        // Concatenate the main domain to the src attribute
+        return `<img${attributes}src="${runtimeConfig.public.LARAVEL_APP_URL}${src}"`;
+      } else {
+        return match; // Return the original match if no modification is needed
+      }
+    }
+  );
+
+  return modifiedContent;
+};
+
 const getAppUrl = function (path) {
   return runtimeConfig.public.LARAVEL_APP_URL + '/' + path;
 };
@@ -66,7 +87,7 @@ const getAppUrl = function (path) {
         {{ post.title }}
       </h1>
       <div id="page-builder-editor">
-        <section v-html="post.content"></section>
+        <section v-html="processedPostContent()"></section>
       </div>
     </template>
     <template #sidebar>

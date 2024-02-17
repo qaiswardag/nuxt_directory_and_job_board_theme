@@ -36,7 +36,6 @@ const {
 );
 
 if (fetchedDataPost.value && fetchedDataPost.value.post) {
-  console.log(`eer:`, fetchedDataPost.value.post.created_at);
   useSeoMeta({
     title: () => {
       return `${runtimeConfig.public.APP_NAME} | ${fetchedDataPost.value.post.title}`;
