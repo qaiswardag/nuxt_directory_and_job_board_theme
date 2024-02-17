@@ -7,15 +7,20 @@ export default defineNuxtConfig({
     },
   },
   devtools: { enabled: true },
-  modules: ['@nuxtjs/sitemap', 'nuxt-gtag'],
-  gtag: {
-    id: 'G-DJ32Y8NV9M',
-  },
+  modules: ['@nuxtjs/sitemap'],
+
   app: {
     head: {
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
 
+      script: [
+        { src: 'https://www.googletagmanager.com/gtag/js?id=G-DJ32Y8NV9M' },
+        `window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'DJ32Y8NV9M');`,
+      ],
       link: [
         {
           rel: 'stylesheet',
