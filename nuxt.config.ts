@@ -9,7 +9,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxtjs/sitemap', 'nuxt-gtag'],
   gtag: {
-    id: 'G-XXXXXXXXXX',
+    id: 'G-DJ32Y8NV9M',
   },
   app: {
     head: {
