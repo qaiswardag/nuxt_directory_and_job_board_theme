@@ -17,7 +17,9 @@ useSeoMeta({
     'Looking for in-store campaigns? myself.ae is the best site in the United Arab Emirates for finding product promotions.',
   ogDescription:
     'Looking for in-store campaigns? myself.ae is the best site in the United Arab Emirates for finding product promotions.',
-  ogImage: getAppUrl('brand-images/pink-lady-high-resolution.jpg'),
+  ogImage: () => {
+    return getAppUrl('brand-images/pink-lady-high-resolution.jpg');
+  },
 });
 </script>
 

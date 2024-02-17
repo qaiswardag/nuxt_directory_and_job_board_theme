@@ -20,7 +20,9 @@ useSeoMeta({
     "Join Fashion's most comprehensive marketing platform in the UAE. Showcase stores to local consumers, find professionals and post fashion jobs. View Prices!",
   ogDescription:
     "Join Fashion's most comprehensive marketing platform in the UAE. Showcase stores to local consumers, find professionals and post fashion jobs. View Prices!",
-  ogImage: getAppUrl('brand-images/pink-lady-high-resolution.jpg'),
+  ogImage: () => {
+    return getAppUrl('brand-images/pink-lady-high-resolution.jpg');
+  },
 });
 </script>
 

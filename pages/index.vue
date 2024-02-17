@@ -16,7 +16,9 @@ useSeoMeta({
     'Search for everything you need in the world of fashion within the United Arab Emirates. From fashion Stores and Jobs to Campaigns.',
   ogDescription:
     'Search for everything you need in the world of fashion within the United Arab Emirates. From fashion Stores and Jobs to Campaigns.',
-  ogImage: getAppUrl('brand-images/pink-lady-high-resolution.jpg'),
+  ogImage: () => {
+    return getAppUrl('brand-images/pink-lady-high-resolution.jpg');
+  },
 });
 
 const faqs = [

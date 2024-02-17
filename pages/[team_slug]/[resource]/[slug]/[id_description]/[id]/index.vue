@@ -3,7 +3,7 @@ import UniqueResource from '../../../../../../components/layouts/UniqueResource.
 import PageHeader from '../../../../../../components/headers/PageHeader.vue';
 import MainLayout from '../../../../../../layouts/MainLayout.vue';
 import GuestsLayout from '../../../../../../layouts/GuestsLayout.vue';
-import { vueFetch } from '../../../../../../composables/vueFetch';
+// import { vueFetch } from '../../../../../../composables/vueFetch';
 import SmallUniversalSpinner from '../../../../../../components/loaders/SmallUniversalSpinner.vue';
 import { extractTextContentHTML } from '../../../../../../helpers/extract-text-content-html';
 
@@ -24,45 +24,63 @@ const getAppUrl = function (path) {
 };
 
 const {
-  handleData: handleGetPost,
-  fetchedData: fetchedDataPost,
-  isError: isErrorPost,
-  error: errorPost,
-  errors: errorsPost,
-  isLoading: isLoadingPost,
-  isSuccess: isSuccessPost,
-} = vueFetch();
-
-onMounted(async () => {
-  const url = getAppUrl(
+  data: fetchedDataPost,
+  pending: isLoadingPost,
+  error: isErrorPost,
+} = await useFetch(
+  getAppUrl(
     `api/${teamSlug}/${resource}/${postSlug}/${id_description}/${postId}`
+  ),
+  {}
+);
+
+if (fetchedDataPost.value && fetchedDataPost.value.post) {
+  console.log(`fetchedDataPost:`, fetchedDataPost.value.post.title);
+
+  useSeoMeta({
+    title: () => {
+      return `${runtimeConfig.public.APP_NAME} | ${fetchedDataPost.value.post.title}`;
+    },
+    ogTitle: () => {
+      return `${runtimeConfig.public.APP_NAME} | ${fetchedDataPost.value.post.title}`;
+    },
+
+    description: () => {
+      return extractTextContentHTML(
+        fetchedDataPost.value.post.content,
+        200,
+        resource
+      );
+    },
+    ogDescription: () => {
+      return extractTextContentHTML(
+        fetchedDataPost.value.post.content,
+        200,
+        resource
+      );
+    },
+    articlePublishedTime: () => {
+      return fetchedDataPost.value.post.created_at;
+    },
+    articleModifiedTime: () => {
+      return fetchedDataPost.value.post.updated_at;
+    },
+
+    ogType: 'article',
+
+    ogImage: () => {
+      return getAppUrl(
+        fetchedDataPost.value.post.cover_images &&
+          `storage/uploads/${fetchedDataPost.value.post.cover_images[0]?.path}`
+      );
+    },
+  });
+
+  console.log(
+    `Errr:`,
+    extractTextContentHTML(fetchedDataPost.value.post.content, 200, resource)
   );
-
-  await handleGetPost(url);
-
-  if (fetchedDataPost.value && fetchedDataPost.value.post) {
-    useSeoMeta({
-      title: `${runtimeConfig.public.APP_NAME} | ${fetchedDataPost.value.post.title}`,
-      ogTitle: `${runtimeConfig.public.APP_NAME} | ${fetchedDataPost.value.post.title}`,
-
-      description: extractTextContentHTML(
-        fetchedDataPost.value.post.content,
-        200
-      ),
-      ogDescription: extractTextContentHTML(
-        fetchedDataPost.value.post.content,
-        200
-      ),
-      articleModifiedTime: fetchedDataPost.value.post.updated_at,
-      articlePublishedTime: fetchedDataPost.value.post.created_at,
-      ogType: 'article',
-      ogImage: getAppUrl(
-        fetchedDataPost.value.post?.cover_images &&
-          `storage/uploads/${fetchedDataPost.value.post.cover_images[0].path}`
-      ),
-    });
-  }
-});
+}
 </script>
 
 <template>
@@ -75,13 +93,13 @@ onMounted(async () => {
       </template>
       <!-- Show Unique Resorce - start -->
       <main class="myPrimaryContentSection">
-        <!-- error # start -->
+        <!-- isErrorPost # start -->
         <template v-if="!isLoadingPost && isErrorPost">
           <p class="myPrimaryParagraphError">
-            {{ errorPost }}
+            {{ isErrorPost }}
           </p>
         </template>
-        <!-- error # end -->
+        <!-- isErrorPost # end -->
 
         <!-- Loading # start -->
         <template v-if="isLoadingPost">

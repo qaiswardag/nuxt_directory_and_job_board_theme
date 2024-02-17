@@ -17,7 +17,9 @@ useSeoMeta({
     'Looking for a job in fashion? myself.ae is the United Arab Emirates best site for finding jobs in the fashion, luxury and retail industries. Start your career here!',
   ogDescription:
     'Looking for a job in fashion? myself.ae is the United Arab Emirates best site for finding jobs in the fashion, luxury and retail industries. Start your career here!',
-  ogImage: getAppUrl('brand-images/pink-lady-high-resolution.jpg'),
+  ogImage: () => {
+    return getAppUrl('brand-images/pink-lady-high-resolution.jpg');
+  },
 });
 </script>
 
