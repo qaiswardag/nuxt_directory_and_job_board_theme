@@ -15,11 +15,11 @@ export default defineNuxtConfig({
       viewport: 'width=device-width, initial-scale=1',
 
       script: [
-        { src: 'https://www.googletagmanager.com/gtag/js?id=G-DJ32Y8NV9M' },
+        { src: 'https://www.googletagmanager.com/gtag/js?id=GT-M34SGDHL' },
         `window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'DJ32Y8NV9M');`,
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'GT-M34SGDHL');`,
       ],
       link: [
         {
