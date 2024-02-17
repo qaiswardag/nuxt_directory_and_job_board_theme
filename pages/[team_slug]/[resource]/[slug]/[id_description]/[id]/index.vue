@@ -6,6 +6,7 @@ import GuestsLayout from '../../../../../../layouts/GuestsLayout.vue';
 // import { vueFetch } from '../../../../../../composables/vueFetch';
 import SmallUniversalSpinner from '../../../../../../components/loaders/SmallUniversalSpinner.vue';
 import { extractTextContentHTML } from '../../../../../../helpers/extract-text-content-html';
+import { parseISO, format } from 'date-fns';
 
 const route = useRoute();
 const teamSlug = route.params.team_slug;
@@ -35,6 +36,7 @@ const {
 );
 
 if (fetchedDataPost.value && fetchedDataPost.value.post) {
+  console.log(`eer:`, fetchedDataPost.value.post.created_at);
   useSeoMeta({
     title: () => {
       return `${runtimeConfig.public.APP_NAME} | ${fetchedDataPost.value.post.title}`;
@@ -51,10 +53,22 @@ if (fetchedDataPost.value && fetchedDataPost.value.post) {
     },
 
     articlePublishedTime: () => {
-      return fetchedDataPost.value.post.created_at;
+      // Parse the original date string
+      const originalDate = parseISO(fetchedDataPost.value.post.created_at);
+
+      // Format the date to the desired format
+      const formattedDate = format(originalDate, "yyyy-MM-dd'T'HH:mm:ss.SSSX");
+
+      return formattedDate;
     },
     articleModifiedTime: () => {
-      return fetchedDataPost.value.post.updated_at;
+      // Parse the original date string
+      const originalDate = parseISO(fetchedDataPost.value.post.updated_at);
+
+      // Format the date to the desired format
+      const formattedDate = format(originalDate, "yyyy-MM-dd'T'HH:mm:ss.SSSX");
+
+      return formattedDate;
     },
 
     ogType: 'article',
