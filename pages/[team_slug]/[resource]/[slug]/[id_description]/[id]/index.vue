@@ -6,6 +6,7 @@ import GuestsLayout from '../../../../../../layouts/GuestsLayout.vue';
 import { vueFetch } from '../../../../../../composables/vueFetch';
 import SmallUniversalSpinner from '../../../../../../components/loaders/SmallUniversalSpinner.vue';
 import { extractTextContentHTML } from '../../../../../../helpers/extract-text-content-html';
+
 const route = useRoute();
 const teamSlug = route.params.team_slug;
 const resource = route.params.resource;
@@ -52,7 +53,9 @@ onMounted(async () => {
         fetchedDataPost.value.post.content,
         200
       ),
-
+      articleModifiedTime: fetchedDataPost.value.post.updated_at,
+      articlePublishedTime: fetchedDataPost.value.post.created_at,
+      ogType: 'article',
       ogImage: getAppUrl(
         fetchedDataPost.value.post?.cover_images &&
           `storage/uploads/${fetchedDataPost.value.post.cover_images[0].path}`
