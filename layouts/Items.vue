@@ -39,10 +39,6 @@ const typeSelected = ref([]);
 const countrySelected = ref([]);
 const stateSelected = ref([]);
 
-const goToSinglePost = function () {
-  console.log(`click.....`);
-};
-
 const search_query = ref('');
 const tags_or_content = ref(false);
 
@@ -287,6 +283,13 @@ const appendSelectedParams = function (params) {
   handleGetPosts(url);
 };
 
+// const goToSinglePost = function (team.postSlug, postId) {
+//   console.log(`click.....`);
+// };
+const goToSinglePost = function (teamSlug, postSlug, postId) {
+  const routePath = `${teamSlug}/${props.nameList}/${postSlug}/view/${postId}`;
+  window.location.href = routePath;
+};
 onMounted(() => {
   fetchComponents(1);
 });
@@ -622,22 +625,7 @@ onMounted(() => {
                       type="button"
                       class="w-full text-left"
                     >
-                      <NuxtLink
-                        :to="{
-                          name: 'team_slug-resource-slug-id_description-id',
-                          params: {
-                            team_slug: post.team.slug,
-                            resource: nameList,
-                            slug: post.slug,
-                            id_description: 'view',
-                            id: post.id,
-                          },
-                        }"
-                      >
-                        <p class="myQuaternaryHeader">
-                          {{ post.title }}
-                        </p>
-                      </NuxtLink>
+                      <p class="myQuaternaryHeader">{{ post.title }}</p>
                     </button>
 
                     <template
