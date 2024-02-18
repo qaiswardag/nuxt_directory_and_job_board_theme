@@ -2,7 +2,6 @@
 import MainLayout from '../layouts/MainLayout.vue';
 import GuestsLayout from '../layouts/GuestsLayout.vue';
 import FullWidthElement from '../components/layouts/FullWidthElement.vue';
-import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue';
 
 const runtimeConfig = useRuntimeConfig();
 
@@ -22,6 +21,7 @@ useSeoMeta({
   },
 });
 
+const open = ref(false);
 const faqs = [
   {
     question: 'Pricing',
@@ -395,19 +395,19 @@ const faqs = [
         <template #content>
           <div class="grid grid-cols-1 lg:gap-16 gap-24 lg:grid-cols-12">
             <dl class="divide-y divide-myPrimaryMediumGrayColor lg:col-span-6">
-              <Disclosure
-                as="div"
+              <div
                 v-for="faq in faqs"
                 :key="faq.question"
-                v-slot="{ open }"
               >
                 <dt>
-                  <DisclosureButton
-                    class="py-6 flex w-full items-center justify-between text-left myPrimaryParagraph"
+                  <div
+                    @click="open = !open"
+                    class="py-6 flex w-full items-center justify-between text-left myPrimaryParagraph cursor-pointer"
                   >
                     <span class="myPrimaryParagraph font-medium"
                       >{{ faq.question }}
                     </span>
+
                     <span class="ml-6 flex h-7 items-center">
                       <span
                         v-if="!open"
@@ -422,17 +422,17 @@ const faqs = [
                         remove
                       </span>
                     </span>
-                  </DisclosureButton>
+                  </div>
                 </dt>
-                <DisclosurePanel
-                  as="dd"
+                <div
+                  v-if="open"
                   class="mt-2 pr-12 pb-16"
                 >
                   <p class="myPrimaryParagraph">
                     {{ faq.answer }}
                   </p>
-                </DisclosurePanel>
-              </Disclosure>
+                </div>
+              </div>
             </dl>
             <img
               class="w-full object-cover lg:col-span-6 rounded-lg"
