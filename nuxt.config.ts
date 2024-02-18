@@ -4,6 +4,7 @@ export default defineNuxtConfig({
     public: {
       LARAVEL_APP_URL: process.env.LARAVEL_APP_URL,
       APP_NAME: process.env.APP_NAME,
+      APP_ENV: process.env.APP_ENV,
     },
   },
   devtools: { enabled: true },

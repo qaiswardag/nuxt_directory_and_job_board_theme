@@ -2,6 +2,7 @@
 import { ref } from 'vue';
 import SlideOverPrimaryMenu from '../components/sidebars/SlideOverPrimaryMenu.vue';
 
+const runtimeConfig = useRuntimeConfig();
 const route = useRoute();
 const routeName = route.name;
 
@@ -15,6 +16,15 @@ const handlePrimaryMenuSlideOver = function () {
 // handle primary menu window
 const primaryMenuSlideOverButton = function () {
   showPrimaryMenuSlideOver.value = false;
+};
+
+const goToDashboard = function () {
+  if (runtimeConfig.public.APP_ENV === 'local') {
+    window.location.href = runtimeConfig.public.LARAVEL_APP_URL;
+  }
+  if (runtimeConfig.public.APP_ENV !== 'local') {
+    window.location.href = 'https://www.admin.myself.ae';
+  }
 };
 </script>
 <template>
@@ -86,6 +96,7 @@ const primaryMenuSlideOverButton = function () {
       <div class="flex myPrimaryGap items-center">
         <div>
           <button
+            @click="goToDashboard"
             type="button"
             class="h-10 w-10 cursor-pointer rounded-full flex items-center border-none justify-center bg-gray-50 aspect-square hover:bg-myPrimaryLinkColor hover:text-white focus-visible:ring-0"
           >
@@ -95,6 +106,7 @@ const primaryMenuSlideOverButton = function () {
       </div>
 
       <button
+        @click="goToDashboard"
         type="button"
         class="h-10 w-10 cursor-pointer rounded-full flex items-center border-none justify-center bg-gray-50 aspect-square hover:bg-myPrimaryLinkColor hover:text-white focus-visible:ring-0"
       >
