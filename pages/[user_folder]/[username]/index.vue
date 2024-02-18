@@ -1,18 +1,165 @@
 <script setup>
-import UniqueResource from '../../../../../../components/layouts/UniqueResource.vue';
-import PageHeader from '../../../../../../components/headers/PageHeader.vue';
-import MainLayout from '../../../../../../layouts/MainLayout.vue';
-import GuestsLayout from '../../../../../../layouts/GuestsLayout.vue';
-// import { vueFetch } from '../../../../../../composables/vueFetch';
-import SmallUniversalSpinner from '../../../../../../components/loaders/SmallUniversalSpinner.vue';
-import { extractTextContentHTML } from '../../../../../../helpers/extract-text-content-html';
-import { parseISO, format } from 'date-fns';
-
 const route = useRoute();
 const userFolder = route.params.user_folder;
 const username = route.params.username;
+import SmallUniversalSpinner from '../../../components/loaders/SmallUniversalSpinner.vue';
+import PageHeader from '../../../components/headers/PageHeader.vue';
+import MainLayout from '../../layouts/MainLayout.vue';
+import GuestsLayout from '../../layouts/GuestsLayout.vue';
+import ThumbnailSmallImageSlider from '../../../components/sliders/ThumbnailSmallImageSlider.vue';
 
-console.log(`userFolder:`, userFolder);
-console.log(`username:`, username);
+const runtimeConfig = useRuntimeConfig();
+
+const getAppUrl = function (path) {
+  if (!path) {
+    return;
+  }
+  return runtimeConfig.public.LARAVEL_APP_URL + '/' + path;
+};
+
+const {
+  data: fetchedDataUser,
+  pending: isLoadingUser,
+  error: isErrorUser,
+} = await useFetch(getAppUrl(`api/me/${username}`), {});
+
+const processedPostContent = function () {
+  if (fetchedDataUser.value && fetchedDataUser.value.userData) {
+    // Find all image tags with src attribute
+    const modifiedContent = fetchedDataUser.value.userData.content.replace(
+      /<img([^>]*)src="([^"]*)"/g,
+      (match, attributes, src) => {
+        // Check if the src is a relative path and does not start with the main domain
+        if (
+          src.startsWith('/') &&
+          !src.startsWith(runtimeConfig.public.LARAVEL_APP_URL)
+        ) {
+          // Concatenate the main domain to the src attribute
+          return `<img${attributes}src="${runtimeConfig.public.LARAVEL_APP_URL}${src}"`;
+        } else {
+          return match; // Return the original match if no modification is needed
+        }
+      }
+    );
+    return modifiedContent;
+  }
+  if (!fetchedDataUser.value || !fetchedDataUser.value.userData) {
+    return '';
+  }
+};
 </script>
-<template>Came here</template>
+<template>
+  <MainLayout>
+    <GuestsLayout>
+      <!-- Show Unique Resorce - start -->
+      <main class="myPrimaryContentSection">
+        <!-- isErrorUser # start -->
+        <template v-if="!isLoadingUser && isErrorUser">
+          <p class="myPrimaryParagraphError">
+            {{ isErrorUser }}
+          </p>
+        </template>
+        <!-- isErrorUser # end -->
+
+        <!-- Loading # start -->
+        <template v-if="isLoadingUser">
+          <SmallUniversalSpinner
+            width="w-8"
+            height="h-8"
+            border="border-4"
+          ></SmallUniversalSpinner>
+        </template>
+
+        <template v-if="fetchedDataUser && fetchedDataUser.userData">
+          <div class="myPrimarySection">
+            <div
+              v-if="
+                fetchedDataUser.userData.user_photo &&
+                Array.isArray(fetchedDataUser.userData.user_photo) &&
+                fetchedDataUser.userData.user_photo.length !== 0
+              "
+              class="flex justify-center items-center w-full mb-8"
+            >
+              <ThumbnailSmallImageSlider
+                :images="fetchedDataUser.userData.user_photo"
+                imageSize="large_path"
+                imageHeight="h-32"
+                imageWidth="w-32"
+                :roundedFull="true"
+              ></ThumbnailSmallImageSlider>
+            </div>
+
+            <h1 class="myPrimaryHeader text-center">
+              {{ fetchedDataUser.userData.first_name }}
+              {{ fetchedDataUser.userData.last_name }}
+            </h1>
+          </div>
+          <div id="page-builder-editor">
+            <section v-html="processedPostContent()"></section>
+          </div>
+        </template>
+
+        <!-- Loading # end -->
+      </main>
+    </GuestsLayout>
+  </MainLayout>
+</template>
+
+<!-- <script setup>
+import MainLayout from "@/Layouts/MainLayout.vue";
+import GuestsLayout from "@/Layouts/GuestsLayout.vue";
+import Pagination from "@/Components/Pagination/Pagination.vue";
+import SubmitButton from "@/Components/Buttons/SubmitButton.vue";
+import { router, useForm, usePage } from "@inertiajs/vue3";
+import DynamicModal from "@/Components/Modals/DynamicModal.vue";
+import FormSection from "@/Components/Forms/FormSection.vue";
+import SearchBarWithOptions from "@/Components/SearchBars/SearchBarWithOptions.vue";
+import { onMounted, ref } from "vue";
+import ThumbnailSmallImageSlider from "@/Components/ImageSliders/ThumbnailSmallImageSlider.vue";
+
+defineProps({
+    userData: {
+        required: true,
+    },
+});
+</script>
+<template>
+    <Head :title="`${userData.first_name} ${userData.last_name}`">
+        <meta
+            head-key="description"
+            name="description"
+            :content="`User at myself.ae — ${userData.first_name} ${userData.last_name}`"
+        />
+    </Head>
+
+    <MainLayout>
+        <GuestsLayout>
+            <template #header> </template>
+            <div class="myPrimarySection">
+                <div
+                    v-if="
+                        userData.user_photo &&
+                        Array.isArray(userData.user_photo) &&
+                        userData.user_photo.length !== 0
+                    "
+                    class="flex justify-center items-center w-full mb-8"
+                >
+                    <ThumbnailSmallImageSlider
+                        :images="userData.user_photo"
+                        imageSize="large_path"
+                        imageHeight="h-32"
+                        imageWidth="w-32"
+                        :roundedFull="true"
+                    ></ThumbnailSmallImageSlider>
+                </div>
+
+                <h1 class="myPrimaryHeader text-center">
+                    {{ userData.first_name }} {{ userData.last_name }}
+                </h1>
+            </div>
+            <div id="page-builder-editor">
+                <section v-html="userData.content"></section>
+            </div>
+        </GuestsLayout>
+    </MainLayout>
+</template> -->

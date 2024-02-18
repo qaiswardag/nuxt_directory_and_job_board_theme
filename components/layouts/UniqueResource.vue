@@ -52,23 +52,29 @@ const runtimeConfig = useRuntimeConfig();
 
 const processedPostContent = function () {
   // Find all image tags with src attribute
-  const modifiedContent = props.post.content.replace(
-    /<img([^>]*)src="([^"]*)"/g,
-    (match, attributes, src) => {
-      // Check if the src is a relative path and does not start with the main domain
-      if (
-        src.startsWith('/') &&
-        !src.startsWith(runtimeConfig.public.LARAVEL_APP_URL)
-      ) {
-        // Concatenate the main domain to the src attribute
-        return `<img${attributes}src="${runtimeConfig.public.LARAVEL_APP_URL}${src}"`;
-      } else {
-        return match; // Return the original match if no modification is needed
-      }
-    }
-  );
 
-  return modifiedContent;
+  if (props.post && props.post.content) {
+    const modifiedContent = props.post.content.replace(
+      /<img([^>]*)src="([^"]*)"/g,
+      (match, attributes, src) => {
+        // Check if the src is a relative path and does not start with the main domain
+        if (
+          src.startsWith('/') &&
+          !src.startsWith(runtimeConfig.public.LARAVEL_APP_URL)
+        ) {
+          // Concatenate the main domain to the src attribute
+          return `<img${attributes}src="${runtimeConfig.public.LARAVEL_APP_URL}${src}"`;
+        } else {
+          return match; // Return the original match if no modification is needed
+        }
+      }
+    );
+    return modifiedContent;
+  }
+
+  if (!props.post || !props.post.content) {
+    return '';
+  }
 };
 
 const getAppUrl = function (path) {

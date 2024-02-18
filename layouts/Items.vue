@@ -283,9 +283,6 @@ const appendSelectedParams = function (params) {
   handleGetPosts(url);
 };
 
-// const goToSinglePost = function (team.postSlug, postId) {
-//   console.log(`click.....`);
-// };
 const goToSinglePost = function (teamSlug, postSlug, postId) {
   const routePath = `${teamSlug}/${props.nameList}/${postSlug}/view/${postId}`;
   window.location.href = routePath;
