@@ -38,14 +38,9 @@ const props = defineProps({
   },
 });
 
-const goToSingleStoreFromInSale = function (
-  routeName,
-  storeTeamSlug,
-  storeSlug,
-  storeId
-) {
-  return;
-  router.get(route(routeName, [storeTeamSlug, storeSlug, storeId]));
+const goToSingleStoreFromInSale = function (storeTeamSlug, storeSlug, storeId) {
+  const routePath = `${storeTeamSlug}/store/${storeSlug}/view/${storeId}`;
+  window.open(`${runtimeConfig.public.APP_URL}/${routePath}`, '_blank');
 };
 
 const runtimeConfig = useRuntimeConfig();
@@ -395,7 +390,6 @@ const getAppUrl = function (path) {
                     :imageClickable="true"
                     @firstButtonClick="
                       goToSingleStoreFromInSale(
-                        'stores.guest.show',
                         store.team.slug,
                         store.slug,
                         store.id
@@ -408,7 +402,6 @@ const getAppUrl = function (path) {
                     <div
                       @click="
                         goToSingleStoreFromInSale(
-                          'stores.guest.show',
                           store.team.slug,
                           store.slug,
                           store.id

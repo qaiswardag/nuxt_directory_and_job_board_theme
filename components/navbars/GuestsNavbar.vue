@@ -23,7 +23,7 @@ const goToDashboard = function () {
     window.location.href = runtimeConfig.public.LARAVEL_APP_URL;
   }
   if (runtimeConfig.public.APP_ENV !== 'local') {
-    window.location.href = 'https://www.admin.myself.ae';
+    window.location.href = runtimeConfig.public.LARAVEL_APP_URL_PRODUCTION;
   }
 };
 </script>
