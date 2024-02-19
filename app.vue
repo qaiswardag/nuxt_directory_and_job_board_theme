@@ -1,5 +1,5 @@
 <script setup>
-import compiledCSS from './utils/page-builder/compiledCSS';
+import compiledCSS from './utils/page-builder/compile-css';
 </script>
 <template>
   <div>
