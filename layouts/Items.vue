@@ -754,11 +754,6 @@ onMounted(() => {
             <TailwindPagination
               :limit="1"
               :keepLength="true"
-              :class="[
-                'space-x-1',
-                'shadow-none',
-                'tailwind-pagination-package',
-              ]"
               :active-classes="[
                 'bg-myPrimaryLinkColor',
                 'text-white',

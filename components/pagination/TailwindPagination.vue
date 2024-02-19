@@ -45,12 +45,12 @@ const onPaginationChangePage = function (page) {
   >
     <nav
       v-bind="$attrs"
-      class="inline-flex -space-x-px rounded-md shadow-sm isolate ltr:flex-row rtl:flex-row-reverse"
+      class="inline-flex -space-x-px rounded-md isolate ltr:flex-row rtl:flex-row-reverse gap-1"
       aria-label="Pagination"
       v-if="slotProps.computed.total > slotProps.computed.perPage"
     >
       <button
-        class="relative inline-flex items-center px-2 py-2 text-sm font-medium border rounded-l-md focus:z-20 disabled:opacity-50"
+        class="rounded-full relative inline-flex items-center px-2 py-2 text-sm font-medium border focus:z-20 disabled:opacity-50"
         :class="itemClasses"
         :disabled="!slotProps.computed.prevPageUrl"
         v-on="slotProps.prevButtonEvents"
@@ -76,7 +76,7 @@ const onPaginationChangePage = function (page) {
       </button>
 
       <button
-        class="relative inline-flex items-center px-4 py-2 text-sm font-medium border focus:z-20"
+        class="rounded-full relative inline-flex items-center px-4 py-2 text-sm font-medium border focus:z-20"
         :class="[
           page == slotProps.computed.currentPage ? activeClasses : itemClasses,
           page == slotProps.computed.currentPage ? 'z-30' : '',
@@ -91,7 +91,7 @@ const onPaginationChangePage = function (page) {
       </button>
 
       <button
-        class="relative inline-flex items-center px-2 py-2 text-sm font-medium border rounded-r-md focus:z-20 disabled:opacity-50"
+        class="rounded-full relative inline-flex items-center px-2 py-2 text-sm font-medium border focus:z-20 disabled:opacity-50"
         :class="itemClasses"
         :disabled="!slotProps.computed.nextPageUrl"
         v-on="slotProps.nextButtonEvents"

@@ -443,19 +443,6 @@
 }
 /* Scrollbar Styles  - end */
 
-.tailwind-pagination-package {
-  box-shadow: none !important;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 6px 0px;
-  justify-content: center;
-}
-.tailwind-pagination-package > :first-child,
-.tailwind-pagination-package > :last-child {
-  border-radius: 100%;
-}
-
 .smooth-transition {
   transition: opacity 0.3s ease-in-out;
 }
