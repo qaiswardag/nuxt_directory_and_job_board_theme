@@ -24,7 +24,6 @@ const getAppUrl = function (path) {
   return runtimeConfig.public.LARAVEL_APP_URL + '/' + path;
 };
 
-console.log(`1`);
 const {
   data: fetchedDataPost,
   pending: isLoadingPost,
@@ -39,9 +38,10 @@ const {
 if (isErrorPost.value !== null) {
   throw createError({
     statusCode: 404,
-    statusMessage: `Error. ${isErrorPost.value}`,
+    statusMessage: `404 Not Found.`,
   });
 }
+
 if (fetchedDataPost.value && fetchedDataPost.value.post) {
   useSeoMeta({
     title: () => {
