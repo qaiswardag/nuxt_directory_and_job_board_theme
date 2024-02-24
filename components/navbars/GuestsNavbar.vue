@@ -51,7 +51,27 @@ onMounted(() => {
       class="mx-auto flex myPrimaryGap items-center justify-end px-6 lg:px-8"
       aria-label="Global"
     >
-      <p>test: {{ user }}</p>
+      <!-- isErrorUser # start -->
+      <template v-if="user && !user.isLoadingUser && user.isErrorUser">
+        <p class="myPrimaryParagraphError">
+          {{ user.errorUser }}
+        </p>
+      </template>
+      <!-- isErrorUser # end -->
+
+      <!-- isErrorUser # start -->
+      <template v-if="user && user.isLoadingUser">
+        <p class="myPrimaryParagraphError">Is loading user</p>
+      </template>
+      <!-- isErrorUser # end -->
+      <!-- isErrorUser # start -->
+      <template v-if="user && user.fetchedDataUser">
+        <p class="myPrimaryParagraph">
+          {{ user.fetchedDataUser }}
+        </p>
+      </template>
+      <!-- isErrorUser # end -->
+
       <div class="flex myPrimaryGap items-center mx-auto">
         <NuxtLink
           to="/"

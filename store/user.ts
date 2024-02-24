@@ -13,13 +13,14 @@ const {
   isSuccess: isSuccessUser,
 } = vueFetch();
 
+interface User {
+  userData: any;
+}
+
 export const useUserStore = defineStore('user', {
   state: () => ({
     baseUrl: useRuntimeConfig().public.LARAVEL_APP_URL,
-    user: {
-      firstName: 'test1233',
-      lastName: '1234rrrr',
-    },
+    user: {},
   }),
   getters: {
     getUser: (state) => state.user,
@@ -34,17 +35,15 @@ export const useUserStore = defineStore('user', {
 
       this.getAppUrl(path);
 
-      //
-      //
-      const test = await handleGetUser(this.getAppUrl(path));
-      console.log(`test:`, test);
-      //
-      console.log(`fetchedDataUser:`, fetchedDataUser);
-      //
-      //
+      handleGetUser(this.getAppUrl(path));
+
       this.user = {
-        firstName: 'updated',
-        lastName: 'new123',
+        fetchedDataUser,
+        isErrorUser,
+        errorUser,
+        errorsUser,
+        isLoadingUser,
+        isSuccessUser,
       };
     },
   },
