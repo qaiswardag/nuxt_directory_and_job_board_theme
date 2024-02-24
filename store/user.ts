@@ -9,4 +9,17 @@ export const useUserStore = defineStore('user', {
       lastName: '1234rrrr',
     },
   }),
+  getters: {
+    getUser: (state) => state.user,
+  },
+  actions: {
+    fetchUser() {
+      console.log(`new user`);
+
+      this.user = {
+        firstName: 'updated',
+        lastName: 'new123',
+      };
+    },
+  },
 });

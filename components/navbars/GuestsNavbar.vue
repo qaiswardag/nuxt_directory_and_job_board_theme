@@ -5,8 +5,10 @@ import { useUserStore } from '../../store/user';
 
 const store = useUserStore();
 
+const { fetchUser } = store;
+
 const user = computed(() => {
-  return store.user;
+  return store.getUser;
 });
 console.log(`user:`, user);
 
@@ -34,6 +36,10 @@ const goToDashboard = function () {
     window.location.href = runtimeConfig.public.LARAVEL_APP_URL_PRODUCTION;
   }
 };
+
+onMounted(() => {
+  fetchUser();
+});
 </script>
 <template>
   <SlideOverPrimaryMenu
