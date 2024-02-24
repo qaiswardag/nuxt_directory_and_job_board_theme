@@ -1,6 +1,14 @@
 <script setup>
 import { ref } from 'vue';
 import SlideOverPrimaryMenu from '../components/sidebars/SlideOverPrimaryMenu.vue';
+import { useUserStore } from '../../store/user';
+
+const store = useUserStore();
+
+const user = computed(() => {
+  return store.user;
+});
+console.log(`user:`, user);
 
 const runtimeConfig = useRuntimeConfig();
 const route = useRoute();
@@ -38,6 +46,7 @@ const goToDashboard = function () {
       class="mx-auto flex myPrimaryGap items-center justify-end px-6 lg:px-8"
       aria-label="Global"
     >
+      <p>test: {{ user }}</p>
       <div class="flex myPrimaryGap items-center mx-auto">
         <NuxtLink
           to="/"
