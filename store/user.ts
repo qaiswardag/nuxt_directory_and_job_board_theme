@@ -29,20 +29,19 @@ export const useUserStore = defineStore('user', {
       return this.baseUrl + '/' + path;
     },
 
-    fetchUser() {
+    async fetchUser() {
       const path = 'api/loggedin-user';
-
-      console.log(`baseUrl:`, this.baseUrl);
 
       this.getAppUrl(path);
 
       //
       //
+      const test = await handleGetUser(this.getAppUrl(path));
+      console.log(`test:`, test);
+      //
+      console.log(`fetchedDataUser:`, fetchedDataUser);
       //
       //
-      //
-      //
-      // handleGetUser();
       this.user = {
         firstName: 'updated',
         lastName: 'new123',

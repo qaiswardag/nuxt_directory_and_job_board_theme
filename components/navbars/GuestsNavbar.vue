@@ -10,7 +10,6 @@ const { fetchUser } = store;
 const user = computed(() => {
   return store.getUser;
 });
-console.log(`user:`, user);
 
 const runtimeConfig = useRuntimeConfig();
 const route = useRoute();
