@@ -30,12 +30,12 @@ export const useUserStore = defineStore('user', {
       return this.baseUrl + '/' + path;
     },
 
-    async fetchUser() {
-      const path = 'api/loggedin-user';
+    async fetchUser(xsrfToken: string) {
+      const path = 'loggedin-user';
 
-      this.getAppUrl(path);
+      const fullPath = this.getAppUrl(path);
 
-      handleGetUser(this.getAppUrl(path));
+      handleGetUser(fullPath);
 
       this.user = {
         fetchedDataUser,

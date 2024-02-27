@@ -23,8 +23,20 @@ const {
   error: isErrorUser,
 } = await useFetch(getAppUrl(`api/me/${username}`), {});
 
+if (isErrorUser.value !== null) {
+  throw createError({
+    statusCode: 404,
+    statusMessage: `404 Not Found.`,
+  });
+}
+
 const processedPostContent = function () {
-  if (fetchedDataUser.value && fetchedDataUser.value.userData) {
+  if (
+    fetchedDataUser.value &&
+    fetchedDataUser.value.userData &&
+    fetchedDataUser.value.userData.content &&
+    typeof fetchedDataUser.value.userData.content === 'string'
+  ) {
     // Find all image tags with src attribute
     const modifiedContent = fetchedDataUser.value.userData.content.replace(
       /<img([^>]*)src="([^"]*)"/g,
@@ -42,8 +54,7 @@ const processedPostContent = function () {
       }
     );
     return modifiedContent;
-  }
-  if (!fetchedDataUser.value || !fetchedDataUser.value.userData) {
+  } else {
     return '';
   }
 };
@@ -83,8 +94,8 @@ const processedPostContent = function () {
               <ThumbnailSmallImageSlider
                 :images="fetchedDataUser.userData.user_photo"
                 imageSize="large_path"
-                imageHeight="h-32"
-                imageWidth="w-32"
+                imageHeight="min-h-32 max-h-32"
+                imageWidth="min-w-32 max-w-32"
                 :roundedFull="true"
               ></ThumbnailSmallImageSlider>
             </div>

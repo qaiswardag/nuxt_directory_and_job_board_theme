@@ -5,8 +5,6 @@ import { useUserStore } from '../../store/user';
 
 const store = useUserStore();
 
-const { fetchUser } = store;
-
 const user = computed(() => {
   return store.getUser;
 });
@@ -35,10 +33,6 @@ const goToDashboard = function () {
     window.location.href = runtimeConfig.public.LARAVEL_APP_URL_PRODUCTION;
   }
 };
-
-onMounted(() => {
-  fetchUser();
-});
 </script>
 <template>
   <SlideOverPrimaryMenu
@@ -51,27 +45,6 @@ onMounted(() => {
       class="mx-auto flex myPrimaryGap items-center justify-end px-6 lg:px-8"
       aria-label="Global"
     >
-      <!-- isErrorUser # start -->
-      <template v-if="user && !user.isLoadingUser && user.isErrorUser">
-        <p class="myPrimaryParagraphError">
-          {{ user.errorUser }}
-        </p>
-      </template>
-      <!-- isErrorUser # end -->
-
-      <!-- isErrorUser # start -->
-      <template v-if="user && user.isLoadingUser">
-        <p class="myPrimaryParagraphError">Is loading user</p>
-      </template>
-      <!-- isErrorUser # end -->
-      <!-- isErrorUser # start -->
-      <template v-if="user && user.fetchedDataUser">
-        <p class="myPrimaryParagraph">
-          {{ user.fetchedDataUser }}
-        </p>
-      </template>
-      <!-- isErrorUser # end -->
-
       <div class="flex myPrimaryGap items-center mx-auto">
         <NuxtLink
           to="/"
@@ -127,19 +100,51 @@ onMounted(() => {
         </NuxtLink>
       </div>
 
-      <button
-        @click="goToDashboard"
-        type="button"
-        class="h-10 w-10 cursor-pointer rounded-full flex items-center border-none justify-center bg-gray-50 aspect-square hover:bg-myPrimaryLinkColor hover:text-white focus-visible:ring-0"
-      >
-        <span class="myMediumIcon material-symbols-outlined"> apps </span>
-      </button>
+      <!-- auth # start -->
+      <!-- isErrorUser # start -->
+      <div>
+        <template
+          v-if="false && user && !user.isLoadingUser && user.isErrorUser"
+        >
+          <p class="myPrimaryParagraphError">
+            {{ user.errorUser }}
+          </p>
+        </template>
+        <!-- isErrorUser # end -->
+
+        <!-- isErrorUser # start -->
+        <template v-if="user && user.isLoadingUser">
+          <span class="relative flex h-3 w-3">
+            <span
+              class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"
+            ></span>
+            <span
+              class="relative inline-flex rounded-full h-3 w-3 bg-sky-500"
+            ></span>
+          </span>
+        </template>
+        <!-- isErrorUser # end -->
+        <!-- isErrorUser # start -->
+        <template v-if="user && !user.isLoadingUser">
+          <p class="myPrimaryParagraph">
+            {{ JSON.stringify(user.fetchedDataUser?.first_name) }}
+          </p>
+        </template>
+      </div>
+      <!-- auth # end -->
       <button
         @click="goToDashboard"
         type="button"
         class="h-10 w-10 cursor-pointer rounded-full flex items-center border-none justify-center bg-gray-50 aspect-square hover:bg-myPrimaryLinkColor hover:text-white focus-visible:ring-0"
       >
         <span class="myMediumIcon material-symbols-outlined"> person </span>
+      </button>
+      <button
+        @click="goToDashboard"
+        type="button"
+        class="h-10 w-10 cursor-pointer rounded-full flex items-center border-none justify-center bg-gray-50 aspect-square hover:bg-myPrimaryLinkColor hover:text-white focus-visible:ring-0"
+      >
+        <span class="myMediumIcon material-symbols-outlined"> apps </span>
       </button>
 
       <button

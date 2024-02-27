@@ -636,9 +636,9 @@ onMounted(() => {
                           :images="post.team?.coverImagesWithLogos?.logos"
                           :isLoading="isLoadingPosts"
                           imageSize="medium_path"
-                          imageHeight="h-16"
-                          imageWidth="w-16"
-                          :roundedFull="false"
+                          imageHeight="min-h-16 max-h-16"
+                          imageWidth="min-w-16 max-w-16"
+                          :roundedFull="true"
                         ></ThumbnailSmallImageSlider>
                       </div>
                     </template>

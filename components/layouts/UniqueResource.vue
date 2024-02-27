@@ -105,9 +105,9 @@ const getAppUrl = function (path) {
               <ThumbnailSmallImageSlider
                 :images="team.coverImagesWithLogos?.logos"
                 imageSize="large_path"
-                imageHeight="h-24"
-                imageWidth="w-24 mb-4"
-                :roundedFull="false"
+                imageHeight="min-h-24 max-h-24"
+                imageWidth="min-w-24 max-w-24 mb-4"
+                :roundedFull="true"
                 :squareButtons="true"
               ></ThumbnailSmallImageSlider>
             </template>
