@@ -121,9 +121,18 @@ const goToDashboard = function () {
         </template>
         <!-- isErrorUser # end -->
         <!-- isErrorUser # start -->
-        <template v-if="user && !user.isLoadingUser">
+        <template
+          v-if="
+            user &&
+            !user.isLoadingUser &&
+            user.isLoadingUser &&
+            user.isLoadingUser.first_name &&
+            user.isLoadingUser.last_name
+          "
+        >
           <p class="myPrimaryParagraph">
-            {{ JSON.stringify(user.fetchedDataUser?.first_name) }}
+            {{ user.fetchedDataUser?.first_name }}
+            {{ user.fetchedDataUser?.last_name }}
           </p>
         </template>
       </div>
