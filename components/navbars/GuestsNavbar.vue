@@ -119,6 +119,12 @@ const goToDashboard = function () {
             bgColorDark="bg-green-800"
           ></AnimateCircle>
         </template>
+        <template v-if="user && !user.isLoadingUser">
+          <AnimateCircle
+            bgColorLight="bg-transparent"
+            bgColorDark="bg-transparent	"
+          ></AnimateCircle>
+        </template>
         <!-- isErrorUser # end -->
         <!-- isErrorUser # start -->
         <template
