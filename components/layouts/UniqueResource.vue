@@ -106,7 +106,7 @@ const getAppUrl = function (path) {
                 :images="team.coverImagesWithLogos?.logos"
                 imageSize="large_path"
                 imageHeight="min-h-24 max-h-24"
-                imageWidth="min-w-24 max-w-24 mb-4"
+                imageWidth="min-w-24 max-w-24 mb-4 object-cover"
                 :roundedFull="true"
                 :squareButtons="true"
               ></ThumbnailSmallImageSlider>
@@ -384,7 +384,7 @@ const getAppUrl = function (path) {
                     :images="store.cover_images"
                     imageSize="medium_path"
                     imageHeight="h-28"
-                    imageWidth="w-28"
+                    imageWidth="w-28 object-cover"
                     :roundedFull="true"
                     :squareButtons="false"
                     :imageClickable="true"
@@ -618,7 +618,7 @@ const getAppUrl = function (path) {
               :images="post.cover_images"
               imageSize="large_path"
               imageHeight="h-auto"
-              imageWidth="w-full"
+              imageWidth="w-full object-cover"
               :roundedFull="false"
               :squareButtons="true"
             ></ThumbnailSmallImageSlider>

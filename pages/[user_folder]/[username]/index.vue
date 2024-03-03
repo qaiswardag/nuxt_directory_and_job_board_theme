@@ -95,7 +95,7 @@ const processedPostContent = function () {
                 :images="fetchedDataUser.userData.user_photo"
                 imageSize="large_path"
                 imageHeight="min-h-32 max-h-32"
-                imageWidth="min-w-32 max-w-32"
+                imageWidth="min-w-32 max-w-32 object-cover"
                 :roundedFull="true"
               ></ThumbnailSmallImageSlider>
             </div>

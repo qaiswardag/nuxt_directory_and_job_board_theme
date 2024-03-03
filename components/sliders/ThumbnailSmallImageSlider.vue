@@ -74,10 +74,10 @@ const sortedImages = computed(() => {
 
 const numbers = [50, 100, 200, 300, 400];
 
-function getRandomNumber() {
+const getRandomNumber = useState(() => {
   const randomIndex = Math.floor(Math.random() * numbers.length);
   return numbers[randomIndex];
-}
+});
 </script>
 
 <template>
@@ -106,7 +106,7 @@ function getRandomNumber() {
           :class="[
             `${imageHeight}`,
             `${imageWidth}`,
-            `bg-slate-${getRandomNumber()}`,
+            `bg-slate-${getRandomNumber}`,
             { hidden: currentImageIndex !== index },
             { 'rounded-full': roundedFull === true },
           ]"
@@ -120,7 +120,7 @@ function getRandomNumber() {
                 : {}
             "
             :src="getAppUrl(`storage/uploads/${image[imageSize]}`)"
-            class="absolute inset-0 z-20 object-cover rounded"
+            class="absolute inset-0 z-20 rounded"
             :class="[
               `${imageHeight}`,
               `${imageWidth}`,
@@ -129,6 +129,7 @@ function getRandomNumber() {
               { 'cursor-pointer': imageClickable === true },
             ]"
           />
+
           <div
             :style="
               currentImageIndex === index
