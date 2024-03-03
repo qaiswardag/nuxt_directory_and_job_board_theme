@@ -97,11 +97,14 @@ const getRandomNumber = useState(() => {
       >
         <div
           id="imagePlaceholder"
-          :style="
-            currentImageIndex === index
-              ? { height: (image.height * 300) / 2000 + 'px' }
-              : {}
-          "
+          :style="{
+            height:
+              currentImageIndex === index
+                ? typeof Number(image.height) === 'number'
+                  ? Number(image.height) + 'px'
+                  : '600px'
+                : '',
+          }"
           class="relative shrink-0 rounded"
           :class="[
             `${imageHeight}`,
@@ -114,11 +117,14 @@ const getRandomNumber = useState(() => {
           <img
             alt="image"
             @click="firstButtonClick"
-            :style="
-              currentImageIndex === index
-                ? { height: (image.height * 300) / 2000 + 'px' }
-                : {}
-            "
+            :style="{
+              height:
+                currentImageIndex === index
+                  ? typeof Number(image.height) === 'number'
+                    ? Number(image.height) + 'px'
+                    : '600px'
+                  : '',
+            }"
             :src="getAppUrl(`storage/uploads/${image[imageSize]}`)"
             class="absolute inset-0 z-20 rounded"
             :class="[
@@ -131,11 +137,14 @@ const getRandomNumber = useState(() => {
           />
 
           <div
-            :style="
-              currentImageIndex === index
-                ? { height: (image.height * 300) / 2000 + 'px' }
-                : {}
-            "
+            :style="{
+              height:
+                currentImageIndex === index
+                  ? typeof Number(image.height) === 'number'
+                    ? Number(image.height) + 'px'
+                    : '600px'
+                  : '',
+            }"
             :class="[
               `${imageHeight}`,
               `${imageWidth}`,
