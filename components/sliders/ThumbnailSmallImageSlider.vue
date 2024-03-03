@@ -1,5 +1,5 @@
 <script setup>
-import { computed, onMounted, ref } from 'vue';
+import { computed, ref } from 'vue';
 
 const props = defineProps({
   images: {
@@ -71,13 +71,6 @@ const sortedImages = computed(() => {
   // If no primary image is found, return the original array
   return props.images;
 });
-
-const numbers = [50, 100, 200, 300, 400];
-
-const getRandomNumber = useState(() => {
-  const randomIndex = Math.floor(Math.random() * numbers.length);
-  return numbers[randomIndex];
-});
 </script>
 
 <template>
@@ -109,7 +102,7 @@ const getRandomNumber = useState(() => {
           :class="[
             `${imageHeight}`,
             `${imageWidth}`,
-            `bg-slate-${getRandomNumber}`,
+            `bg-red-50`,
             { hidden: currentImageIndex !== index },
             { 'rounded-full': roundedFull === true },
           ]"
