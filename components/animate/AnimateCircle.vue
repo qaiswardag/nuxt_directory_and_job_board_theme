@@ -3,9 +3,6 @@ defineProps({
   bgColorLight: {
     required: true,
   },
-  bgColorLight: {
-    required: true,
-  },
 });
 </script>
 <template>
