@@ -300,8 +300,11 @@ onMounted(() => {
     >
       <template #content>
         <!-- Search in Tags Or Content # start -->
-        <div v-if="fetchedDataPosts && fetchedDataPosts.posts">
-          <div class="py-2 px-2 rounded-xl bg-gray-100 grid gap-8 mb-8">
+        <div
+          v-if="fetchedDataPosts && fetchedDataPosts.posts"
+          class="py-2 px-2 rounded-xl bg-gray-100 grid gap-8 mb-8"
+        >
+          <div>
             <!-- options dropdow # start -->
             <Menu
               as="div"
