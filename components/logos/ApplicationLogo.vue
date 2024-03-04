@@ -10,7 +10,7 @@ const getAppUrl = function (path) {
   <NuxtLink to="/">
     <img
       class="lg:w-28 w-24"
-      :src="getAppUrl('logo/myself_text_logo_black.svg')"
+      src="/images/logo/myself_text_logo_black.svg"
       alt="Logo"
     />
   </NuxtLink>

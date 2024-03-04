@@ -17,7 +17,7 @@ useSeoMeta({
   ogDescription:
     'Search for everything you need in the world of fashion within the United Arab Emirates. From fashion Stores and Jobs to Campaigns.',
   ogImage: () => {
-    return getAppUrl('brand-images/pink-lady-high-resolution.jpg');
+    return '/images/brand-images/pink-lady-high-resolution.jpg';
   },
 });
 
@@ -42,8 +42,8 @@ const faqs = [
         <div class="w-full relative h-[32rem]">
           <img
             class="top-0 left-0 w-full object-cover h-[32rem]"
-            :src="getAppUrl('brand-images/pink-lady-high-resolution.jpg')"
-            alt="myself.ae fashion & jobs"
+            src="/images/brand-images/pink-lady-high-resolution.jpg"
+            alt="myself.ae fashion &amp; jobs"
           />
           <div class="bg-black/20 absolute top-0 left-0 w-full h-[32rem]"></div>
           <div
@@ -81,8 +81,8 @@ const faqs = [
             >
               <img
                 class="top-0 left-0 w-full object-cover lg:h-[30rem] h-[22rem] rounded-lg"
-                :src="getAppUrl('app-images/pages/home/fashion_show.jpg')"
-                alt="myself.ae fashion & jobs"
+                src="/images/home/fashion_show.jpg"
+                alt="myself.ae fashion &amp; jobs"
               />
 
               <NuxtLink to="/stores">
@@ -106,8 +106,8 @@ const faqs = [
             >
               <img
                 class="top-0 left-0 w-full object-cover lg:h-[30rem] h-[22rem] rounded-lg"
-                :src="getAppUrl('app-images/pages/home/orange_bg.jpg')"
-                alt="/"
+                src="/images/home/orange_bg.jpg"
+                alt="myself.ae fashion &amp; jobs"
               />
               <NuxtLink to="/campaigns">
                 <div
@@ -130,8 +130,8 @@ const faqs = [
             >
               <img
                 class="top-0 left-0 w-full object-cover lg:h-[30rem] h-[22rem] rounded-lg"
-                :src="getAppUrl('app-images/pages/home/girl_light_bg.jpg')"
-                alt="/"
+                src="/images/home/girl_light_bg.jpg"
+                alt="myself.ae fashion &amp; jobs"
               />
 
               <NuxtLink to="/jobs">
@@ -154,8 +154,8 @@ const faqs = [
             >
               <img
                 class="top-0 left-0 w-full object-cover lg:h-[30rem] h-[22rem] rounded-lg"
-                :src="getAppUrl('app-images/pages/home/three.jpg')"
-                alt="/"
+                src="/images/home/three.jpg"
+                alt="myself.ae fashion &amp; jobs"
               />
 
               <NuxtLink to="/professional">
@@ -200,8 +200,8 @@ const faqs = [
           <div class="w-full relative">
             <img
               class="top-0 left-0 w-full object-cover rounded-lg"
-              :src="getAppUrl('app-images/pages/home/edit_or_add_designs.jpg')"
-              alt="myself.ae fashion & jobs"
+              src="/images/home/edit_or_add_designs.jpg"
+              alt="myself.ae fashion &amp; jobs"
             />
             <div
               class="bg-black/0 absolute top-0 left-0 w-full h-full rounded-lg"
@@ -236,8 +236,8 @@ const faqs = [
                 >
                   <img
                     class="object-cover w-28 h-28 rounded-full"
-                    :src="getAppUrl('app-images/pages/home/woman_1.jpg')"
-                    alt="myself.ae fashion & jobs"
+                    src="/images/home/woman_1.jpg"
+                    alt="myself.ae fashion &amp; jobs"
                   />
                 </div>
 
@@ -273,8 +273,8 @@ const faqs = [
                 >
                   <img
                     class="object-cover w-28 h-28 rounded-full"
-                    :src="getAppUrl('app-images/pages/home/woman_2.jpg')"
-                    alt="myself.ae fashion & jobs"
+                    src="/images/home/woman_2.jpg"
+                    alt="myself.ae fashion &amp; jobs"
                   />
                 </div>
 
@@ -310,8 +310,8 @@ const faqs = [
                 >
                   <img
                     class="object-cover w-28 h-28 rounded-full"
-                    :src="getAppUrl('app-images/pages/home/woman_3.jpg')"
-                    alt="myself.ae fashion & jobs"
+                    src="/images/home/woman_3.jpg"
+                    alt="myself.ae fashion &amp; jobs"
                   />
                 </div>
 
@@ -347,8 +347,8 @@ const faqs = [
                 >
                   <img
                     class="object-cover w-28 h-28 rounded-full"
-                    :src="getAppUrl('app-images/pages/home/woman_4.jpg')"
-                    alt="myself.ae fashion & jobs"
+                    src="/images/home/woman_4.jpg"
+                    alt="myself.ae fashion &amp; jobs"
                   />
                 </div>
 
@@ -436,12 +436,8 @@ const faqs = [
             </dl>
             <img
               class="w-full object-cover lg:col-span-6 rounded-lg"
-              :src="
-                getAppUrl(
-                  'app-images/pages/home/frequently_asked_questions.jpg'
-                )
-              "
-              alt="image"
+              src="/images/home/frequently_asked_questions.jpg"
+              alt="myself.ae fashion &amp; jobs"
             />
           </div>
         </template>

@@ -108,7 +108,7 @@ const sortedImages = computed(() => {
           ]"
         >
           <img
-            alt="image"
+            alt="myself.ae fashion &amp; jobs"
             @click="firstButtonClick"
             :style="{
               height:
