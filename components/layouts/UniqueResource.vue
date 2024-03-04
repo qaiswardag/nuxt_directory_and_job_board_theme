@@ -116,8 +116,8 @@ const getAppUrl = function (path) {
                 v-if="team.coverImagesWithLogos?.cover_images"
                 :images="team.coverImagesWithLogos?.cover_images"
                 imageSize="large_path"
-                imageHeight="h-auto"
-                imageWidth="w-full"
+                imageHeight="max-h-96"
+                imageWidth="w-full object-cover rounded-b-none"
                 :roundedFull="false"
                 :squareButtons="true"
               ></ThumbnailSmallImageSlider>
@@ -617,8 +617,8 @@ const getAppUrl = function (path) {
               v-if="post.cover_images"
               :images="post.cover_images"
               imageSize="large_path"
-              imageHeight="h-auto"
-              imageWidth="w-full object-cover"
+              imageHeight="max-h-96"
+              imageWidth="w-full object-cover rounded-b-none"
               :roundedFull="false"
               :squareButtons="true"
             ></ThumbnailSmallImageSlider>
