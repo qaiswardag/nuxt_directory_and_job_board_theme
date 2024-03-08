@@ -35,7 +35,6 @@ export const useUserStore = defineStore('user', {
 
       const fullPath = this.getAppUrl(path);
 
-      console.log(`fullPath:`, fullPath);
       handleGetUser(fullPath);
 
       this.user = {

@@ -45,7 +45,7 @@ const onPaginationChangePage = function (page) {
   >
     <nav
       v-bind="$attrs"
-      class="inline-flex -space-x-px rounded-md isolate ltr:flex-row rtl:flex-row-reverse gap-1"
+      class="flex gap-y-2 space-x-2 flex-wrap items-center justify-center -mb-1 py-2 px-2 rounded"
       aria-label="Pagination"
       v-if="slotProps.computed.total > slotProps.computed.perPage"
     >

@@ -45,7 +45,7 @@ const goToDashboard = function () {
       class="mx-auto flex myPrimaryGap items-center justify-end px-6 lg:px-8"
       aria-label="Global"
     >
-      <div class="flex myPrimaryGap items-center mx-auto">
+      <div class="lg:flex hidden myPrimaryGap items-center mx-auto">
         <NuxtLink
           to="/"
           class="text-myPrimaryDarkGrayColor"
@@ -54,7 +54,7 @@ const goToDashboard = function () {
           }"
         >
           <div
-            class="bg-gray-50 lg:flex lg:gap-2 lg:items-center hidden focus:outline-none cursor-pointer rounded-full px-1.5 py-1.5 font-medium"
+            class="bg-gray-50 lg:gap-2 lg:items-center focus:outline-none cursor-pointer rounded-full px-1.5 py-1.5 font-medium"
           >
             Home
           </div>
@@ -67,7 +67,7 @@ const goToDashboard = function () {
           }"
         >
           <div
-            class="bg-gray-50 lg:flex lg:gap-2 lg:items-center hidden focus:outline-none cursor-pointer rounded-full px-1.5 py-1.5 font-medium"
+            class="bg-gray-50 lg:gap-2 lg:items-center focus:outline-none cursor-pointer rounded-full px-1.5 py-1.5 font-medium"
           >
             Stores
           </div>
@@ -80,7 +80,7 @@ const goToDashboard = function () {
           }"
         >
           <div
-            class="bg-gray-50 lg:flex lg:gap-2 lg:items-center hidden focus:outline-none cursor-pointer rounded-full px-1.5 py-1.5 font-medium"
+            class="bg-gray-50 lg:gap-2 lg:items-center focus:outline-none cursor-pointer rounded-full px-1.5 py-1.5 font-medium"
           >
             Jobs
           </div>
@@ -102,7 +102,7 @@ const goToDashboard = function () {
 
       <!-- auth # start -->
       <!-- isErrorUser # start -->
-      <div>
+      <div class="lg:block hidden">
         <template
           v-if="false && user && !user.isLoadingUser && user.isErrorUser"
         >
@@ -143,6 +143,7 @@ const goToDashboard = function () {
         </template>
       </div>
       <!-- auth # end -->
+
       <button
         @click="goToDashboard"
         type="button"
