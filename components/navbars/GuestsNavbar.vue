@@ -93,7 +93,7 @@ const goToDashboard = function () {
           }"
         >
           <div
-            class="bg-gray-50 lg:flex lg:gap-2 lg:items-center hidden focus:outline-none cursor-pointer rounded-full px-1.5 py-1.5 font-medium"
+            class="bg-gray-50 lg:flex lg:gap-2 lg:items-center focus:outline-none cursor-pointer rounded-full px-1.5 py-1.5 font-medium"
           >
             Campaigns
           </div>
@@ -103,16 +103,12 @@ const goToDashboard = function () {
       <button
         @click="goToDashboard"
         type="button"
-        class="h-10 w-10 cursor-pointer rounded-full flex items-center border-none justify-center bg-gray-50 aspect-square hover:bg-myPrimaryLinkColor hover:text-white focus-visible:ring-0"
       >
-        <span class="myMediumIcon material-symbols-outlined"> person </span>
-      </button>
-      <button
-        @click="goToDashboard"
-        type="button"
-        class="h-10 w-10 cursor-pointer rounded-full flex items-center border-none justify-center bg-gray-50 aspect-square hover:bg-myPrimaryLinkColor hover:text-white focus-visible:ring-0"
-      >
-        <span class="myMediumIcon material-symbols-outlined"> apps </span>
+        <div
+          class="bg-gray-50 lg:flex lg:gap-2 lg:items-center focus:outline-none cursor-pointer rounded-full px-1.5 py-1.5 font-medium"
+        >
+          Account
+        </div>
       </button>
 
       <button
