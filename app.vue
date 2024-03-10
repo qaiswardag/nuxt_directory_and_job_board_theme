@@ -31,8 +31,8 @@ onMounted(() => {
   // cookie # end
 
   // fetch user # start
-  xsrfToken.value = getCookie(documentDOM, 'XSRF-TOKEN');
-  fetchUser();
+  // xsrfToken.value = getCookie(documentDOM, 'XSRF-TOKEN');
+  // fetchUser();
   // fetch user # end
 });
 </script>

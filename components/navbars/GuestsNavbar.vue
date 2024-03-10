@@ -100,50 +100,6 @@ const goToDashboard = function () {
         </NuxtLink>
       </div>
 
-      <!-- auth # start -->
-      <!-- isErrorUser # start -->
-      <div class="lg:block hidden">
-        <template
-          v-if="false && user && !user.isLoadingUser && user.isErrorUser"
-        >
-          <p class="myPrimaryParagraphError">
-            {{ user.errorUser }}
-          </p>
-        </template>
-        <!-- isErrorUser # end -->
-
-        <!-- isErrorUser # start -->
-        <template v-if="user && user.isLoadingUser">
-          <AnimateCircle
-            bgColorLight="bg-green-600"
-            bgColorDark="bg-green-800"
-          ></AnimateCircle>
-        </template>
-        <template v-if="user && !user.isLoadingUser">
-          <AnimateCircle
-            bgColorLight="bg-transparent"
-            bgColorDark="bg-transparent	"
-          ></AnimateCircle>
-        </template>
-        <!-- isErrorUser # end -->
-        <!-- isErrorUser # start -->
-        <template
-          v-if="
-            user &&
-            !user.isLoadingUser &&
-            user.isLoadingUser &&
-            user.isLoadingUser.first_name &&
-            user.isLoadingUser.last_name
-          "
-        >
-          <p class="myPrimaryParagraph">
-            {{ user.fetchedDataUser?.first_name }}
-            {{ user.fetchedDataUser?.last_name }}
-          </p>
-        </template>
-      </div>
-      <!-- auth # end -->
-
       <button
         @click="goToDashboard"
         type="button"
