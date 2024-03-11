@@ -131,7 +131,7 @@ const navigation = [
                           <li>
                             <ul
                               role="list"
-                              class="-mx-2 space-y-2"
+                              class="space-y-2"
                             >
                               <li
                                 v-for="item in navigation"
