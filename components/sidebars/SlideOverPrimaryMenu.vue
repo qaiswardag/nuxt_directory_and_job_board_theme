@@ -104,7 +104,7 @@ const navigation = [
                     <div class="px-4 sm:px-6">
                       <div class="flex items-center justify-between mb-4">
                         <DialogTitle
-                          class="myPrimaryParagraph text-base rounded w-full py-4 font-medium"
+                          class="myPrimaryParagraph text-base rounded w-full pt-4 font-medium"
                         >
                           Main Menu
                         </DialogTitle>
