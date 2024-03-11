@@ -65,12 +65,6 @@ const navigation = [
           parameters: [],
         },
       },
-      {
-        label: 'Terms of Service',
-      },
-      {
-        label: 'Privacy Policy',
-      },
     ],
   },
 ];
