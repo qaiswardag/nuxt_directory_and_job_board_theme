@@ -376,15 +376,15 @@ const getAppUrl = function (path) {
             >
               <!-- store cover image -->
               <div
-                class="flex justify-center items-center gap-2 border-b border-gray-200 pb-4"
+                class="flex justify-center items-center gap-2 border-b border-gray-200 pb-4 bg-gray-100 rounded-lg"
               >
                 <div class="overflow-x-scroll py-4 px-2 w-full rounded-md">
                   <ThumbnailSmallImageSlider
                     v-if="store.cover_images"
                     :images="store.cover_images"
                     imageSize="medium_path"
-                    imageHeight="h-28"
-                    imageWidth="w-28 object-cover"
+                    imageHeight="min-h-32 max-h-32"
+                    imageWidth="min-w-32 max-w-32 mb-4 object-cover"
                     :roundedFull="true"
                     :squareButtons="false"
                     :imageClickable="true"
