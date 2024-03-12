@@ -17,19 +17,22 @@ const handleCookieModal = function () {
   showCookieModal.value = false;
 };
 
-onMounted(() => {
+onMounted(async () => {
   documentDOM.value = window.document;
 
   // cookie # start
   checkACookieExists.value = getCookie(documentDOM, 'cookieConsent');
 
-  if (checkACookieExists.value) {
-    showCookieModal.value = false;
-  } else {
-    showCookieModal.value = true;
-  }
+  await nextTick(() => {
+    if (checkACookieExists.value) {
+      showCookieModal.value = false;
+    } else {
+      showCookieModal.value = true;
+    }
+  });
   // cookie # end
-
+  //
+  //
   // fetch user # start
   // xsrfToken.value = getCookie(documentDOM, 'XSRF-TOKEN');
   // fetchUser();
