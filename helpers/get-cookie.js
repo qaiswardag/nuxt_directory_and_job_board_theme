@@ -12,5 +12,5 @@ export const setCookie = function (cookieName, cookieValue, expirationDays) {
   );
   const expires = 'expires=' + cookieDate.toUTCString();
 
-  document.cookie = cookieName + '=' + cookieValue + ';' + expires + '/';
+  document.cookie = cookieName + '=' + cookieValue + ';' + expires + ';path=/';
 };
