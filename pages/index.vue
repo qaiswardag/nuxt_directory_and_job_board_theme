@@ -21,13 +21,24 @@ useSeoMeta({
   },
 });
 
-const open = ref(false);
+const currentOpenId = ref(null);
+
+const isOpen = function (id) {
+  if (id === currentOpenId.value) {
+    currentOpenId.value = null;
+    return;
+  }
+  currentOpenId.value = id;
+};
+
 const faqs = [
   {
+    id: 1,
     question: 'Pricing',
     answer: 'For pricing information, visit our professional page.',
   },
   {
+    id: 2,
     question: 'Our services',
     answer:
       'Our services include job posting, product in-store campaigns, and store posting.',
@@ -401,7 +412,7 @@ const faqs = [
               >
                 <dt>
                   <div
-                    @click="open = !open"
+                    @click="isOpen(faq.id)"
                     class="py-6 flex w-full items-center justify-between text-left myPrimaryParagraph cursor-pointer"
                   >
                     <span class="myPrimaryParagraph font-medium"
@@ -410,7 +421,7 @@ const faqs = [
 
                     <span class="ml-6 flex h-7 items-center">
                       <span
-                        v-if="!open"
+                        v-if="faq.id !== currentOpenId"
                         class="myMediumIcon material-symbols-outlined"
                       >
                         add
@@ -425,8 +436,8 @@ const faqs = [
                   </div>
                 </dt>
                 <div
-                  v-if="open"
-                  class="mt-2 pr-12 pb-16"
+                  v-if="faq.id === currentOpenId"
+                  class="mt-2 mb-2 pr-8 pb-6"
                 >
                   <p class="myPrimaryParagraph">
                     {{ faq.answer }}
