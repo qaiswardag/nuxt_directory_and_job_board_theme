@@ -141,7 +141,7 @@ useSeoMeta({
                 @click="goToPostStore"
                 class="myPrimaryButton w-full mt-12"
               >
-                {{ product.title }}
+                Subscribe
               </button>
             </div>
           </div>
@@ -222,7 +222,7 @@ useSeoMeta({
                   @click="goToPostJob"
                   class="myPrimaryButton w-full"
                 >
-                  {{ product.title }}
+                  {{ product.name }}
                 </button>
               </div>
             </div>
