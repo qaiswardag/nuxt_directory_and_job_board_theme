@@ -136,14 +136,13 @@ useSeoMeta({
                   </span>
                   {{ feature }}
                 </li>
-
-                <button
-                  @click="goToPostStore"
-                  class="myPrimaryButton w-full mt-4"
-                >
-                  Subscribe
-                </button>
               </ul>
+              <button
+                @click="goToPostStore"
+                class="myPrimaryButton w-full mt-12"
+              >
+                {{ product.title }}
+              </button>
             </div>
           </div>
         </template>
@@ -218,7 +217,7 @@ useSeoMeta({
                 </ul>
               </div>
 
-              <div class="lg:w-2/4 lg:self-center lg:mt-0 mt-4">
+              <div class="lg:w-2/4 lg:self-center lg:mt-0 mt-12">
                 <button
                   @click="goToPostJob"
                   class="myPrimaryButton w-full"
