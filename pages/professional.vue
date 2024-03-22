@@ -13,6 +13,30 @@ const getAppUrl = function (path) {
   return runtimeConfig.public.LARAVEL_APP_URL + '/' + path;
 };
 
+const goToPostStore = function () {
+  let urlPath;
+
+  if (runtimeConfig.public.APP_ENV === 'local') {
+    urlPath = runtimeConfig.public.LARAVEL_APP_URL;
+  } else {
+    urlPath = runtimeConfig.public.LARAVEL_APP_URL_PRODUCTION;
+  }
+
+  window.location.href = urlPath;
+};
+
+const goToPostJob = function () {
+  let urlPath;
+
+  if (runtimeConfig.public.APP_ENV === 'local') {
+    urlPath = runtimeConfig.public.LARAVEL_APP_URL;
+  } else {
+    urlPath = runtimeConfig.public.LARAVEL_APP_URL_PRODUCTION;
+  }
+
+  window.location.href = urlPath;
+};
+
 useSeoMeta({
   title: `${runtimeConfig.public.APP_NAME} | Professional`,
   ogTitle: `${runtimeConfig.public.APP_NAME} | Professional`,
@@ -98,10 +122,6 @@ useSeoMeta({
                 {{ product.billed }}
               </p>
 
-              <NuxtLink to="/">
-                {{ product.title }}
-              </NuxtLink>
-              <NuxtLink to="/"> Sign up </NuxtLink>
               <ul
                 role="list"
                 class="mt-8 space-y-3 text-sm leading-6 text-gray-600"
@@ -116,6 +136,13 @@ useSeoMeta({
                   </span>
                   {{ feature }}
                 </li>
+
+                <button
+                  @click="goToPostStore"
+                  class="myPrimaryButton w-full mt-4"
+                >
+                  Subscribe
+                </button>
               </ul>
             </div>
           </div>
@@ -192,8 +219,12 @@ useSeoMeta({
               </div>
 
               <div class="lg:w-2/4 lg:self-center lg:mt-0 mt-4">
-                <NuxtLink to="/"> {{ product.title }} </NuxtLink>
-                <NuxtLink to="/"> Sign up </NuxtLink>
+                <button
+                  @click="goToPostJob"
+                  class="myPrimaryButton w-full"
+                >
+                  {{ product.title }}
+                </button>
               </div>
             </div>
           </div>
@@ -211,23 +242,14 @@ useSeoMeta({
           <p class="myPrimaryParagraph">
             We are always ready to assist you and will gladly answer any
             questions or inquiries you may have in connection with our services!
+            <br />
             Please note that our Service Assistants are available Monday through
             Friday between 10.00 am and 08.00 pm.
           </p>
-          <p class="myPrimaryParagraph font-medium mt-4">
-            To ensure security and prevent spam, please log in or register
-            before contacting us — takes less than 10 seconds to sign up.
+          <p class="myPrimaryParagraph mt-4">
+            Email:
+            <span class="text-myPrimaryLinkColor"> hello@myself.ae </span>
           </p>
-
-          <NuxtLink to="/"> Log in or register now. </NuxtLink>
-
-          <p class="myPrimaryParagraph">
-            We are always ready to assist you and will gladly answer any
-            questions or inquiries you may have in connection with our services!
-            Please note that our Service Assistants are available Monday through
-            Friday between 10.00 am and 08.00 pm.
-          </p>
-          <p class="myPrimaryParagraph mt-4"></p>
         </template>
       </FullWidthElement>
     </GuestsLayout>
