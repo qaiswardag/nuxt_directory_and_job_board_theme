@@ -11,6 +11,13 @@ export default defineNuxtConfig({
   },
   devtools: { enabled: true },
   modules: ['@nuxtjs/sitemap', '@pinia/nuxt'],
+  // Add a trailing slash to each route
+  sitemap: {
+    hostname: process.env.APP_ENV,
+
+    exclude: [],
+    routes: ['/stores', '/jobs', '/campaigns'],
+  },
 
   app: {
     head: {
