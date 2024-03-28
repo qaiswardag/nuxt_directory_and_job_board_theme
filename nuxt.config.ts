@@ -1,5 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  // Add a trailing slash to each route
+  site: {
+    url: 'https://www.myself.ae',
+  },
   runtimeConfig: {
     public: {
       LARAVEL_APP_URL_PRODUCTION: process.env.LARAVEL_APP_URL_PRODUCTION,
@@ -11,10 +15,7 @@ export default defineNuxtConfig({
   },
   devtools: { enabled: true },
   modules: ['@nuxtjs/sitemap', '@pinia/nuxt'],
-  // Add a trailing slash to each route
   sitemap: {
-    hostname: process.env.APP_ENV,
-
     exclude: [],
     routes: ['/stores', '/jobs', '/campaigns'],
   },
