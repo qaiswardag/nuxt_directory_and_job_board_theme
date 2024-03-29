@@ -302,100 +302,9 @@ onMounted(() => {
         <!-- Search in Tags Or Content # start -->
         <div
           v-if="fetchedDataPosts && fetchedDataPosts.posts"
-          class="py-2 px-2 rounded-xl bg-gray-100 grid gap-8 mb-8"
+          class="py-6 px-4 rounded-xl bg-gray-100 grid gap-4 mb-8"
         >
-          <div>
-            <!-- options dropdow # start -->
-            <Menu
-              as="div"
-              class="relative inline-block text-left"
-            >
-              <div>
-                <MenuButton
-                  class="myPrimaryParagraph pl-3 pr-3 py-2 text-xs font-medium inline-flex w-full items-center justify-center gap-2 rounded-md bg-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-                >
-                  <span class="material-symbols-outlined"> filter_alt </span>
-                  <span> Filter </span>
-                  <span class="material-symbols-outlined">
-                    arrow_drop_down
-                  </span>
-                </MenuButton>
-              </div>
-
-              <transition
-                enter-active-class="transition ease-out duration-100"
-                enter-from-class="transform opacity-0 scale-95"
-                enter-to-class="transform opacity-100 scale-100"
-                leave-active-class="transition ease-in duration-75"
-                leave-from-class="transform opacity-100 scale-100"
-                leave-to-class="transform opacity-0 scale-95"
-              >
-                <MenuItems
-                  class="absolute left-0 z-30 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
-                >
-                  <div class="py-1">
-                    <!-- Search in tags and content # start -->
-                    <div class="py-1">
-                      <div
-                        class="pl-4 pr-2 pt-2 pb-2 w-full text-sm flex items-center justify-start gap-2 my-2 hover:bg-myPrimaryLightGrayColor"
-                      >
-                        <div class="relative flex items-center">
-                          <div class="flex h-6 items-center">
-                            <input
-                              id="show_seach_in_tags_content"
-                              name="show_seach_in_tags_content"
-                              v-model="searchInTagsAndContent"
-                              type="checkbox"
-                              class="h-5 w-5 rounded border-gray-300 text-myPrimaryBrandColor focus:ring-myPrimaryBrandColor"
-                            />
-                          </div>
-                          <div class="ml-3 min-w-0 flex-1 text-sm leading-6">
-                            <label
-                              for="show_seach_in_tags_content"
-                              class="select-none font-medium text-gray-900"
-                            >
-                              Search in Tags & Content
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Search in tags and content # end -->
-                  </div>
-
-                  <template v-if="nameList === 'job'">
-                    <div class="py-1">
-                      <div
-                        class="pl-4 pr-2 pt-2 pb-2 w-full text-sm flex items-center justify-start gap-2 my-2 hover:bg-myPrimaryLightGrayColor"
-                      >
-                        <div class="relative flex items-center">
-                          <div class="flex h-6 items-center">
-                            <input
-                              id="show_countries"
-                              name="show_countries"
-                              v-model="showJobCountriesAndTypes"
-                              type="checkbox"
-                              class="h-5 w-5 rounded border-gray-300 text-myPrimaryBrandColor focus:ring-myPrimaryBrandColor"
-                            />
-                          </div>
-                          <div class="ml-3 min-w-0 flex-1 text-sm leading-6">
-                            <label
-                              for="show_countries"
-                              class="select-none font-medium text-gray-900"
-                              >Countries & Job Type
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </template>
-                </MenuItems>
-              </transition>
-            </Menu>
-          </div>
-          <!-- options dropdow # end -->
           <!-- Search in Tags Or Content # end -->
-
           <div class="flex md:flex-row flex-col myPrimaryGap">
             <div
               v-if="fetchedDataPosts && fetchedDataPosts.posts"
@@ -544,6 +453,105 @@ onMounted(() => {
               </div>
             </template>
           </template>
+          <div class="flex justify-between items-center gap-4">
+            <div>
+              <!-- options dropdow # start -->
+              <Menu
+                as="div"
+                class="relative inline-block text-left"
+              >
+                <div>
+                  <MenuButton
+                    class="myPrimaryParagraph pl-3 pr-3 py-2 text-xs font-medium inline-flex w-full items-center justify-center gap-2 rounded-md bg-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                  >
+                    <span class="material-symbols-outlined"> filter_alt </span>
+                    <span> Filter </span>
+                    <span class="material-symbols-outlined">
+                      arrow_drop_down
+                    </span>
+                  </MenuButton>
+                </div>
+
+                <transition
+                  enter-active-class="transition ease-out duration-100"
+                  enter-from-class="transform opacity-0 scale-95"
+                  enter-to-class="transform opacity-100 scale-100"
+                  leave-active-class="transition ease-in duration-75"
+                  leave-from-class="transform opacity-100 scale-100"
+                  leave-to-class="transform opacity-0 scale-95"
+                >
+                  <MenuItems
+                    class="absolute left-0 z-30 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                  >
+                    <div class="py-1">
+                      <!-- Search in tags and content # start -->
+                      <div class="py-1">
+                        <div
+                          class="pl-4 pr-2 pt-2 pb-2 w-full text-sm flex items-center justify-start gap-2 my-2 hover:bg-myPrimaryLightGrayColor"
+                        >
+                          <div class="relative flex items-center">
+                            <div class="flex h-6 items-center">
+                              <input
+                                id="show_seach_in_tags_content"
+                                name="show_seach_in_tags_content"
+                                v-model="searchInTagsAndContent"
+                                type="checkbox"
+                                class="h-5 w-5 rounded border-gray-300 text-myPrimaryBrandColor focus:ring-myPrimaryBrandColor"
+                              />
+                            </div>
+                            <div class="ml-3 min-w-0 flex-1 text-sm leading-6">
+                              <label
+                                for="show_seach_in_tags_content"
+                                class="select-none font-medium text-gray-900"
+                              >
+                                Search in Tags & Content
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Search in tags and content # end -->
+                    </div>
+
+                    <template v-if="nameList === 'job'">
+                      <div class="py-1">
+                        <div
+                          class="pl-4 pr-2 pt-2 pb-2 w-full text-sm flex items-center justify-start gap-2 my-2 hover:bg-myPrimaryLightGrayColor"
+                        >
+                          <div class="relative flex items-center">
+                            <div class="flex h-6 items-center">
+                              <input
+                                id="show_countries"
+                                name="show_countries"
+                                v-model="showJobCountriesAndTypes"
+                                type="checkbox"
+                                class="h-5 w-5 rounded border-gray-300 text-myPrimaryBrandColor focus:ring-myPrimaryBrandColor"
+                              />
+                            </div>
+                            <div class="ml-3 min-w-0 flex-1 text-sm leading-6">
+                              <label
+                                for="show_countries"
+                                class="select-none font-medium text-gray-900"
+                                >Countries & Job Type
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </template>
+                  </MenuItems>
+                </transition>
+              </Menu>
+            </div>
+            <!-- options dropdow # end -->
+            <button
+              type="button"
+              @click="handleSearch"
+              class="myPrimaryButton md:w-1/4 w-full"
+            >
+              Search
+            </button>
+          </div>
         </div>
         <!-- Search in Tags Or Content # end -->
 
