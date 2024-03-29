@@ -16,6 +16,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxtjs/sitemap', '@pinia/nuxt'],
   sitemap: {
+    sources: [`${process.env.LARAVEL_APP_URL}/api/guest/stores/index`],
     exclude: [],
     routes: ['/stores', '/jobs', '/campaigns'],
   },

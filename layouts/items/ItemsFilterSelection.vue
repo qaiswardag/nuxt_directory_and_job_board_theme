@@ -56,7 +56,9 @@ const handleRemoveItem = function (selectedItem) {
             Select {{ nameOfList.toLowerCase() }}..
           </span>
 
-          <ul class="overflow-x-scroll flex gap-2 mr-4 pb-1 min-w-full w-full">
+          <ul
+            class="overflow-x-scroll flex gap-2 mr-4 pb-1 min-w-full w-full max-w-96"
+          >
             <li
               @click.stop="
                 handleRemoveItem({
