@@ -57,7 +57,7 @@ const handleRemoveItem = function (selectedItem) {
           </span>
 
           <ul
-            class="overflow-x-scroll flex gap-2 mr-4 pb-1 min-w-full w-full max-w-96"
+            class="overflow-x-scroll flex gap-2 mr-4 pb-1 min-w-full w-full max-w-12"
           >
             <li
               @click.stop="
