@@ -64,13 +64,12 @@ const fetchComponents = function (page) {
 
 const handleSearch = function () {
   const params = new URLSearchParams({
+    page: 1,
     search_query: search_query.value,
     tags_or_content: tags_or_content.value ? 1 : 0,
-    type: typeSelected.value,
-    category: categorySelected.value,
-    country: countrySelected.value,
-    state: stateSelected.value,
   });
+
+  appendSelectedParams(params);
 
   const url = `${props.pathList}?${params.toString()}`;
   handleGetPosts(url);
@@ -263,20 +262,21 @@ const handleRemoveSelection = function (selectedItem, nameOfSelection) {
 //
 //
 const appendSelectedParams = function (params) {
-  categorySelected.value.forEach((item) => {
-    params.append(`category[0][id]`, item.id);
+  categorySelected.value.forEach((item, index) => {
+    params.append(`category[${index}][id]`, item.id);
   });
 
-  typeSelected.value.forEach((item) => {
-    params.append(`type[0][id]`, item.id);
+  typeSelected.value.forEach((item, index) => {
+    params.append(`type[${index}][id]`, item.id);
   });
 
-  countrySelected.value.forEach((item) => {
-    params.append(`country[0][id]`, item.id);
+  countrySelected.value.forEach((item, index) => {
+    params.append(`country[${index}][id]`, item.id);
   });
 
-  stateSelected.value.forEach((item) => {
-    params.append(`state[0][id]`, item.id);
+  // Append selected states
+  stateSelected.value.forEach((item, index) => {
+    params.append(`state[${index}][id]`, item.id);
   });
 
   const url = `${props.pathList}?${params.toString()}`;
