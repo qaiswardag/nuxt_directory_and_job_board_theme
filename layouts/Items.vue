@@ -574,6 +574,24 @@ onMounted(() => {
         <!-- Loading # end -->
 
         <template v-if="!isLoadingPosts && !isErrorPosts && isSuccessPosts">
+          <template
+            v-if="
+              fetchedDataPosts &&
+              fetchedDataPosts.postCount &&
+              fetchedDataPosts.posts
+            "
+          >
+            <div class="flex justify-end items-center">
+              <p class="myPrimaryParagraph text-xs pb-2">
+                {{
+                  Number(fetchedDataPosts.postCount) === 1
+                    ? nameList[0].toUpperCase() + nameList.slice(1)
+                    : `${nameList[0].toUpperCase() + nameList.slice(1)}s`
+                }}:
+                {{ fetchedDataPosts.postCount }}
+              </p>
+            </div>
+          </template>
           <!-- If posts is empty array # start -->
           <template
             v-if="
