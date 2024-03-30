@@ -52,11 +52,9 @@ const fetchComponents = function (page) {
     page: page,
     search_query: search_query.value,
     tags_or_content: tags_or_content.value ? 1 : 0,
-    type: typeSelected.value,
-    category: categorySelected.value,
-    country: countrySelected.value,
-    state: stateSelected.value,
   });
+
+  appendSelectedParams(params);
 
   const url = `${props.pathList}?${params.toString()}`;
   handleGetPosts(url);
