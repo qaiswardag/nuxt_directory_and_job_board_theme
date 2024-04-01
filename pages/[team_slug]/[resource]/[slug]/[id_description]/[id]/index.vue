@@ -82,7 +82,26 @@ if (fetchedDataPost.value && fetchedDataPost.value.post) {
     ogImage: () => {
       if (
         Array.isArray(fetchedDataPost.value.post.cover_images) &&
-        fetchedDataPost.value.post.cover_images.length >= 1
+        fetchedDataPost.value.post.cover_images.length >= 2
+      ) {
+        const images = fetchedDataPost.value.post.cover_images;
+
+        // Filter images where primary is 1
+        const primaryImages = images.filter(
+          (image) => image.pivot?.primary === 1
+        );
+
+        // Assuming you only want the first primary image
+        const primaryImage =
+          Array.isArray(primaryImages) && primaryImages.length > 0
+            ? primaryImages[0]
+            : null;
+
+        return getAppUrl(`storage/uploads/${primaryImage?.path}`);
+      }
+      if (
+        Array.isArray(fetchedDataPost.value.post.cover_images) &&
+        fetchedDataPost.value.post.cover_images.length === 1
       ) {
         return getAppUrl(
           `storage/uploads/${fetchedDataPost.value.post.cover_images[0]?.path}`
