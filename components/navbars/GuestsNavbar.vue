@@ -100,6 +100,20 @@ const goToDashboard = function () {
         </NuxtLink>
       </div>
 
+      <NuxtLink
+        to="/stores"
+        class="text-myPrimaryDarkGrayColor"
+        :class="{
+          'text-myPrimaryLinkColor': routeName === 'stores',
+        }"
+      >
+        <div
+          class="lg:hidden flex bg-gray-50 lg:gap-2 lg:items-center focus:outline-none cursor-pointer rounded-full px-1.5 py-1.5 font-medium"
+        >
+          Stores
+        </div>
+      </NuxtLink>
+
       <button
         @click="goToDashboard"
         type="button"
