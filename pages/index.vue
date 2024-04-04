@@ -391,10 +391,76 @@ const faqs = [
       </FullWidthElement>
       <!-- Linktree # end -->
 
-      <!-- FAQ # start -->
+      <!-- Trusted by # start -->
       <FullWidthElement
         :descriptionArea="true"
         class="bg-red-50 lg:block hidden"
+      >
+        <template #title>Trusted by</template>
+        <template #description>
+          We are like a digital shopping window, focusing on your brand image,
+          authenticity and credibility! Just like on a shopping site customers
+          can search for anything they are looking for, shoes, clothes, bags,
+          lingerie or jewellery.
+        </template>
+
+        <template #content>
+          <div class="w-full relative">
+            <div class="mx-auto max-w-2xl lg:max-w-none">
+              <div
+                class="mx-auto mt-10 grid grid-cols-2 justify-items-center gap-x-8 gap-y-10 sm:grid-cols-4 sm:gap-x-10 lg:mx-0 lg:grid-cols-4"
+              >
+                <a
+                  href="https://www.emaar.com"
+                  target="_blank"
+                >
+                  <img
+                    class="object-contain object-center w-40 h-40 rounded-lg"
+                    src="/images/trusted-by/emaar_logo_square.png"
+                    alt="Emaar logo"
+                  />
+                </a>
+                <a
+                  href="https://burberry.com/"
+                  target="_blank"
+                >
+                  <img
+                    class="object-contain object-center w-40 h-40 rounded-lg"
+                    src="/images/trusted-by/burberry_logo_square.png"
+                    alt="Burberry logo"
+                  />
+                </a>
+                <a
+                  href="https://www.dolcegabbana.com"
+                  target="_blank"
+                >
+                  <img
+                    class="object-contain object-center w-40 h-40 rounded-lg"
+                    src="/images/trusted-by/dolce_gabbana_logo_square.jpg"
+                    alt="Dolce & Gabbana logo"
+                  />
+                </a>
+                <a
+                  href="https://www.lacoste.com"
+                  target="_blank"
+                >
+                  <img
+                    class="object-contain object-center w-40 h-40 rounded-lg"
+                    src="/images/trusted-by/lacoste_logo_square.jpg"
+                    alt="Lacoste logo"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </template>
+      </FullWidthElement>
+      <!-- Trusted by # end -->
+
+      <!-- FAQ # start -->
+      <FullWidthElement
+        :descriptionArea="true"
+        class="bg-gray-50 lg:block hidden"
       >
         <template #title>Frequently asked questions</template>
         <template #description>
