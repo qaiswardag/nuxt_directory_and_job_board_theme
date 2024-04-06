@@ -667,6 +667,25 @@ onMounted(() => {
                           imageWidth="min-w-16 max-w-16 object-cover"
                           :roundedFull="true"
                         ></ThumbnailSmallImageSlider>
+
+                        <p
+                          class="flex justify-center items-center text-xs myPrimaryParagraph mt-2"
+                        >
+                          {{ post.team.name }}
+                        </p>
+                      </div>
+                    </template>
+
+                    <template
+                      v-if="
+                        Array.isArray(post.team?.coverImagesWithLogos?.logos) &&
+                        post.team?.coverImagesWithLogos?.logos.length === 0
+                      "
+                    >
+                      <div
+                        class="text-xs h-16 flex items-center justify-center font-medium"
+                      >
+                        {{ post.team.name }}
                       </div>
                     </template>
 
@@ -699,19 +718,6 @@ onMounted(() => {
                             }}
                           </span>
                         </div>
-                      </div>
-                    </template>
-
-                    <template
-                      v-if="
-                        Array.isArray(post.team?.coverImagesWithLogos?.logos) &&
-                        post.team?.coverImagesWithLogos?.logos.length === 0
-                      "
-                    >
-                      <div
-                        class="text-xs h-16 flex items-center justify-center font-medium"
-                      >
-                        {{ post.team.name }}
                       </div>
                     </template>
 
