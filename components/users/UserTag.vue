@@ -86,7 +86,7 @@ const props = defineProps({
           class="flex flex-col items-start justify-center min-h-[3rem] px-2 text-myPrimaryDarkGrayColor"
           :class="[user.user_photo ? 'rounded-r-full' : 'rounded-full']"
         >
-          <span class="font-medium h-full text-sm">
+          <span class="h-full text-xs">
             {{ user.first_name }}
             {{ user.last_name }}
           </span>
