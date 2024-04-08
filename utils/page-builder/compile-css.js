@@ -2150,6 +2150,7 @@ const compiledCSS = {
     'object-right',
     'object-left',
   ],
+  video: ['w-full', 'aspect-video', 'bg-gray-600'],
 };
 
 export default compiledCSS;
