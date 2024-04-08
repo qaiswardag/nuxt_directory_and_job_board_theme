@@ -294,7 +294,7 @@ const getAppUrl = function (path) {
             <!-- Store opening hours # start -->
             <template v-if="post.use_store_opening_hours">
               <div
-                class="flex flex-col myPrimaryGap bg-gray-50 rounded-md px-2 py-4"
+                class="flex flex-col myPrimaryGap bg-myPrimaryLightGrayColor rounded-lg px-2 py-4"
               >
                 <!--  monday # start -->
                 <div class="flex items-center">
@@ -687,7 +687,7 @@ const getAppUrl = function (path) {
             <!-- Team opening hours # start -->
             <template v-if="post.use_team_opening_hours">
               <div
-                class="flex flex-col myPrimaryGap bg-gray-50 rounded-md px-2 py-4"
+                class="flex flex-col myPrimaryGap bg-myPrimaryLightGrayColor rounded-lg px-2 py-4"
               >
                 <!--  monday # start -->
                 <div class="flex items-center">
