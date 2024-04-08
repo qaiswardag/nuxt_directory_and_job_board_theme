@@ -89,7 +89,7 @@ useSeoMeta({
             >
               <div
                 v-html="product.title"
-                class="text-xs font-semibold tracking-tight"
+                class="text-xs font-medium tracking-tight"
               ></div>
               <h3
                 :id="product.id"
@@ -107,7 +107,7 @@ useSeoMeta({
               </p>
               <p class="mt-6 flex items-baseline gap-x-1">
                 <span
-                  class="text-4xl font-semibold tracking-tight text-gray-900"
+                  class="text-4xl font-medium tracking-tight text-gray-900"
                   >{{ product.price }}</span
                 >
                 <span class="text-sm font-medium leading-6 text-gray-600">{{
@@ -174,7 +174,7 @@ useSeoMeta({
               <div class="lg:w-2/4">
                 <div
                   v-html="product.title"
-                  class="text-xs font-semibold tracking-tight"
+                  class="text-xs font-medium tracking-tight"
                 ></div>
                 <h3
                   :id="product.id"
@@ -192,7 +192,7 @@ useSeoMeta({
                 </p>
                 <p class="mt-6 flex items-baseline gap-x-1">
                   <span
-                    class="text-4xl font-semibold tracking-tight text-gray-900"
+                    class="text-4xl font-medium tracking-tight text-gray-900"
                     >{{ product.price }}</span
                   >
                 </p>
