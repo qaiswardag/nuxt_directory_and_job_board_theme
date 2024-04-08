@@ -286,760 +286,798 @@ const getAppUrl = function (path) {
         <!-- countries # end -->
 
         <!-- opening hours # start -->
-        <div class="myPrimaryWidget">
-          <h4 class="myQuaternaryHeader">Opening hours</h4>
-          <WidgetSectionBorder></WidgetSectionBorder>
+        <template v-if="postType === 'Store'">
+          <div class="myPrimaryWidget">
+            <h4 class="myQuaternaryHeader">Opening hours</h4>
+            <WidgetSectionBorder></WidgetSectionBorder>
 
-          <!-- Store opening hours # start -->
-          <template v-if="post.use_store_opening_hours">
-            <div
-              class="flex flex-col myPrimaryGap bg-gray-50 rounded-md px-2 py-4"
-            >
-              <!--  monday # start -->
-              <div class="flex items-center">
-                <div class="w-1/3 py-2 px-2 rounded-md">
-                  <p class="myPrimaryParagraph tracking-tight">Monday:</p>
+            <!-- Store opening hours # start -->
+            <template v-if="post.use_store_opening_hours">
+              <div
+                class="flex flex-col myPrimaryGap bg-gray-50 rounded-md px-2 py-4"
+              >
+                <!--  monday # start -->
+                <div class="flex items-center">
+                  <div class="w-1/3 py-2 px-2 rounded-md">
+                    <p class="myPrimaryParagraph tracking-tight">Monday:</p>
+                  </div>
+                  <template
+                    v-if="post.monday_opening_time && post.monday_closing_time"
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">
+                        {{ post.monday_opening_time }}
+                      </p>
+                    </div>
+                  </template>
+
+                  <template
+                    v-if="post.monday_opening_time && post.monday_closing_time"
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">
+                        {{ post.monday_closing_time }}
+                      </p>
+                    </div>
+                  </template>
+
+                  <!-- store is closed # start -->
+                  <template
+                    v-if="
+                      !post.monday_opening_time || !post.monday_closing_time
+                    "
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">Closed</p>
+                    </div>
+                  </template>
+                  <!-- store is closed # end -->
+                  <!-- store is closed # start -->
+                  <template
+                    v-if="
+                      !post.monday_opening_time || !post.monday_closing_time
+                    "
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">Closed</p>
+                    </div>
+                  </template>
+                  <!-- store is closed # end -->
                 </div>
-                <template
-                  v-if="post.monday_opening_time && post.monday_closing_time"
-                >
-                  <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">
-                      {{ post.monday_opening_time }}
-                    </p>
-                  </div>
-                </template>
+                <!-- monday weekday # end -->
 
-                <template
-                  v-if="post.monday_opening_time && post.monday_closing_time"
-                >
-                  <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">
-                      {{ post.monday_closing_time }}
-                    </p>
-                  </div>
-                </template>
+                <div class="border border-gray-200"></div>
 
-                <!-- store is closed # start -->
-                <template
-                  v-if="!post.monday_opening_time || !post.monday_closing_time"
-                >
+                <!--  tuesday # start -->
+                <div class="flex items-center">
                   <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">Closed</p>
+                    <p class="myPrimaryParagraph tracking-tight">Tuesday:</p>
                   </div>
-                </template>
-                <!-- store is closed # end -->
-                <!-- store is closed # start -->
-                <template
-                  v-if="!post.monday_opening_time || !post.monday_closing_time"
-                >
-                  <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">Closed</p>
-                  </div>
-                </template>
-                <!-- store is closed # end -->
-              </div>
-              <!-- monday weekday # end -->
+                  <template
+                    v-if="
+                      post.tuesday_opening_time && post.tuesday_closing_time
+                    "
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">
+                        {{ post.tuesday_opening_time }}
+                      </p>
+                    </div>
+                  </template>
 
-              <div class="border border-gray-200"></div>
+                  <template
+                    v-if="
+                      post.tuesday_opening_time && post.tuesday_closing_time
+                    "
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">
+                        {{ post.tuesday_closing_time }}
+                      </p>
+                    </div>
+                  </template>
 
-              <!--  tuesday # start -->
-              <div class="flex items-center">
-                <div class="w-1/3 py-2 px-2 rounded-md">
-                  <p class="myPrimaryParagraph tracking-tight">Tuesday:</p>
+                  <!-- store is closed # start -->
+                  <template
+                    v-if="
+                      !post.tuesday_opening_time || !post.tuesday_closing_time
+                    "
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">Closed</p>
+                    </div>
+                  </template>
+                  <!-- store is closed # end -->
+
+                  <!-- store is closed # start -->
+                  <template
+                    v-if="
+                      !post.tuesday_opening_time || !post.tuesday_closing_time
+                    "
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">Closed</p>
+                    </div>
+                  </template>
+                  <!-- store is closed # end -->
                 </div>
-                <template
-                  v-if="post.tuesday_opening_time && post.tuesday_closing_time"
-                >
+                <!-- tuesday weekday # end -->
+
+                <div class="border border-gray-200"></div>
+
+                <!--  wednesday # start -->
+                <div class="flex items-center">
                   <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">
-                      {{ post.tuesday_opening_time }}
-                    </p>
+                    <p class="myPrimaryParagraph tracking-tight">Wednesday:</p>
                   </div>
-                </template>
+                  <template
+                    v-if="
+                      post.wednesday_opening_time && post.wednesday_closing_time
+                    "
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">
+                        {{ post.wednesday_opening_time }}
+                      </p>
+                    </div>
+                  </template>
 
-                <template
-                  v-if="post.tuesday_opening_time && post.tuesday_closing_time"
-                >
-                  <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">
-                      {{ post.tuesday_closing_time }}
-                    </p>
-                  </div>
-                </template>
+                  <template
+                    v-if="
+                      post.wednesday_opening_time && post.wednesday_closing_time
+                    "
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">
+                        {{ post.wednesday_closing_time }}
+                      </p>
+                    </div>
+                  </template>
 
-                <!-- store is closed # start -->
-                <template
-                  v-if="
-                    !post.tuesday_opening_time || !post.tuesday_closing_time
-                  "
-                >
-                  <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">Closed</p>
-                  </div>
-                </template>
-                <!-- store is closed # end -->
+                  <!-- store is closed # start -->
+                  <template
+                    v-if="
+                      !post.wednesday_opening_time ||
+                      !post.wednesday_closing_time
+                    "
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">Closed</p>
+                    </div>
+                  </template>
+                  <!-- store is closed # end -->
 
-                <!-- store is closed # start -->
-                <template
-                  v-if="
-                    !post.tuesday_opening_time || !post.tuesday_closing_time
-                  "
-                >
-                  <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">Closed</p>
-                  </div>
-                </template>
-                <!-- store is closed # end -->
-              </div>
-              <!-- tuesday weekday # end -->
-
-              <div class="border border-gray-200"></div>
-
-              <!--  wednesday # start -->
-              <div class="flex items-center">
-                <div class="w-1/3 py-2 px-2 rounded-md">
-                  <p class="myPrimaryParagraph tracking-tight">Wednesday:</p>
+                  <!-- store is closed # start -->
+                  <template
+                    v-if="
+                      !post.wednesday_opening_time ||
+                      !post.wednesday_closing_time
+                    "
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">Closed</p>
+                    </div>
+                  </template>
+                  <!-- store is closed # end -->
                 </div>
-                <template
-                  v-if="
-                    post.wednesday_opening_time && post.wednesday_closing_time
-                  "
-                >
+                <!-- wednesday weekday # end -->
+
+                <div class="border border-gray-200"></div>
+
+                <!--  thursday # start -->
+                <div class="flex items-center">
                   <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">
-                      {{ post.wednesday_opening_time }}
-                    </p>
+                    <p class="myPrimaryParagraph tracking-tight">Thursday:</p>
                   </div>
-                </template>
+                  <template
+                    v-if="
+                      post.thursday_opening_time && post.thursday_closing_time
+                    "
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">
+                        {{ post.thursday_opening_time }}
+                      </p>
+                    </div>
+                  </template>
 
-                <template
-                  v-if="
-                    post.wednesday_opening_time && post.wednesday_closing_time
-                  "
-                >
-                  <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">
-                      {{ post.wednesday_closing_time }}
-                    </p>
-                  </div>
-                </template>
+                  <template
+                    v-if="
+                      post.thursday_opening_time && post.thursday_closing_time
+                    "
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">
+                        {{ post.thursday_closing_time }}
+                      </p>
+                    </div>
+                  </template>
 
-                <!-- store is closed # start -->
-                <template
-                  v-if="
-                    !post.wednesday_opening_time || !post.wednesday_closing_time
-                  "
-                >
-                  <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">Closed</p>
-                  </div>
-                </template>
-                <!-- store is closed # end -->
+                  <!-- store is closed # start -->
+                  <template
+                    v-if="
+                      !post.thursday_opening_time || !post.thursday_closing_time
+                    "
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">Closed</p>
+                    </div>
+                  </template>
+                  <!-- store is closed # end -->
 
-                <!-- store is closed # start -->
-                <template
-                  v-if="
-                    !post.wednesday_opening_time || !post.wednesday_closing_time
-                  "
-                >
-                  <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">Closed</p>
-                  </div>
-                </template>
-                <!-- store is closed # end -->
-              </div>
-              <!-- wednesday weekday # end -->
-
-              <div class="border border-gray-200"></div>
-
-              <!--  thursday # start -->
-              <div class="flex items-center">
-                <div class="w-1/3 py-2 px-2 rounded-md">
-                  <p class="myPrimaryParagraph tracking-tight">Thursday:</p>
+                  <!-- store is closed # start -->
+                  <template
+                    v-if="
+                      !post.thursday_opening_time || !post.thursday_closing_time
+                    "
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">Closed</p>
+                    </div>
+                  </template>
+                  <!-- store is closed # end -->
                 </div>
-                <template
-                  v-if="
-                    post.thursday_opening_time && post.thursday_closing_time
-                  "
-                >
+                <!-- thursday weekday # end -->
+
+                <div class="border border-gray-200"></div>
+
+                <!--  friday # start -->
+                <div class="flex items-center">
                   <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">
-                      {{ post.thursday_opening_time }}
-                    </p>
+                    <p class="myPrimaryParagraph tracking-tight">Friday:</p>
                   </div>
-                </template>
+                  <template
+                    v-if="post.friday_opening_time && post.friday_closing_time"
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">
+                        {{ post.friday_opening_time }}
+                      </p>
+                    </div>
+                  </template>
 
-                <template
-                  v-if="
-                    post.thursday_opening_time && post.thursday_closing_time
-                  "
-                >
-                  <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">
-                      {{ post.thursday_closing_time }}
-                    </p>
-                  </div>
-                </template>
+                  <template
+                    v-if="post.friday_opening_time && post.friday_closing_time"
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">
+                        {{ post.friday_closing_time }}
+                      </p>
+                    </div>
+                  </template>
 
-                <!-- store is closed # start -->
-                <template
-                  v-if="
-                    !post.thursday_opening_time || !post.thursday_closing_time
-                  "
-                >
-                  <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">Closed</p>
-                  </div>
-                </template>
-                <!-- store is closed # end -->
-
-                <!-- store is closed # start -->
-                <template
-                  v-if="
-                    !post.thursday_opening_time || !post.thursday_closing_time
-                  "
-                >
-                  <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">Closed</p>
-                  </div>
-                </template>
-                <!-- store is closed # end -->
-              </div>
-              <!-- thursday weekday # end -->
-
-              <div class="border border-gray-200"></div>
-
-              <!--  friday # start -->
-              <div class="flex items-center">
-                <div class="w-1/3 py-2 px-2 rounded-md">
-                  <p class="myPrimaryParagraph tracking-tight">Friday:</p>
+                  <!-- store is closed # start -->
+                  <template
+                    v-if="
+                      !post.friday_opening_time || !post.friday_closing_time
+                    "
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">Closed</p>
+                    </div>
+                  </template>
+                  <!-- store is closed # end -->
+                  <!-- store is closed # start -->
+                  <template
+                    v-if="
+                      !post.friday_opening_time || !post.friday_closing_time
+                    "
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">Closed</p>
+                    </div>
+                  </template>
+                  <!-- store is closed # end -->
                 </div>
-                <template
-                  v-if="post.friday_opening_time && post.friday_closing_time"
-                >
-                  <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">
-                      {{ post.friday_opening_time }}
-                    </p>
-                  </div>
-                </template>
+                <!-- friday weekday # end -->
 
-                <template
-                  v-if="post.friday_opening_time && post.friday_closing_time"
-                >
-                  <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">
-                      {{ post.friday_closing_time }}
-                    </p>
-                  </div>
-                </template>
+                <div class="border border-gray-200"></div>
 
-                <!-- store is closed # start -->
-                <template
-                  v-if="!post.friday_opening_time || !post.friday_closing_time"
-                >
+                <!--  saturday # start -->
+                <div class="flex items-center">
                   <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">Closed</p>
+                    <p class="myPrimaryParagraph tracking-tight">Saturday:</p>
                   </div>
-                </template>
-                <!-- store is closed # end -->
-                <!-- store is closed # start -->
-                <template
-                  v-if="!post.friday_opening_time || !post.friday_closing_time"
-                >
-                  <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">Closed</p>
-                  </div>
-                </template>
-                <!-- store is closed # end -->
-              </div>
-              <!-- friday weekday # end -->
+                  <template
+                    v-if="
+                      post.saturday_opening_time && post.saturday_closing_time
+                    "
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">
+                        {{ post.saturday_opening_time }}
+                      </p>
+                    </div>
+                  </template>
 
-              <div class="border border-gray-200"></div>
+                  <template
+                    v-if="
+                      post.saturday_opening_time && post.saturday_closing_time
+                    "
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">
+                        {{ post.saturday_closing_time }}
+                      </p>
+                    </div>
+                  </template>
 
-              <!--  saturday # start -->
-              <div class="flex items-center">
-                <div class="w-1/3 py-2 px-2 rounded-md">
-                  <p class="myPrimaryParagraph tracking-tight">Saturday:</p>
+                  <!-- store is closed # start -->
+                  <template
+                    v-if="
+                      !post.saturday_opening_time || !post.saturday_closing_time
+                    "
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">Closed</p>
+                    </div>
+                  </template>
+                  <!-- store is closed # end -->
+
+                  <!-- store is closed # start -->
+                  <template
+                    v-if="
+                      !post.saturday_opening_time || !post.saturday_closing_time
+                    "
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">Closed</p>
+                    </div>
+                  </template>
+                  <!-- store is closed # end -->
                 </div>
-                <template
-                  v-if="
-                    post.saturday_opening_time && post.saturday_closing_time
-                  "
-                >
+                <!-- saturday weekday # end -->
+
+                <div class="border border-gray-200"></div>
+
+                <!--  sunday # start -->
+                <div class="flex items-center">
                   <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">
-                      {{ post.saturday_opening_time }}
-                    </p>
+                    <p class="myPrimaryParagraph tracking-tight">Sunday:</p>
                   </div>
-                </template>
+                  <template
+                    v-if="post.sunday_opening_time && post.sunday_closing_time"
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">
+                        {{ post.sunday_opening_time }}
+                      </p>
+                    </div>
+                  </template>
 
-                <template
-                  v-if="
-                    post.saturday_opening_time && post.saturday_closing_time
-                  "
-                >
-                  <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">
-                      {{ post.saturday_closing_time }}
-                    </p>
-                  </div>
-                </template>
+                  <template
+                    v-if="post.sunday_opening_time && post.sunday_closing_time"
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">
+                        {{ post.sunday_closing_time }}
+                      </p>
+                    </div>
+                  </template>
 
-                <!-- store is closed # start -->
-                <template
-                  v-if="
-                    !post.saturday_opening_time || !post.saturday_closing_time
-                  "
-                >
-                  <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">Closed</p>
-                  </div>
-                </template>
-                <!-- store is closed # end -->
+                  <!-- store is closed # start -->
+                  <template
+                    v-if="
+                      !post.sunday_opening_time || !post.sunday_closing_time
+                    "
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">Closed</p>
+                    </div>
+                  </template>
+                  <!-- store is closed # end -->
 
-                <!-- store is closed # start -->
-                <template
-                  v-if="
-                    !post.saturday_opening_time || !post.saturday_closing_time
-                  "
-                >
-                  <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">Closed</p>
-                  </div>
-                </template>
-                <!-- store is closed # end -->
-              </div>
-              <!-- saturday weekday # end -->
-
-              <div class="border border-gray-200"></div>
-
-              <!--  sunday # start -->
-              <div class="flex items-center">
-                <div class="w-1/3 py-2 px-2 rounded-md">
-                  <p class="myPrimaryParagraph tracking-tight">Sunday:</p>
+                  <!-- store is closed # start -->
+                  <template
+                    v-if="
+                      !post.sunday_opening_time || !post.sunday_closing_time
+                    "
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">Closed</p>
+                    </div>
+                  </template>
+                  <!-- store is closed # end -->
                 </div>
-                <template
-                  v-if="post.sunday_opening_time && post.sunday_closing_time"
-                >
-                  <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">
-                      {{ post.sunday_opening_time }}
-                    </p>
-                  </div>
-                </template>
-
-                <template
-                  v-if="post.sunday_opening_time && post.sunday_closing_time"
-                >
-                  <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">
-                      {{ post.sunday_closing_time }}
-                    </p>
-                  </div>
-                </template>
-
-                <!-- store is closed # start -->
-                <template
-                  v-if="!post.sunday_opening_time || !post.sunday_closing_time"
-                >
-                  <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">Closed</p>
-                  </div>
-                </template>
-                <!-- store is closed # end -->
-
-                <!-- store is closed # start -->
-                <template
-                  v-if="!post.sunday_opening_time || !post.sunday_closing_time"
-                >
-                  <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">Closed</p>
-                  </div>
-                </template>
-                <!-- store is closed # end -->
+                <!-- sunday weekday # end -->
               </div>
-              <!-- sunday weekday # end -->
-            </div>
-          </template>
-          <!-- Store opening hours # end -->
+            </template>
+            <!-- Store opening hours # end -->
 
-          <!-- Team opening hours # start -->
-          <template v-if="post.use_team_opening_hours">
-            <div
-              class="flex flex-col myPrimaryGap bg-gray-50 rounded-md px-2 py-4"
-            >
-              <!--  monday # start -->
-              <div class="flex items-center">
-                <div class="w-1/3 py-2 px-2 rounded-md">
-                  <p class="myPrimaryParagraph tracking-tight">Monday:</p>
+            <!-- Team opening hours # start -->
+            <template v-if="post.use_team_opening_hours">
+              <div
+                class="flex flex-col myPrimaryGap bg-gray-50 rounded-md px-2 py-4"
+              >
+                <!--  monday # start -->
+                <div class="flex items-center">
+                  <div class="w-1/3 py-2 px-2 rounded-md">
+                    <p class="myPrimaryParagraph tracking-tight">Monday:</p>
+                  </div>
+                  <template
+                    v-if="team.monday_opening_time && team.monday_closing_time"
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">
+                        {{ team.monday_opening_time }}
+                      </p>
+                    </div>
+                  </template>
+
+                  <template
+                    v-if="team.monday_opening_time && team.monday_closing_time"
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">
+                        {{ team.monday_closing_time }}
+                      </p>
+                    </div>
+                  </template>
+
+                  <!-- store is closed # start -->
+                  <template
+                    v-if="
+                      !team.monday_opening_time || !team.monday_closing_time
+                    "
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">Closed</p>
+                    </div>
+                  </template>
+                  <!-- store is closed # end -->
+                  <!-- store is closed # start -->
+                  <template
+                    v-if="
+                      !team.monday_opening_time || !team.monday_closing_time
+                    "
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">Closed</p>
+                    </div>
+                  </template>
+                  <!-- store is closed # end -->
                 </div>
-                <template
-                  v-if="team.monday_opening_time && team.monday_closing_time"
-                >
-                  <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">
-                      {{ team.monday_opening_time }}
-                    </p>
-                  </div>
-                </template>
+                <!-- monday weekday # end -->
 
-                <template
-                  v-if="team.monday_opening_time && team.monday_closing_time"
-                >
-                  <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">
-                      {{ team.monday_closing_time }}
-                    </p>
-                  </div>
-                </template>
+                <div class="border border-gray-200"></div>
 
-                <!-- store is closed # start -->
-                <template
-                  v-if="!team.monday_opening_time || !team.monday_closing_time"
-                >
+                <!--  tuesday # start -->
+                <div class="flex items-center">
                   <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">Closed</p>
+                    <p class="myPrimaryParagraph tracking-tight">Tuesday:</p>
                   </div>
-                </template>
-                <!-- store is closed # end -->
-                <!-- store is closed # start -->
-                <template
-                  v-if="!team.monday_opening_time || !team.monday_closing_time"
-                >
-                  <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">Closed</p>
-                  </div>
-                </template>
-                <!-- store is closed # end -->
-              </div>
-              <!-- monday weekday # end -->
+                  <template
+                    v-if="
+                      team.tuesday_opening_time && team.tuesday_closing_time
+                    "
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">
+                        {{ team.tuesday_opening_time }}
+                      </p>
+                    </div>
+                  </template>
 
-              <div class="border border-gray-200"></div>
+                  <template
+                    v-if="
+                      team.tuesday_opening_time && team.tuesday_closing_time
+                    "
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">
+                        {{ team.tuesday_closing_time }}
+                      </p>
+                    </div>
+                  </template>
 
-              <!--  tuesday # start -->
-              <div class="flex items-center">
-                <div class="w-1/3 py-2 px-2 rounded-md">
-                  <p class="myPrimaryParagraph tracking-tight">Tuesday:</p>
+                  <!-- store is closed # start -->
+                  <template
+                    v-if="
+                      !team.tuesday_opening_time || !team.tuesday_closing_time
+                    "
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">Closed</p>
+                    </div>
+                  </template>
+                  <!-- store is closed # end -->
+
+                  <!-- store is closed # start -->
+                  <template
+                    v-if="
+                      !team.tuesday_opening_time || !team.tuesday_closing_time
+                    "
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">Closed</p>
+                    </div>
+                  </template>
+                  <!-- store is closed # end -->
                 </div>
-                <template
-                  v-if="team.tuesday_opening_time && team.tuesday_closing_time"
-                >
+                <!-- tuesday weekday # end -->
+
+                <div class="border border-gray-200"></div>
+
+                <!--  wednesday # start -->
+                <div class="flex items-center">
                   <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">
-                      {{ team.tuesday_opening_time }}
-                    </p>
+                    <p class="myPrimaryParagraph tracking-tight">Wednesday:</p>
                   </div>
-                </template>
+                  <template
+                    v-if="
+                      team.wednesday_opening_time && team.wednesday_closing_time
+                    "
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">
+                        {{ team.wednesday_opening_time }}
+                      </p>
+                    </div>
+                  </template>
 
-                <template
-                  v-if="team.tuesday_opening_time && team.tuesday_closing_time"
-                >
-                  <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">
-                      {{ team.tuesday_closing_time }}
-                    </p>
-                  </div>
-                </template>
+                  <template
+                    v-if="
+                      team.wednesday_opening_time && team.wednesday_closing_time
+                    "
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">
+                        {{ team.wednesday_closing_time }}
+                      </p>
+                    </div>
+                  </template>
 
-                <!-- store is closed # start -->
-                <template
-                  v-if="
-                    !team.tuesday_opening_time || !team.tuesday_closing_time
-                  "
-                >
-                  <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">Closed</p>
-                  </div>
-                </template>
-                <!-- store is closed # end -->
+                  <!-- store is closed # start -->
+                  <template
+                    v-if="
+                      !team.wednesday_opening_time ||
+                      !team.wednesday_closing_time
+                    "
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">Closed</p>
+                    </div>
+                  </template>
+                  <!-- store is closed # end -->
 
-                <!-- store is closed # start -->
-                <template
-                  v-if="
-                    !team.tuesday_opening_time || !team.tuesday_closing_time
-                  "
-                >
-                  <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">Closed</p>
-                  </div>
-                </template>
-                <!-- store is closed # end -->
-              </div>
-              <!-- tuesday weekday # end -->
-
-              <div class="border border-gray-200"></div>
-
-              <!--  wednesday # start -->
-              <div class="flex items-center">
-                <div class="w-1/3 py-2 px-2 rounded-md">
-                  <p class="myPrimaryParagraph tracking-tight">Wednesday:</p>
+                  <!-- store is closed # start -->
+                  <template
+                    v-if="
+                      !team.wednesday_opening_time ||
+                      !team.wednesday_closing_time
+                    "
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">Closed</p>
+                    </div>
+                  </template>
+                  <!-- store is closed # end -->
                 </div>
-                <template
-                  v-if="
-                    team.wednesday_opening_time && team.wednesday_closing_time
-                  "
-                >
+                <!-- wednesday weekday # end -->
+
+                <div class="border border-gray-200"></div>
+
+                <!--  thursday # start -->
+                <div class="flex items-center">
                   <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">
-                      {{ team.wednesday_opening_time }}
-                    </p>
+                    <p class="myPrimaryParagraph tracking-tight">Thursday:</p>
                   </div>
-                </template>
+                  <template
+                    v-if="
+                      team.thursday_opening_time && team.thursday_closing_time
+                    "
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">
+                        {{ team.thursday_opening_time }}
+                      </p>
+                    </div>
+                  </template>
 
-                <template
-                  v-if="
-                    team.wednesday_opening_time && team.wednesday_closing_time
-                  "
-                >
-                  <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">
-                      {{ team.wednesday_closing_time }}
-                    </p>
-                  </div>
-                </template>
+                  <template
+                    v-if="
+                      team.thursday_opening_time && team.thursday_closing_time
+                    "
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">
+                        {{ team.thursday_closing_time }}
+                      </p>
+                    </div>
+                  </template>
 
-                <!-- store is closed # start -->
-                <template
-                  v-if="
-                    !team.wednesday_opening_time || !team.wednesday_closing_time
-                  "
-                >
-                  <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">Closed</p>
-                  </div>
-                </template>
-                <!-- store is closed # end -->
+                  <!-- store is closed # start -->
+                  <template
+                    v-if="
+                      !team.thursday_opening_time || !team.thursday_closing_time
+                    "
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">Closed</p>
+                    </div>
+                  </template>
+                  <!-- store is closed # end -->
 
-                <!-- store is closed # start -->
-                <template
-                  v-if="
-                    !team.wednesday_opening_time || !team.wednesday_closing_time
-                  "
-                >
-                  <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">Closed</p>
-                  </div>
-                </template>
-                <!-- store is closed # end -->
-              </div>
-              <!-- wednesday weekday # end -->
-
-              <div class="border border-gray-200"></div>
-
-              <!--  thursday # start -->
-              <div class="flex items-center">
-                <div class="w-1/3 py-2 px-2 rounded-md">
-                  <p class="myPrimaryParagraph tracking-tight">Thursday:</p>
+                  <!-- store is closed # start -->
+                  <template
+                    v-if="
+                      !team.thursday_opening_time || !team.thursday_closing_time
+                    "
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">Closed</p>
+                    </div>
+                  </template>
+                  <!-- store is closed # end -->
                 </div>
-                <template
-                  v-if="
-                    team.thursday_opening_time && team.thursday_closing_time
-                  "
-                >
+                <!-- thursday weekday # end -->
+
+                <div class="border border-gray-200"></div>
+
+                <!--  friday # start -->
+                <div class="flex items-center">
                   <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">
-                      {{ team.thursday_opening_time }}
-                    </p>
+                    <p class="myPrimaryParagraph tracking-tight">Friday:</p>
                   </div>
-                </template>
+                  <template
+                    v-if="team.friday_opening_time && team.friday_closing_time"
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">
+                        {{ team.friday_opening_time }}
+                      </p>
+                    </div>
+                  </template>
 
-                <template
-                  v-if="
-                    team.thursday_opening_time && team.thursday_closing_time
-                  "
-                >
-                  <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">
-                      {{ team.thursday_closing_time }}
-                    </p>
-                  </div>
-                </template>
+                  <template
+                    v-if="team.friday_opening_time && team.friday_closing_time"
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">
+                        {{ team.friday_closing_time }}
+                      </p>
+                    </div>
+                  </template>
 
-                <!-- store is closed # start -->
-                <template
-                  v-if="
-                    !team.thursday_opening_time || !team.thursday_closing_time
-                  "
-                >
-                  <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">Closed</p>
-                  </div>
-                </template>
-                <!-- store is closed # end -->
-
-                <!-- store is closed # start -->
-                <template
-                  v-if="
-                    !team.thursday_opening_time || !team.thursday_closing_time
-                  "
-                >
-                  <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">Closed</p>
-                  </div>
-                </template>
-                <!-- store is closed # end -->
-              </div>
-              <!-- thursday weekday # end -->
-
-              <div class="border border-gray-200"></div>
-
-              <!--  friday # start -->
-              <div class="flex items-center">
-                <div class="w-1/3 py-2 px-2 rounded-md">
-                  <p class="myPrimaryParagraph tracking-tight">Friday:</p>
+                  <!-- store is closed # start -->
+                  <template
+                    v-if="
+                      !team.friday_opening_time || !team.friday_closing_time
+                    "
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">Closed</p>
+                    </div>
+                  </template>
+                  <!-- store is closed # end -->
+                  <!-- store is closed # start -->
+                  <template
+                    v-if="
+                      !team.friday_opening_time || !team.friday_closing_time
+                    "
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">Closed</p>
+                    </div>
+                  </template>
+                  <!-- store is closed # end -->
                 </div>
-                <template
-                  v-if="team.friday_opening_time && team.friday_closing_time"
-                >
-                  <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">
-                      {{ team.friday_opening_time }}
-                    </p>
-                  </div>
-                </template>
+                <!-- friday weekday # end -->
 
-                <template
-                  v-if="team.friday_opening_time && team.friday_closing_time"
-                >
-                  <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">
-                      {{ team.friday_closing_time }}
-                    </p>
-                  </div>
-                </template>
+                <div class="border border-gray-200"></div>
 
-                <!-- store is closed # start -->
-                <template
-                  v-if="!team.friday_opening_time || !team.friday_closing_time"
-                >
+                <!--  saturday # start -->
+                <div class="flex items-center">
                   <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">Closed</p>
+                    <p class="myPrimaryParagraph tracking-tight">Saturday:</p>
                   </div>
-                </template>
-                <!-- store is closed # end -->
-                <!-- store is closed # start -->
-                <template
-                  v-if="!team.friday_opening_time || !team.friday_closing_time"
-                >
-                  <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">Closed</p>
-                  </div>
-                </template>
-                <!-- store is closed # end -->
-              </div>
-              <!-- friday weekday # end -->
+                  <template
+                    v-if="
+                      team.saturday_opening_time && team.saturday_closing_time
+                    "
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">
+                        {{ team.saturday_opening_time }}
+                      </p>
+                    </div>
+                  </template>
 
-              <div class="border border-gray-200"></div>
+                  <template
+                    v-if="
+                      team.saturday_opening_time && team.saturday_closing_time
+                    "
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">
+                        {{ team.saturday_closing_time }}
+                      </p>
+                    </div>
+                  </template>
 
-              <!--  saturday # start -->
-              <div class="flex items-center">
-                <div class="w-1/3 py-2 px-2 rounded-md">
-                  <p class="myPrimaryParagraph tracking-tight">Saturday:</p>
+                  <!-- store is closed # start -->
+                  <template
+                    v-if="
+                      !team.saturday_opening_time || !team.saturday_closing_time
+                    "
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">Closed</p>
+                    </div>
+                  </template>
+                  <!-- store is closed # end -->
+
+                  <!-- store is closed # start -->
+                  <template
+                    v-if="
+                      !team.saturday_opening_time || !team.saturday_closing_time
+                    "
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">Closed</p>
+                    </div>
+                  </template>
+                  <!-- store is closed # end -->
                 </div>
-                <template
-                  v-if="
-                    team.saturday_opening_time && team.saturday_closing_time
-                  "
-                >
+                <!-- saturday weekday # end -->
+
+                <div class="border border-gray-200"></div>
+
+                <!--  sunday # start -->
+                <div class="flex items-center">
                   <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">
-                      {{ team.saturday_opening_time }}
-                    </p>
+                    <p class="myPrimaryParagraph tracking-tight">Sunday:</p>
                   </div>
-                </template>
+                  <template
+                    v-if="team.sunday_opening_time && team.sunday_closing_time"
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">
+                        {{ team.sunday_opening_time }}
+                      </p>
+                    </div>
+                  </template>
 
-                <template
-                  v-if="
-                    team.saturday_opening_time && team.saturday_closing_time
-                  "
-                >
-                  <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">
-                      {{ team.saturday_closing_time }}
-                    </p>
-                  </div>
-                </template>
+                  <template
+                    v-if="team.sunday_opening_time && team.sunday_closing_time"
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">
+                        {{ team.sunday_closing_time }}
+                      </p>
+                    </div>
+                  </template>
 
-                <!-- store is closed # start -->
-                <template
-                  v-if="
-                    !team.saturday_opening_time || !team.saturday_closing_time
-                  "
-                >
-                  <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">Closed</p>
-                  </div>
-                </template>
-                <!-- store is closed # end -->
+                  <!-- store is closed # start -->
+                  <template
+                    v-if="
+                      !team.sunday_opening_time || !team.sunday_closing_time
+                    "
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">Closed</p>
+                    </div>
+                  </template>
+                  <!-- store is closed # end -->
 
-                <!-- store is closed # start -->
-                <template
-                  v-if="
-                    !team.saturday_opening_time || !team.saturday_closing_time
-                  "
-                >
-                  <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">Closed</p>
-                  </div>
-                </template>
-                <!-- store is closed # end -->
-              </div>
-              <!-- saturday weekday # end -->
-
-              <div class="border border-gray-200"></div>
-
-              <!--  sunday # start -->
-              <div class="flex items-center">
-                <div class="w-1/3 py-2 px-2 rounded-md">
-                  <p class="myPrimaryParagraph tracking-tight">Sunday:</p>
+                  <!-- store is closed # start -->
+                  <template
+                    v-if="
+                      !team.sunday_opening_time || !team.sunday_closing_time
+                    "
+                  >
+                    <div class="w-1/3 py-2 px-2 rounded-md">
+                      <p class="myPrimaryParagraph tracking-tight">Closed</p>
+                    </div>
+                  </template>
+                  <!-- store is closed # end -->
                 </div>
-                <template
-                  v-if="team.sunday_opening_time && team.sunday_closing_time"
-                >
-                  <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">
-                      {{ team.sunday_opening_time }}
-                    </p>
-                  </div>
-                </template>
-
-                <template
-                  v-if="team.sunday_opening_time && team.sunday_closing_time"
-                >
-                  <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">
-                      {{ team.sunday_closing_time }}
-                    </p>
-                  </div>
-                </template>
-
-                <!-- store is closed # start -->
-                <template
-                  v-if="!team.sunday_opening_time || !team.sunday_closing_time"
-                >
-                  <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">Closed</p>
-                  </div>
-                </template>
-                <!-- store is closed # end -->
-
-                <!-- store is closed # start -->
-                <template
-                  v-if="!team.sunday_opening_time || !team.sunday_closing_time"
-                >
-                  <div class="w-1/3 py-2 px-2 rounded-md">
-                    <p class="myPrimaryParagraph tracking-tight">Closed</p>
-                  </div>
-                </template>
-                <!-- store is closed # end -->
+                <!-- sunday weekday # end -->
               </div>
-              <!-- sunday weekday # end -->
-            </div>
-          </template>
-          <!-- Team opening hours # end -->
-        </div>
+            </template>
+            <!-- Team opening hours # end -->
+          </div>
+        </template>
         <!-- opening hours # end -->
 
         <!-- location # start -->
