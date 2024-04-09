@@ -615,7 +615,7 @@ onMounted(() => {
                 fetchedDataPosts.posts.data.length !== 0
               "
               role="list"
-              class="grid myPrimaryGap lg:grid-cols-4 sm:grid-cols-2"
+              class="grid myPrimaryGap xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1"
             >
               <TransitionGroup>
                 <li
@@ -625,12 +625,14 @@ onMounted(() => {
                 >
                   <!-- start photo -->
 
+                  <!-- xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 -->
+
                   <template v-if="post && post.cover_images !== null">
                     <ThumbnailSmallImageSlider
                       :images="post.cover_images"
                       :isLoading="isLoadingPosts"
                       imageSize="medium_path"
-                      imageHeight="max-h-96 h-96"
+                      imageHeight="xl:max-h-[32rem] min-h-[32rem] xl:h-[32rem] lg:max-h-[36rem] min-h-[36rem] lg:h-[36rem] md:max-h-[26rem] min-h-[26rem] md:h-[26rem] max-h-[40rem] min-h-[40rem] h-[40rem]"
                       imageWidth="w-full object-cover rounded-b-none"
                       :roundedFull="false"
                       :squareButtons="true"
