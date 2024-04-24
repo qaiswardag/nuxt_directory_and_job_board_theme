@@ -1,4 +1,8 @@
-# Nuxt 3 Minimal Starter
+<p align="center" dir="auto">
+<img width="200" style="max-width: 100%;" src="public/logo/logo.svg" alt="Logo">
+</p>
+
+# Nuxt 3
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
@@ -71,6 +75,3 @@ yarn preview
 # bun
 bun run preview
 ```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
-# myself_ae_nuxt_frontend

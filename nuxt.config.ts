@@ -4,6 +4,9 @@ export default defineNuxtConfig({
   site: {
     url: 'https://www.myself.ae',
   },
+  devServer: {
+    port: 3000,
+  },
   runtimeConfig: {
     public: {
       LARAVEL_APP_URL_PRODUCTION: process.env.LARAVEL_APP_URL_PRODUCTION,
@@ -16,9 +19,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxtjs/sitemap', '@pinia/nuxt'],
   sitemap: {
-    // sources: [`${process.env.LARAVEL_APP_URL}/api/guest/stores/index`],
     exclude: [],
-    routes: ['/stores', '/jobs', '/campaigns'],
   },
 
   app: {
