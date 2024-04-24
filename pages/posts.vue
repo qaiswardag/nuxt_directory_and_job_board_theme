@@ -25,10 +25,10 @@ useSeoMeta({
   <MainLayout>
     <GuestsLayout>
       <template #header>
-        <PageHeader title="Campaigns"></PageHeader>
+        <PageHeader title="Posts"></PageHeader>
         <Items
-          :pathList="`${getAppUrl('api/guest/campaigns/index')}`"
-          nameList="campaign"
+          :pathList="`${getAppUrl('api/guest/posts/index')}`"
+          nameList="post"
         ></Items>
       </template>
     </GuestsLayout>

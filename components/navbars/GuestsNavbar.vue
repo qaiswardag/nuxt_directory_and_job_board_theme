@@ -86,16 +86,16 @@ const goToDashboard = function () {
           </div>
         </NuxtLink>
         <NuxtLink
-          to="/campaigns"
+          to="/posts"
           class="text-myPrimaryDarkGrayColor"
           :class="{
-            'text-myPrimaryLinkColor': routeName === 'campaigns',
+            'text-myPrimaryLinkColor': routeName === 'posts',
           }"
         >
           <div
             class="bg-gray-50 lg:flex lg:gap-2 lg:items-center focus:outline-none cursor-pointer rounded-full px-1.5 py-1.5 font-medium"
           >
-            Campaigns
+            Posts
           </div>
         </NuxtLink>
       </div>

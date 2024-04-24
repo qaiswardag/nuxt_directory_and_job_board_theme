@@ -41,9 +41,9 @@ const navigation = [
     },
   },
   {
-    label: 'Campaigns',
+    label: 'Posts',
     route: {
-      name: 'campaigns',
+      name: 'Posts',
       parameters: [],
     },
   },

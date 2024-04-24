@@ -12,10 +12,8 @@ const getAppUrl = function (path) {
 useSeoMeta({
   title: `${runtimeConfig.public.APP_NAME} | Home`,
   ogTitle: `${runtimeConfig.public.APP_NAME} | Home`,
-  description:
-    'Search for everything you need in the world of fashion within the United Arab Emirates. From fashion Stores and Jobs to Campaigns.',
-  ogDescription:
-    'Search for everything you need in the world of fashion within the United Arab Emirates. From fashion Stores and Jobs to Campaigns.',
+  description: 'Nuxt 3 Directory & Job Board Theme.',
+  ogDescription: 'Nuxt 3 Directory & Job Board Theme.',
   ogImage: () => {
     return '/images/brand-images/home.jpg';
   },
@@ -41,7 +39,7 @@ const faqs = [
     id: 2,
     question: 'Our services',
     answer:
-      'Our services include job posting, product in-store campaigns, and store posting.',
+      'Our services include job posting, product in-store posts, and store posting.',
   },
 ];
 </script>
@@ -116,18 +114,17 @@ const faqs = [
                 src="/images/home/orange_bg.jpg"
                 alt="Laravel and Vue Directory & Job Board Theme"
               />
-              <NuxtLink to="/campaigns">
+              <NuxtLink to="/posts">
                 <div
                   class="bg-black/10 absolute top-0 left-0 w-full h-full rounded-lg"
                 ></div>
 
                 <div class="px-2 pt-8 absolute top-0 w-full">
-                  <p class="text-white mySecondaryHeader">Campaigns</p>
+                  <p class="text-white mySecondaryHeader">Posts</p>
                   <p
                     class="myPrimaryParagraph text-white font-medium drop-shadow-sm"
                   >
-                    Fashion campaigns in the United Arab Emirates. Discover new
-                    products or get inspired.
+                    Nuxt 3 Directory & Job Board Theme
                   </p>
                 </div>
               </NuxtLink>
@@ -190,15 +187,14 @@ const faqs = [
         class="bg-red-50 lg:block hidden"
       >
         <template #title
-          >Customize the design of Stores, Jobs and Campaigns the way you
+          >Customize the design of Stores, Jobs and Posts the way you
           want</template
         >
         <template #description>
-          Design stores, jobs or campaigns your way with our intuitive page
-          builder. Customize layouts, colors, and fonts to achieve the perfect
-          design.
+          Design stores, jobs or posts your way with our intuitive page builder.
+          Customize layouts, colors, and fonts to achieve the perfect design.
           <br />
-          Laravel and Vue Directory & Job Board Theme
+          Laravel, Vue and Nuxt Directory & Job Board Theme
         </template>
         <template #content>
           <div class="w-full relative">

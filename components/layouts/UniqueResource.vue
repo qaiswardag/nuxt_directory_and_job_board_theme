@@ -1175,7 +1175,7 @@ const getAppUrl = function (path) {
         </div>
         <!-- categories # end -->
 
-        <!-- Running campaigns - stores # start -->
+        <!-- Running posts - stores # start -->
         <div
           v-if="stores && Array.isArray(stores) && stores.length !== 0"
           class="myPrimaryWidget"
@@ -1280,7 +1280,7 @@ const getAppUrl = function (path) {
             </div>
           </div>
         </div>
-        <!-- Running campaigns - stores # end -->
+        <!-- Running posts - stores # end -->
 
         <!-- tags # start -->
         <template v-if="post.tags">
@@ -1309,7 +1309,7 @@ const getAppUrl = function (path) {
         <!-- tags # end -->
 
         <!-- show authors # start -->
-        <template v-if="onlyForCurrentTeam && postType !== 'Campaign'">
+        <template v-if="onlyForCurrentTeam && postType !== 'Post'">
           <div
             v-if="post.show_author"
             class="myPrimaryWidget"

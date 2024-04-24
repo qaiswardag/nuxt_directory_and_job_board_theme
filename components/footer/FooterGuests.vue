@@ -2,14 +2,13 @@
   <footer class="w-full mx-auto px-6 py-4 flex justify-between bg-gray-100">
     <div>
       <p class="myPrimaryParagraph lg:text-sm text-xs">
-        <span class="text-xs">©</span> Laravel and Vue Directory & Job Board
-        Theme
+        <span class="text-xs">©</span> Nuxt 3 Directory & Job Board Theme
       </p>
     </div>
     <div class="flex justify-center items-center myPrimaryGap">
       <p class="myPrimaryParagraph lg:text-sm text-xs">
         <a
-          href="https://github.com/qaiswardag/"
+          href="https://github.com/qaiswardag/nuxt_directory_and_job_board_theme"
           target="_blank"
         >
           GitHub

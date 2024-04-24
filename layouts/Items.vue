@@ -309,10 +309,10 @@ onMounted(() => {
               class="w-full"
               :class="[
                 {
-                  'md:w-1/3': nameList !== 'campaign',
+                  'md:w-1/3': nameList !== 'post',
                 },
                 {
-                  'md:w-1/2': nameList === 'campaign',
+                  'md:w-1/2': nameList === 'post',
                 },
               ]"
             >
@@ -346,10 +346,10 @@ onMounted(() => {
               class="w-full"
               :class="[
                 {
-                  'md:w-1/3': nameList !== 'campaign',
+                  'md:w-1/3': nameList !== 'post',
                 },
                 {
-                  'md:w-1/2': nameList === 'campaign',
+                  'md:w-1/2': nameList === 'post',
                 },
               ]"
               v-if="
@@ -693,9 +693,7 @@ onMounted(() => {
 
                     <template
                       v-if="
-                        post.started_at &&
-                        post.ended_at &&
-                        nameList === 'campaign'
+                        post.started_at && post.ended_at && nameList === 'post'
                       "
                     >
                       <div class="flex gap-4">
