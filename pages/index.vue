@@ -17,7 +17,7 @@ useSeoMeta({
   ogDescription:
     'Search for everything you need in the world of fashion within the United Arab Emirates. From fashion Stores and Jobs to Campaigns.',
   ogImage: () => {
-    return '/images/brand-images/pink-lady-high-resolution.jpg';
+    return '/images/brand-images/home.jpg';
   },
 });
 
@@ -53,15 +53,15 @@ const faqs = [
         <div class="w-full relative h-[32rem]">
           <img
             class="top-0 left-0 w-full object-cover h-[32rem]"
-            src="/images/brand-images/pink-lady-high-resolution.jpg"
-            alt="myself.ae fashion &amp; jobs"
+            src="/images/brand-images/home.jpg"
+            alt="Laravel and Vue Directory & Job Board Theme"
           />
           <div class="bg-black/20 absolute top-0 left-0 w-full h-[32rem]"></div>
           <div
             class="absolute text-2xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
           >
             <h1 class="myPrimaryHeader text-white text-center">
-              myself fashion & jobs
+              Laravel and Vue Directory & Job Board Theme
               <br />
             </h1>
 
@@ -79,9 +79,7 @@ const faqs = [
       >
         <template #title>Fashion brands in one searchable solution</template>
         <template #description>
-          myself is the largest and most exclusive fashion directory in the
-          United Arab Emirates, gathering all fashion brands in one searchable
-          solution.
+          Laravel and Vue Directory & Job Board Theme
         </template>
         <template #content>
           <div
@@ -93,7 +91,7 @@ const faqs = [
               <img
                 class="top-0 left-0 w-full object-cover lg:h-[30rem] h-[22rem] rounded-lg"
                 src="/images/home/fashion_show.jpg"
-                alt="myself.ae fashion &amp; jobs"
+                alt="Laravel and Vue Directory & Job Board Theme"
               />
 
               <NuxtLink to="/stores">
@@ -105,9 +103,7 @@ const faqs = [
                   <p
                     class="myPrimaryParagraph text-white font-medium drop-shadow-sm"
                   >
-                    myself is the largest and most exclusive fashion directory
-                    in the United Arab Emirates, gathering all fashion brands
-                    and stores in one searchable solution.
+                    Laravel and Vue Directory & Job Board Theme
                   </p>
                 </div>
               </NuxtLink>
@@ -118,7 +114,7 @@ const faqs = [
               <img
                 class="top-0 left-0 w-full object-cover lg:h-[30rem] h-[22rem] rounded-lg"
                 src="/images/home/orange_bg.jpg"
-                alt="myself.ae fashion &amp; jobs"
+                alt="Laravel and Vue Directory & Job Board Theme"
               />
               <NuxtLink to="/campaigns">
                 <div
@@ -142,7 +138,7 @@ const faqs = [
               <img
                 class="top-0 left-0 w-full object-cover lg:h-[30rem] h-[22rem] rounded-lg"
                 src="/images/home/girl_light_bg.jpg"
-                alt="myself.ae fashion &amp; jobs"
+                alt="Laravel and Vue Directory & Job Board Theme"
               />
 
               <NuxtLink to="/jobs">
@@ -166,7 +162,7 @@ const faqs = [
               <img
                 class="top-0 left-0 w-full object-cover lg:h-[30rem] h-[22rem] rounded-lg"
                 src="/images/home/three.jpg"
-                alt="myself.ae fashion &amp; jobs"
+                alt="Laravel and Vue Directory & Job Board Theme"
               />
 
               <NuxtLink to="/professional">
@@ -178,8 +174,7 @@ const faqs = [
                   <p
                     class="myPrimaryParagraph text-white font-medium drop-shadow-sm"
                   >
-                    myself is like a digital shopping window, focusing on your
-                    brand image, authenticity and credibility.
+                    Laravel and Vue Directory & Job Board Theme
                   </p>
                 </div>
               </NuxtLink>
@@ -203,16 +198,14 @@ const faqs = [
           builder. Customize layouts, colors, and fonts to achieve the perfect
           design.
           <br />
-          myself is like a digital shopping window, focusing on your brand
-          image, authenticity and credibility! Just like on a shopping site
-          customers can search for anything they are looking for.
+          Laravel and Vue Directory & Job Board Theme
         </template>
         <template #content>
           <div class="w-full relative">
             <img
               class="top-0 left-0 w-full object-cover rounded-lg"
               src="/images/home/edit_or_add_designs.jpg"
-              alt="myself.ae fashion &amp; jobs"
+              alt="Laravel and Vue Directory & Job Board Theme"
             />
             <div
               class="bg-black/0 absolute top-0 left-0 w-full h-full rounded-lg"
@@ -248,7 +241,7 @@ const faqs = [
                   <img
                     class="object-cover w-28 h-28 rounded-full"
                     src="/images/home/woman_1.jpg"
-                    alt="myself.ae fashion &amp; jobs"
+                    alt="Laravel and Vue Directory & Job Board Theme"
                   />
                 </div>
 
@@ -285,7 +278,7 @@ const faqs = [
                   <img
                     class="object-cover w-28 h-28 rounded-full"
                     src="/images/home/woman_2.jpg"
-                    alt="myself.ae fashion &amp; jobs"
+                    alt="Laravel and Vue Directory & Job Board Theme"
                   />
                 </div>
 
@@ -322,7 +315,7 @@ const faqs = [
                   <img
                     class="object-cover w-28 h-28 rounded-full"
                     src="/images/home/woman_3.jpg"
-                    alt="myself.ae fashion &amp; jobs"
+                    alt="Laravel and Vue Directory & Job Board Theme"
                   />
                 </div>
 
@@ -359,7 +352,7 @@ const faqs = [
                   <img
                     class="object-cover w-28 h-28 rounded-full"
                     src="/images/home/woman_4.jpg"
-                    alt="myself.ae fashion &amp; jobs"
+                    alt="Laravel and Vue Directory & Job Board Theme"
                   />
                 </div>
 
@@ -391,72 +384,6 @@ const faqs = [
       </FullWidthElement>
       <!-- Linktree # end -->
 
-      <!-- Trusted by # start -->
-      <FullWidthElement
-        :descriptionArea="true"
-        class="bg-red-50 lg:block hidden"
-      >
-        <template #title>Trusted by</template>
-        <template #description>
-          We are like a digital shopping window, focusing on your brand image,
-          authenticity and credibility! Just like on a shopping site customers
-          can search for anything they are looking for, shoes, clothes, bags,
-          lingerie or jewellery.
-        </template>
-
-        <template #content>
-          <div class="w-full relative">
-            <div class="mx-auto max-w-2xl lg:max-w-none">
-              <div
-                class="mx-auto mt-10 grid grid-cols-2 justify-items-center gap-x-8 gap-y-10 sm:grid-cols-4 sm:gap-x-10 lg:mx-0 lg:grid-cols-4"
-              >
-                <a
-                  href="https://www.emaar.com"
-                  target="_blank"
-                >
-                  <img
-                    class="object-contain object-center w-40 h-40 rounded-lg"
-                    src="/images/trusted-by/emaar_logo_square.png"
-                    alt="Emaar logo"
-                  />
-                </a>
-                <a
-                  href="https://burberry.com/"
-                  target="_blank"
-                >
-                  <img
-                    class="object-contain object-center w-40 h-40 rounded-lg"
-                    src="/images/trusted-by/burberry_logo_square.png"
-                    alt="Burberry logo"
-                  />
-                </a>
-                <a
-                  href="https://www.dolcegabbana.com"
-                  target="_blank"
-                >
-                  <img
-                    class="object-contain object-center w-40 h-40 rounded-lg"
-                    src="/images/trusted-by/dolce_gabbana_logo_square.jpg"
-                    alt="Dolce & Gabbana logo"
-                  />
-                </a>
-                <a
-                  href="https://www.lacoste.com"
-                  target="_blank"
-                >
-                  <img
-                    class="object-contain object-center w-40 h-40 rounded-lg"
-                    src="/images/trusted-by/lacoste_logo_square.jpg"
-                    alt="Lacoste logo"
-                  />
-                </a>
-              </div>
-            </div>
-          </div>
-        </template>
-      </FullWidthElement>
-      <!-- Trusted by # end -->
-
       <!-- FAQ # start -->
       <FullWidthElement
         :descriptionArea="true"
@@ -464,10 +391,7 @@ const faqs = [
       >
         <template #title>Frequently asked questions</template>
         <template #description>
-          Shopping has become an experience, and store performance must keep up
-          to meet customer expectations. myself is a powerful branding and
-          marketing tool connection brands and stores with consumers. Our
-          platform enables you to build local brand awareness online.
+          Laravel and Vue Directory & Job Board Theme
         </template>
         <template #content>
           <div class="grid grid-cols-1 lg:gap-16 gap-24 lg:grid-cols-12">
@@ -514,7 +438,7 @@ const faqs = [
             <img
               class="w-full object-cover lg:col-span-6 rounded-lg"
               src="/images/home/frequently_asked_questions.jpg"
-              alt="myself.ae fashion &amp; jobs"
+              alt="Laravel and Vue Directory & Job Board Theme"
             />
           </div>
         </template>

@@ -13,12 +13,10 @@ const getAppUrl = function (path) {
 useSeoMeta({
   title: `${runtimeConfig.public.APP_NAME} | Jobs`,
   ogTitle: `${runtimeConfig.public.APP_NAME} | Jobs`,
-  description:
-    'Looking for a job in fashion? myself.ae is the United Arab Emirates best site for finding jobs in the fashion, luxury and retail industries. Start your career here!',
-  ogDescription:
-    'Looking for a job in fashion? myself.ae is the United Arab Emirates best site for finding jobs in the fashion, luxury and retail industries. Start your career here!',
+  description: 'Laravel and Vue Directory & Job Board Theme',
+  ogDescription: 'Laravel and Vue Directory & Job Board Theme',
   ogImage: () => {
-    return getAppUrl('brand-images/pink-lady-high-resolution.jpg');
+    return getAppUrl('brand-images/home.jpg');
   },
 });
 </script>

@@ -45,7 +45,7 @@ useSeoMeta({
   ogDescription:
     "Join Fashion's most comprehensive marketing platform in the UAE. Showcase stores to local consumers, find professionals and post fashion jobs. View Prices!",
   ogImage: () => {
-    return getAppUrl('brand-images/pink-lady-high-resolution.jpg');
+    return getAppUrl('brand-images/home.jpg');
   },
 });
 </script>
@@ -154,10 +154,7 @@ useSeoMeta({
       >
         <template #title>Pricing for jobs</template>
         <template #description>
-          Finding the best fit for the job shouldn’t be a full-time job. myself
-          is like a digital shopping window, focusing on your brand image,
-          authenticity and credibility. Post your open roles on myself and
-          easily target, prioritize, and manage qualified candidates.
+          Laravel and Vue Directory & Job Board Theme
         </template>
         <template #content>
           <div
@@ -245,10 +242,6 @@ useSeoMeta({
             <br />
             Please note that our Service Assistants are available Monday through
             Friday between 10.00 am and 08.00 pm.
-          </p>
-          <p class="myPrimaryParagraph mt-4">
-            Email:
-            <span class="text-myPrimaryLinkColor"> hello@myself.ae </span>
           </p>
         </template>
       </FullWidthElement>

@@ -11,14 +11,12 @@ const getAppUrl = function (path) {
 };
 
 useSeoMeta({
-  title: `${runtimeConfig.public.APP_NAME} | Campaigns`,
-  ogTitle: `${runtimeConfig.public.APP_NAME} | Campaigns`,
-  description:
-    'Looking for in-store campaigns? myself.ae is the best site in the United Arab Emirates for finding product promotions.',
-  ogDescription:
-    'Looking for in-store campaigns? myself.ae is the best site in the United Arab Emirates for finding product promotions.',
+  title: `${runtimeConfig.public.APP_NAME} | Posts`,
+  ogTitle: `${runtimeConfig.public.APP_NAME} | Posts`,
+  description: 'Laravel and Vue Directory & Job Board Theme',
+  ogDescription: 'Laravel and Vue Directory & Job Board Theme',
   ogImage: () => {
-    return getAppUrl('brand-images/pink-lady-high-resolution.jpg');
+    return getAppUrl('brand-images/home.jpg');
   },
 });
 </script>

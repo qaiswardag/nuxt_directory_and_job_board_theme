@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   // Add a trailing slash to each route
   site: {
-    url: 'https://www.myself.ae',
+    url: 'https://www.myissue.io',
   },
   devServer: {
     port: 3000,
