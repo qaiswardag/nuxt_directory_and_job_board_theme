@@ -1,5 +1,5 @@
 <p align="center" dir="auto">
-<img width="200" style="max-width: 100%;" src="public/logo/logo.svg" alt="Logo">
+<img width="200" style="max-width: 100%;" src="public/images/logo/logo.svg" alt="Logo">
 </p>
 
 # Nuxt 3
