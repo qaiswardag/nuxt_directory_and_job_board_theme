@@ -53,11 +53,7 @@ const goToDashboard = function () {
             'text-myPrimaryLinkColor': routeName === 'index',
           }"
         >
-          <div
-            class="bg-gray-50 lg:gap-2 lg:items-center focus:outline-none cursor-pointer rounded-full px-1.5 py-1.5 font-medium"
-          >
-            Home
-          </div>
+          <div class="myPrimaryMenuTextButton">Home</div>
         </NuxtLink>
         <NuxtLink
           to="/stores"
@@ -66,11 +62,7 @@ const goToDashboard = function () {
             'text-myPrimaryLinkColor': routeName === 'stores',
           }"
         >
-          <div
-            class="bg-gray-50 lg:gap-2 lg:items-center focus:outline-none cursor-pointer rounded-full px-1.5 py-1.5 font-medium"
-          >
-            Stores
-          </div>
+          <div class="myPrimaryMenuTextButton">Stores</div>
         </NuxtLink>
         <NuxtLink
           to="/jobs"
@@ -79,11 +71,7 @@ const goToDashboard = function () {
             'text-myPrimaryLinkColor': routeName === 'jobs',
           }"
         >
-          <div
-            class="bg-gray-50 lg:gap-2 lg:items-center focus:outline-none cursor-pointer rounded-full px-1.5 py-1.5 font-medium"
-          >
-            Jobs
-          </div>
+          <div class="myPrimaryMenuTextButton">Jobs</div>
         </NuxtLink>
         <NuxtLink
           to="/posts"
@@ -92,11 +80,7 @@ const goToDashboard = function () {
             'text-myPrimaryLinkColor': routeName === 'posts',
           }"
         >
-          <div
-            class="bg-gray-50 lg:flex lg:gap-2 lg:items-center focus:outline-none cursor-pointer rounded-full px-1.5 py-1.5 font-medium"
-          >
-            Posts
-          </div>
+          <div class="myPrimaryMenuTextButton">Posts</div>
         </NuxtLink>
       </div>
 
@@ -107,22 +91,14 @@ const goToDashboard = function () {
           'text-myPrimaryLinkColor': routeName === 'stores',
         }"
       >
-        <div
-          class="lg:hidden flex bg-gray-50 lg:gap-2 lg:items-center focus:outline-none cursor-pointer rounded-full px-1.5 py-1.5 font-medium"
-        >
-          Stores
-        </div>
+        <div class="lg:hidden flex myPrimaryMenuTextButton">Stores</div>
       </NuxtLink>
 
       <button
         @click="goToDashboard"
         type="button"
       >
-        <div
-          class="bg-gray-50 lg:flex lg:gap-2 lg:items-center focus:outline-none cursor-pointer rounded-full px-1.5 py-1.5 font-medium"
-        >
-          Account
-        </div>
+        <div class="myPrimaryMenuTextButton">Account</div>
       </button>
 
       <button
