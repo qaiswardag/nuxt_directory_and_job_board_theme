@@ -12,8 +12,6 @@ This app was born out of my desire to create a minimalist Listing Directory, Blo
 
 [Play around with the demo app](https://www.myissue.io)
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
-
 # Setup
 
 Make sure to install the dependencies:
