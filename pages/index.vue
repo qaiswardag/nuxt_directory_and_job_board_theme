@@ -59,7 +59,7 @@ const faqs = [
             class="absolute text-2xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
           >
             <h1 class="myPrimaryHeader text-white text-center">
-              Test Ø1 Laravel and Vue Directory & Job Board Theme
+              Test Æ10 Laravel and Vue Directory & Job Board Theme
               <br />
             </h1>
 
