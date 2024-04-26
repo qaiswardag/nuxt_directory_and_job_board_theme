@@ -13,8 +13,10 @@ const getAppUrl = function (path) {
 useSeoMeta({
   title: `${runtimeConfig.public.APP_NAME} | Posts`,
   ogTitle: `${runtimeConfig.public.APP_NAME} | Posts`,
-  description: 'Laravel and Vue Directory & Job Board Theme',
-  ogDescription: 'Laravel and Vue Directory & Job Board Theme',
+  description:
+    'Laravel, Vue & Nuxt, a Listing Directory, Blog & Job Board Theme.',
+  ogDescription:
+    'Laravel, Vue & Nuxt, a Listing Directory, Blog & Job Board Theme.',
   ogImage: () => {
     return getAppUrl('brand-images/home.jpg');
   },
