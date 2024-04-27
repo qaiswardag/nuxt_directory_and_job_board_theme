@@ -154,7 +154,8 @@ useSeoMeta({
       >
         <template #title>Pricing for jobs</template>
         <template #description>
-          Laravel, Vue & Nuxt, a Listing Directory, Blog & Job Board Theme.
+          Laravel, Vue & Nuxt, a Listing Directory, Blog & Job Board Theme with
+          Page Builder.
         </template>
         <template #content>
           <div
