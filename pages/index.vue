@@ -103,8 +103,8 @@ const faqs = [
                   <p
                     class="myPrimaryParagraph text-white font-medium drop-shadow-sm"
                   >
-                    Laravel, Vue & Nuxt, a Listing Directory, Blog & Job Board
-                    Theme.
+                    User-friendly features for managing, organizing, and
+                    advertising business listings.
                   </p>
                 </div>
               </NuxtLink>
@@ -127,7 +127,8 @@ const faqs = [
                   <p
                     class="myPrimaryParagraph text-white font-medium drop-shadow-sm"
                   >
-                    Nuxt 3 Directory & Job Board Theme
+                    Newest published posts. Utilize advanced filters ensuring
+                    users find the most relevant content for their needs.
                   </p>
                 </div>
               </NuxtLink>
@@ -150,8 +151,9 @@ const faqs = [
                   <p
                     class="myPrimaryParagraph text-white font-medium drop-shadow-sm"
                   >
-                    Find the right job for you in the fashion industry in the
-                    United Arab Emirates.
+                    Latest published job postings. Utilize advanced filters to
+                    refine the search by country, state, category, job type, and
+                    more.
                   </p>
                 </div>
               </NuxtLink>
@@ -174,8 +176,8 @@ const faqs = [
                   <p
                     class="myPrimaryParagraph text-white font-medium drop-shadow-sm"
                   >
-                    Laravel, Vue & Nuxt, a Listing Directory, Blog & Job Board
-                    Theme.
+                    Professional page for subscribing to listings or creating
+                    single-charge job posts using built-in Stripe integration.
                   </p>
                 </div>
               </NuxtLink>
@@ -188,18 +190,15 @@ const faqs = [
       <!-- Builder # start -->
       <FullWidthElement
         :descriptionArea="true"
-        class="bg-red-50 lg:block hidden"
+        class="bg-red-50"
       >
         <template #title
-          >Customize the design of Listings, Jobs and Posts the way you
-          want</template
-        >
+          >Customize the design of Listings, Jobs and Posts
+        </template>
         <template #description>
-          Design listings, jobs or posts your way with our intuitive page
-          builder. Customize layouts, colors, and fonts to achieve the perfect
-          design.
-          <br />
-          Laravel, Vue and Nuxt Directory & Job Board Theme
+          Allow your users to build listings, jobs or posts with the intuitive
+          Page Builder. Customize layouts, colors, and fonts to achieve the
+          perfect design with the built-in Page Builder.
         </template>
         <template #content>
           <div class="w-full relative">
@@ -221,10 +220,10 @@ const faqs = [
         :descriptionArea="true"
         class="bg-gray-50 lg:block hidden"
       >
-        <template #title>Share multiple links</template>
+        <template #title>Allow your users to share multiple links </template>
         <template #description>
-          Add and manage multiple links to your landing page with minimal effort
-          and reach the right people.
+          Empower your users to easily add and manage multiple links to their
+          landing page with the built-in Page Builder.
         </template>
         <template #content>
           <div
