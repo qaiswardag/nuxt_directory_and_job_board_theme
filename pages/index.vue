@@ -59,12 +59,12 @@ const faqs = [
             class="absolute text-2xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
           >
             <h1 class="myPrimaryHeader text-white text-center">
-              Listing Directory, Blog & Job Board Theme
+              Free Listing Directory, Blog & Job Board Theme
               <br />
             </h1>
             <p class="myPrimaryParagraph text-white text-center font-medium">
-              Free Laravel, Vue, and Nuxt, a Page Builder, Listing Directory,
-              Blog, and Job Board Theme.
+              Laravel, Vue, and Nuxt, a Page Builder, Listing Directory, Blog,
+              and Job Board Theme.
             </p>
           </div>
         </div>
