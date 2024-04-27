@@ -317,7 +317,6 @@ onMounted(() => {
               ]"
             >
               <!-- Search # start -->
-
               <form @submit.prevent="handleSearch">
                 <div class="relative w-full">
                   <div
@@ -325,6 +324,7 @@ onMounted(() => {
                   >
                     <span class="material-symbols-outlined"> search </span>
                   </div>
+
                   <input
                     v-model="search_query"
                     type="search"
@@ -332,7 +332,7 @@ onMounted(() => {
                     class="myPrimaryInput pl-10 shadow-none min-h-[3.5rem] h-[3.5rem]"
                     autocomplete="off"
                     :placeholder="`${
-                      nameList === 'store'
+                      nameList === 'listing'
                         ? 'Company or Brand name'
                         : `Search ${nameList}`
                     }..`"

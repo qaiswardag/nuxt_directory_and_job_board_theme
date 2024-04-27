@@ -11,12 +11,12 @@ const getAppUrl = function (path) {
 };
 
 useSeoMeta({
-  title: `${runtimeConfig.public.APP_NAME} | Stores`,
-  ogTitle: `${runtimeConfig.public.APP_NAME} | Stores`,
+  title: `${runtimeConfig.public.APP_NAME} | Listings`,
+  ogTitle: `${runtimeConfig.public.APP_NAME} | Listings`,
   description:
-    'Find fashion stores and discover everything you need in the world of fashion within the United Arab Emirates — all in one place.',
+    'Find fashion listings and discover everything you need in the world of fashion within the United Arab Emirates — all in one place.',
   ogDescription:
-    'Find fashion stores and discover everything you need in the world of fashion within the United Arab Emirates — all in one place.',
+    'Find fashion listings and discover everything you need in the world of fashion within the United Arab Emirates — all in one place.',
   ogImage: () => {
     return getAppUrl('brand-images/home.jpg');
   },
@@ -27,11 +27,11 @@ useSeoMeta({
   <MainLayout>
     <GuestsLayout>
       <template #header>
-        <PageHeader title="Stores"></PageHeader>
+        <PageHeader title="Listings"></PageHeader>
       </template>
       <Items
         :pathList="`${getAppUrl('api/guest/stores/index')}`"
-        nameList="store"
+        nameList="listing"
       ></Items>
     </GuestsLayout>
   </MainLayout>

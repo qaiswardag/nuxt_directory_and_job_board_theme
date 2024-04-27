@@ -50,23 +50,18 @@ const faqs = [
       <template #header>
         <div class="w-full relative h-[32rem]">
           <img
-            class="top-0 left-0 w-full object-cover h-[32rem]"
+            class="top-0 left-0 w-full object-cover h-[36rem]"
             src="/images/brand-images/home.jpg"
             alt="Laravel, Vue & Nuxt, a Listing Directory, Blog & Job Board Theme with Page Builder."
           />
-          <div class="bg-black/20 absolute top-0 left-0 w-full h-[32rem]"></div>
+          <div class="bg-black/20 absolute top-0 left-0 w-full h-[36rem]"></div>
           <div
             class="absolute text-2xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
           >
             <h1 class="myPrimaryHeader text-white text-center">
-              Test Æ10 Laravel, Vue & Nuxt, a Listing Directory, Blog & Job
-              Board Theme.
+              Page Builder, Listing Directory, Blog & Job Board
               <br />
             </h1>
-
-            <p class="myPrimaryParagraph text-white text-center font-medium">
-              Discover Fashion in the United Arab Emirates.
-            </p>
           </div>
         </div>
       </template>
@@ -76,10 +71,12 @@ const faqs = [
         :descriptionArea="true"
         class="bg-gray-50"
       >
-        <template #title>Fashion brands in one searchable solution</template>
+        <template #title
+          >Page Builder, Listing Directory, Blog & Job Board
+        </template>
         <template #description>
-          Laravel, Vue & Nuxt, a Listing Directory, Blog & Job Board Theme with
-          Page Builder.
+          Multiple Security Layers, advanced Team Management, Page Builder,
+          Listing Directory, Blog, Job Board and Media Library in one solution
         </template>
         <template #content>
           <div
@@ -94,12 +91,12 @@ const faqs = [
                 alt="Laravel, Vue & Nuxt, a Listing Directory, Blog & Job Board Theme with Page Builder."
               />
 
-              <NuxtLink to="/stores">
+              <NuxtLink to="/listings">
                 <div
                   class="bg-black/10 absolute top-0 left-0 w-full h-full rounded-lg"
                 ></div>
                 <div class="px-2 pt-8 absolute top-0 w-full">
-                  <p class="text-white mySecondaryHeader">Find stores</p>
+                  <p class="text-white mySecondaryHeader">Listings</p>
                   <p
                     class="myPrimaryParagraph text-white font-medium drop-shadow-sm"
                   >
@@ -146,7 +143,7 @@ const faqs = [
                   class="bg-black/10 absolute top-0 left-0 w-full h-full rounded-lg"
                 ></div>
                 <div class="px-2 pt-8 absolute top-0 w-full">
-                  <p class="text-white mySecondaryHeader">Jobs in UAE</p>
+                  <p class="text-white mySecondaryHeader">Jobs</p>
                   <p
                     class="myPrimaryParagraph text-white font-medium drop-shadow-sm"
                   >
@@ -191,12 +188,13 @@ const faqs = [
         class="bg-red-50 lg:block hidden"
       >
         <template #title
-          >Customize the design of Stores, Jobs and Posts the way you
+          >Customize the design of Listings, Jobs and Posts the way you
           want</template
         >
         <template #description>
-          Design stores, jobs or posts your way with our intuitive page builder.
-          Customize layouts, colors, and fonts to achieve the perfect design.
+          Design listings, jobs or posts your way with our intuitive page
+          builder. Customize layouts, colors, and fonts to achieve the perfect
+          design.
           <br />
           Laravel, Vue and Nuxt Directory & Job Board Theme
         </template>

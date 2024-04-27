@@ -56,13 +56,13 @@ const goToDashboard = function () {
           <div class="myPrimaryMenuTextButton">Home</div>
         </NuxtLink>
         <NuxtLink
-          to="/stores"
+          to="/listings"
           class="text-myPrimaryDarkGrayColor"
           :class="{
-            'text-myPrimaryLinkColor': routeName === 'stores',
+            'text-myPrimaryLinkColor': routeName === 'listings',
           }"
         >
-          <div class="myPrimaryMenuTextButton">Stores</div>
+          <div class="myPrimaryMenuTextButton">Listings</div>
         </NuxtLink>
         <NuxtLink
           to="/jobs"
@@ -85,13 +85,13 @@ const goToDashboard = function () {
       </div>
 
       <NuxtLink
-        to="/stores"
+        to="/listings"
         class="text-myPrimaryDarkGrayColor"
         :class="{
-          'text-myPrimaryLinkColor': routeName === 'stores',
+          'text-myPrimaryLinkColor': routeName === 'listings',
         }"
       >
-        <div class="lg:hidden flex myPrimaryMenuTextButton">Stores</div>
+        <div class="lg:hidden flex myPrimaryMenuTextButton">Listings</div>
       </NuxtLink>
 
       <button
