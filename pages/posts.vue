@@ -14,9 +14,9 @@ useSeoMeta({
   title: `${runtimeConfig.public.APP_NAME} | Posts`,
   ogTitle: `${runtimeConfig.public.APP_NAME} | Posts`,
   description:
-    'Laravel, Vue & Nuxt, a Listing Directory, Blog & Job Board Theme with Page Builder.',
+    'Laravel, Vue, and Nuxt, a Page Builder, Listing Directory, Blog, and Job Board Theme.',
   ogDescription:
-    'Laravel, Vue & Nuxt, a Listing Directory, Blog & Job Board Theme with Page Builder.',
+    'Laravel, Vue, and Nuxt, a Page Builder, Listing Directory, Blog, and Job Board Theme.',
   ogImage: () => {
     return getAppUrl('brand-images/home.jpg');
   },

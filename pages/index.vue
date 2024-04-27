@@ -52,18 +52,19 @@ const faqs = [
           <img
             class="top-0 left-0 w-full object-cover h-[36rem]"
             src="/images/brand-images/home.jpg"
-            alt="Laravel, Vue & Nuxt, a Listing Directory, Blog & Job Board Theme with Page Builder."
+            alt="Laravel, Vue, and Nuxt, a Page Builder, Listing Directory, Blog, and Job Board Theme."
           />
           <div class="bg-black/20 absolute top-0 left-0 w-full h-[36rem]"></div>
           <div
             class="absolute text-2xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
           >
             <h1 class="myPrimaryHeader text-white text-center">
-              Page Builder, Listing Directory, Blog & Job Board Theme
+              Listing Directory, Blog & Job Board Theme
               <br />
             </h1>
             <p class="myPrimaryParagraph text-white text-center font-medium">
-              Free Page Builder, Listing Directory, Blog & Job Board Theme
+              Free Laravel, Vue, and Nuxt, a Page Builder, Listing Directory,
+              Blog, and Job Board Theme.
             </p>
           </div>
         </div>
@@ -91,7 +92,7 @@ const faqs = [
               <img
                 class="top-0 left-0 w-full object-cover lg:h-[30rem] h-[22rem] rounded-lg"
                 src="/images/home/fashion_show.jpg"
-                alt="Laravel, Vue & Nuxt, a Listing Directory, Blog & Job Board Theme with Page Builder."
+                alt="Laravel, Vue, and Nuxt, a Page Builder, Listing Directory, Blog, and Job Board Theme."
               />
 
               <NuxtLink to="/listings">
@@ -115,7 +116,7 @@ const faqs = [
               <img
                 class="top-0 left-0 w-full object-cover lg:h-[30rem] h-[22rem] rounded-lg"
                 src="/images/home/orange_bg.jpg"
-                alt="Laravel, Vue & Nuxt, a Listing Directory, Blog & Job Board Theme with Page Builder."
+                alt="Laravel, Vue, and Nuxt, a Page Builder, Listing Directory, Blog, and Job Board Theme."
               />
               <NuxtLink to="/posts">
                 <div
@@ -139,7 +140,7 @@ const faqs = [
               <img
                 class="top-0 left-0 w-full object-cover lg:h-[30rem] h-[22rem] rounded-lg"
                 src="/images/home/girl_light_bg.jpg"
-                alt="Laravel, Vue & Nuxt, a Listing Directory, Blog & Job Board Theme with Page Builder."
+                alt="Laravel, Vue, and Nuxt, a Page Builder, Listing Directory, Blog, and Job Board Theme."
               />
 
               <NuxtLink to="/jobs">
@@ -151,9 +152,8 @@ const faqs = [
                   <p
                     class="myPrimaryParagraph text-white font-medium drop-shadow-sm"
                   >
-                    Latest published job postings. Utilize advanced filters to
-                    refine the search by country, state, category, job type, and
-                    more.
+                    Latest published job postings. Filters to refine the search
+                    by country, state, category, job type, and more.
                   </p>
                 </div>
               </NuxtLink>
@@ -164,7 +164,7 @@ const faqs = [
               <img
                 class="top-0 left-0 w-full object-cover lg:h-[30rem] h-[22rem] rounded-lg"
                 src="/images/home/three.jpg"
-                alt="Laravel, Vue & Nuxt, a Listing Directory, Blog & Job Board Theme with Page Builder."
+                alt="Laravel, Vue, and Nuxt, a Page Builder, Listing Directory, Blog, and Job Board Theme."
               />
 
               <NuxtLink to="/professional">
@@ -177,7 +177,7 @@ const faqs = [
                     class="myPrimaryParagraph text-white font-medium drop-shadow-sm"
                   >
                     Professional page for subscribing to listings or creating
-                    single-charge job posts using built-in Stripe integration.
+                    single-charge job posts using Stripe integration.
                   </p>
                 </div>
               </NuxtLink>
@@ -205,7 +205,7 @@ const faqs = [
             <img
               class="top-0 left-0 w-full object-cover rounded-lg"
               src="/images/home/edit_or_add_designs.jpg"
-              alt="Laravel, Vue & Nuxt, a Listing Directory, Blog & Job Board Theme with Page Builder."
+              alt="Laravel, Vue, and Nuxt, a Page Builder, Listing Directory, Blog, and Job Board Theme."
             />
             <div
               class="bg-black/0 absolute top-0 left-0 w-full h-full rounded-lg"
@@ -239,7 +239,7 @@ const faqs = [
                   <img
                     class="object-cover w-28 h-28 rounded-full"
                     src="/images/home/woman_1.jpg"
-                    alt="Laravel, Vue & Nuxt, a Listing Directory, Blog & Job Board Theme with Page Builder."
+                    alt="Laravel, Vue, and Nuxt, a Page Builder, Listing Directory, Blog, and Job Board Theme."
                   />
                 </div>
 
@@ -276,7 +276,7 @@ const faqs = [
                   <img
                     class="object-cover w-28 h-28 rounded-full"
                     src="/images/home/woman_2.jpg"
-                    alt="Laravel, Vue & Nuxt, a Listing Directory, Blog & Job Board Theme with Page Builder."
+                    alt="Laravel, Vue, and Nuxt, a Page Builder, Listing Directory, Blog, and Job Board Theme."
                   />
                 </div>
 
@@ -313,7 +313,7 @@ const faqs = [
                   <img
                     class="object-cover w-28 h-28 rounded-full"
                     src="/images/home/woman_3.jpg"
-                    alt="Laravel, Vue & Nuxt, a Listing Directory, Blog & Job Board Theme with Page Builder."
+                    alt="Laravel, Vue, and Nuxt, a Page Builder, Listing Directory, Blog, and Job Board Theme."
                   />
                 </div>
 
@@ -350,7 +350,7 @@ const faqs = [
                   <img
                     class="object-cover w-28 h-28 rounded-full"
                     src="/images/home/woman_4.jpg"
-                    alt="Laravel, Vue & Nuxt, a Listing Directory, Blog & Job Board Theme with Page Builder."
+                    alt="Laravel, Vue, and Nuxt, a Page Builder, Listing Directory, Blog, and Job Board Theme."
                   />
                 </div>
 
@@ -389,8 +389,8 @@ const faqs = [
       >
         <template #title>Frequently asked questions</template>
         <template #description>
-          Laravel, Vue & Nuxt, a Listing Directory, Blog & Job Board Theme with
-          Page Builder.
+          Laravel, Vue, and Nuxt, a Page Builder, Listing Directory, Blog, and
+          Job Board Theme.
         </template>
         <template #content>
           <div class="grid grid-cols-1 lg:gap-16 gap-24 lg:grid-cols-12">
@@ -437,7 +437,7 @@ const faqs = [
             <img
               class="w-full object-cover lg:col-span-6 rounded-lg"
               src="/images/home/frequently_asked_questions.jpg"
-              alt="Laravel, Vue & Nuxt, a Listing Directory, Blog & Job Board Theme with Page Builder."
+              alt="Laravel, Vue, and Nuxt, a Page Builder, Listing Directory, Blog, and Job Board Theme."
             />
           </div>
         </template>
