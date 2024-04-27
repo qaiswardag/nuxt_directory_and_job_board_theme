@@ -149,7 +149,6 @@ if (fetchedDataPost.value && fetchedDataPost.value.post) {
             :states="fetchedDataPost.states"
             :jobTypes="fetchedDataPost.jobTypes"
             :categories="fetchedDataPost.categories"
-            :stores="fetchedDataPost.stores"
             :postType="fetchedDataPost.postType"
           >
           </UniqueResource>
