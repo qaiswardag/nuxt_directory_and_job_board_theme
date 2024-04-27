@@ -59,9 +59,12 @@ const faqs = [
             class="absolute text-2xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
           >
             <h1 class="myPrimaryHeader text-white text-center">
-              Page Builder, Listing Directory, Blog & Job Board
+              Page Builder, Listing Directory, Blog & Job Board Theme
               <br />
             </h1>
+            <p class="myPrimaryParagraph text-white text-center font-medium">
+              Free Page Builder, Listing Directory, Blog & Job Board Theme
+            </p>
           </div>
         </div>
       </template>
@@ -72,7 +75,7 @@ const faqs = [
         class="bg-gray-50"
       >
         <template #title
-          >Page Builder, Listing Directory, Blog & Job Board
+          >Free Listing Directory, Blog & Job Board Theme
         </template>
         <template #description>
           Multiple Security Layers, advanced Team Management, Page Builder,
@@ -218,9 +221,7 @@ const faqs = [
         :descriptionArea="true"
         class="bg-gray-50 lg:block hidden"
       >
-        <template #title
-          >Share multiple links, suitable for everyone and fully free</template
-        >
+        <template #title>Share multiple links</template>
         <template #description>
           Add and manage multiple links to your landing page with minimal effort
           and reach the right people.
