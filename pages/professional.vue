@@ -68,10 +68,6 @@ useSeoMeta({
         <template #description>
           What if there was a digital solution that would bring online shoppers
           back to real stores?
-          <br />
-          Choose an affordable plan that’s packed with the best features for
-          engaging your audience, creating customer loyalty, and driving sales.
-          Select the ideal subscription based on number of stores.
         </template>
         <template #content>
           <div
@@ -234,15 +230,12 @@ useSeoMeta({
       >
         <template #title>Contact us</template>
         <template #description
-          >If you have questions or need assistance, please contact us.
+          >Get in touch for customization or any questions.
         </template>
         <template #content>
           <p class="myPrimaryParagraph">
-            We are always ready to assist you and will gladly answer any
-            questions or inquiries you may have in connection with our services!
-            <br />
-            Please note that our Service Assistants are available Monday through
-            Friday between 10.00 am and 08.00 pm.
+            If you have any questions or if you're looking for customization,
+            feel free to connect with me on LinkedIn and send me a message.
           </p>
         </template>
       </FullWidthElement>
