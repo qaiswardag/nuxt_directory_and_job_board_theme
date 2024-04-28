@@ -215,8 +215,8 @@ useSeoMeta({
       >
         <template #title>Allow your users to share multiple links </template>
         <template #description>
-          Empower your users to easily add and manage multiple links to their
-          landing page with the built-in Page Builder.
+          Empower your users with the Page Builder. It allows them to easily add
+          and manage multiple links, customize content, and arrange layouts.
         </template>
         <template #content>
           <div
