@@ -66,8 +66,9 @@ useSeoMeta({
       >
         <template #title>Pricing plans for all sizes</template>
         <template #description>
-          What if there was a digital solution that would bring online shoppers
-          back to real stores?
+          Here is an example of how the pricing page could look. All prices are
+          linked to Stripe, using product identifiers. Create your Stripe
+          account and update the env file with Stripe token and secrets.
         </template>
         <template #content>
           <div
@@ -150,8 +151,9 @@ useSeoMeta({
       >
         <template #title>Pricing for jobs</template>
         <template #description>
-          Laravel, Vue, and Nuxt, a Page Builder, Listing Directory, Blog, and
-          Job Board Theme.
+          Here is an example of how the pricing page could look. All prices are
+          linked to Stripe, using product identifiers. Create your Stripe
+          account and update the env file with Stripe token and secrets.
         </template>
         <template #content>
           <div
