@@ -238,22 +238,22 @@ useSeoMeta({
 
                 <p class="myQuaternaryHeader">Stella Hill</p>
                 <div
-                  class="mySecondaryButton w-full mt-4 bg-transparent text-myPrimaryDarkGrayColor text-sm bg-white hover:bg-white"
+                  class="mySecondaryButton w-full mt-4 bg-transparent text-myPrimaryDarkGrayColor text-xs bg-white hover:bg-white"
                 >
                   Instagram
                 </div>
                 <div
-                  class="mySecondaryButton w-full mt-4 bg-transparent text-myPrimaryDarkGrayColor text-sm bg-white hover:bg-white"
+                  class="mySecondaryButton w-full mt-4 bg-transparent text-myPrimaryDarkGrayColor text-xs bg-white hover:bg-white"
                 >
                   Website
                 </div>
                 <div
-                  class="mySecondaryButton w-full mt-4 bg-transparent text-myPrimaryDarkGrayColor text-sm bg-white hover:bg-white"
+                  class="mySecondaryButton w-full mt-4 bg-transparent text-myPrimaryDarkGrayColor text-xs bg-white hover:bg-white"
                 >
                   Blog
                 </div>
                 <div
-                  class="mySecondaryButton w-full mt-4 bg-transparent text-myPrimaryDarkGrayColor text-sm bg-white hover:bg-white"
+                  class="mySecondaryButton w-full mt-4 bg-transparent text-myPrimaryDarkGrayColor text-xs bg-white hover:bg-white"
                 >
                   Contact
                 </div>
@@ -275,22 +275,22 @@ useSeoMeta({
 
                 <p class="myQuaternaryHeader">Victoria Alvarez</p>
                 <div
-                  class="mySecondaryButton w-full mt-4 bg-transparent text-myPrimaryDarkGrayColor text-sm bg-white hover:bg-white"
+                  class="mySecondaryButton w-full mt-4 bg-transparent text-myPrimaryDarkGrayColor text-xs bg-white hover:bg-white"
                 >
                   YouTube
                 </div>
                 <div
-                  class="mySecondaryButton w-full mt-4 bg-transparent text-myPrimaryDarkGrayColor text-sm bg-white hover:bg-white"
+                  class="mySecondaryButton w-full mt-4 bg-transparent text-myPrimaryDarkGrayColor text-xs bg-white hover:bg-white"
                 >
                   TikTok
                 </div>
                 <div
-                  class="mySecondaryButton w-full mt-4 bg-transparent text-myPrimaryDarkGrayColor text-sm bg-white hover:bg-white"
+                  class="mySecondaryButton w-full mt-4 bg-transparent text-myPrimaryDarkGrayColor text-xs bg-white hover:bg-white"
                 >
                   Instagram
                 </div>
                 <div
-                  class="mySecondaryButton w-full mt-4 bg-transparent text-myPrimaryDarkGrayColor text-sm bg-white hover:bg-white"
+                  class="mySecondaryButton w-full mt-4 bg-transparent text-myPrimaryDarkGrayColor text-xs bg-white hover:bg-white"
                 >
                   Contact
                 </div>
@@ -312,22 +312,22 @@ useSeoMeta({
 
                 <p class="myQuaternaryHeader">Leilani Sanders</p>
                 <div
-                  class="mySecondaryButton w-full mt-4 bg-transparent text-myPrimaryDarkGrayColor text-sm bg-white hover:bg-white"
+                  class="mySecondaryButton w-full mt-4 bg-transparent text-myPrimaryDarkGrayColor text-xs bg-white hover:bg-white"
                 >
                   Work
                 </div>
                 <div
-                  class="mySecondaryButton w-full mt-4 bg-transparent text-myPrimaryDarkGrayColor text-sm bg-white hover:bg-white"
+                  class="mySecondaryButton w-full mt-4 bg-transparent text-myPrimaryDarkGrayColor text-xs bg-white hover:bg-white"
                 >
                   Affiliate Links
                 </div>
                 <div
-                  class="mySecondaryButton w-full mt-4 bg-transparent text-myPrimaryDarkGrayColor text-sm bg-white hover:bg-white"
+                  class="mySecondaryButton w-full mt-4 bg-transparent text-myPrimaryDarkGrayColor text-xs bg-white hover:bg-white"
                 >
                   Daily Outfits
                 </div>
                 <div
-                  class="mySecondaryButton w-full mt-4 bg-transparent text-myPrimaryDarkGrayColor text-sm bg-white hover:bg-white"
+                  class="mySecondaryButton w-full mt-4 bg-transparent text-myPrimaryDarkGrayColor text-xs bg-white hover:bg-white"
                 >
                   Fashion Inspo
                 </div>
@@ -349,22 +349,22 @@ useSeoMeta({
 
                 <p class="myQuaternaryHeader">Alice Howard</p>
                 <div
-                  class="mySecondaryButton w-full mt-4 bg-transparent text-myPrimaryDarkGrayColor text-sm bg-white hover:bg-white"
+                  class="mySecondaryButton w-full mt-4 bg-transparent text-myPrimaryDarkGrayColor text-xs bg-white hover:bg-white"
                 >
                   Travel Blog
                 </div>
                 <div
-                  class="mySecondaryButton w-full mt-4 bg-transparent text-myPrimaryDarkGrayColor text-sm bg-white hover:bg-white"
+                  class="mySecondaryButton w-full mt-4 bg-transparent text-myPrimaryDarkGrayColor text-xs bg-white hover:bg-white"
                 >
                   Travel Tips
                 </div>
                 <div
-                  class="mySecondaryButton w-full mt-4 bg-transparent text-myPrimaryDarkGrayColor text-sm bg-white hover:bg-white"
+                  class="mySecondaryButton w-full mt-4 bg-transparent text-myPrimaryDarkGrayColor text-xs bg-white hover:bg-white"
                 >
                   Inspiration
                 </div>
                 <div
-                  class="mySecondaryButton w-full mt-4 bg-transparent text-myPrimaryDarkGrayColor text-sm bg-white hover:bg-white"
+                  class="mySecondaryButton w-full mt-4 bg-transparent text-myPrimaryDarkGrayColor text-xs bg-white hover:bg-white"
                 >
                   About me
                 </div>
