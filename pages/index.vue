@@ -18,30 +18,6 @@ useSeoMeta({
     return '/images/brand-images/home.jpg';
   },
 });
-
-const currentOpenId = ref(null);
-
-const isOpen = function (id) {
-  if (id === currentOpenId.value) {
-    currentOpenId.value = null;
-    return;
-  }
-  currentOpenId.value = id;
-};
-
-const faqs = [
-  {
-    id: 1,
-    question: 'Pricing',
-    answer: 'For pricing information, visit our professional page.',
-  },
-  {
-    id: 2,
-    question: 'Our services',
-    answer:
-      'Our services include job posting, product in-store posts, and store posting.',
-  },
-];
 </script>
 
 <template>
@@ -79,8 +55,16 @@ const faqs = [
           >Free Listing Directory, Blog & Job Board Theme
         </template>
         <template #description>
-          Multiple Security Layers, advanced Team Management, Page Builder,
-          Listing Directory, Blog, Job Board and Media Library in one solution
+          Page Builder, Multiple Security Layers, advanced Team Management,
+          Listing Directory, Blog, Job Board and Media Library in one solution.
+          <br />
+          <a
+            class="text-myPrimaryLinkColor"
+            href="https://github.com/qaiswardag/laravel_vue_directory_and_job_board_theme"
+            target="_blank"
+          >
+            Visit and download the GitHub repository.</a
+          >
         </template>
         <template #content>
           <div
@@ -197,8 +181,17 @@ const faqs = [
         </template>
         <template #description>
           Allow your users to build listings, jobs or posts with the intuitive
-          Page Builder. Customize layouts, colors, and fonts to achieve the
-          perfect design with the built-in Page Builder.
+          Page Builder. Features such as drag & drop building, true visual
+          editing, media library, responsive editing, color and font
+          customization allow users to achieve the perfect layout.
+          <br />
+          <a
+            class="text-myPrimaryLinkColor"
+            href="https://github.com/qaiswardag/laravel_vue_directory_and_job_board_theme"
+            target="_blank"
+          >
+            Visit and download the GitHub repository.</a
+          >
         </template>
         <template #content>
           <div class="w-full relative">
@@ -218,7 +211,7 @@ const faqs = [
       <!-- Linktree # start -->
       <FullWidthElement
         :descriptionArea="true"
-        class="bg-gray-50 lg:block hidden"
+        class="bg-gray-50"
       >
         <template #title>Allow your users to share multiple links </template>
         <template #description>
@@ -381,68 +374,6 @@ const faqs = [
         </template>
       </FullWidthElement>
       <!-- Linktree # end -->
-
-      <!-- FAQ # start -->
-      <FullWidthElement
-        :descriptionArea="true"
-        class="bg-gray-50 lg:block hidden"
-      >
-        <template #title>Frequently asked questions</template>
-        <template #description>
-          Laravel, Vue, and Nuxt, a Page Builder, Listing Directory, Blog, and
-          Job Board Theme.
-        </template>
-        <template #content>
-          <div class="grid grid-cols-1 lg:gap-16 gap-24 lg:grid-cols-12">
-            <dl class="divide-y divide-myPrimaryMediumGrayColor lg:col-span-6">
-              <div
-                v-for="faq in faqs"
-                :key="faq.question"
-              >
-                <dt>
-                  <div
-                    @click="isOpen(faq.id)"
-                    class="py-6 flex w-full items-center justify-between text-left myPrimaryParagraph cursor-pointer"
-                  >
-                    <span class="myPrimaryParagraph font-medium"
-                      >{{ faq.question }}
-                    </span>
-
-                    <span class="ml-6 flex h-7 items-center">
-                      <span
-                        v-if="faq.id !== currentOpenId"
-                        class="myMediumIcon material-symbols-outlined"
-                      >
-                        add
-                      </span>
-                      <span
-                        v-else
-                        class="myMediumIcon material-symbols-outlined"
-                      >
-                        remove
-                      </span>
-                    </span>
-                  </div>
-                </dt>
-                <div
-                  v-if="faq.id === currentOpenId"
-                  class="mt-2 mb-2 pr-8 pb-6"
-                >
-                  <p class="myPrimaryParagraph">
-                    {{ faq.answer }}
-                  </p>
-                </div>
-              </div>
-            </dl>
-            <img
-              class="w-full object-cover lg:col-span-6 rounded-lg"
-              src="/images/home/frequently_asked_questions.jpg"
-              alt="Laravel, Vue, and Nuxt, a Page Builder, Listing Directory, Blog, and Job Board Theme."
-            />
-          </div>
-        </template>
-      </FullWidthElement>
-      <!-- FAQ # end -->
     </GuestsLayout>
   </MainLayout>
 </template>
