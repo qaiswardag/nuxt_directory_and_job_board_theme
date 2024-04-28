@@ -6,13 +6,13 @@
 
 Laravel, Vue, and Nuxt, a Page Builder, Listing Directory, Blog, and Job Board Theme.
 
-# Nuxt 3 for Server-Side Rendering
+[Play around with the demo app](https://www.myissue.io)
+
+# Laravel and Vue 3 for backend
 
 Laravel and Vue 3 has been used for for the backend part.
 
 Check out the GitHub [repository](https://github.com/qaiswardag/laravel_vue_directory_and_job_board_theme).
-
-[Play around with the demo app](https://www.myissue.io)
 
 # Setup
 
