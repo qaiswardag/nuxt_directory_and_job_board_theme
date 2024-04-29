@@ -317,6 +317,7 @@ onMounted(() => {
               ]"
             >
               <!-- Search # start -->
+
               <form @submit.prevent="handleSearch">
                 <div class="relative w-full">
                   <div
@@ -324,7 +325,6 @@ onMounted(() => {
                   >
                     <span class="material-symbols-outlined"> search </span>
                   </div>
-
                   <input
                     v-model="search_query"
                     type="search"
@@ -617,110 +617,141 @@ onMounted(() => {
               role="list"
               class="grid myPrimaryGap xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1"
             >
-              <TransitionGroup>
-                <li
-                  v-for="post in fetchedDataPosts.posts.data"
-                  :key="post.id"
-                  class="overflow-hidden whitespace-pre-line flex-1 h-auto rounded bg-myPrimaryLightGrayColor"
+              <li
+                v-for="post in fetchedDataPosts.posts.data"
+                :key="post.id"
+                class="overflow-hidden whitespace-pre-line flex-1 h-auto rounded p-2 border border-myPrimaryLightGrayColor"
+              >
+                <!-- start photo -->
+                <template
+                  v-if="
+                    post && post.cover_images !== null && nameList === 'post'
+                  "
                 >
-                  <!-- start photo -->
+                  <ThumbnailSmallImageSlider
+                    :images="post.cover_images"
+                    :isLoading="isLoadingPosts"
+                    imageSize="medium_path"
+                    imageHeight="xl:max-h-[20rem] xl:min-h-[20rem] xl:h-[20rem] lg:max-h-[22rem] min-h-[22rem] lg:h-[22rem] md:max-h-[18rem] min-h-[18rem] md:h-[18rem] max-h-[26rem] min-h-[26rem] h-[26rem]"
+                    imageWidth="w-full object-cover rounded-b-none"
+                    :roundedFull="false"
+                    :squareButtons="true"
+                    @firstButtonClick="
+                      goToSinglePost(post.team.slug, post.slug, post.id)
+                    "
+                    :imageClickable="true"
+                  ></ThumbnailSmallImageSlider>
+                </template>
+                <template
+                  v-if="
+                    post && post.cover_images !== null && nameList === 'job'
+                  "
+                >
+                  <ThumbnailSmallImageSlider
+                    :images="post.cover_images"
+                    :isLoading="isLoadingPosts"
+                    imageSize="medium_path"
+                    imageHeight="xl:max-h-[12rem] xl:min-h-[12rem] xl:h-[12rem] lg:max-h-[12rem] min-h-[12rem] lg:h-[12rem] md:max-h-[12rem] min-h-[12rem] md:h-[12rem] max-h-[12rem] min-h-[12rem] h-[12rem]"
+                    imageWidth="w-full object-cover rounded-b-none"
+                    :roundedFull="false"
+                    :squareButtons="true"
+                    @firstButtonClick="
+                      goToSinglePost(post.team.slug, post.slug, post.id)
+                    "
+                    :imageClickable="true"
+                  ></ThumbnailSmallImageSlider>
+                </template>
+                <template
+                  v-if="
+                    post && post.cover_images !== null && nameList === 'listing'
+                  "
+                >
+                  <ThumbnailSmallImageSlider
+                    :images="post.cover_images"
+                    :isLoading="isLoadingPosts"
+                    imageSize="medium_path"
+                    imageHeight="xl:max-h-[28rem] xl:min-h-[28rem] xl:h-[28rem] lg:max-h-[30rem] min-h-[30rem] lg:h-[30rem] md:max-h-[26rem] min-h-[26rem] md:h-[26rem] max-h-[34rem] min-h-[34rem] h-[34rem]"
+                    imageWidth="w-full object-cover rounded-b-none"
+                    :roundedFull="false"
+                    :squareButtons="true"
+                    @firstButtonClick="
+                      goToSinglePost(post.team.slug, post.slug, post.id)
+                    "
+                    :imageClickable="true"
+                  ></ThumbnailSmallImageSlider>
+                </template>
 
-                  <!-- xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 -->
+                <section class="pt-4 pb-6 px-4">
+                  <button
+                    @click="goToSinglePost(post.team.slug, post.slug, post.id)"
+                    type="button"
+                    class="w-full text-left mb-6"
+                  >
+                    <p class="myPrimaryParagraph text-sm font-medium">
+                      <span>
+                        {{ post.title }}
+                      </span>
 
-                  <template v-if="post && post.cover_images !== null">
-                    <ThumbnailSmallImageSlider
-                      :images="post.cover_images"
-                      :isLoading="isLoadingPosts"
-                      imageSize="medium_path"
-                      imageHeight="xl:max-h-[28rem] xl:min-h-[28rem] xl:h-[28rem] lg:max-h-[30rem] min-h-[30rem] lg:h-[30rem] md:max-h-[26rem] min-h-[26rem] md:h-[26rem] max-h-[34rem] min-h-[34rem] h-[34rem]"
-                      imageWidth="w-full object-cover rounded-b-none"
-                      :roundedFull="false"
-                      :squareButtons="true"
-                      @firstButtonClick="
-                        goToSinglePost(post.team.slug, post.slug, post.id)
-                      "
-                      :imageClickable="true"
-                    ></ThumbnailSmallImageSlider>
-                  </template>
-
-                  <section class="pt-8 pb-4 px-4">
-                    <button
-                      @click="
-                        goToSinglePost(post.team.slug, post.slug, post.id)
-                      "
-                      type="button"
-                      class="w-full text-left"
-                    >
-                      <p class="myQuaternaryHeader">{{ post.title }}</p>
-                    </button>
-
-                    <template
-                      v-if="
-                        Array.isArray(post.team?.coverImagesWithLogos?.logos) &&
-                        post.team?.coverImagesWithLogos?.logos.length !== 0
-                      "
-                    >
-                      <div class="my-2">
-                        <ThumbnailSmallImageSlider
-                          :images="post.team?.coverImagesWithLogos?.logos"
-                          :isLoading="isLoadingPosts"
-                          imageSize="medium_path"
-                          imageHeight="min-h-16 max-h-16"
-                          imageWidth="min-w-16 max-w-16 object-cover"
-                          :roundedFull="true"
-                        ></ThumbnailSmallImageSlider>
-
-                        <p
-                          class="flex justify-center items-center text-xs myPrimaryParagraph mt-2"
-                        >
-                          {{ post.team.name }}
-                        </p>
-                      </div>
-                    </template>
-
-                    <template
-                      v-if="
-                        Array.isArray(post.team?.coverImagesWithLogos?.logos) &&
-                        post.team?.coverImagesWithLogos?.logos.length === 0
-                      "
-                    >
-                      <div
-                        class="text-xs h-16 flex items-center justify-center font-medium"
+                      <!-- If team do have a logo # start -->
+                      <template
+                        v-if="
+                          Array.isArray(
+                            post.team?.coverImagesWithLogos?.logos
+                          ) &&
+                          post.team?.coverImagesWithLogos?.logos.length !== 0
+                        "
                       >
-                        {{ post.team.name }}
-                      </div>
-                    </template>
+                        <span>, </span>
+                        <span>
+                          {{ post.team.name }}
+                        </span>
+                      </template>
+                      <!-- If team do have a logo # end -->
 
+                      <!-- If team do not have a logo # start -->
+                      <template
+                        v-if="
+                          Array.isArray(
+                            post.team?.coverImagesWithLogos?.logos
+                          ) &&
+                          post.team?.coverImagesWithLogos?.logos.length === 0
+                        "
+                      >
+                        <span>, </span>
+                        <span>
+                          {{ post.team.name }}
+                        </span>
+                      </template>
+                      <!-- If team do not have a logo # end -->
+                    </p>
+                  </button>
+
+                  <div
+                    :class="{
+                      'flex gap-0 items-center flex-wrap':
+                        post.countries &&
+                        Array.isArray(post.countries) &&
+                        post.countries.length > 0 &&
+                        post.states &&
+                        Array.isArray(post.states) &&
+                        post.states.length > 0,
+                    }"
+                  >
                     <template
                       v-if="
-                        post.started_at && post.ended_at && nameList === 'post'
+                        nameList !== 'post' &&
+                        post.countries &&
+                        Array.isArray(post.countries) &&
+                        post.countries.length > 0 &&
+                        post.states &&
+                        Array.isArray(post.states) &&
+                        post.states.length > 0
                       "
                     >
-                      <div class="flex gap-4">
-                        <div
-                          class="myPrimaryTag text-[10px] py-1 px-2 flex items-center min-h-[1rem]"
-                        >
-                          From:
-                          <span class="font-medium">
-                            {{
-                              format(parseISO(post.started_at), 'dd. MMMM yyyy')
-                            }}
-                          </span>
-                        </div>
-
-                        <div
-                          class="myPrimaryTag text-[10px] py-1 px-2 flex items-center min-h-[1rem]"
-                        >
-                          To:
-                          <span class="font-medium">
-                            {{
-                              format(parseISO(post.ended_at), 'dd. MMMM yyyy')
-                            }}
-                          </span>
-                        </div>
-                      </div>
+                      <span class="material-symbols-outlined text-[12px] pr-1">
+                        location_on
+                      </span>
                     </template>
-
                     <!-- Country # start -->
                     <template v-if="post.countries">
                       <ItemDisplaySelection
@@ -732,49 +763,88 @@ onMounted(() => {
                         @selectItem="handleSelection"
                       ></ItemDisplaySelection>
                     </template>
+                    <template
+                      v-if="
+                        post.countries &&
+                        Array.isArray(post.countries) &&
+                        post.countries.length > 0
+                      "
+                    >
+                      <span class="text-xs">,&nbsp;</span>
+                    </template>
                     <!-- Country # end -->
 
                     <!-- State # start -->
-                    <template v-if="post.states">
-                      <ItemDisplaySelection
-                        nameOfList="States"
-                        :list="post.states"
-                        :listSelected="stateSelected"
-                        icon="MapPinIcon"
-                        @removeItem="handleRemoveSelection"
-                        @selectItem="handleSelection"
-                      ></ItemDisplaySelection>
-                    </template>
+                    <div
+                      :class="{
+                        'flex gap-0 items-center flex-wrap':
+                          !post.countries ||
+                          (post.countries &&
+                            Array.isArray(post.countries) &&
+                            post.countries.length === 0 &&
+                            post.states &&
+                            Array.isArray(post.states) &&
+                            post.states.length > 0),
+                      }"
+                    >
+                      <template
+                        v-if="
+                          (nameList !== 'post' && !post.countries) ||
+                          (post.countries &&
+                            Array.isArray(post.countries) &&
+                            post.countries.length === 0 &&
+                            post.states &&
+                            Array.isArray(post.states) &&
+                            post.states.length > 0)
+                        "
+                      >
+                        <span
+                          class="material-symbols-outlined text-[12px] pr-1"
+                        >
+                          location_on
+                        </span>
+                      </template>
+                      <template v-if="post.states">
+                        <ItemDisplaySelection
+                          nameOfList="States"
+                          :list="post.states"
+                          :listSelected="stateSelected"
+                          icon="MapPinIcon"
+                          @removeItem="handleRemoveSelection"
+                          @selectItem="handleSelection"
+                        ></ItemDisplaySelection>
+                      </template>
+                    </div>
                     <!-- State # end -->
+                  </div>
 
-                    <!-- Type # start -->
-                    <template v-if="post.types">
-                      <ItemDisplaySelection
-                        nameOfList="Types"
-                        :list="post.types"
-                        :listSelected="typeSelected"
-                        icon="NewspaperIcon"
-                        @removeItem="handleRemoveSelection"
-                        @selectItem="handleSelection"
-                      ></ItemDisplaySelection>
-                    </template>
-                    <!-- Type # end -->
+                  <!-- Type # start -->
+                  <template v-if="post.types">
+                    <ItemDisplaySelection
+                      nameOfList="Types"
+                      :list="post.types"
+                      :listSelected="typeSelected"
+                      icon="NewspaperIcon"
+                      @removeItem="handleRemoveSelection"
+                      @selectItem="handleSelection"
+                    ></ItemDisplaySelection>
+                  </template>
+                  <!-- Type # end -->
 
-                    <!-- Category # start -->
-                    <template v-if="post.categories">
-                      <ItemDisplaySelection
-                        nameOfList="Categories"
-                        :list="post.categories"
-                        :listSelected="categorySelected"
-                        icon="interests"
-                        @removeItem="handleRemoveSelection"
-                        @selectItem="handleSelection"
-                      ></ItemDisplaySelection>
-                    </template>
-                    <!-- Category # end -->
-                  </section>
-                </li>
-              </TransitionGroup>
+                  <!-- Category # start -->
+                  <template v-if="post.categories">
+                    <ItemDisplaySelection
+                      nameOfList="Categories"
+                      :list="post.categories"
+                      :listSelected="categorySelected"
+                      icon="interests"
+                      @removeItem="handleRemoveSelection"
+                      @selectItem="handleSelection"
+                    ></ItemDisplaySelection>
+                  </template>
+                  <!-- Category # end -->
+                </section>
+              </li>
             </ul>
           </div>
           <!-- List Grid # end -->

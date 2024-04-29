@@ -27,7 +27,7 @@ const handleRemoveItem = function (selectedItem) {
 
 <template>
   <template v-if="list">
-    <div class="flex flex-wrap gap-2 items-center justify-left py-4">
+    <div class="flex flex-wrap gap-2 items-center justify-left py-2 text-xs">
       <button
         @click="
           listSelected.some((cat) => cat.id === item.id)
@@ -37,14 +37,11 @@ const handleRemoveItem = function (selectedItem) {
                 id: item.id,
               })
         "
-        v-for="item in list"
+        v-for="(item, index) in list"
         :key="item.id"
-        class="py-1.5 px-2 flex justify-center items-center gap-1 myPrimaryTag font-medium"
         :class="[
           {
-            'bg-myPrimaryLinkColor text-white': listSelected.some(
-              (cat) => cat.id === item.id
-            ),
+            'font-medium ': listSelected.some((cat) => cat.id === item.id),
           },
           {
             '': listSelected.some((cat) => cat.id !== item.id),
@@ -52,27 +49,14 @@ const handleRemoveItem = function (selectedItem) {
         ]"
         :disabled="listSelected.name === item.name"
       >
-        <template v-if="props.icon === 'interests'">
-          <span class="myMediumIcon material-symbols-outlined">
-            interests
+        <span class="flex items-center justify-start gap-1">
+          <span>
+            <span> {{ item.name }} </span>
+            <template v-if="list.length >= 2 && index < list.length - 1">
+              <span>, </span>
+            </template>
           </span>
-        </template>
-
-        <template v-if="props.icon === 'GlobeAmericasIcon'">
-          <span class="myMediumIcon material-symbols-outlined"> globe </span>
-        </template>
-
-        <template v-if="props.icon === 'MapPinIcon'">
-          <span class="myMediumIcon material-symbols-outlined">
-            location_on
-          </span>
-        </template>
-
-        <template v-if="props.icon === 'NewspaperIcon'">
-          <span class="myMediumIcon material-symbols-outlined"> sell </span>
-        </template>
-
-        {{ item.name }}
+        </span>
       </button>
     </div>
   </template>
