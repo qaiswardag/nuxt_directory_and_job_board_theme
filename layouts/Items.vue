@@ -57,7 +57,7 @@ const fetchComponents = function (page) {
   appendSelectedParams(params);
 
   const url = `${props.pathList}?${params.toString()}`;
-  handleGetPosts(url);
+  handleGetPosts(url, {}, { additionalCallTime: 200 });
 };
 
 const handleSearch = function () {
@@ -70,7 +70,7 @@ const handleSearch = function () {
   appendSelectedParams(params);
 
   const url = `${props.pathList}?${params.toString()}`;
-  handleGetPosts(url);
+  handleGetPosts(url, {}, { additionalCallTime: 200 });
 };
 
 const searchInTagsAndContent = ref(false);
@@ -278,7 +278,7 @@ const appendSelectedParams = function (params) {
   });
 
   const url = `${props.pathList}?${params.toString()}`;
-  handleGetPosts(url);
+  handleGetPosts(url, {}, { additionalCallTime: 200 });
 };
 
 const goToSinglePost = function (teamSlug, postSlug, postId) {
