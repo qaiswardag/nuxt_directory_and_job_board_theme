@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: 'myissue',
+      name: 'MyISSUE',
       port: '4000',
       exec_mode: 'cluster',
       instances: 'max',
