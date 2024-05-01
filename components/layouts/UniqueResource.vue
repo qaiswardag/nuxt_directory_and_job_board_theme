@@ -1323,15 +1323,58 @@ const getAppUrl = function (path) {
             ></ThumbnailSmallImageSlider>
             <!-- post logo # end -->
 
-            <ThumbnailSmallImageSlider
-              v-if="post.cover_images"
-              :images="post.cover_images"
-              imageSize="large_path"
-              imageHeight="xl:max-h-[28rem] xl:min-h-[28rem] xl:h-[28rem] lg:max-h-[30rem] min-h-[30rem] lg:h-[30rem] md:max-h-[26rem] min-h-[26rem] md:h-[26rem] max-h-[34rem] min-h-[34rem] h-[34rem]"
-              imageWidth="w-full object-cover rounded-b-none"
-              :roundedFull="false"
-              :squareButtons="true"
-            ></ThumbnailSmallImageSlider>
+            <!-- start photo -->
+            <template
+              v-if="post && post.cover_images !== null && postType === 'Post'"
+            >
+              <ThumbnailSmallImageSlider
+                :images="post.cover_images"
+                imageSize="large_path"
+                imageHeight="xl:max-h-[20rem] xl:min-h-[20rem] xl:h-[20rem] lg:max-h-[22rem] min-h-[22rem] lg:h-[22rem] md:max-h-[18rem] min-h-[18rem] md:h-[18rem] max-h-[26rem] min-h-[26rem] h-[26rem]"
+                imageWidth="w-full object-cover rounded-b-none"
+                :roundedFull="false"
+                :squareButtons="true"
+                @firstButtonClick="
+                  goToSinglePost(post.team.slug, post.slug, post.id)
+                "
+                :imageClickable="true"
+              ></ThumbnailSmallImageSlider>
+            </template>
+            <template
+              v-if="post && post.cover_images !== null && postType === 'Job'"
+            >
+              <ThumbnailSmallImageSlider
+                :images="post.cover_images"
+                imageSize="large_path"
+                imageHeight="xl:max-h-[20rem] xl:min-h-[20rem] xl:h-[20rem] lg:max-h-[22rem] min-h-[22rem] lg:h-[22rem] md:max-h-[18rem] min-h-[18rem] md:h-[18rem] max-h-[26rem] min-h-[26rem] h-[26rem]"
+                imageWidth="w-full object-cover rounded-b-none"
+                :roundedFull="false"
+                :squareButtons="true"
+                @firstButtonClick="
+                  goToSinglePost(post.team.slug, post.slug, post.id)
+                "
+                :imageClickable="true"
+              ></ThumbnailSmallImageSlider>
+            </template>
+            <template
+              v-if="
+                post && post.cover_images !== null && postType === 'Listing'
+              "
+            >
+              <ThumbnailSmallImageSlider
+                :images="post.cover_images"
+                imageSize="large_path"
+                imageHeight="xl:max-h-[34rem] xl:min-h-[34rem] xl:h-[34rem] lg:max-h-[34rem] min-h-[34rem] lg:h-[34rem] md:max-h-[z-30rem] min-h-[z-30rem] md:h-[z-30rem] max-h-[34rem] min-h-[34rem] h-[34rem]"
+                imageWidth="w-full object-cover rounded-b-none object-top"
+                :roundedFull="false"
+                :squareButtons="true"
+                @firstButtonClick="
+                  goToSinglePost(post.team.slug, post.slug, post.id)
+                "
+                :imageClickable="true"
+              ></ThumbnailSmallImageSlider>
+            </template>
+            <!-- post logo # start -->
             <!-- post logo # start -->
 
             <!-- post logo # end -->
