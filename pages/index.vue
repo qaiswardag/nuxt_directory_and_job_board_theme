@@ -252,11 +252,6 @@ useSeoMeta({
                 >
                   Blog
                 </div>
-                <div
-                  class="mySecondaryButton w-full mt-4 bg-transparent text-myPrimaryDarkGrayColor text-xs bg-white hover:bg-white"
-                >
-                  Contact
-                </div>
               </div>
             </div>
             <div
@@ -288,11 +283,6 @@ useSeoMeta({
                   class="mySecondaryButton w-full mt-4 bg-transparent text-myPrimaryDarkGrayColor text-xs bg-white hover:bg-white"
                 >
                   Instagram
-                </div>
-                <div
-                  class="mySecondaryButton w-full mt-4 bg-transparent text-myPrimaryDarkGrayColor text-xs bg-white hover:bg-white"
-                >
-                  Contact
                 </div>
               </div>
             </div>
@@ -326,11 +316,6 @@ useSeoMeta({
                 >
                   Daily Outfits
                 </div>
-                <div
-                  class="mySecondaryButton w-full mt-4 bg-transparent text-myPrimaryDarkGrayColor text-xs bg-white hover:bg-white"
-                >
-                  Fashion Inspo
-                </div>
               </div>
             </div>
             <div
@@ -362,11 +347,6 @@ useSeoMeta({
                   class="mySecondaryButton w-full mt-4 bg-transparent text-myPrimaryDarkGrayColor text-xs bg-white hover:bg-white"
                 >
                   Inspiration
-                </div>
-                <div
-                  class="mySecondaryButton w-full mt-4 bg-transparent text-myPrimaryDarkGrayColor text-xs bg-white hover:bg-white"
-                >
-                  About me
                 </div>
               </div>
             </div>
