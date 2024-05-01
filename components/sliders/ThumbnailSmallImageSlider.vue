@@ -119,7 +119,7 @@ const sortedImages = computed(() => {
                   : '',
             }"
             :src="getAppUrl(`storage/uploads/${image[imageSize]}`)"
-            class="absolute inset-0 z-20 rounded object-top"
+            class="absolute inset-0 z-20 rounded"
             :class="[
               `${imageHeight}`,
               `${imageWidth}`,
