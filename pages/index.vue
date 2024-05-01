@@ -24,7 +24,7 @@ useSeoMeta({
   <MainLayout>
     <GuestsLayout>
       <template #header>
-        <div class="w-full relative h-[32rem]">
+        <div class="w-full relative h-[36rem]">
           <img
             class="top-0 left-0 w-full object-cover h-[36rem]"
             src="/images/brand-images/home.jpg"
