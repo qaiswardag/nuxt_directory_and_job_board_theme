@@ -181,9 +181,12 @@ useSeoMeta({
         </template>
         <template #description>
           Allow your users to build listings, jobs or posts with the intuitive
-          Page Builder. Features such as drag & drop building, true visual
-          editing, media library, responsive editing, color and font
-          customization allow users to achieve the perfect layout.
+          Page Builder.
+          <br />
+          <br />
+          Features such as drag & drop building, true visual editing, media
+          library, responsive editing, color and font customization allow users
+          to achieve the perfect layout.
           <br />
           <a
             class="text-myPrimaryLinkColor"
