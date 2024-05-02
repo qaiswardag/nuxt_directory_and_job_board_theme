@@ -285,6 +285,13 @@ const goToSinglePost = function (teamSlug, postSlug, postId) {
   const routePath = `${teamSlug}/${props.nameList}/${postSlug}/view/${postId}`;
   window.location.href = routePath;
 };
+
+const runtimeConfig = useRuntimeConfig();
+
+const getAppUrl = function (path) {
+  return runtimeConfig.public.LARAVEL_APP_URL + '/' + path;
+};
+
 onMounted(() => {
   fetchComponents(1);
 });
@@ -641,7 +648,33 @@ onMounted(() => {
                     "
                     :imageClickable="true"
                   ></ThumbnailSmallImageSlider>
+                  <!-- Team logo # start -->
+                  <div
+                    v-if="
+                      post.cover_images &&
+                      Array.isArray(post.cover_images) &&
+                      post.cover_images.length > 0 &&
+                      post.team &&
+                      post.team.coverImagesWithLogos &&
+                      post.team.coverImagesWithLogos.logos &&
+                      Array.isArray(post.team.coverImagesWithLogos.logos) &&
+                      post.team.coverImagesWithLogos.logos.length > 0
+                    "
+                    class="relative flex justify-center items-center mt-[-2rem] z-50 w-full h-[4rem]"
+                  >
+                    <img
+                      alt="Logo brand"
+                      :src="
+                        getAppUrl(
+                          `storage/uploads/${post.team.coverImagesWithLogos.logos[0].large_path}`
+                        )
+                      "
+                      class="w-[4rem] h-[4rem] bg-white rounded-full object-cover"
+                    />
+                  </div>
+                  <!-- Team logo # end -->
                 </template>
+
                 <template
                   v-if="
                     post && post.cover_images !== null && nameList === 'job'
@@ -660,7 +693,33 @@ onMounted(() => {
                     "
                     :imageClickable="true"
                   ></ThumbnailSmallImageSlider>
+                  <!-- Team logo # start -->
+                  <div
+                    v-if="
+                      post.cover_images &&
+                      Array.isArray(post.cover_images) &&
+                      post.cover_images.length > 0 &&
+                      post.team &&
+                      post.team.coverImagesWithLogos &&
+                      post.team.coverImagesWithLogos.logos &&
+                      Array.isArray(post.team.coverImagesWithLogos.logos) &&
+                      post.team.coverImagesWithLogos.logos.length > 0
+                    "
+                    class="relative flex justify-center items-center mt-[-2rem] z-50 w-full h-[4rem]"
+                  >
+                    <img
+                      alt="Logo brand"
+                      :src="
+                        getAppUrl(
+                          `storage/uploads/${post.team.coverImagesWithLogos.logos[0].large_path}`
+                        )
+                      "
+                      class="w-[4rem] h-[4rem] bg-white rounded-full object-cover"
+                    />
+                  </div>
+                  <!-- Team logo # end -->
                 </template>
+
                 <template
                   v-if="
                     post && post.cover_images !== null && nameList === 'listing'
@@ -679,6 +738,29 @@ onMounted(() => {
                     "
                     :imageClickable="true"
                   ></ThumbnailSmallImageSlider>
+                  <!-- Listing logo # start -->
+                  <div
+                    v-if="
+                      post.cover_images &&
+                      Array.isArray(post.cover_images) &&
+                      post.cover_images.length > 0 &&
+                      post.brand_logos &&
+                      Array.isArray(post.brand_logos) &&
+                      post.brand_logos.length > 0
+                    "
+                    class="relative flex justify-center items-center mt-[-2rem] z-50 w-full h-[4rem]"
+                  >
+                    <img
+                      alt="Logo brand"
+                      :src="
+                        getAppUrl(
+                          `storage/uploads/${post.brand_logos[0].large_path}`
+                        )
+                      "
+                      class="w-[4rem] h-[4rem] bg-white rounded-full object-cover"
+                    />
+                  </div>
+                  <!-- Listing logo # end -->
                 </template>
 
                 <section class="pt-4 pb-6 px-4">
