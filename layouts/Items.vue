@@ -660,7 +660,7 @@ onMounted(() => {
                       Array.isArray(post.team.coverImagesWithLogos.logos) &&
                       post.team.coverImagesWithLogos.logos.length > 0
                     "
-                    class="relative flex justify-center items-center mt-[-2rem] z-50 w-full h-[4rem]"
+                    class="relative flex justify-center items-center mt-[-2rem] z-20 w-full h-[4rem]"
                   >
                     <img
                       alt="Logo brand"
@@ -705,7 +705,7 @@ onMounted(() => {
                       Array.isArray(post.team.coverImagesWithLogos.logos) &&
                       post.team.coverImagesWithLogos.logos.length > 0
                     "
-                    class="relative flex justify-center items-center mt-[-2rem] z-50 w-full h-[4rem]"
+                    class="relative flex justify-center items-center mt-[-2rem] z-20 w-full h-[4rem]"
                   >
                     <img
                       alt="Logo brand"
@@ -748,7 +748,7 @@ onMounted(() => {
                       Array.isArray(post.brand_logos) &&
                       post.brand_logos.length > 0
                     "
-                    class="relative flex justify-center items-center mt-[-2rem] z-50 w-full h-[4rem]"
+                    class="relative flex justify-center items-center mt-[-2rem] z-20 w-full h-[4rem]"
                   >
                     <img
                       alt="Logo brand"
