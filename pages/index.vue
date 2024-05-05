@@ -40,8 +40,9 @@ useSeoMeta({
             alt="Laravel, Vue, and Nuxt, a Page Builder, Listing Directory, Blog, and Job Board Theme."
           />
           <div class="bg-black/20 absolute top-0 left-0 w-full h-[36rem]"></div>
+
           <div
-            class="absolute text-2xl md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 top-1/2 left-2/2 -translate-x-2/2 -translate-y-1/2 md:mx-0 mx-6"
+            class="absolute text-2xl md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 top-1/4 w-full md:px-6 px-4"
           >
             <h1 class="myPrimaryHeader text-white text-center">
               Free Listing Directory, Blog & Job Board Theme
@@ -53,7 +54,7 @@ useSeoMeta({
             </p>
 
             <div
-              class="py-6 px-4 rounded-xl mt-6 mb-4 flex md:flex-row flex-col md:gap-4 gap-2 bg-gray-100 bg-opacity-50"
+              class="lg:w-2/3 md:w-2/2 w-full mx-auto py-6 px-4 rounded-full mt-6 mb-4 flex md:flex-row flex-col md:gap-4 gap-2 bg-gray-100 bg-opacity-50"
             >
               <form
                 @submit.prevent="handleSearch"
