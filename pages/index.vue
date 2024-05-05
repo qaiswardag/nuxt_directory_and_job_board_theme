@@ -44,45 +44,47 @@ useSeoMeta({
           <div
             class="absolute text-2xl md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 top-1/4 w-full md:px-6 px-4"
           >
-            <h1 class="myPrimaryHeader text-white text-center">
-              Free Listing Directory, Blog & Job Board Theme
-              <br />
-            </h1>
-            <p class="myPrimaryParagraph text-white text-center font-medium">
-              Laravel, Vue, and Nuxt, a Page Builder, Listing Directory, Blog,
-              and Job Board Theme.
-            </p>
+            <div class="lg:w-2/3 md:w-2/2 w-full mx-auto">
+              <h1 class="myPrimaryHeader text-white text-center">
+                Free Listing Directory, Blog & Job Board Theme
+                <br />
+              </h1>
+              <p class="myPrimaryParagraph text-white text-center font-medium">
+                Laravel, Vue, and Nuxt, a Page Builder, Listing Directory, Blog,
+                and Job Board Theme.
+              </p>
 
-            <div
-              class="lg:w-2/3 md:w-2/2 w-full mx-auto py-6 px-4 rounded-2xl mt-6 mb-4 flex md:flex-row flex-col md:gap-4 gap-2 bg-gray-100 bg-opacity-20"
-            >
-              <form
-                @submit.prevent="handleSearch"
-                class="md:w-3/4 w-full"
+              <div
+                class="py-6 px-4 rounded-2xl mt-6 mb-4 flex md:flex-row flex-col md:gap-4 gap-2 bg-gray-100 bg-opacity-20"
               >
-                <div class="relative w-full">
-                  <div
-                    class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none"
-                  >
-                    <span class="material-symbols-outlined"> search </span>
+                <form
+                  @submit.prevent="handleSearch"
+                  class="md:w-3/4 w-full"
+                >
+                  <div class="relative w-full">
+                    <div
+                      class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none"
+                    >
+                      <span class="material-symbols-outlined"> search </span>
+                    </div>
+                    <input
+                      v-model="searchQuery"
+                      type="search"
+                      id="search_query"
+                      class="myPrimaryInput pl-10 shadow-none w-full text-sm"
+                      autocomplete="off"
+                      placeholder="Search listings.."
+                    />
                   </div>
-                  <input
-                    v-model="searchQuery"
-                    type="search"
-                    id="search_query"
-                    class="myPrimaryInput pl-10 shadow-none w-full text-sm"
-                    autocomplete="off"
-                    placeholder="Search listings.."
-                  />
-                </div>
-              </form>
-              <button
-                type="button"
-                @click="handleSearch"
-                class="myPrimaryButton md:w-1/4 w-full"
-              >
-                Search
-              </button>
+                </form>
+                <button
+                  type="button"
+                  @click="handleSearch"
+                  class="myPrimaryButton md:w-1/4 w-full"
+                >
+                  Search
+                </button>
+              </div>
             </div>
           </div>
         </div>
