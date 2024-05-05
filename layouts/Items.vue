@@ -681,7 +681,7 @@ onMounted(() => {
                       alt="Logo brand"
                       :src="
                         getAppUrl(
-                          `storage/uploads/${post.team.coverImagesWithLogos.logos[0].large_path}`
+                          `storage/uploads/${post.team.coverImagesWithLogos.logos[0].medium_path}`
                         )
                       "
                       class="w-[4rem] h-[4rem] bg-white rounded-full object-cover"
@@ -726,7 +726,7 @@ onMounted(() => {
                       alt="Logo brand"
                       :src="
                         getAppUrl(
-                          `storage/uploads/${post.team.coverImagesWithLogos.logos[0].large_path}`
+                          `storage/uploads/${post.team.coverImagesWithLogos.logos[0].medium_path}`
                         )
                       "
                       class="w-[4rem] h-[4rem] bg-white rounded-full object-cover"
@@ -769,7 +769,7 @@ onMounted(() => {
                       alt="Logo brand"
                       :src="
                         getAppUrl(
-                          `storage/uploads/${post.brand_logos[0].large_path}`
+                          `storage/uploads/${post.brand_logos[0].medium_path}`
                         )
                       "
                       class="w-[4rem] h-[4rem] bg-white rounded-full object-cover"
