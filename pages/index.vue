@@ -54,7 +54,7 @@ useSeoMeta({
             </p>
 
             <div
-              class="lg:w-2/3 md:w-2/2 w-full mx-auto py-6 px-4 rounded-full mt-6 mb-4 flex md:flex-row flex-col md:gap-4 gap-2 bg-gray-100 bg-opacity-50"
+              class="lg:w-2/3 md:w-2/2 w-full mx-auto py-6 px-4 rounded-2xl mt-6 mb-4 flex md:flex-row flex-col md:gap-4 gap-2 bg-gray-100 bg-opacity-20"
             >
               <form
                 @submit.prevent="handleSearch"
