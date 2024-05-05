@@ -21,8 +21,10 @@ const handleSearch = async function () {
 useSeoMeta({
   title: `${runtimeConfig.public.APP_NAME} | Home`,
   ogTitle: `${runtimeConfig.public.APP_NAME} | Home`,
-  description: 'Nuxt 3 Directory & Job Board Theme.',
-  ogDescription: 'Nuxt 3 Directory & Job Board Theme.',
+  description:
+    'Laravel, Vue, and Nuxt, a Page Builder, Listing Directory, Blog, and Job Board Theme.',
+  ogDescription:
+    'Laravel, Vue, and Nuxt, a Page Builder, Listing Directory, Blog, and Job Board Theme.',
   ogImage: () => {
     return '/images/brand-images/home.jpg';
   },
