@@ -21,11 +21,19 @@ export const useUserStore = defineStore('user', {
   state: () => ({
     baseUrl: useRuntimeConfig().public.LARAVEL_APP_URL,
     user: {},
+    searchQuery: '',
   }),
   getters: {
     getUser: (state) => state.user,
+    getSearchQuery: (state) => state.searchQuery,
   },
   actions: {
+    setSearchQuery(query: string) {
+      this.searchQuery = query;
+    },
+
+    //
+    //
     getAppUrl(path: string) {
       return this.baseUrl + '/' + path;
     },

@@ -9,6 +9,11 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue';
 import ItemDisplaySelection from '../layouts/items/ItemDisplaySelection.vue';
 import ItemsFilterSelection from '../layouts/items/ItemsFilterSelection.vue';
 import TailwindPagination from '../components/pagination/TailwindPagination.vue';
+import { useUserStore } from '../store/user';
+
+const store = useUserStore();
+
+const { getSearchQuery, setSearchQuery } = store;
 
 const props = defineProps({
   nameList: {
@@ -43,7 +48,7 @@ const search_query = ref('');
 const tags_or_content = ref(false);
 
 const fetchComponents = function (page) {
-  //remember old search value while paginating
+  // remember old search value while paginating
   if (fetchedDataPosts.value?.oldInput?.search_query) {
     search_query.value = fetchedDataPosts.value?.oldInput?.search_query;
   }
@@ -293,7 +298,17 @@ const getAppUrl = function (path) {
 };
 
 onMounted(() => {
+  if (
+    typeof getSearchQuery !== 'undefined' &&
+    typeof getSearchQuery === 'string' &&
+    getSearchQuery.length > 0
+  ) {
+    search_query.value = getSearchQuery;
+  }
+
   fetchComponents(1);
+
+  setSearchQuery('');
 });
 </script>
 
