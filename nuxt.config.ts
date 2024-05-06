@@ -21,7 +21,6 @@ export default defineNuxtConfig({
   sitemap: {
     exclude: [],
   },
-
   app: {
     head: {
       charset: 'utf-8',
@@ -71,9 +70,3 @@ export default defineNuxtConfig({
     },
   },
 });
-
-//
-//
-//
-//
-//

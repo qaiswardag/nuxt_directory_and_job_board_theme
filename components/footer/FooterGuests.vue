@@ -17,7 +17,15 @@
       </p>
       <p class="myPrimaryParagraph lg:text-sm text-xs">
         <a
-          href="https://www.linkedin.com/in/qaiswardag/"
+          href="https://www.linkedin.com/in/qaiswardag"
+          target="_blank"
+        >
+          Qais Wardag
+        </a>
+      </p>
+      <p class="myPrimaryParagraph lg:text-sm text-xs">
+        <a
+          href="https://www.linkedin.com/company/myissue"
           target="_blank"
         >
           LinkedIn
