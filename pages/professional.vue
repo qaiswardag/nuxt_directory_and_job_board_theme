@@ -41,9 +41,9 @@ useSeoMeta({
   title: `${runtimeConfig.public.APP_NAME} | Professional`,
   ogTitle: `${runtimeConfig.public.APP_NAME} | Professional`,
   description:
-    'Join the best theme within Laravel, Vue, and Nuxt, featuring a powerful Page Builder, Listing Directory, Blog, and Job Board.',
+    'Download Laravel, Vue, and Nuxt Theme for free, featuring a powerful Page Builder, Listing Directory, Blog, and Job Board.',
   ogDescription:
-    'Join the best theme within Laravel, Vue, and Nuxt, featuring a powerful Page Builder, Listing Directory, Blog, and Job Board.',
+    'Download Laravel, Vue, and Nuxt Theme for free, featuring a powerful Page Builder, Listing Directory, Blog, and Job Board.',
   ogImage: () => {
     return getAppUrl('brand-images/home.jpg');
   },
