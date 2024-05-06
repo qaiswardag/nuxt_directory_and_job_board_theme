@@ -22,9 +22,9 @@ useSeoMeta({
   title: `${runtimeConfig.public.APP_NAME} | Home`,
   ogTitle: `${runtimeConfig.public.APP_NAME} | Home`,
   description:
-    'Laravel, Vue, and Nuxt, a Page Builder, Listing Directory, Blog, and Job Board Theme.',
+    'Download Laravel, Vue, and Nuxt Theme for free, featuring a powerful Page Builder, Listing Directory, Blog, and Job Board.',
   ogDescription:
-    'Laravel, Vue, and Nuxt, a Page Builder, Listing Directory, Blog, and Job Board Theme.',
+    'Download Laravel, Vue, and Nuxt Theme for free, featuring a powerful Page Builder, Listing Directory, Blog, and Job Board.',
   ogImage: () => {
     return '/images/brand-images/home.jpg';
   },
