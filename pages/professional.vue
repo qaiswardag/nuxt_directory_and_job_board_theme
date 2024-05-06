@@ -41,9 +41,9 @@ useSeoMeta({
   title: `${runtimeConfig.public.APP_NAME} | Professional`,
   ogTitle: `${runtimeConfig.public.APP_NAME} | Professional`,
   description:
-    "Join Fashion's most comprehensive marketing platform in the UAE. Showcase stores to local consumers, find professionals and post fashion jobs. View Prices!",
+    'Join the best theme within Laravel, Vue, and Nuxt, featuring a powerful Page Builder, Listing Directory, Blog, and Job Board.',
   ogDescription:
-    "Join Fashion's most comprehensive marketing platform in the UAE. Showcase stores to local consumers, find professionals and post fashion jobs. View Prices!",
+    'Join the best theme within Laravel, Vue, and Nuxt, featuring a powerful Page Builder, Listing Directory, Blog, and Job Board.',
   ogImage: () => {
     return getAppUrl('brand-images/home.jpg');
   },
