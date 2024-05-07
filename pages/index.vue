@@ -312,7 +312,9 @@ useSeoMeta({
             >
               <div class="flex items-center justify-between h-full">
                 <!-- section # start -->
-                <div class="flex items-center justify-end myPrimaryGap h-full">
+                <div
+                  class="lg:flex hidden items-center justify-end myPrimaryGap h-full"
+                >
                   <div class="flex gap-2">
                     <span
                       class="w-2 h-2 rounded-full bg-red-400 hover:bg-red-600"
@@ -347,7 +349,7 @@ useSeoMeta({
                 <!-- section # end -->
 
                 <!-- section # start -->
-                <div class="flex justify-center items-center gap-2">
+                <div class="lg:flex hidden justify-center items-center gap-2">
                   <p class="myPrimaryParagraph text-[10px] text-white italic">
                     Listing: Louis Vuitton
                   </p>
@@ -375,7 +377,9 @@ useSeoMeta({
             </div>
             <!-- Top menu # end -->
             <!-- Container  # start -->
-            <div class="col-span-9 top-0 w-full h-[61rem] rounded-l-2xl">
+            <div
+              class="lg:col-span-9 col-span-6 top-0 w-full h-[61rem] rounded-l-2xl"
+            >
               <div class="flex items-center justify-between">
                 <!-- Left side menu # start -->
                 <div
@@ -428,7 +432,7 @@ useSeoMeta({
 
             <!-- Right menu  # start -->
             <div
-              class="col-span-3 px-4 top-0 w-full bg-gray-200 bg-opacity-90 hover:bg-opacity-80 h-[61rem] rounded-br-2xl pt-6"
+              class="lg:col-span-3 col-span-6 px-4 top-0 w-full bg-gray-200 bg-opacity-90 hover:bg-opacity-80 h-[61rem] rounded-br-2xl pt-6"
             >
               <div>
                 <!-- icon # start -->
