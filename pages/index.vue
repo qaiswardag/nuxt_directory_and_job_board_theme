@@ -6,6 +6,68 @@ import { useUserStore } from '../store/user';
 
 const store = useUserStore();
 
+const features = [
+  {
+    name: 'Free and open-source',
+    description:
+      'Enjoy all features without any cost, making it accessible to everyone.',
+  },
+  {
+    name: 'Single Page Application',
+    description:
+      'Seamlessly navigate through the application without page reloads, ensuring a smooth user experience.',
+  },
+  {
+    name: 'Page Builder',
+    description:
+      'Easily create and customize pages according to your needs with a user-friendly page builder.',
+  },
+  {
+    name: 'Listings Directory',
+    description: 'Effortlessly manage and showcase various listings.',
+  },
+  {
+    name: 'Job Board',
+    description:
+      'Facilitate job postings and applications through a dedicated job board feature.',
+  },
+  {
+    name: 'Blog Postings',
+    description:
+      'Publish and manage blog posts efficiently to keep your audience engaged and informed.',
+  },
+  {
+    name: 'Mobile-First Approach',
+    description:
+      'Designed with a mobile-first approach, ensuring optimal performance and usability on all devices.',
+  },
+  {
+    name: 'Media Library',
+    description:
+      'Organize and manage your media assets conveniently within a centralized media library for teams and users.',
+  },
+  {
+    name: 'Stripe Integration',
+    description:
+      'Offer subscription-based plans for listings using Stripe or one-time charges for job postings.',
+  },
+  {
+    name: 'Team Roles',
+    description:
+      'Assign specific roles and permissions to team members for better organization and control.',
+  },
+  {
+    name: 'Superadmin Management',
+    description:
+      'Efficiently manage administrative tasks and permissions with superadmin capabilities.',
+  },
+  {
+    name: 'Set Brand and Link Colors Once',
+    description:
+      'Customize and set brand colors and link styles easily, saving time and ensuring consistency.',
+  },
+];
+
 const { setSearchQuery } = store;
 
 const runtimeConfig = useRuntimeConfig();
@@ -120,7 +182,7 @@ useSeoMeta({
               class="w-full lg:h-[30rem] h-[22rem] relative col-span-1 flex flex-col bg-red-100 text-center shadow rounded-lg"
             >
               <img
-                class="top-0 left-0 w-full object-cover lg:h-[30rem] h-[22rem] rounded-lg"
+                class="top-0 left-0 w-full object-cover lg:h-[30rem] h-[22rem] rounded-lg object-top"
                 src="/images/home/fashion_show.jpg"
                 alt="Laravel, Vue, and Nuxt, a Page Builder, Listing Directory, Blog, and Job Board Theme."
               />
@@ -144,7 +206,7 @@ useSeoMeta({
               class="w-full lg:h-[30rem] h-[22rem] relative col-span-1 flex flex-col bg-red-100 text-center shadow rounded-lg"
             >
               <img
-                class="top-0 left-0 w-full object-cover lg:h-[30rem] h-[22rem] rounded-lg"
+                class="top-0 left-0 w-full object-cover lg:h-[30rem] h-[22rem] rounded-lg object-top"
                 src="/images/home/orange_bg.jpg"
                 alt="Laravel, Vue, and Nuxt, a Page Builder, Listing Directory, Blog, and Job Board Theme."
               />
@@ -168,7 +230,7 @@ useSeoMeta({
               class="w-full lg:h-[30rem] h-[22rem] relative col-span-1 flex flex-col bg-red-100 text-center shadow rounded-lg"
             >
               <img
-                class="top-0 left-0 w-full object-cover lg:h-[30rem] h-[22rem] rounded-lg"
+                class="top-0 left-0 w-full object-cover lg:h-[30rem] h-[22rem] rounded-lg object-top"
                 src="/images/home/girl_light_bg.jpg"
                 alt="Laravel, Vue, and Nuxt, a Page Builder, Listing Directory, Blog, and Job Board Theme."
               />
@@ -192,7 +254,7 @@ useSeoMeta({
               class="w-full lg:h-[30rem] h-[22rem] relative col-span-1 flex flex-col bg-red-100 text-center shadow rounded-lg"
             >
               <img
-                class="top-0 left-0 w-full object-cover lg:h-[30rem] h-[22rem] rounded-lg"
+                class="top-0 left-0 w-full object-cover lg:h-[30rem] h-[22rem] rounded-lg object-top"
                 src="/images/home/three.jpg"
                 alt="Laravel, Vue, and Nuxt, a Page Builder, Listing Directory, Blog, and Job Board Theme."
               />
@@ -257,10 +319,41 @@ useSeoMeta({
       </FullWidthElement>
       <!-- Builder # end -->
 
-      <!-- Linktree # start -->
+      <!-- Theme features # start -->
       <FullWidthElement
         :descriptionArea="true"
         class="bg-gray-50"
+      >
+        <template #title>Technical Specifications </template>
+        <template #description>
+          Complete Solution for Seamless Management and Control.
+          <br />
+          Everything you need from a page builder, listing directory, blog, and
+          job board theme to get started right out of the box.
+        </template>
+        <template #content>
+          <dl
+            class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:max-w-none lg:grid-cols-3 lg:gap-x-8"
+          >
+            <div
+              v-for="feature in features"
+              :key="feature.name"
+              class="border-t border-gray-200 pt-4"
+            >
+              <dt class="myPrimaryParagraph font-medium">{{ feature.name }}</dt>
+              <dd class="myPrimaryParagraph">
+                {{ feature.description }}
+              </dd>
+            </div>
+          </dl>
+        </template>
+      </FullWidthElement>
+      <!-- Theme features # end -->
+
+      <!-- Linktree # start -->
+      <FullWidthElement
+        :descriptionArea="true"
+        class="bg-red-50"
       >
         <template #title>Allow your users to share multiple links </template>
         <template #description>
