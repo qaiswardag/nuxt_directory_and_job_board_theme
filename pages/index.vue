@@ -113,7 +113,7 @@ useSeoMeta({
                 Free Listing Directory, Blog & Job Board Theme
                 <br />
               </h1>
-              <p class="myPrimaryParagraph text-white text-center font-medium">
+              <p class="myPrimaryParagraph text-[12px]text-center font-medium">
                 Laravel, Vue, and Nuxt, a Page Builder, Listing Directory, Blog,
                 and Job Board Theme.
               </p>
@@ -194,7 +194,7 @@ useSeoMeta({
                 <div class="px-2 pt-8 absolute top-0 w-full">
                   <p class="text-white mySecondaryHeader">Listings</p>
                   <p
-                    class="myPrimaryParagraph text-white font-medium drop-shadow-sm"
+                    class="myPrimaryParagraph text-[12px]font-medium drop-shadow-sm"
                   >
                     User-friendly features for managing, organizing, and
                     advertising business listings.
@@ -218,7 +218,7 @@ useSeoMeta({
                 <div class="px-2 pt-8 absolute top-0 w-full">
                   <p class="text-white mySecondaryHeader">Posts</p>
                   <p
-                    class="myPrimaryParagraph text-white font-medium drop-shadow-sm"
+                    class="myPrimaryParagraph text-[12px]font-medium drop-shadow-sm"
                   >
                     Newest published posts. Utilize advanced filters ensuring
                     users find the most relevant content for their needs.
@@ -242,7 +242,7 @@ useSeoMeta({
                 <div class="px-2 pt-8 absolute top-0 w-full">
                   <p class="text-white mySecondaryHeader">Jobs</p>
                   <p
-                    class="myPrimaryParagraph text-white font-medium drop-shadow-sm"
+                    class="myPrimaryParagraph text-[12px]font-medium drop-shadow-sm"
                   >
                     Latest published job postings. Filters to refine the search
                     by country, state, category, job type, and more.
@@ -266,7 +266,7 @@ useSeoMeta({
                 <div class="px-2 pt-8 absolute top-0 w-full">
                   <p class="text-white mySecondaryHeader">Professional</p>
                   <p
-                    class="myPrimaryParagraph text-white font-medium drop-shadow-sm"
+                    class="myPrimaryParagraph text-[12px]font-medium drop-shadow-sm"
                   >
                     Professional page for subscribing to listings or creating
                     single-charge job posts using Stripe integration.
@@ -291,7 +291,6 @@ useSeoMeta({
           Allow your users to build listings, jobs or posts with the intuitive
           Page Builder.
           <br />
-          <br />
           Features such as drag & drop building, true visual editing, media
           library, responsive editing, color and font customization allow users
           to achieve the perfect layout.
@@ -306,7 +305,7 @@ useSeoMeta({
         </template>
         <template #content>
           <div
-            class="relative overflow-hidden bg-cover bg-no-repeat grid grid-cols-12 h-[65rem] rounded-2xl shadow-sm outline outline-2 outline-offset-4 outline-myPrimaryLinkColor hover:outline-myPrimaryLinkColor/50"
+            class="relative overflow-hidden bg-cover bg-no-repeat grid grid-cols-12 h-[68rem] rounded-2xl shadow-sm outline outline-2 outline-offset-4 outline-myPrimaryLinkColor hover:outline-myPrimaryLinkColor/50"
             style="background-image: url('/images/home/the_furthest_dawn.jpg')"
           >
             <!-- Top menu # start -->
@@ -332,8 +331,6 @@ useSeoMeta({
                 </div>
                 <!-- section # end -->
 
-                <!-- section # start -->
-
                 <!-- Editing page # start -->
                 <div class="flex justify-center items-center gap-2">
                   <button
@@ -354,7 +351,7 @@ useSeoMeta({
                 <!-- section # start -->
                 <div class="lg:flex hidden justify-center items-center gap-2">
                   <p class="myPrimaryParagraph text-[10px] text-white italic">
-                    Listing: Louis Vuitton
+                    Editing: Listing ID 1
                   </p>
                 </div>
                 <!-- section # end -->
@@ -374,6 +371,16 @@ useSeoMeta({
                     <span class="material-symbols-outlined"> visibility </span>
                   </div>
                   <!-- icon # end -->
+
+                  <!-- section # start -->
+                  <div class="lg:flex justify-center items-center gap-2">
+                    <p
+                      class="myPrimaryParagraph text-[12px] text-white font-medium"
+                    >
+                      Page Builder
+                    </p>
+                  </div>
+                  <!-- section # end -->
                 </div>
                 <!-- section # end -->
               </div>
@@ -381,7 +388,7 @@ useSeoMeta({
             <!-- Top menu # end -->
             <!-- Container  # start -->
             <div
-              class="lg:col-span-9 col-span-6 top-0 w-full h-[61rem] rounded-l-2xl"
+              class="lg:col-span-9 col-span-6 top-0 w-full h-[64rem] rounded-l-2xl"
             >
               <div class="flex items-center justify-between">
                 <!-- Left side menu # start -->
@@ -424,9 +431,68 @@ useSeoMeta({
                 <!-- Left side menu # end -->
 
                 <div
-                  class="flex items-center justify-center w-full h-[61rem] pt-2"
+                  class="flex items-center justify-center w-full h-[64rem] pt-2 pr-8"
                 >
                   <!-- Content for container # start -->
+
+                  <!-- Text area # start -->
+                  <div
+                    class="lg:flex hidden items-center w-full h-full justify-end"
+                  >
+                    <div
+                      class="w-[22rem] h-[10rem] rounded-2xl bg-gray-200 bg-opacity-90 hover:bg-opacity-80 py-8 flex flex-col justify-between top-0"
+                    >
+                      <div
+                        class="py-2 flex justify-between gap-4 px-4 bg-gray-400 rounded-full mx-6 bg-opacity-30"
+                      >
+                        <p class="myPrimaryParagraph text-[20px]">
+                          <span class="material-symbols-outlined text-[20px]">
+                            format_bold
+                          </span>
+                        </p>
+                        <p class="myPrimaryParagraph text-[20px]">
+                          <span class="material-symbols-outlined text-[20px]">
+                            format_italic
+                          </span>
+                        </p>
+                        <p class="myPrimaryParagraph text-[20px]">
+                          <span class="material-symbols-outlined text-[20px]">
+                            format_color_text
+                          </span>
+                        </p>
+                        <p class="myPrimaryParagraph text-[20px]">
+                          <span class="material-symbols-outlined text-[20px]">
+                            format_align_left
+                          </span>
+                        </p>
+                      </div>
+                      <div
+                        class="py-2 flex justify-between gap-4 px-4 bg-gray-400 rounded-full mx-6 bg-opacity-30"
+                      >
+                        <p class="myPrimaryParagraph text-[20px]">
+                          <span class="material-symbols-outlined text-[20px]">
+                            format_shapes
+                          </span>
+                        </p>
+                        <p class="myPrimaryParagraph text-[20px]">
+                          <span class="material-symbols-outlined text-[20px]">
+                            add_photo_alternate
+                          </span>
+                        </p>
+                        <p class="myPrimaryParagraph text-[20px]">
+                          <span class="material-symbols-outlined text-[20px]">
+                            colors
+                          </span>
+                        </p>
+                        <p class="myPrimaryParagraph text-[20px]">
+                          <span class="material-symbols-outlined text-[20px]">
+                            attach_file
+                          </span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Text area # end -->
                   <!-- Content for container # end -->
                 </div>
               </div>
@@ -435,19 +501,24 @@ useSeoMeta({
 
             <!-- Right menu  # start -->
             <div
-              class="lg:col-span-3 col-span-6 px-4 top-0 w-full bg-gray-200 bg-opacity-90 hover:bg-opacity-80 h-[61rem] rounded-br-2xl pt-6"
+              class="lg:col-span-3 col-span-6 px-4 top-0 w-full bg-gray-200 bg-opacity-90 hover:bg-opacity-80 h-[64rem] rounded-br-2xl pt-6"
             >
               <div>
-                <!-- icon # start -->
-                <div
-                  class="h-8 w-8 rounded-full flex items-center border-none justify-center bg-gray-50 aspect-square hover:bg-myPrimaryLinkColor hover:text-white focus-visible:ring-0"
-                >
-                  <span class="material-symbols-outlined"> Close </span>
+                <div class="flex justify-between items-center gap-2">
+                  <!-- icon # start -->
+                  <div
+                    class="h-8 w-8 rounded-full flex items-center border-none justify-center bg-gray-50 aspect-square hover:bg-myPrimaryLinkColor hover:text-white focus-visible:ring-0"
+                  >
+                    <span class="material-symbols-outlined"> Close </span>
+                  </div>
+                  <!-- icon # end -->
+                  <p class="font-medium text-sm">
+                    Editing <span class="lowercase">&lt;IMG&gt;</span>
+                  </p>
                 </div>
-                <!-- icon # end -->
 
                 <div class="my-8">
-                  <p class="myPrimaryParagraph text-sm font-medium pb-4">
+                  <p class="myPrimaryParagraph text-sm font-medium pb-3">
                     Filters
                   </p>
 
@@ -458,7 +529,7 @@ useSeoMeta({
                         Blur
                       </div>
                       <div
-                        class="border border-myPrimaryDarkGrayColor hover:border-gray-400 h-10 flex items-center justify-between px-2 w-full rounded-lg w-2/3"
+                        class="border border-myPrimaryDarkGrayColor hover:border-gray-400 h-10 flex items-center justify-between px-2 shadow rounded-lg w-2/3"
                       >
                         <p class="myPrimaryParagraph text-xs">blur-lg</p>
 
@@ -469,8 +540,10 @@ useSeoMeta({
                   </div>
                 </div>
 
+                <div class="w-full border-t border-gray-300"></div>
+
                 <div class="my-8">
-                  <p class="myPrimaryParagraph text-sm font-medium pb-4">
+                  <p class="myPrimaryParagraph text-sm font-medium pb-3">
                     Borders
                   </p>
 
@@ -481,7 +554,7 @@ useSeoMeta({
                         Radius
                       </div>
                       <div
-                        class="border border-myPrimaryDarkGrayColor hover:border-gray-400 h-10 flex items-center justify-between px-2 w-full rounded-lg w-2/3"
+                        class="border border-myPrimaryDarkGrayColor hover:border-gray-400 h-10 flex items-center justify-between px-2 shadow rounded-lg w-2/3"
                       >
                         <p class="myPrimaryParagraph text-xs">rounded</p>
 
@@ -495,7 +568,7 @@ useSeoMeta({
                         Width
                       </div>
                       <div
-                        class="border border-myPrimaryDarkGrayColor hover:border-gray-400 h-10 flex items-center justify-between px-2 w-full rounded-lg w-2/3"
+                        class="border border-myPrimaryDarkGrayColor hover:border-gray-400 h-10 flex items-center justify-between px-2 shadow rounded-lg w-2/3"
                       >
                         <p class="myPrimaryParagraph text-xs">border-0</p>
 
@@ -509,7 +582,7 @@ useSeoMeta({
                 <div class="w-full border-t border-gray-300"></div>
 
                 <div class="my-4">
-                  <p class="myPrimaryParagraph text-sm font-medium pb-4">
+                  <p class="myPrimaryParagraph text-sm font-medium pb-3">
                     Typography
                   </p>
 
@@ -535,7 +608,7 @@ useSeoMeta({
 
                 <div class="w-full border-t border-gray-300"></div>
                 <div class="my-4">
-                  <p class="myPrimaryParagraph text-sm font-medium pb-4">
+                  <p class="myPrimaryParagraph text-sm font-medium pb-3">
                     Video
                   </p>
 
@@ -564,7 +637,7 @@ useSeoMeta({
                 <div class="w-full border-t border-gray-300"></div>
 
                 <div class="my-8">
-                  <p class="myPrimaryParagraph text-sm font-medium pb-4">
+                  <p class="myPrimaryParagraph text-sm font-medium pb-3">
                     Customization
                   </p>
 
@@ -595,7 +668,7 @@ useSeoMeta({
                         Sepia
                       </div>
                       <div
-                        class="border border-myPrimaryDarkGrayColor hover:border-gray-400 h-10 flex items-center justify-between px-2 w-full rounded-lg w-2/3"
+                        class="border border-myPrimaryDarkGrayColor hover:border-gray-400 h-10 flex items-center justify-between px-2 shadow rounded-lg w-2/3"
                       >
                         <p class="myPrimaryParagraph text-xs">sepia-0</p>
 
@@ -608,7 +681,7 @@ useSeoMeta({
 
                 <div class="w-full border-t border-gray-300"></div>
                 <div class="my-8">
-                  <p class="myPrimaryParagraph text-sm font-medium pb-4">
+                  <p class="myPrimaryParagraph text-sm font-medium pb-3">
                     Spacing
                   </p>
 
@@ -619,7 +692,7 @@ useSeoMeta({
                         Padding
                       </div>
                       <div
-                        class="border border-myPrimaryDarkGrayColor hover:border-gray-400 h-10 flex items-center justify-between px-2 w-full rounded-lg w-2/3"
+                        class="border border-myPrimaryDarkGrayColor hover:border-gray-400 h-10 flex items-center justify-between px-2 shadow rounded-lg w-2/3"
                       >
                         <p class="myPrimaryParagraph text-xs">p-0</p>
 
@@ -634,7 +707,7 @@ useSeoMeta({
                         Margin
                       </div>
                       <div
-                        class="border border-myPrimaryDarkGrayColor hover:border-gray-400 h-10 flex items-center justify-between px-2 w-full rounded-lg w-2/3"
+                        class="border border-myPrimaryDarkGrayColor hover:border-gray-400 h-10 flex items-center justify-between px-2 shadow rounded-lg w-2/3"
                       >
                         <p class="myPrimaryParagraph text-xs">m-0</p>
 
