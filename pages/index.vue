@@ -3,6 +3,7 @@ import MainLayout from '../layouts/MainLayout.vue';
 import GuestsLayout from '../layouts/GuestsLayout.vue';
 import FullWidthElement from '../components/layouts/FullWidthElement.vue';
 import { useUserStore } from '../store/user';
+import WidgetSectionBorder from '~/components/sections/WidgetSectionBorder.vue';
 
 const store = useUserStore();
 
@@ -318,6 +319,336 @@ useSeoMeta({
         </template>
       </FullWidthElement>
       <!-- Builder # end -->
+
+      <!-- Theme Test # start -->
+      <FullWidthElement :descriptionArea="true">
+        <template #title
+          >Customize the design of Listings, Jobs and Posts
+        </template>
+        <template #description>
+          Allow your users to build listings, jobs or posts with the intuitive
+          Page Builder.
+          <br />
+          <br />
+          Features such as drag & drop building, true visual editing, media
+          library, responsive editing, color and font customization allow users
+          to achieve the perfect layout.
+          <br />
+          <a
+            class="text-myPrimaryLinkColor"
+            href="https://github.com/qaiswardag/laravel_vue_directory_and_job_board_theme"
+            target="_blank"
+          >
+            Visit and download the GitHub repository.</a
+          >
+        </template>
+        <template #content>
+          <div
+            class="grid grid-cols-12 h-[60rem] rounded-2xl shadow-sm outline outline-2 outline-offset-4 outline-myPrimaryLinkColor hover:outline-myPrimaryLinkColor/50"
+          >
+            <!-- Top menu # start -->
+            <div
+              class="col-span-12 px-4 top-0 h-[3rem] w-full border-b border-gray-200"
+            >
+              <div class="flex items-center justify-between h-full">
+                <!-- section # start -->
+                <div class="flex items-center justify-end myPrimaryGap h-full">
+                  <div class="flex gap-2">
+                    <span
+                      class="w-2 h-2 rounded-full bg-red-400 hover:bg-red-600"
+                    ></span
+                    ><span
+                      class="w-2 h-2 rounded-full bg-yellow-400 hover:bg-yellow-600"
+                    ></span
+                    ><span
+                      class="w-2 h-2 rounded-full bg-green-400 hover:bg-green-600"
+                    ></span>
+                  </div>
+                </div>
+                <!-- section # end -->
+
+                <!-- section # start -->
+
+                <!-- section # start -->
+                <div class="flex justify-center items-center gap-2">
+                  <button
+                    type="button"
+                    class="mySecondaryButton text-[10px] py-2 px-6 cursor-default min-h-2"
+                  >
+                    Save
+                  </button>
+                  <button
+                    type="button"
+                    class="myPrimaryButton text-[10px] py-2 px-6 cursor-default min-h-2"
+                  >
+                    Publish
+                  </button>
+                </div>
+                <!-- section # end -->
+
+                <div class="flex items-center justify-end myPrimaryGap h-full">
+                  <!-- icon # start -->
+                  <div
+                    class="h-8 w-8 rounded-full flex items-center border-none justify-center bg-gray-50 aspect-square hover:bg-myPrimaryLinkColor hover:text-white focus-visible:ring-0"
+                  >
+                    <span class="material-symbols-outlined"> add </span>
+                  </div>
+                  <!-- icon # end -->
+                  <!-- icon # start -->
+                  <div
+                    class="h-8 w-8 rounded-full flex items-center border-none justify-center bg-gray-50 aspect-square hover:bg-myPrimaryLinkColor hover:text-white focus-visible:ring-0"
+                  >
+                    <span class="material-symbols-outlined"> visibility </span>
+                  </div>
+                  <!-- icon # end -->
+                </div>
+                <!-- section # end -->
+              </div>
+            </div>
+            <!-- Top menu # end -->
+            <!-- Container  # start -->
+            <div
+              class="col-span-9 top-0 w-full h-[56rem] rounded-l-2xl relative overflow-hidden bg-cover bg-no-repeat"
+              style="background-image: url('/images/brand-images/home.jpg')"
+            >
+              <div class="flex items-center justify-between">
+                <!-- Left side menu # start -->
+                <div
+                  class="w-[4rem] bg-myPrimaryMediumGrayColor bg-opacity-90 hover:bg-opacity-80 h-[40rem] rounded-full pt-8 ml-2"
+                >
+                  <div class="flex flex-col justify-center items-center gap-8">
+                    <!-- icon # start -->
+                    <div
+                      class="h-8 w-8 rounded-full flex items-center border-none justify-center bg-gray-50 aspect-square hover:bg-myPrimaryLinkColor hover:text-white focus-visible:ring-0"
+                    >
+                      <span class="material-symbols-outlined">
+                        arrow_selector_tool
+                      </span>
+                    </div>
+                    <!-- icon # end -->
+                    <!-- icon # start -->
+                    <div
+                      class="h-8 w-8 rounded-full flex items-center border-none justify-center bg-gray-50 aspect-square hover:bg-myPrimaryLinkColor hover:text-white focus-visible:ring-0"
+                    >
+                      <span class="material-symbols-outlined"> add </span>
+                    </div>
+                    <!-- icon # end -->
+                    <!-- icon # start -->
+                    <div
+                      class="h-8 w-8 rounded-full flex items-center border-none justify-center bg-gray-50 aspect-square hover:bg-myPrimaryLinkColor hover:text-white focus-visible:ring-0"
+                    >
+                      <span class="material-symbols-outlined"> replay </span>
+                    </div>
+                    <!-- icon # end -->
+                    <!-- icon # start -->
+                    <div
+                      class="h-8 w-8 rounded-full flex items-center border-none justify-center bg-gray-50 aspect-square hover:bg-myPrimaryErrorColor hover:text-white focus-visible:ring-0"
+                    >
+                      <span class="material-symbols-outlined"> delete </span>
+                    </div>
+                    <!-- icon # end -->
+                  </div>
+                </div>
+                <!-- Left side menu # end -->
+
+                <div
+                  class="flex items-center justify-center w-full h-[56rem] pt-2"
+                >
+                  Container
+                </div>
+              </div>
+            </div>
+            <!-- Container  # end -->
+            <!-- Right menu  # start -->
+            <div
+              class="col-span-3 px-4 top-0 w-full bg-gray-100 h-[56rem] rounded-br-2xl pt-2 border-l border-myPrimaryDarkGrayColor"
+            >
+              <div>
+                <!-- icon # start -->
+                <div
+                  class="h-8 w-8 rounded-full flex items-center border-none justify-center bg-gray-50 aspect-square hover:bg-myPrimaryLinkColor hover:text-white focus-visible:ring-0"
+                >
+                  <span class="material-symbols-outlined"> Close </span>
+                </div>
+                <!-- icon # end -->
+
+                <div class="my-8">
+                  <p class="myPrimaryParagraph text-sm font-medium pb-4">
+                    Filters
+                  </p>
+
+                  <div class="flex flex-col myPrimaryGap">
+                    <!-- select # start -->
+                    <div class="flex items-center justify-start gap-6">
+                      <div class="myPrimaryParagraph text-xs font-medium w-1/3">
+                        Blur
+                      </div>
+                      <div
+                        class="border border-myPrimaryDarkGrayColor hover:border-gray-400 h-10 flex items-center justify-between px-2 w-full rounded-lg w-2/3"
+                      >
+                        <p class="myPrimaryParagraph text-xs">blur-lg</p>
+
+                        <div class="material-symbols-outlined">expand_more</div>
+                      </div>
+                    </div>
+                    <!-- select # end -->
+                  </div>
+                </div>
+
+                <div class="my-8">
+                  <p class="myPrimaryParagraph text-sm font-medium pb-4">
+                    Borders
+                  </p>
+
+                  <div class="flex flex-col myPrimaryGap">
+                    <!-- select # start -->
+                    <div class="flex items-center justify-start gap-6">
+                      <div class="myPrimaryParagraph text-xs font-medium w-1/3">
+                        Radius
+                      </div>
+                      <div
+                        class="border border-myPrimaryDarkGrayColor hover:border-gray-400 h-10 flex items-center justify-between px-2 w-full rounded-lg w-2/3"
+                      >
+                        <p class="myPrimaryParagraph text-xs">rounded</p>
+
+                        <div class="material-symbols-outlined">expand_more</div>
+                      </div>
+                    </div>
+                    <!-- select # end -->
+                    <!-- select # start -->
+                    <div class="flex items-center justify-start gap-6">
+                      <div class="myPrimaryParagraph text-xs font-medium w-1/3">
+                        Width
+                      </div>
+                      <div
+                        class="border border-myPrimaryDarkGrayColor hover:border-gray-400 h-10 flex items-center justify-between px-2 w-full rounded-lg w-2/3"
+                      >
+                        <p class="myPrimaryParagraph text-xs">border-0</p>
+
+                        <div class="material-symbols-outlined">expand_more</div>
+                      </div>
+                    </div>
+                    <!-- select # end -->
+                  </div>
+                </div>
+
+                <WidgetSectionBorder></WidgetSectionBorder>
+                <div class="my-8">
+                  <p class="myPrimaryParagraph text-sm font-medium pb-4">
+                    Video
+                  </p>
+
+                  <div class="flex flex-col myPrimaryGap">
+                    <!-- select # start -->
+                    <div class="flex items-center justify-start gap-6">
+                      <div class="myPrimaryParagraph text-xs font-medium w-1/3">
+                        Add Video
+                      </div>
+                      <!-- icon # start -->
+                      <div class="flex justify-end w-full">
+                        <div
+                          class="shadow h-8 w-14 rounded-lg flex items-center border-none justify-center bg-gray-50 aspect-square hover:bg-myPrimaryLinkColor hover:text-white focus-visible:ring-0"
+                        >
+                          <span class="material-symbols-outlined">
+                            play_arrow
+                          </span>
+                        </div>
+                      </div>
+                      <!-- icon # end -->
+                    </div>
+                    <!-- select # end -->
+                  </div>
+                </div>
+                <WidgetSectionBorder></WidgetSectionBorder>
+
+                <div class="my-8">
+                  <p class="myPrimaryParagraph text-sm font-medium pb-4">
+                    Customization
+                  </p>
+
+                  <div class="flex flex-col myPrimaryGap">
+                    <!-- toggle # start -->
+                    <div class="flex items-center justify-start gap-6">
+                      <div class="myPrimaryParagraph text-xs font-medium w-1/3">
+                        Shadow
+                      </div>
+
+                      <div
+                        class="myPrimaryParagraph text-xs font-medium flex justify-end w-full"
+                      >
+                        <div
+                          class="pointer-events-auto h-6 w-10 rounded-full p-1 ring-1 ring-inset transition duration-200 ease-in-out bg-myPrimaryLinkColor ring-black/20"
+                        >
+                          <div
+                            class="h-4 w-4 rounded-full bg-white shadow-sm ring-1 ring-slate-700/10 transition duration-200 ease-in-out translate-x-4"
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- toggle # end -->
+
+                    <!-- select # start -->
+                    <div class="flex items-center justify-start gap-6">
+                      <div class="myPrimaryParagraph text-xs font-medium w-1/3">
+                        Sepia
+                      </div>
+                      <div
+                        class="border border-myPrimaryDarkGrayColor hover:border-gray-400 h-10 flex items-center justify-between px-2 w-full rounded-lg w-2/3"
+                      >
+                        <p class="myPrimaryParagraph text-xs">sepia-0</p>
+
+                        <div class="material-symbols-outlined">expand_more</div>
+                      </div>
+                    </div>
+                    <!-- select # end -->
+                  </div>
+                </div>
+                <WidgetSectionBorder></WidgetSectionBorder>
+
+                <div class="my-8">
+                  <p class="myPrimaryParagraph text-sm font-medium pb-4">
+                    Spacing
+                  </p>
+
+                  <div class="flex flex-col myPrimaryGap">
+                    <!-- select # start -->
+                    <div class="flex items-center justify-start gap-6">
+                      <div class="myPrimaryParagraph text-xs font-medium w-1/3">
+                        Padding
+                      </div>
+                      <div
+                        class="border border-myPrimaryDarkGrayColor hover:border-gray-400 h-10 flex items-center justify-between px-2 w-full rounded-lg w-2/3"
+                      >
+                        <p class="myPrimaryParagraph text-xs">p-0</p>
+
+                        <div class="material-symbols-outlined">expand_more</div>
+                      </div>
+                    </div>
+                    <!-- select # end -->
+
+                    <!-- select # start -->
+                    <div class="flex items-center justify-start gap-6">
+                      <div class="myPrimaryParagraph text-xs font-medium w-1/3">
+                        Margin
+                      </div>
+                      <div
+                        class="border border-myPrimaryDarkGrayColor hover:border-gray-400 h-10 flex items-center justify-between px-2 w-full rounded-lg w-2/3"
+                      >
+                        <p class="myPrimaryParagraph text-xs">m-0</p>
+
+                        <div class="material-symbols-outlined">expand_more</div>
+                      </div>
+                    </div>
+                    <!-- select # end -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Right menu  # end -->
+          </div>
+        </template>
+      </FullWidthElement>
+      <!-- Theme Test # end -->
 
       <!-- Theme features # start -->
       <FullWidthElement
