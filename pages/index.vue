@@ -280,7 +280,10 @@ useSeoMeta({
       <!-- 4 images # end -->
 
       <!-- Builder # start -->
-      <FullWidthElement :descriptionArea="true">
+      <FullWidthElement
+        :descriptionArea="true"
+        class="bg-red-50"
+      >
         <template #title
           >Customize the design of Listings, Jobs and Posts
         </template>
