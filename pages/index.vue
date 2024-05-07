@@ -3,7 +3,6 @@ import MainLayout from '../layouts/MainLayout.vue';
 import GuestsLayout from '../layouts/GuestsLayout.vue';
 import FullWidthElement from '../components/layouts/FullWidthElement.vue';
 import { useUserStore } from '../store/user';
-import WidgetSectionBorder from '~/components/sections/WidgetSectionBorder.vue';
 
 const store = useUserStore();
 
@@ -281,46 +280,6 @@ useSeoMeta({
       <!-- 4 images # end -->
 
       <!-- Builder # start -->
-      <FullWidthElement
-        :descriptionArea="true"
-        class="bg-red-50"
-      >
-        <template #title
-          >Customize the design of Listings, Jobs and Posts
-        </template>
-        <template #description>
-          Allow your users to build listings, jobs or posts with the intuitive
-          Page Builder.
-          <br />
-          <br />
-          Features such as drag & drop building, true visual editing, media
-          library, responsive editing, color and font customization allow users
-          to achieve the perfect layout.
-          <br />
-          <a
-            class="text-myPrimaryLinkColor"
-            href="https://github.com/qaiswardag/laravel_vue_directory_and_job_board_theme"
-            target="_blank"
-          >
-            Visit and download the GitHub repository.</a
-          >
-        </template>
-        <template #content>
-          <div class="w-full relative">
-            <img
-              class="top-0 left-0 w-full object-cover rounded-lg"
-              src="/images/home/edit_or_add_designs.jpg"
-              alt="Laravel, Vue, and Nuxt, a Page Builder, Listing Directory, Blog, and Job Board Theme."
-            />
-            <div
-              class="bg-black/0 absolute top-0 left-0 w-full h-full rounded-lg"
-            ></div>
-          </div>
-        </template>
-      </FullWidthElement>
-      <!-- Builder # end -->
-
-      <!-- Theme Test # start -->
       <FullWidthElement :descriptionArea="true">
         <template #title
           >Customize the design of Listings, Jobs and Posts
@@ -344,11 +303,12 @@ useSeoMeta({
         </template>
         <template #content>
           <div
-            class="grid grid-cols-12 h-[60rem] rounded-2xl shadow-sm outline outline-2 outline-offset-4 outline-myPrimaryLinkColor hover:outline-myPrimaryLinkColor/50"
+            class="relative overflow-hidden bg-cover bg-no-repeat grid grid-cols-12 h-[65rem] rounded-2xl shadow-sm outline outline-2 outline-offset-4 outline-myPrimaryLinkColor hover:outline-myPrimaryLinkColor/50"
+            style="background-image: url('/images/home/the_furthest_dawn.jpg')"
           >
             <!-- Top menu # start -->
             <div
-              class="col-span-12 px-4 top-0 h-[3rem] w-full border-b border-gray-200"
+              class="col-span-12 px-4 top-0 h-[4rem] w-full border-b border-gray-200"
             >
               <div class="flex items-center justify-between h-full">
                 <!-- section # start -->
@@ -369,7 +329,7 @@ useSeoMeta({
 
                 <!-- section # start -->
 
-                <!-- section # start -->
+                <!-- Editing page # start -->
                 <div class="flex justify-center items-center gap-2">
                   <button
                     type="button"
@@ -383,6 +343,14 @@ useSeoMeta({
                   >
                     Publish
                   </button>
+                </div>
+                <!-- section # end -->
+
+                <!-- section # start -->
+                <div class="flex justify-center items-center gap-2">
+                  <p class="myPrimaryParagraph text-[10px] text-white italic">
+                    Listing: Louis Vuitton
+                  </p>
                 </div>
                 <!-- section # end -->
 
@@ -407,14 +375,11 @@ useSeoMeta({
             </div>
             <!-- Top menu # end -->
             <!-- Container  # start -->
-            <div
-              class="col-span-9 top-0 w-full h-[56rem] rounded-l-2xl relative overflow-hidden bg-cover bg-no-repeat"
-              style="background-image: url('/images/brand-images/home.jpg')"
-            >
+            <div class="col-span-9 top-0 w-full h-[61rem] rounded-l-2xl">
               <div class="flex items-center justify-between">
                 <!-- Left side menu # start -->
                 <div
-                  class="w-[4rem] bg-myPrimaryMediumGrayColor bg-opacity-90 hover:bg-opacity-80 h-[40rem] rounded-full pt-8 ml-2"
+                  class="w-[4rem] bg-red-100 bg-opacity-50 hover:bg-opacity-40 h-[40rem] rounded-full pt-8 ml-2"
                 >
                   <div class="flex flex-col justify-center items-center gap-8">
                     <!-- icon # start -->
@@ -452,16 +417,18 @@ useSeoMeta({
                 <!-- Left side menu # end -->
 
                 <div
-                  class="flex items-center justify-center w-full h-[56rem] pt-2"
+                  class="flex items-center justify-center w-full h-[61rem] pt-2"
                 >
-                  Container
+                  <!-- Content for container # start -->
+                  <!-- Content for container # end -->
                 </div>
               </div>
             </div>
             <!-- Container  # end -->
+
             <!-- Right menu  # start -->
             <div
-              class="col-span-3 px-4 top-0 w-full bg-gray-100 h-[56rem] rounded-br-2xl pt-2 border-l border-myPrimaryDarkGrayColor"
+              class="col-span-3 px-4 top-0 w-full bg-gray-200 bg-opacity-90 hover:bg-opacity-80 h-[61rem] rounded-br-2xl pt-6"
             >
               <div>
                 <!-- icon # start -->
@@ -532,8 +499,35 @@ useSeoMeta({
                   </div>
                 </div>
 
-                <WidgetSectionBorder></WidgetSectionBorder>
-                <div class="my-8">
+                <div class="w-full border-t border-gray-300"></div>
+
+                <div class="my-4">
+                  <p class="myPrimaryParagraph text-sm font-medium pb-4">
+                    Typography
+                  </p>
+
+                  <div class="flex flex-col myPrimaryGap">
+                    <!-- select # start -->
+                    <div class="flex items-center justify-start gap-6">
+                      <div class="myPrimaryParagraph text-xs font-medium w-1/3">
+                        Font Family
+                      </div>
+                      <!-- icon # start -->
+                      <div class="flex justify-end w-full">
+                        <div
+                          class="shadow h-8 w-14 rounded-lg flex items-center border-none justify-center bg-gray-50 aspect-square hover:bg-myPrimaryLinkColor hover:text-white focus-visible:ring-0"
+                        >
+                          <span class="material-symbols-outlined"> aq </span>
+                        </div>
+                      </div>
+                      <!-- icon # end -->
+                    </div>
+                    <!-- select # end -->
+                  </div>
+                </div>
+
+                <div class="w-full border-t border-gray-300"></div>
+                <div class="my-4">
                   <p class="myPrimaryParagraph text-sm font-medium pb-4">
                     Video
                   </p>
@@ -559,7 +553,8 @@ useSeoMeta({
                     <!-- select # end -->
                   </div>
                 </div>
-                <WidgetSectionBorder></WidgetSectionBorder>
+
+                <div class="w-full border-t border-gray-300"></div>
 
                 <div class="my-8">
                   <p class="myPrimaryParagraph text-sm font-medium pb-4">
@@ -603,8 +598,8 @@ useSeoMeta({
                     <!-- select # end -->
                   </div>
                 </div>
-                <WidgetSectionBorder></WidgetSectionBorder>
 
+                <div class="w-full border-t border-gray-300"></div>
                 <div class="my-8">
                   <p class="myPrimaryParagraph text-sm font-medium pb-4">
                     Spacing
@@ -648,7 +643,7 @@ useSeoMeta({
           </div>
         </template>
       </FullWidthElement>
-      <!-- Theme Test # end -->
+      <!-- Builder # end -->
 
       <!-- Theme features # start -->
       <FullWidthElement
