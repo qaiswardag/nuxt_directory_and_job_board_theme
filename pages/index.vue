@@ -387,7 +387,7 @@ useSeoMeta({
             <!-- Top menu # end -->
             <!-- Container  # start -->
             <div
-              class="lg:col-span-9 col-span-6 top-0 w-full h-[64rem] rounded-l-2xl"
+              class="lg:col-span-9 col-span-5 top-0 w-full h-[64rem] rounded-l-2xl"
             >
               <div class="flex items-center justify-between">
                 <!-- Left side menu # start -->
@@ -500,7 +500,7 @@ useSeoMeta({
 
             <!-- Right menu  # start -->
             <div
-              class="lg:col-span-3 col-span-6 px-4 top-0 w-full bg-gray-200 bg-opacity-90 hover:bg-opacity-80 h-[64rem] rounded-br-2xl pt-6 overflow-y-scroll"
+              class="lg:col-span-3 col-span-7 px-4 top-0 w-full bg-gray-200 bg-opacity-90 hover:bg-opacity-80 h-[64rem] rounded-br-2xl pt-6 overflow-y-scroll"
             >
               <div class="min-h-[80rem] h-[80rem]">
                 <div class="flex justify-between items-center gap-2">
