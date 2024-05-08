@@ -798,6 +798,127 @@ useSeoMeta({
             </div>
             <!-- Right menu  # end -->
           </div>
+
+          <!-- Page Builder features # start -->
+          <div
+            class="lg:block hidden mt-12 px-2 py-4 rounded-2xl shadow-sm outline outline-2 outline-offset-4 outline-myPrimaryLinkColor hover:outline-myPrimaryLinkColor/50"
+          >
+            <p class="myPrimaryParagraph text-xs font-medium text-center mb-4">
+              Page Builder features:
+            </p>
+            <div class="flex items-center justify-start gap-4 flex-wrap">
+              <div class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-[16px]">
+                  done
+                </span>
+
+                <p class="myPrimaryParagraph text-xs">Drag & Drop</p>
+              </div>
+
+              <div class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-[16px]">
+                  done
+                </span>
+                <p class="myPrimaryParagraph text-xs">Reordering</p>
+              </div>
+
+              <div class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-[16px]">
+                  done
+                </span>
+                <p class="myPrimaryParagraph text-xs">Build In Seconds</p>
+              </div>
+
+              <div class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-[16px]">
+                  done
+                </span>
+                <p class="myPrimaryParagraph text-xs">True Visual Editing</p>
+              </div>
+
+              <div class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-[16px]">
+                  done
+                </span>
+                <p class="myPrimaryParagraph text-xs">
+                  Flexible Layout Options
+                </p>
+              </div>
+
+              <div class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-[16px]">
+                  done
+                </span>
+                <p class="myPrimaryParagraph text-xs">Media Library</p>
+              </div>
+
+              <div class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-[16px]">
+                  done
+                </span>
+                <p class="myPrimaryParagraph text-xs">Responsive Editing</p>
+              </div>
+
+              <div class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-[16px]">
+                  done
+                </span>
+                <p class="myPrimaryParagraph text-xs">Font Customization</p>
+              </div>
+
+              <div class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-[16px]">
+                  done
+                </span>
+                <p class="myPrimaryParagraph text-xs">Color Customization</p>
+              </div>
+
+              <div class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-[16px]">
+                  done
+                </span>
+                <p class="myPrimaryParagraph text-xs">Undo & Redo</p>
+              </div>
+
+              <div class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-[16px]">
+                  done
+                </span>
+                <p class="myPrimaryParagraph text-xs">YouTube Videos</p>
+              </div>
+
+              <div class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-[16px]">
+                  done
+                </span>
+                <p class="myPrimaryParagraph text-xs">Global Styling Options</p>
+              </div>
+
+              <div class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-[16px]">
+                  done
+                </span>
+                <p class="myPrimaryParagraph text-xs">
+                  Integrated Image Editing
+                </p>
+              </div>
+
+              <div class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-[16px]">
+                  done
+                </span>
+                <p class="myPrimaryParagraph text-xs">Dynamic Content Blocks</p>
+              </div>
+
+              <div class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-[16px]">
+                  done
+                </span>
+                <p class="myPrimaryParagraph text-xs">Mobile Preview</p>
+              </div>
+            </div>
+          </div>
+          <!-- Page Builder features # end -->
         </template>
       </FullWidthElement>
       <!-- Builder # end -->
