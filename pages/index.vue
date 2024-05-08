@@ -372,7 +372,7 @@ useSeoMeta({
                   <!-- icon # end -->
 
                   <!-- section # start -->
-                  <div class="lg:flex justify-center items-center gap-2">
+                  <div class="lg:flex hidden justify-center items-center gap-2">
                     <p
                       class="myPrimaryParagraph text-[12px] text-white font-medium"
                     >
