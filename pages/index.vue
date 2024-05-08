@@ -194,7 +194,7 @@ useSeoMeta({
                 <div class="px-2 pt-8 absolute top-0 w-full">
                   <p class="text-white mySecondaryHeader">Listings</p>
                   <p
-                    class="myPrimaryParagraph text-[12px]font-medium drop-shadow-sm"
+                    class="myPrimaryParagraph text-white font-medium drop-shadow-sm"
                   >
                     User-friendly features for managing, organizing, and
                     advertising business listings.
@@ -218,7 +218,7 @@ useSeoMeta({
                 <div class="px-2 pt-8 absolute top-0 w-full">
                   <p class="text-white mySecondaryHeader">Posts</p>
                   <p
-                    class="myPrimaryParagraph text-[12px]font-medium drop-shadow-sm"
+                    class="myPrimaryParagraph text-white font-medium drop-shadow-sm"
                   >
                     Newest published posts. Utilize advanced filters ensuring
                     users find the most relevant content for their needs.
@@ -242,7 +242,7 @@ useSeoMeta({
                 <div class="px-2 pt-8 absolute top-0 w-full">
                   <p class="text-white mySecondaryHeader">Jobs</p>
                   <p
-                    class="myPrimaryParagraph text-[12px]font-medium drop-shadow-sm"
+                    class="myPrimaryParagraph text-white font-medium drop-shadow-sm"
                   >
                     Latest published job postings. Filters to refine the search
                     by country, state, category, job type, and more.
@@ -266,7 +266,7 @@ useSeoMeta({
                 <div class="px-2 pt-8 absolute top-0 w-full">
                   <p class="text-white mySecondaryHeader">Professional</p>
                   <p
-                    class="myPrimaryParagraph text-[12px]font-medium drop-shadow-sm"
+                    class="myPrimaryParagraph text-white font-medium drop-shadow-sm"
                   >
                     Professional page for subscribing to listings or creating
                     single-charge job posts using Stripe integration.
@@ -501,16 +501,12 @@ useSeoMeta({
 
             <!-- Right menu  # start -->
             <div
-              class="lg:col-span-3 col-span-6 px-4 top-0 w-full bg-gray-200 bg-opacity-90 hover:bg-opacity-80 h-[64rem] rounded-br-2xl pt-6"
+              class="lg:col-span-3 col-span-6 px-4 top-0 w-full bg-gray-200 bg-opacity-90 hover:bg-opacity-80 h-[64rem] rounded-br-2xl pt-6 overflow-y-scroll"
             >
-              <div>
+              <div class="min-h-[80rem] h-[80rem]">
                 <div class="flex justify-between items-center gap-2">
                   <!-- icon # start -->
-                  <div
-                    class="h-8 w-8 rounded-full flex items-center border-none justify-center bg-gray-50 aspect-square hover:bg-myPrimaryLinkColor hover:text-white focus-visible:ring-0"
-                  >
-                    <span class="material-symbols-outlined"> Close </span>
-                  </div>
+                  <div></div>
                   <!-- icon # end -->
                   <p class="font-medium text-sm">
                     Editing <span class="lowercase">&lt;IMG&gt;</span>
@@ -713,6 +709,71 @@ useSeoMeta({
 
                         <div class="material-symbols-outlined">expand_more</div>
                       </div>
+                    </div>
+                    <!-- select # end -->
+                  </div>
+                </div>
+                <div class="w-full border-t border-gray-300"></div>
+                <div class="my-8">
+                  <p class="myPrimaryParagraph text-sm font-medium pb-3">
+                    Backgrounds
+                  </p>
+
+                  <div class="flex flex-col myPrimaryGap">
+                    <!-- select # start -->
+                    <div class="flex items-center justify-start gap-6">
+                      <div class="myPrimaryParagraph text-xs font-medium w-1/3">
+                        Color
+                      </div>
+                      <div
+                        class="border border-myPrimaryDarkGrayColor hover:border-gray-400 h-10 flex items-center justify-between px-2 shadow rounded-lg w-2/3"
+                      >
+                        <p class="myPrimaryParagraph text-xs">bg-black</p>
+
+                        <div class="material-symbols-outlined">expand_more</div>
+                      </div>
+                    </div>
+                    <!-- select # end -->
+
+                    <!-- select # start -->
+                    <div class="flex items-center justify-start gap-6">
+                      <div class="myPrimaryParagraph text-xs font-medium w-1/3">
+                        Size
+                      </div>
+                      <div
+                        class="border border-myPrimaryDarkGrayColor hover:border-gray-400 h-10 flex items-center justify-between px-2 shadow rounded-lg w-2/3"
+                      >
+                        <p class="myPrimaryParagraph text-xs">bg-cover</p>
+
+                        <div class="material-symbols-outlined">expand_more</div>
+                      </div>
+                    </div>
+                    <!-- select # end -->
+                  </div>
+                </div>
+                <div class="w-full border-t border-gray-300"></div>
+                <div class="my-8">
+                  <p class="myPrimaryParagraph text-sm font-medium pb-3">
+                    Settings
+                  </p>
+
+                  <div class="flex flex-col myPrimaryGap">
+                    <!-- select # start -->
+                    <div class="flex items-center justify-start gap-6">
+                      <div class="myPrimaryParagraph text-xs font-medium w-1/3">
+                        Download
+                      </div>
+                      <!-- icon # start -->
+                      <div class="flex justify-end w-full">
+                        <div
+                          class="shadow h-8 w-14 rounded-lg flex items-center border-none justify-center bg-gray-50 aspect-square hover:bg-myPrimaryLinkColor hover:text-white focus-visible:ring-0"
+                        >
+                          <span class="material-symbols-outlined">
+                            cloud_download
+                          </span>
+                        </div>
+                      </div>
+                      <!-- icon # end -->
                     </div>
                     <!-- select # end -->
                   </div>
