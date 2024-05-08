@@ -444,50 +444,40 @@ useSeoMeta({
                       <div
                         class="py-2 flex justify-between gap-4 px-4 bg-gray-400 rounded-full mx-6 bg-opacity-30"
                       >
-                        <p class="myPrimaryParagraph text-[20px]">
-                          <span class="material-symbols-outlined text-[20px]">
-                            format_bold
-                          </span>
-                        </p>
-                        <p class="myPrimaryParagraph text-[20px]">
-                          <span class="material-symbols-outlined text-[20px]">
-                            format_italic
-                          </span>
-                        </p>
-                        <p class="myPrimaryParagraph text-[20px]">
-                          <span class="material-symbols-outlined text-[20px]">
-                            format_color_text
-                          </span>
-                        </p>
-                        <p class="myPrimaryParagraph text-[20px]">
-                          <span class="material-symbols-outlined text-[20px]">
-                            format_align_left
-                          </span>
-                        </p>
+                        <span class="material-symbols-outlined text-[20px]">
+                          format_bold
+                        </span>
+
+                        <span class="material-symbols-outlined text-[20px]">
+                          format_italic
+                        </span>
+
+                        <span class="material-symbols-outlined text-[20px]">
+                          format_color_text
+                        </span>
+
+                        <span class="material-symbols-outlined text-[20px]">
+                          format_align_left
+                        </span>
                       </div>
                       <div
                         class="py-2 flex justify-between gap-4 px-4 bg-gray-400 rounded-full mx-6 bg-opacity-30"
                       >
-                        <p class="myPrimaryParagraph text-[20px]">
-                          <span class="material-symbols-outlined text-[20px]">
-                            format_shapes
-                          </span>
-                        </p>
-                        <p class="myPrimaryParagraph text-[20px]">
-                          <span class="material-symbols-outlined text-[20px]">
-                            add_photo_alternate
-                          </span>
-                        </p>
-                        <p class="myPrimaryParagraph text-[20px]">
-                          <span class="material-symbols-outlined text-[20px]">
-                            colors
-                          </span>
-                        </p>
-                        <p class="myPrimaryParagraph text-[20px]">
-                          <span class="material-symbols-outlined text-[20px]">
-                            attach_file
-                          </span>
-                        </p>
+                        <span class="material-symbols-outlined text-[20px]">
+                          format_shapes
+                        </span>
+
+                        <span class="material-symbols-outlined text-[20px]">
+                          add_photo_alternate
+                        </span>
+
+                        <span class="material-symbols-outlined text-[20px]">
+                          colors
+                        </span>
+
+                        <span class="material-symbols-outlined text-[20px]">
+                          attach_file
+                        </span>
                       </div>
                     </div>
                   </div>
