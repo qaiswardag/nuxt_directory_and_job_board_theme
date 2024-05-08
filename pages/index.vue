@@ -434,50 +434,77 @@ useSeoMeta({
                 >
                   <!-- Content for container # start -->
 
+                  <!-- Add text # start -->
                   <!-- Text area # start -->
                   <div
                     class="lg:flex hidden items-center w-full h-full justify-end"
                   >
-                    <div
-                      class="w-[22rem] h-[10rem] rounded-2xl bg-gray-200 bg-opacity-90 hover:bg-opacity-80 py-8 flex flex-col justify-between top-0"
-                    >
+                    <div class="flex flex-col gap-2">
+                      <!-- Add text # end -->
                       <div
-                        class="py-2 flex justify-between gap-4 px-4 bg-gray-400 rounded-full mx-6 bg-opacity-30"
+                        class="w-[22rem] rounded-2xl hover:bg-opacity-80 flex flex-col justify-between top-0"
                       >
-                        <span class="material-symbols-outlined text-[20px]">
-                          format_bold
-                        </span>
-
-                        <span class="material-symbols-outlined text-[20px]">
-                          format_italic
-                        </span>
-
-                        <span class="material-symbols-outlined text-[20px]">
-                          format_color_text
-                        </span>
-
-                        <span class="material-symbols-outlined text-[20px]">
-                          format_align_left
-                        </span>
+                        <div class="flex items-center justify-end gap-2">
+                          <button
+                            class="myPrimaryParagraph mySecondaryButton text-[10px] py-2 px-6 cursor-default min-h-2"
+                          >
+                            Add text element
+                          </button>
+                          <div
+                            class="h-8 w-8 rounded-full flex items-center border-none justify-center bg-gray-50 aspect-square hover:bg-myPrimaryLinkColor hover:text-white focus-visible:ring-0"
+                          >
+                            <span class="material-symbols-outlined text-[20px]">
+                              add
+                            </span>
+                          </div>
+                        </div>
                       </div>
+                      <!-- Text area # start -->
                       <div
-                        class="py-2 flex justify-between gap-4 px-4 bg-gray-400 rounded-full mx-6 bg-opacity-30"
+                        class="lg:flex hidden items-center w-full h-full justify-end"
                       >
-                        <span class="material-symbols-outlined text-[20px]">
-                          format_shapes
-                        </span>
+                        <div
+                          class="w-[22rem] h-[10rem] rounded-2xl bg-gray-200 bg-opacity-90 hover:bg-opacity-80 py-8 flex flex-col justify-between top-0"
+                        >
+                          <div
+                            class="py-2 flex justify-between gap-4 px-4 bg-gray-400 rounded-full mx-6 bg-opacity-30"
+                          >
+                            <span class="material-symbols-outlined text-[20px]">
+                              format_bold
+                            </span>
 
-                        <span class="material-symbols-outlined text-[20px]">
-                          add_photo_alternate
-                        </span>
+                            <span class="material-symbols-outlined text-[20px]">
+                              format_italic
+                            </span>
 
-                        <span class="material-symbols-outlined text-[20px]">
-                          colors
-                        </span>
+                            <span class="material-symbols-outlined text-[20px]">
+                              format_color_text
+                            </span>
 
-                        <span class="material-symbols-outlined text-[20px]">
-                          attach_file
-                        </span>
+                            <span class="material-symbols-outlined text-[20px]">
+                              format_align_left
+                            </span>
+                          </div>
+                          <div
+                            class="py-2 flex justify-between gap-4 px-4 bg-gray-400 rounded-full mx-6 bg-opacity-30"
+                          >
+                            <span class="material-symbols-outlined text-[20px]">
+                              format_shapes
+                            </span>
+
+                            <span class="material-symbols-outlined text-[20px]">
+                              add_photo_alternate
+                            </span>
+
+                            <span class="material-symbols-outlined text-[20px]">
+                              colors
+                            </span>
+
+                            <span class="material-symbols-outlined text-[20px]">
+                              attach_file
+                            </span>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
