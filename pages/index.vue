@@ -113,7 +113,7 @@ useSeoMeta({
                 Free Listing Directory, Blog & Job Board Theme
                 <br />
               </h1>
-              <p class="myPrimaryParagraph text-[12px]text-center font-medium">
+              <p class="myPrimaryParagraph text-white text-center font-medium">
                 Laravel, Vue, and Nuxt, a Page Builder, Listing Directory, Blog,
                 and Job Board Theme.
               </p>
@@ -163,15 +163,14 @@ useSeoMeta({
           >Free Listing Directory, Blog & Job Board Theme
         </template>
         <template #description>
-          Page Builder, Multiple Security Layers, advanced Team Management,
-          Listing Directory, Blog, Job Board and Media Library in one solution.
-          <br />
+          Page Builder, Listing Directory, Blog, Job Board, Media Library,
+          Multiple Security Layers, Team Management, and much more. <br />
           <a
             class="text-myPrimaryLinkColor"
             href="https://github.com/qaiswardag/laravel_vue_directory_and_job_board_theme"
             target="_blank"
           >
-            Visit and download the GitHub repository.</a
+            Download GitHub repository.</a
           >
         </template>
         <template #content>
@@ -300,7 +299,7 @@ useSeoMeta({
             href="https://github.com/qaiswardag/laravel_vue_directory_and_job_board_theme"
             target="_blank"
           >
-            Visit and download the GitHub repository.</a
+            Download GitHub repository.</a
           >
         </template>
         <template #content>
