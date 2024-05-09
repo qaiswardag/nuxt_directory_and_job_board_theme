@@ -202,8 +202,14 @@ useSeoMeta({
           >Free Listing Directory, Blog & Job Board Theme
         </template>
         <template #description>
-          Page Builder, Listing Directory, Blog, Job Board, Media Library,
-          Multiple Security Layers, Team Management, and much more. <br />
+          Page Builder, Listing Directory, Job Board, Blog, Media Library,
+          Multiple Security Layers, Team Management, and much more.
+          <br />
+          <br />
+          I would greatly appreciate if you could star the GitHub repository. It
+          helps to boost the visibility of this project and encourages me to
+          continue adding new features.
+          <br />
           <a
             class="text-myPrimaryLinkColor"
             href="https://github.com/qaiswardag/laravel_vue_directory_and_job_board_theme"
