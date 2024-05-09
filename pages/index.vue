@@ -99,11 +99,11 @@ useSeoMeta({
       <template #header>
         <div class="w-full relative h-[36rem]">
           <img
-            class="top-0 left-0 w-full object-cover h-[36rem]"
+            class="top-0 left-0 w-full object-cover h-[40rem]"
             src="/images/brand-images/home.jpg"
             alt="Laravel, Vue, and Nuxt, a Page Builder, Listing Directory, Blog, and Job Board Theme."
           />
-          <div class="bg-black/20 absolute top-0 left-0 w-full h-[36rem]"></div>
+          <div class="bg-black/20 absolute top-0 left-0 w-full h-[40rem]"></div>
 
           <div
             class="absolute text-2xl md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 top-1/4 w-full md:px-6 px-4"
@@ -149,6 +149,45 @@ useSeoMeta({
                   Search
                 </button>
               </div>
+            </div>
+            <div class="flex items-center justify-center myPrimaryGap">
+              <NuxtLink to="/listings">
+                <div
+                  class="myPrimaryTag cursor-pointer hover:bg-opacity-10 bg-opacity-20 lg:px-6 px-4 text-xs lg:py-6 py-2 font-medium text-white lg:gap-2 gap-1.5"
+                >
+                  <span
+                    class="material-symbols-outlined lg:text-[18px] text-[16px]"
+                  >
+                    location_on
+                  </span>
+                  <span class="lg:text-sm text-xs"> Listings </span>
+                </div>
+              </NuxtLink>
+              <NuxtLink to="/jobs">
+                <div
+                  class="myPrimaryTag cursor-pointer hover:bg-opacity-10 bg-opacity-20 lg:px-6 px-4 text-xs lg:py-6 py-2 font-medium text-white lg:gap-2 gap-1.5"
+                >
+                  <span
+                    class="material-symbols-outlined lg:text-[18px] text-[16px]"
+                  >
+                    loyalty
+                  </span>
+
+                  <span class="lg:text-sm text-xs"> Jobs </span>
+                </div>
+              </NuxtLink>
+              <NuxtLink to="/posts">
+                <div
+                  class="myPrimaryTag cursor-pointer hover:bg-opacity-10 bg-opacity-20 lg:px-6 px-4 text-xs lg:py-6 py-2 font-medium text-white lg:gap-2 gap-1.5"
+                >
+                  <span
+                    class="material-symbols-outlined lg:text-[18px] text-[16px]"
+                  >
+                    interests
+                  </span>
+                  <span class="lg:text-sm text-xs"> Posts </span>
+                </div>
+              </NuxtLink>
             </div>
           </div>
         </div>
@@ -290,9 +329,9 @@ useSeoMeta({
           Allow your users to build listings, jobs or posts with the intuitive
           Page Builder.
           <br />
-          Features such as drag & drop building, true visual editing, media
-          library, responsive editing, color and font customization allow users
-          to achieve the perfect layout.
+          Features such as Drag & Drop, Reordering, True Visual Editing, Media
+          Library, Responsive Editing, Font Customization, Undo & Redo and
+          Dynamic Content Blocks allow users to achieve the perfect layout.
           <br />
           <a
             class="text-myPrimaryLinkColor"
@@ -798,143 +837,6 @@ useSeoMeta({
             </div>
             <!-- Right menu  # end -->
           </div>
-
-          <!-- Page Builder features # start -->
-          <div class="lg:block hidden mt-4 px-2 py-4">
-            <div class="flex items-center justify-start gap-4 flex-wrap">
-              <div
-                class="flex items-center gap-1 bg-gray-200 rounded-full pl-2 pr-4 py-2"
-              >
-                <span class="material-symbols-outlined text-[16px]">
-                  done
-                </span>
-
-                <p class="myPrimaryParagraph text-xs">Drag & Drop</p>
-              </div>
-
-              <div
-                class="flex items-center gap-1 bg-gray-200 rounded-full pl-2 pr-4 py-2"
-              >
-                <span class="material-symbols-outlined text-[16px]">
-                  done
-                </span>
-                <p class="myPrimaryParagraph text-xs">Reordering</p>
-              </div>
-
-              <div
-                class="flex items-center gap-1 bg-gray-200 rounded-full pl-2 pr-4 py-2"
-              >
-                <span class="material-symbols-outlined text-[16px]">
-                  done
-                </span>
-                <p class="myPrimaryParagraph text-xs">Build In Seconds</p>
-              </div>
-
-              <div
-                class="flex items-center gap-1 bg-gray-200 rounded-full pl-2 pr-4 py-2"
-              >
-                <span class="material-symbols-outlined text-[16px]">
-                  done
-                </span>
-                <p class="myPrimaryParagraph text-xs">True Visual Editing</p>
-              </div>
-
-              <div
-                class="flex items-center gap-1 bg-gray-200 rounded-full pl-2 pr-4 py-2"
-              >
-                <span class="material-symbols-outlined text-[16px]">
-                  done
-                </span>
-                <p class="myPrimaryParagraph text-xs">
-                  Flexible Layout Options
-                </p>
-              </div>
-
-              <div
-                class="flex items-center gap-1 bg-gray-200 rounded-full pl-2 pr-4 py-2"
-              >
-                <span class="material-symbols-outlined text-[16px]">
-                  done
-                </span>
-                <p class="myPrimaryParagraph text-xs">Media Library</p>
-              </div>
-
-              <div
-                class="flex items-center gap-1 bg-gray-200 rounded-full pl-2 pr-4 py-2"
-              >
-                <span class="material-symbols-outlined text-[16px]">
-                  done
-                </span>
-                <p class="myPrimaryParagraph text-xs">Responsive Editing</p>
-              </div>
-
-              <div
-                class="flex items-center gap-1 bg-gray-200 rounded-full pl-2 pr-4 py-2"
-              >
-                <span class="material-symbols-outlined text-[16px]">
-                  done
-                </span>
-                <p class="myPrimaryParagraph text-xs">Font Customization</p>
-              </div>
-
-              <div
-                class="flex items-center gap-1 bg-gray-200 rounded-full pl-2 pr-4 py-2"
-              >
-                <span class="material-symbols-outlined text-[16px]">
-                  done
-                </span>
-                <p class="myPrimaryParagraph text-xs">Undo & Redo</p>
-              </div>
-
-              <div
-                class="flex items-center gap-1 bg-gray-200 rounded-full pl-2 pr-4 py-2"
-              >
-                <span class="material-symbols-outlined text-[16px]">
-                  done
-                </span>
-                <p class="myPrimaryParagraph text-xs">YouTube Videos</p>
-              </div>
-
-              <div
-                class="flex items-center gap-1 bg-gray-200 rounded-full pl-2 pr-4 py-2"
-              >
-                <span class="material-symbols-outlined text-[16px]">
-                  done
-                </span>
-                <p class="myPrimaryParagraph text-xs">Global Styling Options</p>
-              </div>
-
-              <div
-                class="flex items-center gap-1 bg-gray-200 rounded-full pl-2 pr-4 py-2"
-              >
-                <span class="material-symbols-outlined text-[16px]">
-                  done
-                </span>
-                <p class="myPrimaryParagraph text-xs">
-                  Integrated Image Editing
-                </p>
-              </div>
-
-              <div
-                class="flex items-center gap-1 bg-gray-200 rounded-full pl-2 pr-4 py-2"
-              >
-                <span class="material-symbols-outlined text-[16px]">
-                  done
-                </span>
-                <p class="myPrimaryParagraph text-xs">Dynamic Content Blocks</p>
-              </div>
-
-              <div
-                class="flex items-center gap-1 bg-gray-200 rounded-full pl-2 pr-4 py-2"
-              >
-                <span class="material-symbols-outlined text-[16px]">
-                  done
-                </span>
-                <p class="myPrimaryParagraph text-xs">Mobile Preview</p>
-              </div>
-            </div>
-          </div>
-          <!-- Page Builder features # end -->
         </template>
       </FullWidthElement>
       <!-- Builder # end -->
