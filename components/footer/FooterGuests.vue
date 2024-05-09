@@ -14,16 +14,18 @@ import ApplicationLogo from '../components/logos/ApplicationLogo.vue';
         <p class="myPrimaryParagraph font-medium text-xl mb-4">About</p>
         <p class="myPrimaryParagraph lg:text-sm text-xs">
           Laravel, Vue, and Nuxt, a Page Builder, Listing Directory, Blog, and
-          Job Board Theme. Allow your users to build listings, jobs or posts
-          with the intuitive Page Builder.
+          Job Board Theme.
           <br />
-          Check out the GitHub
+          Allow your users to build listings, jobs or posts with the intuitive
+          Page Builder.
+          <br />
+          This platform is created using open-source software. Check out the
           <a
             href="https://github.com/qaiswardag/laravel_vue_directory_and_job_board_theme"
             target="_blank"
-          >
-            repository</a
-          >.
+            >GitHub repository
+          </a>
+          for more information.
         </p>
       </div>
       <div class="lg:w-2/6 w-full mb-6">
