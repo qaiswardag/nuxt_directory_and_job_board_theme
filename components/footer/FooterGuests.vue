@@ -16,6 +16,14 @@ import ApplicationLogo from '../components/logos/ApplicationLogo.vue';
           Laravel, Vue, and Nuxt, a Page Builder, Listing Directory, Blog, and
           Job Board Theme. Allow your users to build listings, jobs or posts
           with the intuitive Page Builder.
+          <br />
+          Check out the GitHub
+          <a
+            href="https://github.com/qaiswardag/laravel_vue_directory_and_job_board_theme"
+            target="_blank"
+          >
+            repository</a
+          >.
         </p>
       </div>
       <div class="lg:w-2/6 w-full mb-6">
@@ -26,7 +34,7 @@ import ApplicationLogo from '../components/logos/ApplicationLogo.vue';
               href="https://github.com/qaiswardag/laravel_vue_directory_and_job_board_theme"
               target="_blank"
             >
-              GitHub
+              GitHub Repository
             </a>
           </p>
           <p class="myPrimaryParagraph lg:text-sm text-xs">
@@ -34,7 +42,7 @@ import ApplicationLogo from '../components/logos/ApplicationLogo.vue';
               href="https://www.linkedin.com/in/qaiswardag"
               target="_blank"
             >
-              Qais Wardag
+              LinkedIn Qais Wardag
             </a>
           </p>
           <p class="myPrimaryParagraph lg:text-sm text-xs">
@@ -42,7 +50,7 @@ import ApplicationLogo from '../components/logos/ApplicationLogo.vue';
               href="https://www.linkedin.com/company/myissue"
               target="_blank"
             >
-              LinkedIn Page
+              LinkedIn MyISSUE
             </a>
           </p>
         </div>
