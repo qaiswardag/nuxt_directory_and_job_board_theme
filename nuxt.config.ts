@@ -1,4 +1,3 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   // Add a trailing slash to each route
   site: {
@@ -25,6 +24,15 @@ export default defineNuxtConfig({
     head: {
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
+      script: [
+        {
+          src: `https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_GTAG}`,
+        },
+        `window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'GT-M34SGDHL');`,
+      ],
       link: [
         {
           rel: 'stylesheet',
