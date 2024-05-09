@@ -97,7 +97,7 @@ useSeoMeta({
   <MainLayout>
     <GuestsLayout>
       <template #header>
-        <div class="w-full relative h-[36rem]">
+        <div class="w-full relative h-[40rem]">
           <img
             class="top-0 left-0 w-full object-cover h-[40rem]"
             src="/images/brand-images/home.jpg"
@@ -106,7 +106,7 @@ useSeoMeta({
           <div class="bg-black/20 absolute top-0 left-0 w-full h-[40rem]"></div>
 
           <div
-            class="absolute text-2xl md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 top-1/4 w-full md:px-6 px-4"
+            class="absolute text-2xl md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:top-2/4 sm:top-32 top-14 w-full md:px-6 px-4"
           >
             <div class="lg:w-2/3 md:w-2/2 w-full mx-auto">
               <h1 class="myPrimaryHeader text-white text-center">
