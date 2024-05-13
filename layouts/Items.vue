@@ -49,7 +49,12 @@ const tags_or_content = ref(false);
 
 const fetchComponents = function (page) {
   // remember old search value while paginating
-  if (fetchedDataPosts.value?.oldInput?.search_query) {
+  if (
+    fetchedDataPosts &&
+    fetchedDataPosts.value &&
+    fetchedDataPosts.value.oldInput &&
+    fetchedDataPosts.value.oldInput.search_query
+  ) {
     search_query.value = fetchedDataPosts.value?.oldInput?.search_query;
   }
 
