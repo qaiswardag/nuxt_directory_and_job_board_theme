@@ -286,9 +286,10 @@ const appendSelectedParams = function (params) {
   handleGetPosts(url, {}, { additionalCallTime: 200 });
 };
 
-const goToSinglePost = function (teamSlug, postSlug, postId) {
-  const routePath = `${teamSlug}/${props.nameList}/${postSlug}/view/${postId}`;
-  window.location.href = routePath;
+const goToSinglePost = async function (teamSlug, postSlug, postId) {
+  await navigateTo({
+    path: `${teamSlug}/${props.nameList}/${postSlug}/view/${postId}`,
+  });
 };
 
 const runtimeConfig = useRuntimeConfig();

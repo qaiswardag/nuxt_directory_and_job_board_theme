@@ -3,7 +3,6 @@ const route = useRoute();
 const userFolder = route.params.user_folder;
 const username = route.params.username;
 import SmallUniversalSpinner from '../../../components/loaders/SmallUniversalSpinner.vue';
-import PageHeader from '../../../components/headers/PageHeader.vue';
 import MainLayout from '../../layouts/MainLayout.vue';
 import GuestsLayout from '../../layouts/GuestsLayout.vue';
 import ThumbnailSmallImageSlider from '../../../components/sliders/ThumbnailSmallImageSlider.vue';
