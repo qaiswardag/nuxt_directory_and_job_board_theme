@@ -49,7 +49,7 @@ import ApplicationLogo from '../components/logos/ApplicationLogo.vue';
               href="https://www.linkedin.com/in/qaiswardag"
               target="_blank"
             >
-              LinkedIn Qais Wardag
+              LinkedIn Qais Wardag test 1
             </a>
           </p>
         </div>
