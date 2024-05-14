@@ -13,8 +13,8 @@ import ApplicationLogo from '../components/logos/ApplicationLogo.vue';
       <div class="lg:w-4/6 w-full mb-6">
         <p class="myPrimaryParagraph font-medium text-xl mb-4">About</p>
         <p class="myPrimaryParagraph lg:text-sm text-xs">
-          test 4 - Laravel, Vue, and Nuxt, a Page Builder, Listing Directory,
-          Blog, and Job Board Theme.
+          Laravel, Vue, and Nuxt, a Page Builder, Listing Directory, Blog, and
+          Job Board Theme.
           <br />
           This platform is created using open-source software. Check out the
           <a
