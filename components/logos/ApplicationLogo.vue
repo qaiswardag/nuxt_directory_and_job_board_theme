@@ -13,5 +13,6 @@ const getAppUrl = function (path) {
       src="/images/logo/logo.svg"
       alt="Logo"
     />
+    + ØØØ2
   </NuxtLink>
 </template>
