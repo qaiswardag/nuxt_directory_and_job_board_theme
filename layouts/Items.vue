@@ -448,6 +448,33 @@ const clearSearch = function () {
   countrySelected.value = [];
   stateSelected.value = [];
 
+  setTagsOrContentListings(false);
+  setTagsOrContentJobs(false);
+  setTagsOrContentPosts(false);
+  setSearchQueryListings('');
+  setSearchQueryJobs('');
+  setSearchQueryPosts('');
+
+  setCurrentPageListings(1);
+  setCurrentPageJobs(1);
+  setCurrentPagePosts(1);
+
+  setCurrentCategoriesListings([]);
+  setCurrentCategoriesJobs([]);
+  setCurrentCategoriesPosts([]);
+
+  setCurrentTypesListings([]);
+  setCurrentTypesJobs([]);
+  setCurrentTypesPosts([]);
+
+  setCurrentCountriesListings([]);
+  setCurrentCountriesJobs([]);
+  setCurrentCountriesPosts([]);
+
+  setCurrentStatesListings([]);
+  setCurrentStatesJobs([]);
+  setCurrentStatesPosts([]);
+
   const params = new URLSearchParams({
     page: 1,
     search_query: search_query.value,
