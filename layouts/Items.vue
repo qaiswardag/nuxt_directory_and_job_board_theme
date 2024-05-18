@@ -231,7 +231,7 @@ const getResultsForPage = (page = 1) => {
   scrollToTop();
 };
 
-// handle category # start øø
+// handle selection # start
 const handleSelection = function (selectedItem, nameOfSelection) {
   checkStateParams();
 
