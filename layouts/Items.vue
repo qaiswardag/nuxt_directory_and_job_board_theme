@@ -233,6 +233,8 @@ const getResultsForPage = (page = 1) => {
 
 // handle category # start øø
 const handleSelection = function (selectedItem, nameOfSelection) {
+  checkStateParams();
+
   if (props.nameList === 'listing') {
     setCurrentCategoriesListings(categorySelected.value);
     setCurrentTypesListings(typeSelected.value);
