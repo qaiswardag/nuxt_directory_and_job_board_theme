@@ -37,6 +37,18 @@ export const useUserStore = defineStore('user', {
     currentCategoriesListings: [],
     currentCategoriesJobs: [],
     currentCategoriesPosts: [],
+
+    currentTypesListings: [],
+    currentTypesJobs: [],
+    currentTypesPosts: [],
+
+    currentCountriesListings: [],
+    currentCountriesJobs: [],
+    currentCountriesPosts: [],
+
+    currentStatesListings: [],
+    currentStatesJobs: [],
+    currentStatesPosts: [],
   }),
   getters: {
     getUser: (state) => state.user,
@@ -55,6 +67,18 @@ export const useUserStore = defineStore('user', {
     getCurrentCategoriesListings: (state) => state.currentCategoriesListings,
     getCurrentCategoriesJobs: (state) => state.currentCategoriesJobs,
     getCurrentCategoriesPosts: (state) => state.currentCategoriesPosts,
+
+    getCurrentTypesListings: (state) => state.currentTypesListings,
+    getCurrentTypesJobs: (state) => state.currentTypesJobs,
+    getCurrentTypesPosts: (state) => state.currentTypesPosts,
+
+    getCurrentCountriesListings: (state) => state.currentCountriesListings,
+    getCurrentCountriesJobs: (state) => state.currentCountriesJobs,
+    getCurrentCountriesPosts: (state) => state.currentCountriesPosts,
+
+    getCurrentStatesListings: (state) => state.currentStatesListings,
+    getCurrentStatesJobs: (state) => state.currentStatesJobs,
+    getCurrentStatesPosts: (state) => state.currentStatesPosts,
   },
   actions: {
     setTagsOrContentListings(query: boolean) {
@@ -96,8 +120,36 @@ export const useUserStore = defineStore('user', {
       this.currentCategoriesPosts = query;
     },
 
-    //
-    //
+    setCurrentTypesListings(query: any) {
+      this.currentTypesListings = query;
+    },
+    setCurrentTypesJobs(query: any) {
+      this.currentTypesJobs = query;
+    },
+    setCurrentTypesPosts(query: any) {
+      this.currentTypesPosts = query;
+    },
+
+    setCurrentCountriesListings(query: any) {
+      this.currentCountriesListings = query;
+    },
+    setCurrentCountriesJobs(query: any) {
+      this.currentCountriesJobs = query;
+    },
+    setCurrentCountriesPosts(query: any) {
+      this.currentCountriesPosts = query;
+    },
+
+    setCurrentStatesListings(query: any) {
+      this.currentStatesListings = query;
+    },
+    setCurrentStatesJobs(query: any) {
+      this.currentStatesJobs = query;
+    },
+    setCurrentStatesPosts(query: any) {
+      this.currentStatesPosts = query;
+    },
+
     getAppUrl(path: string) {
       return this.baseUrl + '/' + path;
     },

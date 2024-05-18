@@ -43,6 +43,30 @@ const {
   setCurrentCategoriesListings,
   setCurrentCategoriesJobs,
   setCurrentCategoriesPosts,
+
+  getCurrentTypesListings,
+  getCurrentTypesJobs,
+  getCurrentTypesPosts,
+
+  setCurrentTypesListings,
+  setCurrentTypesJobs,
+  setCurrentTypesPosts,
+
+  getCurrentCountriesListings,
+  getCurrentCountriesJobs,
+  getCurrentCountriesPosts,
+
+  setCurrentCountriesListings,
+  setCurrentCountriesJobs,
+  setCurrentCountriesPosts,
+
+  getCurrentStatesListings,
+  getCurrentStatesJobs,
+  getCurrentStatesPosts,
+
+  setCurrentStatesListings,
+  setCurrentStatesJobs,
+  setCurrentStatesPosts,
 } = store;
 
 const props = defineProps({
@@ -211,12 +235,21 @@ const getResultsForPage = (page = 1) => {
 const handleSelection = function (selectedItem, nameOfSelection) {
   if (props.nameList === 'listing') {
     setCurrentCategoriesListings(categorySelected.value);
+    setCurrentTypesListings(typeSelected.value);
+    setCurrentCountriesListings(countrySelected.value);
+    setCurrentStatesListings(stateSelected.value);
   }
   if (props.nameList === 'job') {
     setCurrentCategoriesJobs(categorySelected.value);
+    setCurrentTypesJobs(typeSelected.value);
+    setCurrentCountriesJobs(countrySelected.value);
+    setCurrentStatesJobs(stateSelected.value);
   }
   if (props.nameList === 'post') {
     setCurrentCategoriesPosts(categorySelected.value);
+    setCurrentTypesPosts(typeSelected.value);
+    setCurrentCountriesPosts(countrySelected.value);
+    setCurrentStatesPosts(stateSelected.value);
   }
 
   if (!selectedItem) {
@@ -427,7 +460,7 @@ onMounted(() => {
   setFetchParamsFromState();
 
   if (props.nameList === 'listing') {
-    // Check if categories from global state is array
+    // Check if params from global state is array
     if (
       getCurrentCategoriesListings &&
       Array.isArray(getCurrentCategoriesListings) &&
@@ -436,19 +469,73 @@ onMounted(() => {
       categorySelected.value = getCurrentCategoriesListings;
     }
 
+    // Check if params from global state is array
+    if (
+      getCurrentCountriesListings &&
+      Array.isArray(getCurrentCountriesListings) &&
+      getCurrentCountriesListings.length > 0
+    ) {
+      countrySelected.value = getCurrentCountriesListings;
+    }
+
+    // Check if params from global state is array
+    if (
+      getCurrentStatesListings &&
+      Array.isArray(getCurrentStatesListings) &&
+      getCurrentStatesListings.length > 0
+    ) {
+      stateSelected.value = getCurrentStatesListings;
+    }
+
+    // Check if params from global state is array
+    if (
+      getCurrentTypesListings &&
+      Array.isArray(getCurrentTypesListings) &&
+      getCurrentTypesListings.length > 0
+    ) {
+      typeSelected.value = getCurrentTypesListings;
+    }
+
     tags_or_content.value = getTagsOrContentListings;
     searchInTagsAndContent.value = getTagsOrContentListings;
     // fetch data
     fetchComponents(getCurrentPageListings);
   }
   if (props.nameList === 'job') {
-    // Check if categories from global state is array
+    // Check if params from global state is array
     if (
       getCurrentCategoriesJobs &&
       Array.isArray(getCurrentCategoriesJobs) &&
       getCurrentCategoriesJobs.length > 0
     ) {
       categorySelected.value = getCurrentCategoriesJobs;
+    }
+
+    // Check if params from global state is array
+    if (
+      getCurrentCountriesJobs &&
+      Array.isArray(getCurrentCountriesJobs) &&
+      getCurrentCountriesJobs.length > 0
+    ) {
+      countrySelected.value = getCurrentCountriesJobs;
+    }
+
+    // Check if params from global state is array
+    if (
+      getCurrentStatesJobs &&
+      Array.isArray(getCurrentStatesJobs) &&
+      getCurrentStatesJobs.length > 0
+    ) {
+      stateSelected.value = getCurrentStatesJobs;
+    }
+
+    // Check if params from global state is array
+    if (
+      getCurrentTypesJobs &&
+      Array.isArray(getCurrentTypesJobs) &&
+      getCurrentTypesJobs.length > 0
+    ) {
+      typeSelected.value = getCurrentTypesJobs;
     }
 
     tags_or_content.value = getTagsOrContentJobs;
@@ -458,13 +545,40 @@ onMounted(() => {
     fetchComponents(getCurrentPageJobs);
   }
   if (props.nameList === 'post') {
-    // Check if categories from global state is array
+    // Check if params from global state is array
     if (
       getCurrentCategoriesPosts &&
       Array.isArray(getCurrentCategoriesPosts) &&
       getCurrentCategoriesPosts.length > 0
     ) {
       categorySelected.value = getCurrentCategoriesPosts;
+    }
+
+    // Check if params from global state is array
+    if (
+      getCurrentCountriesPosts &&
+      Array.isArray(getCurrentCountriesPosts) &&
+      getCurrentCountriesPosts.length > 0
+    ) {
+      countrySelected.value = getCurrentCountriesPosts;
+    }
+
+    // Check if params from global state is array
+    if (
+      getCurrentStatesPosts &&
+      Array.isArray(getCurrentStatesPosts) &&
+      getCurrentStatesPosts.length > 0
+    ) {
+      stateSelected.value = getCurrentStatesPosts;
+    }
+
+    // Check if params from global state is array
+    if (
+      getCurrentTypesPosts &&
+      Array.isArray(getCurrentTypesPosts) &&
+      getCurrentTypesPosts.length > 0
+    ) {
+      typeSelected.value = getCurrentTypesPosts;
     }
 
     tags_or_content.value = getTagsOrContentPosts;
