@@ -68,14 +68,14 @@ const features = [
   },
 ];
 
-const { setSearchQuery } = store;
+const { setSearchQueryListings } = store;
 
 const runtimeConfig = useRuntimeConfig();
 
 const searchQuery = ref('');
 
 const handleSearch = async function () {
-  setSearchQuery(searchQuery.value);
+  setSearchQueryListings(searchQuery.value);
 
   await navigateTo('/listings');
 };

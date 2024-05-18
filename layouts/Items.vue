@@ -13,7 +13,37 @@ import { useUserStore } from '../store/user';
 
 const store = useUserStore();
 
-const { getSearchQuery, setSearchQuery } = store;
+const {
+  getTagsOrContentListings,
+  getTagsOrContentJobs,
+  getTagsOrContentPosts,
+
+  setTagsOrContentListings,
+  setTagsOrContentJobs,
+  setTagsOrContentPosts,
+
+  getSearchQueryListings,
+  setSearchQueryListings,
+  getSearchQueryJobs,
+  setSearchQueryJobs,
+  getSearchQueryPosts,
+  setSearchQueryPosts,
+
+  getCurrentPageListings,
+  getCurrentPageJobs,
+  getCurrentPagePosts,
+  setCurrentPageListings,
+  setCurrentPageJobs,
+  setCurrentPagePosts,
+
+  getCurrentCategoriesListings,
+  getCurrentCategoriesJobs,
+  getCurrentCategoriesPosts,
+
+  setCurrentCategoriesListings,
+  setCurrentCategoriesJobs,
+  setCurrentCategoriesPosts,
+} = store;
 
 const props = defineProps({
   nameList: {
@@ -47,7 +77,12 @@ const stateSelected = ref([]);
 const search_query = ref('');
 const tags_or_content = ref(false);
 
+const currentPage = ref(1);
+
 const fetchComponents = function (page) {
+  currentPage.value = page;
+  checkStateParams();
+
   // remember old search value while paginating
   if (
     fetchedDataPosts &&
@@ -70,7 +105,34 @@ const fetchComponents = function (page) {
   handleGetPosts(url, {}, { additionalCallTime: 200 });
 };
 
+const checkStateParams = function () {
+  if (
+    props.nameList === 'listing' &&
+    typeof search_query.value !== 'undefined' &&
+    typeof search_query.value === 'string'
+  ) {
+    setSearchQueryListings(search_query.value);
+    setCurrentPageListings(currentPage.value);
+  }
+  if (
+    props.nameList === 'job' &&
+    typeof search_query.value !== 'undefined' &&
+    typeof search_query.value === 'string'
+  ) {
+    setSearchQueryJobs(search_query.value);
+    setCurrentPageJobs(currentPage.value);
+  }
+  if (
+    props.nameList === 'post' &&
+    typeof search_query.value !== 'undefined' &&
+    typeof search_query.value === 'string'
+  ) {
+    setSearchQueryPosts(search_query.value);
+    setCurrentPagePosts(currentPage.value);
+  }
+};
 const handleSearch = function () {
+  checkStateParams();
   const params = new URLSearchParams({
     page: 1,
     search_query: search_query.value,
@@ -102,6 +164,16 @@ watch(showJobCountriesAndTypes, (newValue) => {
 });
 
 watch(searchInTagsAndContent, (newValue) => {
+  if (props.nameList === 'listing') {
+    setTagsOrContentListings(newValue);
+  }
+  if (props.nameList === 'job') {
+    setTagsOrContentJobs(newValue);
+  }
+  if (props.nameList === 'post') {
+    setTagsOrContentPosts(newValue);
+  }
+
   if (newValue) {
     tags_or_content.value = true;
     searchTagsOrContent();
@@ -135,8 +207,18 @@ const getResultsForPage = (page = 1) => {
   scrollToTop();
 };
 
-// handle category # start
+// handle category # start øø
 const handleSelection = function (selectedItem, nameOfSelection) {
+  if (props.nameList === 'listing') {
+    setCurrentCategoriesListings(categorySelected.value);
+  }
+  if (props.nameList === 'job') {
+    setCurrentCategoriesJobs(categorySelected.value);
+  }
+  if (props.nameList === 'post') {
+    setCurrentCategoriesPosts(categorySelected.value);
+  }
+
   if (!selectedItem) {
     return;
   }
@@ -291,6 +373,13 @@ const appendSelectedParams = function (params) {
   handleGetPosts(url, {}, { additionalCallTime: 200 });
 };
 
+const goToSinglePostNewWindow = function (teamSlug, postSlug, postId) {
+  window.open(
+    `${runtimeConfig.public.APP_URL}/${teamSlug}/${props.nameList}/${postSlug}/view/${postId}`,
+    '_blank'
+  );
+};
+
 const goToSinglePost = async function (teamSlug, postSlug, postId) {
   await navigateTo({
     path: `${teamSlug}/${props.nameList}/${postSlug}/view/${postId}`,
@@ -303,18 +392,87 @@ const getAppUrl = function (path) {
   return runtimeConfig.public.LARAVEL_APP_URL + '/' + path;
 };
 
-onMounted(() => {
-  if (
-    typeof getSearchQuery !== 'undefined' &&
-    typeof getSearchQuery === 'string' &&
-    getSearchQuery.length > 0
-  ) {
-    search_query.value = getSearchQuery;
+const setFetchParamsFromState = function () {
+  if (props.nameList === 'listing') {
+    search_query.value = getSearchQueryListings;
   }
+  if (props.nameList === 'job') {
+    search_query.value = getSearchQueryJobs;
+  }
+  if (props.nameList === 'post') {
+    search_query.value = getSearchQueryPosts;
+  }
+};
 
-  fetchComponents(1);
+const clearSearch = function () {
+  search_query.value = '';
+  searchInTagsAndContent.value = false;
+  showJobCountriesAndTypes.value = false;
+  categorySelected.value = [];
+  typeSelected.value = [];
+  countrySelected.value = [];
+  stateSelected.value = [];
 
-  setSearchQuery('');
+  const params = new URLSearchParams({
+    page: 1,
+    search_query: search_query.value,
+    tags_or_content: tags_or_content.value ? 1 : 0,
+  });
+
+  const url = `${props.pathList}?${params.toString()}`;
+  handleGetPosts(url, {}, { additionalCallTime: 200 });
+};
+
+onMounted(() => {
+  setFetchParamsFromState();
+
+  if (props.nameList === 'listing') {
+    // Check if categories from global state is array
+    if (
+      getCurrentCategoriesListings &&
+      Array.isArray(getCurrentCategoriesListings) &&
+      getCurrentCategoriesListings.length > 0
+    ) {
+      categorySelected.value = getCurrentCategoriesListings;
+    }
+
+    tags_or_content.value = getTagsOrContentListings;
+    searchInTagsAndContent.value = getTagsOrContentListings;
+    // fetch data
+    fetchComponents(getCurrentPageListings);
+  }
+  if (props.nameList === 'job') {
+    // Check if categories from global state is array
+    if (
+      getCurrentCategoriesJobs &&
+      Array.isArray(getCurrentCategoriesJobs) &&
+      getCurrentCategoriesJobs.length > 0
+    ) {
+      categorySelected.value = getCurrentCategoriesJobs;
+    }
+
+    tags_or_content.value = getTagsOrContentJobs;
+    searchInTagsAndContent.value = getTagsOrContentJobs;
+
+    // fetch data
+    fetchComponents(getCurrentPageJobs);
+  }
+  if (props.nameList === 'post') {
+    // Check if categories from global state is array
+    if (
+      getCurrentCategoriesPosts &&
+      Array.isArray(getCurrentCategoriesPosts) &&
+      getCurrentCategoriesPosts.length > 0
+    ) {
+      categorySelected.value = getCurrentCategoriesPosts;
+    }
+
+    tags_or_content.value = getTagsOrContentPosts;
+    searchInTagsAndContent.value = getTagsOrContentPosts;
+
+    // fetch data
+    fetchComponents(getCurrentPagePosts);
+  }
 });
 </script>
 
@@ -570,13 +728,22 @@ onMounted(() => {
               </Menu>
             </div>
             <!-- options dropdow # end -->
-            <button
-              type="button"
-              @click="handleSearch"
-              class="myPrimaryButton md:w-1/4 w-full"
-            >
-              Search
-            </button>
+            <div class="md:w-1/4 w-full flex items-center gap-2">
+              <button
+                type="button"
+                @click="clearSearch"
+                class="h-10 w-10 cursor-pointer rounded-full flex items-center border-none justify-center bg-gray-50 aspect-square hover:bg-myPrimaryErrorColor hover:text-white text-myPrimaryErrorColor"
+              >
+                <span class="material-symbols-outlined"> filter_alt_off </span>
+              </button>
+              <button
+                type="button"
+                @click="handleSearch"
+                class="myPrimaryButton w-full"
+              >
+                Search
+              </button>
+            </div>
           </div>
         </div>
         <!-- Search in Tags Or Content # end -->
@@ -946,6 +1113,20 @@ onMounted(() => {
                     ></ItemDisplaySelection>
                   </template>
                   <!-- Category # end -->
+
+                  <button
+                    type="button"
+                    @click="
+                      goToSinglePostNewWindow(
+                        post.team.slug,
+                        post.slug,
+                        post.id
+                      )
+                    "
+                    class="flex flex-wrap gap-2 items-center justify-left py-2 text-xs pt-4"
+                  >
+                    Open in new window
+                  </button>
                 </section>
               </li>
             </ul>
