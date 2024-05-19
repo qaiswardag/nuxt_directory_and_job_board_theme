@@ -415,11 +415,11 @@
 /* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: black rgb(237 228 228);
+  scrollbar-color: black transparent;
 }
 
 *::-webkit-scrollbar-track {
-  background: rgb(237 228 228);
+  background: transparent;
   border-radius: 2px;
 }
 
@@ -430,7 +430,7 @@
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: rgb(237 228 228);
+  background-color: transparent;
   border-radius: 2px;
   border: none;
 }

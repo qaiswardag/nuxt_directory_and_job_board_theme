@@ -671,7 +671,7 @@ onMounted(() => {
                     v-model="search_query"
                     type="search"
                     id="search_query"
-                    class="px-2 leading-10 pl-10 min-h-[4.5rem] h-[4.5rem] myPrimaryInput shadow-none"
+                    class="px-2 leading-10 pl-10 min-h-[4.8rem] h-[4.8rem] myPrimaryInput shadow-none"
                     autocomplete="off"
                     :placeholder="`${
                       nameList === 'listing'

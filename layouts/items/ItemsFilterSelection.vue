@@ -47,18 +47,22 @@ const handleRemoveItem = function (selectedItem) {
       <div class="relative">
         <!-- Selected list # Start -->
         <ListboxButton
-          class="py-2 min-h-[4.5rem] h-[4.5rem] pr-8 pl-2 text-xs border border-gray-300 shadow-sm rounded-md w-full text-left bg-white"
+          class="py-2 min-h-[4.7rem] h-[4.7rem] pr-8 pl-2 text-xs w-full text-left border border-gray-300 shadow-sm rounded-md bg-white"
         >
           <button
             type="button"
-            v-if="listSelected.length === 0"
-            class="px-2 leading-10 font-normal text-gray-500"
+            v-if="
+              listSelected &&
+              Array.isArray(listSelected) &&
+              listSelected.length === 0
+            "
+            class="px-2 leading-10 font-normal text-gray-500 pb-0 mt-2"
           >
             Select {{ nameOfList && nameOfList.toLowerCase() }}..
           </button>
 
           <ul
-            class="overflow-x-scroll flex gap-2 mr-4 pb-1 min-w-full w-full max-w-12"
+            class="overflow-x-scroll flex gap-2 mr-4 pb-1 min-w-full w-full max-w-12 mt-2"
           >
             <li
               @click.stop="
@@ -67,7 +71,9 @@ const handleRemoveItem = function (selectedItem) {
                   id: singleSelection.id,
                 })
               "
-              v-for="singleSelection in listSelected && listSelected"
+              v-for="singleSelection in listSelected &&
+              Array.isArray(listSelected) &&
+              listSelected"
               :key="singleSelection.id"
               class="px-2 leading-10 bg-gray-200 rounded-full hover:bg-myPrimaryErrorColor hover:text-white my-0"
             >
@@ -124,12 +130,16 @@ const handleRemoveItem = function (selectedItem) {
             class="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white z-30 py-1 text-base shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm"
           >
             <ListboxOption
-              v-for="item in list"
+              v-for="item in list && Array.isArray(list) && list"
               :key="item.id"
               :value="item"
             >
               <li
-                v-if="!listSelected.some((cat) => cat.id === item.id)"
+                v-if="
+                  listSelected &&
+                  Array.isArray(listSelected) &&
+                  !listSelected.some((cat) => cat.id === item.id)
+                "
                 @click="
                   handleSelectItem({
                     name: item.name,
