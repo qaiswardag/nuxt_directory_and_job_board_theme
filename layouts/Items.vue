@@ -17,10 +17,12 @@ const {
   getTagsOrContentListings,
   getTagsOrContentJobs,
   getTagsOrContentPosts,
+  getShowJobCountriesAndTypes,
 
   setTagsOrContentListings,
   setTagsOrContentJobs,
   setTagsOrContentPosts,
+  setShowJobCountriesAndTypes,
 
   getSearchQueryListings,
   setSearchQueryListings,
@@ -173,9 +175,17 @@ const searchInTagsAndContent = ref(false);
 const showJobCountriesAndTypes = ref(false);
 
 watch(showJobCountriesAndTypes, (newValue) => {
+  if (newValue) {
+    setShowJobCountriesAndTypes(true);
+  }
+
   if (!newValue) {
     typeSelected.value = [];
     countrySelected.value = [];
+
+    setShowJobCountriesAndTypes(false);
+    setCurrentCountriesJobs([]);
+    setCurrentTypesJobs([]);
 
     const params = new URLSearchParams({
       page: 1,
@@ -451,6 +461,7 @@ const clearSearch = function () {
   setTagsOrContentListings(false);
   setTagsOrContentJobs(false);
   setTagsOrContentPosts(false);
+  setShowJobCountriesAndTypes(false);
   setSearchQueryListings('');
   setSearchQueryJobs('');
   setSearchQueryPosts('');
@@ -527,6 +538,7 @@ onMounted(() => {
 
     tags_or_content.value = getTagsOrContentListings;
     searchInTagsAndContent.value = getTagsOrContentListings;
+
     // fetch data
     fetchComponents(getCurrentPageListings);
   }
@@ -569,6 +581,7 @@ onMounted(() => {
 
     tags_or_content.value = getTagsOrContentJobs;
     searchInTagsAndContent.value = getTagsOrContentJobs;
+    showJobCountriesAndTypes.value = getShowJobCountriesAndTypes;
 
     // fetch data
     fetchComponents(getCurrentPageJobs);
@@ -658,7 +671,7 @@ onMounted(() => {
                     v-model="search_query"
                     type="search"
                     id="search_query"
-                    class="myPrimaryInput pl-10 shadow-none min-h-[3.5rem] h-[3.5rem]"
+                    class="px-2 leading-10 pl-10 min-h-[4.5rem] h-[4.5rem] myPrimaryInput shadow-none"
                     autocomplete="off"
                     :placeholder="`${
                       nameList === 'listing'

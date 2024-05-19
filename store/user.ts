@@ -26,6 +26,8 @@ export const useUserStore = defineStore('user', {
     tagsOrContentPosts: false,
     tagsOrContentJobs: false,
 
+    showJobCountriesAndTypes: false,
+
     searchQueryListings: '',
     searchQueryJobs: '',
     searchQueryPosts: '',
@@ -55,6 +57,7 @@ export const useUserStore = defineStore('user', {
     getTagsOrContentListings: (state) => state.tagsOrContentListings,
     getTagsOrContentJobs: (state) => state.tagsOrContentJobs,
     getTagsOrContentPosts: (state) => state.tagsOrContentPosts,
+    getShowJobCountriesAndTypes: (state) => state.showJobCountriesAndTypes,
 
     getSearchQueryListings: (state) => state.searchQueryListings,
     getSearchQueryJobs: (state) => state.searchQueryJobs,
@@ -89,6 +92,9 @@ export const useUserStore = defineStore('user', {
     },
     setTagsOrContentPosts(query: boolean) {
       this.tagsOrContentPosts = query;
+    },
+    setShowJobCountriesAndTypes(query: boolean) {
+      this.showJobCountriesAndTypes = query;
     },
     setSearchQueryListings(query: string) {
       this.searchQueryListings = query;

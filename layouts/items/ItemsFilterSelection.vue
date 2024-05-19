@@ -47,14 +47,15 @@ const handleRemoveItem = function (selectedItem) {
       <div class="relative">
         <!-- Selected list # Start -->
         <ListboxButton
-          class="border border-gray-300 shadow-sm rounded-md w-full min-h-[3.5rem] h-[3.5rem] pt-2 pb-0 pr-8 pl-2 text-left text-sm bg-white"
+          class="py-2 min-h-[4.5rem] h-[4.5rem] pr-8 pl-2 text-xs border border-gray-300 shadow-sm rounded-md w-full text-left bg-white"
         >
-          <span
+          <button
+            type="button"
             v-if="listSelected.length === 0"
-            class="font-normal text-gray-500"
+            class="px-2 leading-10 font-normal text-gray-500"
           >
-            Select {{ nameOfList.toLowerCase() }}..
-          </span>
+            Select {{ nameOfList && nameOfList.toLowerCase() }}..
+          </button>
 
           <ul
             class="overflow-x-scroll flex gap-2 mr-4 pb-1 min-w-full w-full max-w-12"
@@ -66,37 +67,49 @@ const handleRemoveItem = function (selectedItem) {
                   id: singleSelection.id,
                 })
               "
-              v-for="singleSelection in listSelected"
+              v-for="singleSelection in listSelected && listSelected"
               :key="singleSelection.id"
-              class="bg-gray-200 py-2 px-2 rounded-full hover:bg-myPrimaryErrorColor hover:text-white my-0"
+              class="px-2 leading-10 bg-gray-200 rounded-full hover:bg-myPrimaryErrorColor hover:text-white my-0"
             >
               <div class="flex justify-center items-center gap-2">
                 <template v-if="props.icon === 'interests'">
-                  <span class="material-symbols-outlined"> interests </span>
+                  <span class="material-symbols-outlined text-[18px]">
+                    interests
+                  </span>
                 </template>
 
                 <template v-if="props.icon === 'GlobeAmericasIcon'">
-                  <span class="material-symbols-outlined"> globe </span>
+                  <span class="material-symbols-outlined text-[18px]">
+                    globe
+                  </span>
                 </template>
 
                 <template v-if="props.icon === 'MapPinIcon'">
-                  <span class="material-symbols-outlined"> location_on </span>
+                  <span class="material-symbols-outlined text-[18px]">
+                    location_on
+                  </span>
                 </template>
 
                 <template v-if="props.icon === 'NewspaperIcon'">
-                  <span class="material-symbols-outlined"> sell </span>
+                  <span class="material-symbols-outlined text-[18px]">
+                    sell
+                  </span>
                 </template>
                 <div class="w-max">
                   {{ singleSelection.name }}
                 </div>
-                <span class="material-symbols-outlined"> close </span>
+                <span class="material-symbols-outlined text-[18px]">
+                  close
+                </span>
               </div>
             </li>
           </ul>
           <span
             class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2"
           >
-            <span class="material-symbols-outlined"> unfold_more </span>
+            <span class="material-symbols-outlined text-[18px]">
+              unfold_more
+            </span>
           </span>
         </ListboxButton>
         <!-- Selected list # End -->
@@ -127,19 +140,27 @@ const handleRemoveItem = function (selectedItem) {
               >
                 <div class="flex justify-left items-center gap-2">
                   <template v-if="props.icon === 'interests'">
-                    <span class="material-symbols-outlined"> interests </span>
+                    <span class="material-symbols-outlined text-[18px]">
+                      interests
+                    </span>
                   </template>
 
                   <template v-if="props.icon === 'GlobeAmericasIcon'">
-                    <span class="material-symbols-outlined"> globe </span>
+                    <span class="material-symbols-outlined text-[18px]">
+                      globe
+                    </span>
                   </template>
 
                   <template v-if="props.icon === 'MapPinIcon'">
-                    <span class="material-symbols-outlined"> location_on </span>
+                    <span class="material-symbols-outlined text-[18px]">
+                      location_on
+                    </span>
                   </template>
 
                   <template v-if="props.icon === 'NewspaperIcon'">
-                    <span class="material-symbols-outlined"> sell </span>
+                    <span class="material-symbols-outlined text-[18px]">
+                      sell
+                    </span>
                   </template>
                   {{ item.name }}
                 </div>
