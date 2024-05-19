@@ -128,6 +128,7 @@ const fetchComponents = function (page) {
   appendSelectedParams(params);
 
   const url = `${props.pathList}?${params.toString()}`;
+  console.log(`køre 1:`, params.toString());
   handleGetPosts(url, {}, { additionalCallTime: 200 });
 };
 
@@ -168,6 +169,7 @@ const handleSearch = function () {
   appendSelectedParams(params);
 
   const url = `${props.pathList}?${params.toString()}`;
+  console.log(`køre 2:`, params.toString());
   handleGetPosts(url, {}, { additionalCallTime: 200 });
 };
 
@@ -415,6 +417,7 @@ const appendSelectedParams = function (params) {
   });
 
   const url = `${props.pathList}?${params.toString()}`;
+  console.log(`køre 3:`, params.toString());
   handleGetPosts(url, {}, { additionalCallTime: 200 });
 };
 
@@ -493,6 +496,7 @@ const clearSearch = function () {
   });
 
   const url = `${props.pathList}?${params.toString()}`;
+  console.log(`køre 4:`, params.toString());
   handleGetPosts(url, {}, { additionalCallTime: 200 });
 };
 
