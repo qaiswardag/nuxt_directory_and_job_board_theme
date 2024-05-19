@@ -56,7 +56,7 @@ const handleRemoveItem = function (selectedItem) {
               Array.isArray(listSelected) &&
               listSelected.length === 0
             "
-            class="px-2 leading-10 font-normal text-gray-500 pb-0 mt-2"
+            class="px-2 leading-10 font-normal text-gray-500 pb-0 mt-2 text-sm"
           >
             Select {{ nameOfList && nameOfList.toLowerCase() }}..
           </button>
