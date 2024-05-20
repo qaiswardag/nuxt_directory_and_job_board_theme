@@ -177,16 +177,29 @@ const checkStateParams = function () {
   }
 };
 
+const setPageToOne = function () {
+  currentPage.value = 1;
+
+  if (props.nameList === 'listing') {
+    setCurrentPageListings(currentPage.value);
+  }
+  if (props.nameList === 'job') {
+    setCurrentPageJobs(currentPage.value);
+  }
+  if (props.nameList === 'post') {
+    setCurrentPagePosts(currentPage.value);
+  }
+};
+
 const handleSearch = function () {
-  checkStateParams();
+  setPageToOne();
   const params = new URLSearchParams({
     page: 1,
     search_query: search_query.value,
     tags_or_content: tags_or_content.value ? 1 : 0,
   });
 
-  const url = `${props.pathList}?${params.toString()}`;
-  handleGetPosts(url, {}, { additionalCallTime: 200 });
+  appendSelectedParams(params);
 };
 
 const showJobCountriesAndTypes = ref(false);
@@ -258,6 +271,7 @@ const getResultsForPage = (page = 1) => {
 
 // handle selection # start
 const handleSelection = function (selectedItem, nameOfSelection) {
+  setPageToOne();
   checkStateParams();
 
   if (props.nameList === 'listing') {
@@ -346,6 +360,7 @@ const handleSelection = function (selectedItem, nameOfSelection) {
 
   appendSelectedParams(params);
 };
+
 const handleRemoveSelection = function (selectedItem, nameOfSelection) {
   if (!selectedItem) {
     return;
@@ -483,6 +498,10 @@ const clearSearch = function () {
 
   const url = `${props.pathList}?${params.toString()}`;
   handleGetPosts(url, {}, { additionalCallTime: 200 });
+};
+
+const handleNavigateToPageOne = function () {
+  fetchComponents(1);
 };
 
 onMounted(() => {
@@ -910,24 +929,48 @@ onMounted(() => {
         <!-- Loading # end -->
 
         <template v-if="!isLoadingPosts && !isErrorPosts && isSuccessPosts">
-          <template
-            v-if="
-              fetchedDataPosts &&
-              fetchedDataPosts.postCount &&
-              fetchedDataPosts.posts
-            "
+          <div
+            class="flex justify-end items-center gap-2 border-b border-red-100 mb-4 pb-2"
           >
-            <div class="flex justify-end items-center">
-              <p class="myPrimaryParagraph text-xs pb-2">
-                {{
-                  Number(fetchedDataPosts.postCount) === 1
-                    ? nameList[0].toUpperCase() + nameList.slice(1)
-                    : `${nameList[0].toUpperCase() + nameList.slice(1)}s`
-                }}:
-                {{ fetchedDataPosts.postCount }}
-              </p>
+            <template
+              v-if="currentPage && Number(currentPage) && currentPage !== 1"
+            >
+              <div
+                class="myPrimaryParagraph text-xs hover:text-myPrimaryLinkColor cursor-pointer"
+              >
+                <span @click="handleNavigateToPageOne()"> Go to Page: 1 </span>
+              </div>
+              <div class="myPrimaryParagraph text-xs">|</div>
+            </template>
+            <div class="myPrimaryParagraph text-xs">
+              <span class="myPrimaryParagraph text-xs pb-2">
+                Current Page:
+                <span> {{ currentPage }} </span>
+              </span>
             </div>
-          </template>
+            <template
+              v-if="
+                fetchedDataPosts &&
+                fetchedDataPosts.postCount >= 0 &&
+                fetchedDataPosts.posts
+              "
+            >
+              <div class="myPrimaryParagraph text-xs">|</div>
+              <div class="myPrimaryParagraph text-xs">
+                <span> Showing </span>
+                <span>
+                  {{ fetchedDataPosts.postCount }}
+                </span>
+                <span>
+                  {{
+                    Number(fetchedDataPosts.postCount) === 1
+                      ? '	Result'
+                      : '	Results'
+                  }}
+                </span>
+              </div>
+            </template>
+          </div>
           <!-- If posts is empty array # start -->
           <template
             v-if="
