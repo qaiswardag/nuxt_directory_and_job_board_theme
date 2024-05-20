@@ -2,13 +2,6 @@ const jobPrices = [
   {
     name: 'Single Job Posting',
     id: 'single_job_post',
-    dynamic_product: false,
-    priceIdentifierStripe: '1234',
-    priceIdentifierStripeTest: '1234',
-    route: {
-      name: 'dashboard',
-      parameters: [],
-    },
     price: '$150',
     priceRaw: '150',
     totalPrice: '150',
