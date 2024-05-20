@@ -105,9 +105,31 @@ const tags_or_content = ref(false);
 
 const currentPage = ref(1);
 
+const appendSelectedParams = function (params) {
+  categorySelected.value.forEach((item, index) => {
+    params.append(`category[${index}][id]`, item.id);
+  });
+
+  typeSelected.value.forEach((item, index) => {
+    params.append(`type[${index}][id]`, item.id);
+  });
+
+  countrySelected.value.forEach((item, index) => {
+    params.append(`country[${index}][id]`, item.id);
+  });
+
+  // Append selected states
+  stateSelected.value.forEach((item, index) => {
+    params.append(`state[${index}][id]`, item.id);
+  });
+
+  const url = `${props.pathList}?${params.toString()}`;
+  console.log(`køre 1:`, params.toString());
+  handleGetPosts(url, {}, { additionalCallTime: 200 });
+};
+
 const fetchComponents = function (page) {
   currentPage.value = page;
-  checkStateParams();
 
   // remember old search value while paginating
   if (
@@ -126,10 +148,6 @@ const fetchComponents = function (page) {
   });
 
   appendSelectedParams(params);
-
-  const url = `${props.pathList}?${params.toString()}`;
-  console.log(`køre 1:`, params.toString());
-  handleGetPosts(url, {}, { additionalCallTime: 200 });
 };
 
 const checkStateParams = function () {
@@ -158,6 +176,7 @@ const checkStateParams = function () {
     setCurrentPagePosts(currentPage.value);
   }
 };
+
 const handleSearch = function () {
   checkStateParams();
   const params = new URLSearchParams({
@@ -166,14 +185,11 @@ const handleSearch = function () {
     tags_or_content: tags_or_content.value ? 1 : 0,
   });
 
-  appendSelectedParams(params);
-
   const url = `${props.pathList}?${params.toString()}`;
-  console.log(`køre 2:`, params.toString());
+  console.log(`køre 3:`, params.toString());
   handleGetPosts(url, {}, { additionalCallTime: 200 });
 };
 
-const searchInTagsAndContent = ref(false);
 const showJobCountriesAndTypes = ref(false);
 
 watch(showJobCountriesAndTypes, (newValue) => {
@@ -199,27 +215,6 @@ watch(showJobCountriesAndTypes, (newValue) => {
   }
 });
 
-watch(searchInTagsAndContent, (newValue) => {
-  if (props.nameList === 'listing') {
-    setTagsOrContentListings(newValue);
-  }
-  if (props.nameList === 'job') {
-    setTagsOrContentJobs(newValue);
-  }
-  if (props.nameList === 'post') {
-    setTagsOrContentPosts(newValue);
-  }
-
-  if (newValue) {
-    tags_or_content.value = true;
-    searchTagsOrContent();
-  }
-  if (!newValue) {
-    tags_or_content.value = false;
-    searchTagsOrContent();
-  }
-});
-
 const searchTagsOrContent = function () {
   const params = new URLSearchParams({
     page: 1,
@@ -228,6 +223,27 @@ const searchTagsOrContent = function () {
   });
 
   appendSelectedParams(params);
+};
+
+const updateSearchInTagsAndContent = function (event) {
+  if (props.nameList === 'listing') {
+    setTagsOrContentListings(event.target.checked);
+  }
+  if (props.nameList === 'job') {
+    setTagsOrContentJobs(event.target.checked);
+  }
+  if (props.nameList === 'post') {
+    setTagsOrContentPosts(event.target.checked);
+  }
+
+  if (event.target.checked) {
+    tags_or_content.value = true;
+    searchTagsOrContent();
+  }
+  if (!event.target.checked) {
+    tags_or_content.value = false;
+    searchTagsOrContent();
+  }
 };
 
 // Scroll to the top of the page
@@ -374,7 +390,7 @@ const handleRemoveSelection = function (selectedItem, nameOfSelection) {
   }
 
   if (nameOfSelection === 'States') {
-    // Find the index of the selected item in categorySelected.value
+    // Find the index of the selected item in categorySelected
     const index = stateSelected.value.findIndex(
       (item) => item.id === selectedItem.id
     );
@@ -392,33 +408,6 @@ const handleRemoveSelection = function (selectedItem, nameOfSelection) {
   });
 
   appendSelectedParams(params);
-};
-// handle category # end
-
-//
-//
-//
-const appendSelectedParams = function (params) {
-  categorySelected.value.forEach((item, index) => {
-    params.append(`category[${index}][id]`, item.id);
-  });
-
-  typeSelected.value.forEach((item, index) => {
-    params.append(`type[${index}][id]`, item.id);
-  });
-
-  countrySelected.value.forEach((item, index) => {
-    params.append(`country[${index}][id]`, item.id);
-  });
-
-  // Append selected states
-  stateSelected.value.forEach((item, index) => {
-    params.append(`state[${index}][id]`, item.id);
-  });
-
-  const url = `${props.pathList}?${params.toString()}`;
-  console.log(`køre 3:`, params.toString());
-  handleGetPosts(url, {}, { additionalCallTime: 200 });
 };
 
 const goToSinglePostNewWindow = function (teamSlug, postSlug, postId) {
@@ -454,7 +443,6 @@ const setFetchParamsFromState = function () {
 
 const clearSearch = function () {
   search_query.value = '';
-  searchInTagsAndContent.value = false;
   showJobCountriesAndTypes.value = false;
   categorySelected.value = [];
   typeSelected.value = [];
@@ -541,7 +529,6 @@ onMounted(() => {
     }
 
     tags_or_content.value = getTagsOrContentListings;
-    searchInTagsAndContent.value = getTagsOrContentListings;
 
     // fetch data
     fetchComponents(getCurrentPageListings);
@@ -584,7 +571,6 @@ onMounted(() => {
     }
 
     tags_or_content.value = getTagsOrContentJobs;
-    searchInTagsAndContent.value = getTagsOrContentJobs;
     showJobCountriesAndTypes.value = getShowJobCountriesAndTypes;
 
     // fetch data
@@ -628,7 +614,6 @@ onMounted(() => {
     }
 
     tags_or_content.value = getTagsOrContentPosts;
-    searchInTagsAndContent.value = getTagsOrContentPosts;
 
     // fetch data
     fetchComponents(getCurrentPagePosts);
@@ -838,7 +823,8 @@ onMounted(() => {
                               <input
                                 id="show_seach_in_tags_content"
                                 name="show_seach_in_tags_content"
-                                v-model="searchInTagsAndContent"
+                                v-model="tags_or_content"
+                                @change="updateSearchInTagsAndContent($event)"
                                 type="checkbox"
                                 class="h-5 w-5 rounded border-gray-300 text-myPrimaryBrandColor focus:ring-myPrimaryBrandColor"
                               />
