@@ -124,12 +124,12 @@ const appendSelectedParams = function (params) {
   });
 
   const url = `${props.pathList}?${params.toString()}`;
-  console.log(`køre 1:`, params.toString());
   handleGetPosts(url, {}, { additionalCallTime: 200 });
 };
 
 const fetchComponents = function (page) {
   currentPage.value = page;
+  checkStateParams();
 
   // remember old search value while paginating
   if (
@@ -186,7 +186,6 @@ const handleSearch = function () {
   });
 
   const url = `${props.pathList}?${params.toString()}`;
-  console.log(`køre 3:`, params.toString());
   handleGetPosts(url, {}, { additionalCallTime: 200 });
 };
 
@@ -353,7 +352,7 @@ const handleRemoveSelection = function (selectedItem, nameOfSelection) {
   }
 
   if (nameOfSelection === 'Categories') {
-    // Find the index of the selected item in categorySelected.value
+    // Find the index of the selected item in categorySelected
     const index = categorySelected.value.findIndex(
       (item) => item.id === selectedItem.id
     );
@@ -364,7 +363,7 @@ const handleRemoveSelection = function (selectedItem, nameOfSelection) {
     }
   }
   if (nameOfSelection === 'Types') {
-    // Find the index of the selected item in categorySelected.value
+    // Find the index of the selected item in categorySelected
     const index = typeSelected.value.findIndex(
       (item) => item.id === selectedItem.id
     );
@@ -376,7 +375,7 @@ const handleRemoveSelection = function (selectedItem, nameOfSelection) {
   }
 
   if (nameOfSelection === 'Countries') {
-    // Find the index of the selected item in categorySelected.value
+    // Find the index of the selected item in categorySelected
     const index = countrySelected.value.findIndex(
       (item) => item.id === selectedItem.id
     );
@@ -483,7 +482,6 @@ const clearSearch = function () {
   });
 
   const url = `${props.pathList}?${params.toString()}`;
-  console.log(`køre 4:`, params.toString());
   handleGetPosts(url, {}, { additionalCallTime: 200 });
 };
 
