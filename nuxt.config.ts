@@ -1,7 +1,7 @@
 export default defineNuxtConfig({
   // Add a trailing slash to each route
   site: {
-    url: 'https://www.myissue.io',
+    url: process.env.LARAVEL_APP_URL_PRODUCTION,
   },
   devServer: {
     port: 4000,

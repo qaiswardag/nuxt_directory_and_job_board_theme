@@ -108,7 +108,7 @@ const sortedImages = computed(() => {
           ]"
         >
           <img
-            alt="myissue.io"
+            alt="image"
             @click="firstButtonClick"
             :style="{
               height:
