@@ -227,21 +227,19 @@ const searchTagsOrContent = function () {
 
 const updateSearchInTagsAndContent = function (event) {
   if (props.nameList === 'listing') {
-    setTagsOrContentListings(event.target.checked);
+    setTagsOrContentListings(event.target.checked ? true : false);
   }
   if (props.nameList === 'job') {
-    setTagsOrContentJobs(event.target.checked);
+    setTagsOrContentJobs(event.target.checked ? true : false);
   }
   if (props.nameList === 'post') {
-    setTagsOrContentPosts(event.target.checked);
+    setTagsOrContentPosts(event.target.checked ? true : false);
   }
 
   if (event.target.checked) {
-    tags_or_content.value = true;
     searchTagsOrContent();
   }
   if (!event.target.checked) {
-    tags_or_content.value = false;
     searchTagsOrContent();
   }
 };
@@ -443,6 +441,7 @@ const setFetchParamsFromState = function () {
 
 const clearSearch = function () {
   search_query.value = '';
+  tags_or_content.value = false;
   showJobCountriesAndTypes.value = false;
   categorySelected.value = [];
   typeSelected.value = [];
