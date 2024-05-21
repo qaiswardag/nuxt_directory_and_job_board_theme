@@ -193,6 +193,7 @@ const setPageToOne = function () {
 
 const handleSearch = function () {
   setPageToOne();
+  checkStateParams(); //
   const params = new URLSearchParams({
     page: 1,
     search_query: search_query.value,
