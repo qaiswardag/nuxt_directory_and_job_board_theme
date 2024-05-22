@@ -33,6 +33,11 @@ const goToDashboard = function () {
     window.location.href = runtimeConfig.public.LARAVEL_APP_URL_PRODUCTION;
   }
 };
+
+const isActive = function (segment) {
+  const segments = route.path.split('/');
+  return segments[2] === segment;
+};
 </script>
 <template>
   <SlideOverPrimaryMenu
@@ -60,6 +65,7 @@ const goToDashboard = function () {
           class="text-myPrimaryDarkGrayColor"
           :class="{
             'text-myPrimaryLinkColor': routeName === 'listings',
+            'text-myPrimaryLinkColor': isActive('listing'),
           }"
         >
           <div class="myPrimaryMenuTextButton">Listings</div>
@@ -69,6 +75,7 @@ const goToDashboard = function () {
           class="text-myPrimaryDarkGrayColor"
           :class="{
             'text-myPrimaryLinkColor': routeName === 'jobs',
+            'text-myPrimaryLinkColor': isActive('job'),
           }"
         >
           <div class="myPrimaryMenuTextButton">Jobs</div>
@@ -78,6 +85,7 @@ const goToDashboard = function () {
           class="text-myPrimaryDarkGrayColor"
           :class="{
             'text-myPrimaryLinkColor': routeName === 'posts',
+            'text-myPrimaryLinkColor': isActive('post'),
           }"
         >
           <div class="myPrimaryMenuTextButton">Posts</div>
