@@ -36,7 +36,11 @@ const goToDashboard = function () {
 
 const isActive = function (segment) {
   const segments = route.path.split('/');
-  return segments[2] === segment;
+  if (segments[2] === segment) {
+    return true;
+  } else {
+    return false;
+  }
 };
 </script>
 <template>
@@ -63,30 +67,30 @@ const isActive = function (segment) {
         <NuxtLink
           to="/listings"
           class="text-myPrimaryDarkGrayColor"
-          :class="{
-            'text-myPrimaryLinkColor': routeName === 'listings',
-            'text-myPrimaryLinkColor': isActive('listing'),
-          }"
+          :class="[
+            route.name === 'listings' ? 'text-myPrimaryLinkColor' : '',
+            isActive('listing') ? 'text-myPrimaryLinkColor' : '',
+          ]"
         >
           <div class="myPrimaryMenuTextButton">Listings</div>
         </NuxtLink>
         <NuxtLink
           to="/jobs"
           class="text-myPrimaryDarkGrayColor"
-          :class="{
-            'text-myPrimaryLinkColor': routeName === 'jobs',
-            'text-myPrimaryLinkColor': isActive('job'),
-          }"
+          :class="[
+            route.name === 'jobs' ? 'text-myPrimaryLinkColor' : '',
+            isActive('job') ? 'text-myPrimaryLinkColor' : '',
+          ]"
         >
           <div class="myPrimaryMenuTextButton">Jobs</div>
         </NuxtLink>
         <NuxtLink
           to="/posts"
           class="text-myPrimaryDarkGrayColor"
-          :class="{
-            'text-myPrimaryLinkColor': routeName === 'posts',
-            'text-myPrimaryLinkColor': isActive('post'),
-          }"
+          :class="[
+            route.name === 'posts' ? 'text-myPrimaryLinkColor' : '',
+            isActive('post') ? 'text-myPrimaryLinkColor' : '',
+          ]"
         >
           <div class="myPrimaryMenuTextButton">Posts</div>
         </NuxtLink>
