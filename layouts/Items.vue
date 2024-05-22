@@ -363,6 +363,28 @@ const handleSelection = function (selectedItem, nameOfSelection) {
 };
 
 const handleRemoveSelection = function (selectedItem, nameOfSelection) {
+  setPageToOne();
+  checkStateParams();
+
+  if (props.nameList === 'listing') {
+    setCurrentCategoriesListings(categorySelected.value);
+    setCurrentTypesListings(typeSelected.value);
+    setCurrentCountriesListings(countrySelected.value);
+    setCurrentStatesListings(stateSelected.value);
+  }
+  if (props.nameList === 'job') {
+    setCurrentCategoriesJobs(categorySelected.value);
+    setCurrentTypesJobs(typeSelected.value);
+    setCurrentCountriesJobs(countrySelected.value);
+    setCurrentStatesJobs(stateSelected.value);
+  }
+  if (props.nameList === 'post') {
+    setCurrentCategoriesPosts(categorySelected.value);
+    setCurrentTypesPosts(typeSelected.value);
+    setCurrentCountriesPosts(countrySelected.value);
+    setCurrentStatesPosts(stateSelected.value);
+  }
+
   if (!selectedItem) {
     return;
   }
