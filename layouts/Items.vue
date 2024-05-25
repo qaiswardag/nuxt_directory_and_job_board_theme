@@ -241,12 +241,18 @@ const searchTagsOrContent = function () {
 const updateSearchInTagsAndContent = function (event) {
   if (props.nameList === 'listing') {
     setTagsOrContentListings(event.target.checked ? true : false);
+    setCurrentPageListings(1);
+    currentPage.value = 1;
   }
   if (props.nameList === 'job') {
     setTagsOrContentJobs(event.target.checked ? true : false);
+    setCurrentPageJobs(1);
+    currentPage.value = 1;
   }
   if (props.nameList === 'post') {
     setTagsOrContentPosts(event.target.checked ? true : false);
+    setCurrentPagePosts(1);
+    currentPage.value = 1;
   }
 
   if (event.target.checked) {
