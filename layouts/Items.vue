@@ -1030,7 +1030,7 @@ onMounted(() => {
               <li
                 v-for="post in fetchedDataPosts.posts.data"
                 :key="post.id"
-                class="overflow-hidden whitespace-pre-line flex-1 h-auto rounded p-2 border border-myPrimaryLightGrayColor"
+                class="overflow-hidden whitespace-pre-line flex-1 h-auto rounded-lg p-2 border border-myPrimaryLightGrayColor"
               >
                 <!-- start photo -->
                 <template
@@ -1043,7 +1043,7 @@ onMounted(() => {
                     :isLoading="isLoadingPosts"
                     imageSize="medium_path"
                     imageHeight="xl:max-h-[18rem] xl:min-h-[18rem] xl:h-[18rem] lg:max-h-[18rem] min-h-[18rem] lg:h-[18rem] md:max-h-[18rem] min-h-[18rem] md:h-[18rem] max-h-[18rem] min-h-[18rem] h-[18rem]"
-                    imageWidth="w-full object-cover rounded-b-none object-top"
+                    imageWidth="w-full object-cover rounded-b-none rounded-t-lg object-top"
                     :roundedFull="false"
                     :squareButtons="true"
                     @firstButtonClick="
@@ -1063,7 +1063,7 @@ onMounted(() => {
                       Array.isArray(post.team.coverImagesWithLogos.logos) &&
                       post.team.coverImagesWithLogos.logos.length > 0
                     "
-                    class="relative flex justify-center items-center mt-[-2rem] z-20 w-full h-[4rem]"
+                    class="relative flex justify-center items-center mt-[-2rem] z-20 h-[4rem] w-[4rem] mx-auto"
                   >
                     <img
                       alt="Logo brand"
@@ -1088,7 +1088,7 @@ onMounted(() => {
                     :isLoading="isLoadingPosts"
                     imageSize="medium_path"
                     imageHeight="xl:max-h-[18rem] xl:min-h-[18rem] xl:h-[18rem] lg:max-h-[18rem] min-h-[18rem] lg:h-[18rem] md:max-h-[18rem] min-h-[18rem] md:h-[18rem] max-h-[18rem] min-h-[18rem] h-[18rem]"
-                    imageWidth="w-full object-cover rounded-b-none object-top"
+                    imageWidth="w-full object-cover rounded-b-none rounded-t-lg object-top"
                     :roundedFull="false"
                     :squareButtons="true"
                     @firstButtonClick="
@@ -1133,7 +1133,7 @@ onMounted(() => {
                     :isLoading="isLoadingPosts"
                     imageSize="medium_path"
                     imageHeight="xl:max-h-[18rem] xl:min-h-[18rem] xl:h-[18rem] lg:max-h-[18rem] min-h-[18rem] lg:h-[18rem] md:max-h-[18rem] min-h-[18rem] md:h-[18rem] max-h-[18rem] min-h-[18rem] h-[18rem]"
-                    imageWidth="w-full object-cover rounded-b-none object-top"
+                    imageWidth="w-full object-cover rounded-b-none rounded-t-lg object-top"
                     :roundedFull="false"
                     :squareButtons="true"
                     @firstButtonClick="
