@@ -1063,7 +1063,7 @@ onMounted(() => {
                       Array.isArray(post.team.coverImagesWithLogos.logos) &&
                       post.team.coverImagesWithLogos.logos.length > 0
                     "
-                    class="relative flex justify-center items-center mt-[-2rem] z-20 w-full h-[4rem]"
+                    class="relative flex justify-center items-center mt-[-2rem] z-20 h-[4rem] w-[4rem] mx-auto"
                   >
                     <img
                       alt="Logo brand"
@@ -1108,7 +1108,7 @@ onMounted(() => {
                       Array.isArray(post.team.coverImagesWithLogos.logos) &&
                       post.team.coverImagesWithLogos.logos.length > 0
                     "
-                    class="relative flex justify-center items-center mt-[-2rem] z-20 w-full h-[4rem]"
+                    class="relative flex justify-center items-center mt-[-2rem] z-20 h-[4rem] w-[4rem] mx-auto"
                   >
                     <img
                       alt="Logo brand"
@@ -1166,7 +1166,7 @@ onMounted(() => {
                   <!-- Listing logo # end -->
                 </template>
 
-                <section class="pt-4 pb-6 px-4">
+                <section class="pt-4 pb-2 px-4">
                   <button
                     @click="goToSinglePost(post.team.slug, post.slug, post.id)"
                     type="button"
@@ -1318,14 +1318,16 @@ onMounted(() => {
 
                   <!-- Category # start -->
                   <template v-if="post.categories">
-                    <ItemDisplaySelection
-                      nameOfList="Categories"
-                      :list="post.categories"
-                      :listSelected="categorySelected"
-                      icon="interests"
-                      @removeItem="handleRemoveSelection"
-                      @selectItem="handleSelection"
-                    ></ItemDisplaySelection>
+                    <div class="border-t border-red-100 mt-4">
+                      <ItemDisplaySelection
+                        nameOfList="Categories"
+                        :list="post.categories"
+                        :listSelected="categorySelected"
+                        icon="interests"
+                        @removeItem="handleRemoveSelection"
+                        @selectItem="handleSelection"
+                      ></ItemDisplaySelection>
+                    </div>
                   </template>
                   <!-- Category # end -->
                 </section>
