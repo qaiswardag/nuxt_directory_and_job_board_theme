@@ -1166,7 +1166,7 @@ onMounted(() => {
                   <!-- Listing logo # end -->
                 </template>
 
-                <section class="pt-4 pb-2 px-4">
+                <section class="pt-4 pb-2 px-2">
                   <button
                     @click="goToSinglePost(post.team.slug, post.slug, post.id)"
                     type="button"
@@ -1222,21 +1222,6 @@ onMounted(() => {
                         post.states.length > 0,
                     }"
                   >
-                    <template
-                      v-if="
-                        nameList !== 'post' &&
-                        post.countries &&
-                        Array.isArray(post.countries) &&
-                        post.countries.length > 0 &&
-                        post.states &&
-                        Array.isArray(post.states) &&
-                        post.states.length > 0
-                      "
-                    >
-                      <span class="material-symbols-outlined text-[12px] pr-1">
-                        location_on
-                      </span>
-                    </template>
                     <!-- Country # start -->
                     <template v-if="post.countries">
                       <ItemDisplaySelection
@@ -1272,23 +1257,6 @@ onMounted(() => {
                             post.states.length > 0),
                       }"
                     >
-                      <template
-                        v-if="
-                          (nameList !== 'post' && !post.countries) ||
-                          (post.countries &&
-                            Array.isArray(post.countries) &&
-                            post.countries.length === 0 &&
-                            post.states &&
-                            Array.isArray(post.states) &&
-                            post.states.length > 0)
-                        "
-                      >
-                        <span
-                          class="material-symbols-outlined text-[12px] pr-1"
-                        >
-                          location_on
-                        </span>
-                      </template>
                       <template v-if="post.states">
                         <ItemDisplaySelection
                           nameOfList="States"
