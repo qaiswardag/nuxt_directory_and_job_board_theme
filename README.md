@@ -2,21 +2,15 @@
 <img width="200" style="max-width: 100%;" src="public/images/logo/logo.svg" alt="Logo">
 </p>
 
-# Intro
+# Free Page Builder, Listing Directory, Blog, and Job Board Theme
 
-Laravel, Vue, and Nuxt, a Page Builder, Listing Directory, Blog, and Job Board Theme.
+Demo [play around](https://www.demo.myissue.dk)
 
-I would greatly appreciate if you could star the GitHub repository. It helps to boost the visibility of this project and encourages me to continue adding new features.
+Laravel & Vue backend [repository](https://github.com/qaiswardag/laravel_vue_directory_and_job_board_theme)
 
-[Play around with the demo app](https://www.demo.myissue.dk)
 
-# Laravel and Vue 3 for backend
 
-Laravel and Vue 3 has been used for for the backend part.
-
-Check out the GitHub [repository](https://github.com/qaiswardag/laravel_vue_directory_and_job_board_theme).
-
-# Setup
+# Installation
 
 Make sure to install the dependencies:
 
