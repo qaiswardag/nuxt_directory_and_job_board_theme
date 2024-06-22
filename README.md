@@ -112,11 +112,6 @@ Identify the process using port 3000.
 lsof -i :3000
 ```
 
-#### Output:
-
-COMMAND PID USER FD TYPE DEVICE SIZE/OFF NODE NAME
-node 21995 myissue 19u IPv6 986387 0t0 TCP \*:3000 (LISTEN)
-
 Kill:
 
 ```
