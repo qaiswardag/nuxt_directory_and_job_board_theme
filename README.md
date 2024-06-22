@@ -80,7 +80,7 @@ yarn preview
 bun run preview
 ```
 
-## PM2
+## Process Manager
 
 PM2 (Process Manager 2) is a fast and easy solution for hosting your Nuxt application on your server or VM.
 To use pm2, use an ecosystem.config.cjs:
