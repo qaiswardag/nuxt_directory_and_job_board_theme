@@ -170,3 +170,32 @@ Restart Process. If process ID is 0
 ```
 pm2 restart 0
 ```
+
+
+## Contributing
+
+Thank you for considering contributing to this project!
+
+## Security Vulnerabilities
+
+If you discover a security vulnerability, please send me an e-mail.
+
+## Get in touch for customization or any questions.
+
+If you have any questions or if you're looking for customization, feel free to connect with me on LinkedIn and send me a message.
+
+-   [Email](mailto:qais.wardag@outlook.com)
+-   [LinkedIn](https://www.linkedin.com/in/qaiswardag)
+
+## Feedback
+
+I would love to hear your feedback, suggestions, or any issues you encounter while using this app. Feel free to reach out to me if you have any questions or just want to say hello. 
+
+## Support the Project
+
+I would greatly appreciate it if you could star the GitHub repository. Starring the project helps to boost its visibility and encourages me to continue adding new features.
+
+
+## License
+
+This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
