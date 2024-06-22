@@ -196,6 +196,6 @@ I would love to hear your feedback, suggestions, or any issues you encounter whi
 I would greatly appreciate it if you could star the GitHub repository. Starring the project helps to boost its visibility and encourages me to continue adding new features.
 
 
-## License
+# License
 
 This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
