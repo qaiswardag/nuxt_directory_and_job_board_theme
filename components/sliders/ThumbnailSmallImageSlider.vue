@@ -163,10 +163,11 @@ const sortedImages = computed(() => {
               'rounded-none h-full top-0 bottom-0 left-0 w-8': squareButtons,
             },
             {
-              'bg-opacity-60 top-1/2 bottom-1/2 left-[4px] shaddow h-10 w-10 rounded-full ':
+              'bg-opacity-60 top-[45%] left-[4px] shaddow h-10 w-10 rounded-full ':
                 !squareButtons,
             },
           ]"
+          style="touch-action: manipulation"
         >
           <span class="material-symbols-outlined"> keyboard_arrow_left </span>
         </button>
@@ -180,10 +181,11 @@ const sortedImages = computed(() => {
               'rounded-none h-full top-0 right-0 bottom-0 w-8': squareButtons,
             },
             {
-              'bg-opacity-60 top-1/2 bottom-1/2 right-[4px] shaddow h-10 w-10 rounded-full ':
+              'bg-opacity-60 top-[45%] right-[4px] shaddow h-10 w-10 rounded-full ':
                 !squareButtons,
             },
           ]"
+          style="touch-action: manipulation"
         >
           <span class="material-symbols-outlined"> keyboard_arrow_right </span>
         </button>
