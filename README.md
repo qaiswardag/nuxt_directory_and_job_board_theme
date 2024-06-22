@@ -10,7 +10,7 @@ Laravel & Vue backend [repository](https://github.com/qaiswardag/laravel_vue_dir
 
 
 
-# Installation
+## Installation
 
 Make sure to install the dependencies:
 
@@ -28,7 +28,7 @@ yarn install
 bun install
 ```
 
-# Development Server
+## Development Server
 
 Start the development server on `http://localhost`:
 
@@ -46,7 +46,7 @@ yarn dev
 bun run dev
 ```
 
-# Production
+## Production
 
 Build the application for production:
 
@@ -142,26 +142,3 @@ Restart Process. If process ID is 0
 ```
 pm2 restart 0
 ```
-
-# Contributing
-
-Thank you for considering contributing to this project!
-
-# Security Vulnerabilities
-
-If you discover a security vulnerability, please send me an e-mail.
-
-# Get in touch for customization or any questions.
-
-If you have any questions or if you're looking for customization, feel free to connect with me on LinkedIn and send me a message.
-
-- [Email](mailto:qais.wardag@outlook.com)
-- [LinkedIn](https://www.linkedin.com/in/qaiswardag)
-
-# Feedback
-
-I would love to hear your feedback, suggestions, or any issues you encounter while using this app. Feel free to reach out to me if you have any questions or just want to say hello. You can connect with me through:
-
-# License
-
-This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
