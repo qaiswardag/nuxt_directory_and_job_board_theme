@@ -119,7 +119,7 @@ const getAppUrl = function (path) {
                 imageHeight="min-h-24 max-h-24"
                 imageWidth="w-24 min-w-24 max-w-24 mb-4 object-cover"
                 :roundedFull="true"
-                :squareButtons="true"
+                :squareButtons="false"
               ></ThumbnailSmallImageSlider>
             </template>
             <template v-if="team.coverImagesWithLogos?.cover_images">
@@ -130,7 +130,7 @@ const getAppUrl = function (path) {
                 imageHeight="max-h-96"
                 imageWidth="w-full object-cover rounded-b-none"
                 :roundedFull="false"
-                :squareButtons="true"
+                :squareButtons="false"
               ></ThumbnailSmallImageSlider>
             </template>
           </div>
@@ -1319,7 +1319,7 @@ const getAppUrl = function (path) {
               imageHeight="min-h-24 max-h-24 rounded-full"
               imageWidth="w-24 min-w-24 max-w-24 mb-4 w-24 object-cover"
               :roundedFull="false"
-              :squareButtons="true"
+              :squareButtons="false"
             ></ThumbnailSmallImageSlider>
             <!-- post logo # end -->
 
@@ -1333,7 +1333,7 @@ const getAppUrl = function (path) {
                 imageHeight="xl:max-h-[22rem] xl:min-h-[22rem] xl:h-[22rem] lg:max-h-[22rem] min-h-[22rem] lg:h-[22rem] md:max-h-[22rem] min-h-[22rem] md:h-[22rem] max-h-[22rem] min-h-[22rem] h-[22rem]"
                 imageWidth="w-full object-cover object-top"
                 :roundedFull="false"
-                :squareButtons="true"
+                :squareButtons="false"
                 :imageClickable="false"
               ></ThumbnailSmallImageSlider>
             </template>
@@ -1346,7 +1346,7 @@ const getAppUrl = function (path) {
                 imageHeight="xl:max-h-[22rem] xl:min-h-[22rem] xl:h-[22rem] lg:max-h-[22rem] min-h-[22rem] lg:h-[22rem] md:max-h-[22rem] min-h-[22rem] md:h-[22rem] max-h-[22rem] min-h-[22rem] h-[22rem]"
                 imageWidth="w-full object-cover object-top"
                 :roundedFull="false"
-                :squareButtons="true"
+                :squareButtons="false"
                 :imageClickable="false"
               ></ThumbnailSmallImageSlider>
             </template>
@@ -1361,7 +1361,7 @@ const getAppUrl = function (path) {
                 imageHeight="xl:max-h-[22rem] xl:min-h-[22rem] xl:h-[22rem] lg:max-h-[22rem] min-h-[22rem] lg:h-[22rem] md:max-h-[22rem] min-h-[22rem] md:h-[22rem] max-h-[22rem] min-h-[22rem] h-[22rem]"
                 imageWidth="w-full object-cover object-top"
                 :roundedFull="false"
-                :squareButtons="true"
+                :squareButtons="false"
                 :imageClickable="false"
               ></ThumbnailSmallImageSlider>
             </template>
