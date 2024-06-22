@@ -8,7 +8,7 @@ Demo [play around](https://www.demo.myissue.dk)
 
 Laravel & Vue backend [repository](https://github.com/qaiswardag/laravel_vue_directory_and_job_board_theme)
 
-## Introduction
+### Introduction
 
 ### About
 
@@ -43,7 +43,7 @@ Empower users to create the perfect listings, jobs, or blog posts with the Page 
 - **Frameworks**: Nuxt.
 - **Features**: Drag & Drop Page Builder, Listing Directory, Blog, Job Board, and Stripe integration for subscriptions and one-time payments.
 
-# Installation
+## Installation
 
 Make sure to install the dependencies:
 
@@ -61,7 +61,7 @@ yarn install
 bun install
 ```
 
-## Development Server
+### Development Server
 
 Start the development server on `http://localhost`:
 
@@ -79,7 +79,7 @@ yarn dev
 bun run dev
 ```
 
-## Production
+### Production
 
 Build the application for production:
 
@@ -113,7 +113,7 @@ yarn preview
 bun run preview
 ```
 
-## Process Manager
+### Process Manager
 
 PM2 (Process Manager 2) is a fast and easy solution for hosting your Nuxt application on your server or VM.
 To use pm2, use an ecosystem.config.cjs:
@@ -137,7 +137,7 @@ module.exports = {
 npm run build
 ```
 
-## Check port:
+### Check port:
 
 Identify the process using port 3000.
 
@@ -157,7 +157,7 @@ The SIGKILL signal is a special signal that forcefully terminates a process.
 It does not allow the process to perform any cleanup or
 handle the signal in any way – it immediately terminates the process.
 
-## pm2 Restart process
+### pm2 Restart process
 
 Get Process ID. Remember to install pm2 globally
 
@@ -170,32 +170,3 @@ Restart Process. If process ID is 0
 ```
 pm2 restart 0
 ```
-
-
-# Contributing
-
-Thank you for considering contributing to this project!
-
-# Security Vulnerabilities
-
-If you discover a security vulnerability, please send me an e-mail.
-
-# Get in touch for customization or any questions
-
-If you have any questions or if you're looking for customization, feel free to connect with me on LinkedIn and send me a message.
-
--   [Email](mailto:qais.wardag@outlook.com)
--   [LinkedIn](https://www.linkedin.com/in/qaiswardag)
-
-# Feedback
-
-I would love to hear your feedback, suggestions, or any issues you encounter while using this app. Feel free to reach out to me if you have any questions or just want to say hello. 
-
-# Support the Project
-
-I would greatly appreciate it if you could star the GitHub repository. Starring the project helps to boost its visibility and encourages me to continue adding new features.
-
-
-# License
-
-This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
