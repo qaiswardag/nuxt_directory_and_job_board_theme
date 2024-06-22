@@ -1045,7 +1045,7 @@ onMounted(() => {
                     imageHeight="xl:max-h-[18rem] xl:min-h-[18rem] xl:h-[18rem] lg:max-h-[18rem] min-h-[18rem] lg:h-[18rem] md:max-h-[18rem] min-h-[18rem] md:h-[18rem] max-h-[18rem] min-h-[18rem] h-[18rem]"
                     imageWidth="w-full object-cover rounded-b-none rounded-t-lg object-top"
                     :roundedFull="false"
-                    :squareButtons="true"
+                    :squareButtons="false"
                     @firstButtonClick="
                       goToSinglePost(post.team.slug, post.slug, post.id)
                     "
@@ -1090,7 +1090,7 @@ onMounted(() => {
                     imageHeight="xl:max-h-[18rem] xl:min-h-[18rem] xl:h-[18rem] lg:max-h-[18rem] min-h-[18rem] lg:h-[18rem] md:max-h-[18rem] min-h-[18rem] md:h-[18rem] max-h-[18rem] min-h-[18rem] h-[18rem]"
                     imageWidth="w-full object-cover rounded-b-none rounded-t-lg object-top"
                     :roundedFull="false"
-                    :squareButtons="true"
+                    :squareButtons="false"
                     @firstButtonClick="
                       goToSinglePost(post.team.slug, post.slug, post.id)
                     "
@@ -1135,7 +1135,7 @@ onMounted(() => {
                     imageHeight="xl:max-h-[18rem] xl:min-h-[18rem] xl:h-[18rem] lg:max-h-[18rem] min-h-[18rem] lg:h-[18rem] md:max-h-[18rem] min-h-[18rem] md:h-[18rem] max-h-[18rem] min-h-[18rem] h-[18rem]"
                     imageWidth="w-full object-cover rounded-b-none rounded-t-lg object-top"
                     :roundedFull="false"
-                    :squareButtons="true"
+                    :squareButtons="false"
                     @firstButtonClick="
                       goToSinglePost(post.team.slug, post.slug, post.id)
                     "
