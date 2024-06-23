@@ -30,13 +30,6 @@ onMounted(async () => {
       showCookieModal.value = true;
     }
   });
-  // cookie # end
-  //
-  //
-  // fetch user # start
-  // xsrfToken.value = getCookie(documentDOM, 'XSRF-TOKEN');
-  // fetchUser();
-  // fetch user # end
 });
 </script>
 <template>
