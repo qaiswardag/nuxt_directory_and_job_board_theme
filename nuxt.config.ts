@@ -18,7 +18,20 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxtjs/sitemap', '@pinia/nuxt'],
   sitemap: {
-    exclude: [],
+    //
+    //
+    // sources: ['https://www.demo-admin.myissue.dk/api/guest/stores/index'],
+    // sources: ['/api/__sitemap__/urls'],
+    //
+    //
+    sitemaps: {
+      pages: {
+        sources: ['/api/__sitemap__/urls/pages'],
+      },
+      listings: {
+        sources: ['/api/__sitemap__/urls/listings'],
+      },
+    },
   },
   app: {
     head: {
