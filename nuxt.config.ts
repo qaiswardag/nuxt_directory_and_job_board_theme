@@ -1,5 +1,11 @@
 export default defineNuxtConfig({
   // Add a trailing slash to each route
+  nitro: {
+    prerender: {
+      crawlLinks: true,
+      routes: ['/'],
+    },
+  },
   site: {
     url: process.env.LARAVEL_APP_URL_PRODUCTION,
   },
@@ -16,22 +22,9 @@ export default defineNuxtConfig({
     },
   },
   devtools: { enabled: true },
-  modules: ['@nuxtjs/sitemap', '@pinia/nuxt'],
+  modules: ['@nuxtjs/sitemap', '@pinia/nuxt', 'nuxt-simple-robots'],
   sitemap: {
-    //
-    //
-    // sources: ['https://www.demo-admin.myissue.dk/api/guest/stores/index'],
-    // sources: ['/api/__sitemap__/urls'],
-    //
-    //
-    sitemaps: {
-      pages: {
-        sources: ['/api/__sitemap__/urls/pages'],
-      },
-      listings: {
-        sources: ['/api/__sitemap__/urls/listings'],
-      },
-    },
+    sources: ['nuxt:pages', '/api/__sitemap__/urls'],
   },
   app: {
     head: {
