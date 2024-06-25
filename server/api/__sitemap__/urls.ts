@@ -9,10 +9,10 @@ export default defineSitemapEventHandler(async () => {
 
   async function generateUrls(route: string, posttype: string) {
     const ListingData: any = await $fetch(route);
-    return (ListingData?.posts || [])?.data?.map((item: any) => {
+    return (ListingData?.posts || [])?.map((item: any) => {
       return {
         loc: `${item?.team?.slug}/${posttype}/${item?.slug}/view/${item.id}`,
-        lastmod: new Date(),
+        lastmod: item.updated_at,
       };
     });
   }
