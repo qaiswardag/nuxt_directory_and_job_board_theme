@@ -112,16 +112,6 @@ const getAppUrl = function (path) {
 
             <WidgetSectionBorder></WidgetSectionBorder>
 
-            <template v-if="team.coverImagesWithLogos?.logos">
-              <ThumbnailSmallImageSlider
-                :images="team.coverImagesWithLogos?.logos"
-                imageSize="large_path"
-                imageHeight="min-h-24 max-h-24"
-                imageWidth="w-24 min-w-24 max-w-24 mb-4 object-cover"
-                :roundedFull="true"
-                :squareButtons="false"
-              ></ThumbnailSmallImageSlider>
-            </template>
             <template v-if="team.coverImagesWithLogos?.cover_images">
               <ThumbnailSmallImageSlider
                 v-if="team.coverImagesWithLogos?.cover_images"
@@ -132,6 +122,20 @@ const getAppUrl = function (path) {
                 :roundedFull="false"
                 :squareButtons="false"
               ></ThumbnailSmallImageSlider>
+            </template>
+            <template v-if="team.coverImagesWithLogos?.logos">
+              <div
+                class="relative flex justify-center items-center mt-[-2rem] z-20 h-[4rem] w-[4rem] mx-auto"
+              >
+                <ThumbnailSmallImageSlider
+                  :images="team.coverImagesWithLogos?.logos"
+                  imageSize="large_path"
+                  imageHeight="min-h-24 max-h-24"
+                  imageWidth="w-24 min-w-24 max-w-24 object-cover"
+                  :roundedFull="true"
+                  :squareButtons="false"
+                ></ThumbnailSmallImageSlider>
+              </div>
             </template>
           </div>
         </template>
@@ -1311,17 +1315,6 @@ const getAppUrl = function (path) {
               <!-- brand website # end -->
             </h4>
             <WidgetSectionBorder></WidgetSectionBorder>
-            <!-- post logo # start -->
-            <ThumbnailSmallImageSlider
-              v-if="post.brand_logos"
-              :images="post.brand_logos"
-              imageSize="medium_path"
-              imageHeight="min-h-24 max-h-24 rounded-full"
-              imageWidth="w-24 min-w-24 max-w-24 mb-4 w-24 object-cover"
-              :roundedFull="false"
-              :squareButtons="false"
-            ></ThumbnailSmallImageSlider>
-            <!-- post logo # end -->
 
             <!-- start photo -->
             <template
@@ -1367,7 +1360,19 @@ const getAppUrl = function (path) {
             </template>
             <!-- post logo # start -->
             <!-- post logo # start -->
-
+            <div
+              class="relative flex justify-center items-center mt-[-2rem] z-20 h-[4rem] w-[4rem] mx-auto"
+            >
+              <ThumbnailSmallImageSlider
+                v-if="post.brand_logos"
+                :images="post.brand_logos"
+                imageSize="medium_path"
+                imageHeight="min-h-24 max-h-24 rounded-full"
+                imageWidth="w-24 min-w-24 max-w-24 w-24 object-cover"
+                :roundedFull="false"
+                :squareButtons="false"
+              ></ThumbnailSmallImageSlider>
+            </div>
             <!-- post logo # end -->
           </div>
         </template>

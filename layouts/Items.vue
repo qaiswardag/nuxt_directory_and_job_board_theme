@@ -451,17 +451,34 @@ const handleRemoveSelection = function (selectedItem, nameOfSelection) {
   appendSelectedParams(params);
 };
 
+const isNavigating = ref(false);
+
 const goToSinglePostNewWindow = function (teamSlug, postSlug, postId) {
-  window.open(
-    `${runtimeConfig.public.APP_URL}/${teamSlug}/${props.nameList}/${postSlug}/view/${postId}`,
-    '_blank'
-  );
+  if (isNavigating.value) return;
+  isNavigating.value = true;
+
+  try {
+    window.open(
+      `${runtimeConfig.public.APP_URL}/${teamSlug}/${props.nameList}/${postSlug}/view/${postId}`,
+      '_blank'
+    );
+  } finally {
+    isNavigating.value = false;
+  }
 };
 
 const goToSinglePost = async function (teamSlug, postSlug, postId) {
-  await navigateTo({
-    path: `${teamSlug}/${props.nameList}/${postSlug}/view/${postId}`,
-  });
+  if (isNavigating.value) return;
+
+  isNavigating.value = true;
+
+  try {
+    await navigateTo({
+      path: `${teamSlug}/${props.nameList}/${postSlug}/view/${postId}`,
+    });
+  } finally {
+    isNavigating.value = false;
+  }
 };
 
 const runtimeConfig = useRuntimeConfig();
