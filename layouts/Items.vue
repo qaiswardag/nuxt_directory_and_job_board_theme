@@ -501,6 +501,7 @@ const setFetchParamsFromState = function () {
 
 const clearSearch = function () {
   search_query.value = '';
+  currentPage.value = 1;
   tags_or_content.value = false;
   showJobCountriesAndTypes.value = false;
   categorySelected.value = [];
