@@ -6,9 +6,7 @@ export default defineNuxtConfig({
       routes: ['/'],
     },
   },
-  site: {
-    url: process.env.LARAVEL_APP_URL_PRODUCTION,
-  },
+
   devServer: {
     port: 4000,
   },
@@ -24,7 +22,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxtjs/sitemap', '@pinia/nuxt', 'nuxt-simple-robots'],
   sitemap: {
-    sources: ['nuxt:pages', '/api/__sitemap__/urls'],
+    sources: ['/api/__sitemap__/urls'],
   },
   app: {
     head: {

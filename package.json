@@ -14,11 +14,11 @@
     "node": "20.x"
   },
   "dependencies": {
+    "nuxt-simple-robots": "^4.0.0-rc.17",
     "@pinia/nuxt": "^0.5.1",
     "date-fns": "^2.30.0",
-    "nuxt": "^3.10.1",
+    "nuxt": "^3.13.0",
     "nuxt-headlessui": "^1.1.5",
-    "nuxt-simple-robots": "^4.0.0-rc.17",
     "pinia": "^2.1.7",
     "pm2": "^5.3.1",
     "vue": "^3.4.15",

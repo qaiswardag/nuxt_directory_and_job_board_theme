@@ -41,7 +41,7 @@ const handleRemoveItem = function (selectedItem) {
         :key="item.id"
         :class="[
           {
-            'font-medium ': listSelected.some((cat) => cat.id === item.id),
+            'text-red-400 ': listSelected.some((cat) => cat.id === item.id),
           },
           {
             '': listSelected.some((cat) => cat.id !== item.id),
@@ -49,12 +49,8 @@ const handleRemoveItem = function (selectedItem) {
         ]"
         :disabled="listSelected.name === item.name"
       >
-        <span class="flex items-center justify-start gap-1">
-          <template v-if="icon === 'interests'">
-            <span class="material-symbols-outlined text-[15px]">
-              interests
-            </span>
-          </template>
+        <div class="flex items-center justify-start gap-1">
+          <template v-if="icon === 'interests'"> </template>
           <template v-if="icon === 'GlobeAmericasIcon'">
             <span class="material-symbols-outlined text-[15px]"> flag </span>
           </template>
@@ -72,7 +68,7 @@ const handleRemoveItem = function (selectedItem) {
               <span>, </span>
             </template>
           </span>
-        </span>
+        </div>
       </button>
     </div>
   </template>
