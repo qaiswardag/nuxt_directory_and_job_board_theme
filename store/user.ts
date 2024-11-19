@@ -165,7 +165,10 @@ export const useUserStore = defineStore('user', {
 
       const fullPath = this.getAppUrl(path);
 
-      handleGetUser(fullPath);
+      handleGetUser(fullPath, {
+        method: 'GET',
+        credentials: 'include',
+      });
 
       this.user = {
         fetchedDataUser,

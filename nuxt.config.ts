@@ -7,9 +7,14 @@ export default defineNuxtConfig({
     },
   },
 
+  site: {
+    url: 'https://www.admin.myissue.io',
+  },
+
   devServer: {
     port: 4000,
   },
+
   runtimeConfig: {
     public: {
       LARAVEL_APP_URL_PRODUCTION: process.env.LARAVEL_APP_URL_PRODUCTION,
@@ -19,11 +24,14 @@ export default defineNuxtConfig({
       APP_ENV: process.env.APP_ENV,
     },
   },
+
   devtools: { enabled: true },
   modules: ['@nuxtjs/sitemap', '@pinia/nuxt', 'nuxt-simple-robots'],
+
   sitemap: {
     sources: ['/api/__sitemap__/urls'],
   },
+
   app: {
     head: {
       charset: 'utf-8',
@@ -77,11 +85,15 @@ export default defineNuxtConfig({
       ],
     },
   },
+
   css: ['~/assets/css/main.css'],
+
   postcss: {
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
     },
   },
+
+  compatibilityDate: '2024-11-19',
 });

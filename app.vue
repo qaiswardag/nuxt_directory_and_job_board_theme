@@ -1,14 +1,8 @@
 <script setup>
-import { useUserStore } from './store/user';
 import CookieConsentModal from './components/modals/CookieConsentModal.vue';
 import { getCookie } from './helpers/get-cookie';
 
-const store = useUserStore();
-
-const { fetchUser } = store;
-
 const documentDOM = ref(null);
-const xsrfToken = ref(null);
 const checkACookieExists = ref(null);
 
 const showCookieModal = ref(false);
