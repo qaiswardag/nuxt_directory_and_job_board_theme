@@ -160,7 +160,7 @@ export const useUserStore = defineStore('user', {
       return this.baseUrl + '/' + path;
     },
 
-    async fetchUser(xsrfToken: string) {
+    async fetchUser() {
       const path = 'loggedin-user';
 
       const fullPath = this.getAppUrl(path);
