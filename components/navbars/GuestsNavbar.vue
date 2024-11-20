@@ -187,7 +187,9 @@ onMounted(() => {
 
           <template v-else>
             <template v-if="!user.isLoadingUser && !user.isErrorUser">
-              <div class="px-2">
+              <div
+                class="rounded-l-full min-h-[3rem] flex items-center justify-center"
+              >
                 <div
                   class="text-white flex-shrink-0 gap-0.5 h-10 w-10 rounded-full bg-myPrimaryBrandColor flex justify-center items-center text-xs rounded-l-full"
                 >
