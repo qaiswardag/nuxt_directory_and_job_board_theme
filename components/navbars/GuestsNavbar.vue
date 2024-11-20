@@ -148,38 +148,61 @@ onMounted(() => {
           @click="goToDashboard"
           type="button"
         >
-          <div
+          <template v-if="user && user.isLoadingUser && !user.isErrorUser">
+            <div>
+              <span class="flex justify-center items-center h-10 w-10">
+                <span class="relative flex justify-center items-center h-3 w-3">
+                  <span
+                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-myPrimaryLinkColor opacity-50"
+                  ></span>
+                  <span
+                    class="relative inline-flex rounded-full h-3 w-3 bg-myPrimaryLinkColor"
+                  ></span>
+                </span>
+              </span>
+            </div>
+          </template>
+
+          <template
             v-if="
               user.fetchedDataUser.user_photo &&
               Array.isArray(user.fetchedDataUser.user_photo) &&
-              user.fetchedDataUser.user_photo.length !== 0
+              user.fetchedDataUser.user_photo.length !== 0 &&
+              !user.isLoadingUser &&
+              !user.isErrorUser
             "
-            class="px-2 rounded-l-full min-h-[3rem] flex items-center justify-center"
-          >
-            <ThumbnailSmallImageSlider
-              :images="user.fetchedDataUser.user_photo"
-              imageSize="thumbnail_path"
-              imageHeight="h-10 min-h-10 max-h-10"
-              imageWidth="w-10 min-w-10 max-w-10 object-cover"
-              :roundedFull="true"
-            ></ThumbnailSmallImageSlider>
-          </div>
-
-          <div
-            v-else
-            class="px-2"
           >
             <div
-              class="text-white flex-shrink-0 gap-0.5 h-10 w-10 rounded-full bg-myPrimaryBrandColor flex justify-center items-center text-xs rounded-l-full"
+              class="rounded-l-full min-h-[3rem] flex items-center justify-center"
             >
-              <span>
-                {{ user.fetchedDataUser.first_name.charAt(0).toUpperCase() }}
-              </span>
-              <span>
-                {{ user.fetchedDataUser.last_name.charAt(0).toUpperCase() }}
-              </span>
+              <ThumbnailSmallImageSlider
+                :images="user.fetchedDataUser.user_photo"
+                imageSize="thumbnail_path"
+                imageHeight="h-10 min-h-10 max-h-10"
+                imageWidth="w-10 min-w-10 max-w-10 object-cover"
+                :roundedFull="true"
+              ></ThumbnailSmallImageSlider>
             </div>
-          </div>
+          </template>
+
+          <template v-else>
+            <template v-if="!user.isLoadingUser && !user.isErrorUser">
+              <div class="px-2">
+                <div
+                  class="text-white flex-shrink-0 gap-0.5 h-10 w-10 rounded-full bg-myPrimaryBrandColor flex justify-center items-center text-xs rounded-l-full"
+                >
+                  <span>
+                    {{
+                      user.fetchedDataUser.first_name.charAt(0).toUpperCase()
+                    }}
+                  </span>
+                  <span>
+                    {{ user.fetchedDataUser.last_name.charAt(0).toUpperCase() }}
+                  </span>
+                </div>
+              </div>
+            </template>
+          </template>
         </button>
       </template>
 
