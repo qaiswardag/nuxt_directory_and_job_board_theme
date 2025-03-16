@@ -55,6 +55,13 @@ const navigation = [
     },
   },
   {
+    label: 'Contact us',
+    route: {
+      name: 'professional',
+      parameters: [],
+    },
+  },
+  {
     label: 'Resources',
 
     children: [
