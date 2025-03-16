@@ -278,6 +278,7 @@ const getResultsForPage = (page = 1) => {
 
 // handle selection # start
 const handleSelection = function (selectedItem, nameOfSelection) {
+  scrollToTop();
   setPageToOne();
   checkStateParams();
 
@@ -369,6 +370,7 @@ const handleSelection = function (selectedItem, nameOfSelection) {
 };
 
 const handleRemoveSelection = function (selectedItem, nameOfSelection) {
+  scrollToTop();
   setPageToOne();
   checkStateParams();
 
