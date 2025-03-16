@@ -76,7 +76,7 @@ onMounted(() => {
     @primaryMenuSlideOverButton="primaryMenuSlideOverButton"
   >
   </SlideOverPrimaryMenu>
-  <header class="w-full sm:text-sm text-xs">
+  <header class="w-full text-sm">
     <nav
       class="mx-auto flex myPrimaryGap items-center justify-end px-6 lg:px-8"
       aria-label="Global"
