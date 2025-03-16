@@ -1,3 +1,5 @@
+import { version } from './package.json';
+
 export default defineNuxtConfig({
   // Add a trailing slash to each route
   nitro: {
@@ -6,7 +8,6 @@ export default defineNuxtConfig({
       routes: ['/'],
     },
   },
-
   site: {
     url: 'https://www.admin.myissue.io',
   },
@@ -21,7 +22,7 @@ export default defineNuxtConfig({
       LARAVEL_APP_URL: process.env.LARAVEL_APP_URL,
       APP_URL: process.env.APP_URL,
       APP_NAME: process.env.APP_NAME,
-      APP_ENV: process.env.APP_ENV,
+      APP_VERSION: version,
     },
   },
 
