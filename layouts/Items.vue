@@ -1316,6 +1316,20 @@ onMounted(() => {
                     </div>
                   </template>
                   <!-- Category # end -->
+                  <button
+                    v-if="true"
+                    type="button"
+                    @click="
+                      goToSinglePostNewWindow(
+                        post.team.slug,
+                        post.slug,
+                        post.id
+                      )
+                    "
+                    class="flex flex-wrap gap-2 items-center justify-left py-2 text-xs pt-4"
+                  >
+                    Open in new window
+                  </button>
                 </section>
               </li>
             </ul>
