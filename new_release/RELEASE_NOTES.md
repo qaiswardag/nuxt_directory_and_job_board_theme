@@ -2,7 +2,7 @@
 
 ## Overview
 
-Go Web Toolkit is a reusable Go module designed to simplify common tasks in web application development. Instead of rewriting the same code for every project.
+Laravel, Vue, and Nuxt, a Page Builder, Listing Directory, Blog, and Job Board Theme.
 
 ## Changes
 
