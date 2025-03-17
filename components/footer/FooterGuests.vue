@@ -13,9 +13,6 @@ const version = runtimeConfig.public.APP_VERSION;
     >
       <div class="lg:w-1/6 w-full mb-6">
         <ApplicationLogo></ApplicationLogo>
-        <p class="myPrimaryParagraph mt-2">
-          <span class="text-myPrimaryDarkGrayColor text-xs">{{ version }}</span>
-        </p>
       </div>
       <div class="lg:w-4/6 w-full mb-6">
         <p class="myPrimaryParagraph font-medium text-xl mb-4">About</p>
@@ -30,6 +27,9 @@ const version = runtimeConfig.public.APP_VERSION;
             >GitHub repository
           </a>
           for more information.
+        </p>
+        <p class="myPrimaryParagraph mt-2">
+          <span class="text-myPrimaryDarkGrayColor text-xs">{{ version }}</span>
         </p>
       </div>
       <div class="lg:w-2/6 w-full mb-6">
