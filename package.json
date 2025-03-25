@@ -1,6 +1,6 @@
 {
   "name": "myissue",
-  "version": "v1.2.25",
+  "version": "v1.2.30",
   "private": true,
   "type": "module",
   "scripts": {
