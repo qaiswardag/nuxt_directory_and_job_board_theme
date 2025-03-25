@@ -453,34 +453,33 @@ const handleRemoveSelection = function (selectedItem, nameOfSelection) {
   appendSelectedParams(params);
 };
 
-const isNavigating = ref(false);
-
 const goToSinglePost = async function (teamSlug, postSlug, postId) {
-  if (isNavigating.value) return;
+  const newPath = `/${teamSlug}/${props.nameList}/${postSlug}/view/${postId}`;
 
-  isNavigating.value = true;
+  // Get the current path without query parameters
+  const currentPath = window.location.pathname;
 
-  try {
-    await navigateTo({
-      path: `${teamSlug}/${props.nameList}/${postSlug}/view/${postId}`,
-    });
-  } finally {
-    isNavigating.value = false;
+  if (currentPath === newPath) {
+    return;
   }
+
+  // Perform navigation if the path is different
+  await navigateTo({
+    path: newPath,
+  });
 };
 
 const goToSinglePostNewWindow = function (teamSlug, postSlug, postId) {
-  if (isNavigating.value) return;
-  isNavigating.value = true;
+  const newPath = `/${teamSlug}/${props.nameList}/${postSlug}/view/${postId}`;
 
-  try {
-    window.open(
-      `${runtimeConfig.public.APP_URL}/${teamSlug}/${props.nameList}/${postSlug}/view/${postId}`,
-      '_blank'
-    );
-  } finally {
-    isNavigating.value = false;
+  // Get the current path without query parameters
+  const currentPath = window.location.pathname;
+
+  if (currentPath === newPath) {
+    return;
   }
+
+  window.open(newPath, '_blank');
 };
 
 const runtimeConfig = useRuntimeConfig();
