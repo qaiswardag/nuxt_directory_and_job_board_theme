@@ -4,7 +4,7 @@ import { onMounted, ref, watch } from 'vue';
 import SmallUniversalSpinner from '../components/loaders/SmallUniversalSpinner.vue';
 import FullWidthElement from '../components/layouts/FullWidthElement.vue';
 import ThumbnailSmallImageSlider from '../components/sliders/ThumbnailSmallImageSlider.vue';
-import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue';
+import { Menu, MenuButton, MenuItems } from '@headlessui/vue';
 import ItemDisplaySelection from '../layouts/items/ItemDisplaySelection.vue';
 import ItemsFilterSelection from '../layouts/items/ItemsFilterSelection.vue';
 import TailwindPagination from '../components/pagination/TailwindPagination.vue';
