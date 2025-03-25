@@ -18,6 +18,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
+      APP_ENV: process.env.APP_ENV,
       LARAVEL_APP_URL_PRODUCTION: process.env.LARAVEL_APP_URL_PRODUCTION,
       LARAVEL_APP_URL: process.env.LARAVEL_APP_URL,
       APP_URL: process.env.APP_URL,
