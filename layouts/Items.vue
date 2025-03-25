@@ -4,7 +4,6 @@ import { onMounted, ref, watch } from 'vue';
 import SmallUniversalSpinner from '../components/loaders/SmallUniversalSpinner.vue';
 import FullWidthElement from '../components/layouts/FullWidthElement.vue';
 import ThumbnailSmallImageSlider from '../components/sliders/ThumbnailSmallImageSlider.vue';
-import { parseISO, format } from 'date-fns';
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue';
 import ItemDisplaySelection from '../layouts/items/ItemDisplaySelection.vue';
 import ItemsFilterSelection from '../layouts/items/ItemsFilterSelection.vue';
@@ -124,7 +123,7 @@ const appendSelectedParams = function (params) {
   });
 
   const url = `${props.pathList}?${params.toString()}`;
-  handleGetPosts(url, {}, { additionalCallTime: 200 });
+  handleGetPosts(url);
 };
 
 const fetchComponents = function (page) {
@@ -545,7 +544,7 @@ const clearSearch = function () {
   });
 
   const url = `${props.pathList}?${params.toString()}`;
-  handleGetPosts(url, {}, { additionalCallTime: 200 });
+  handleGetPosts(url);
 };
 
 const handleNavigateToPageOne = function () {
