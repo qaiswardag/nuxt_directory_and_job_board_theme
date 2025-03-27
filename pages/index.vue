@@ -98,13 +98,13 @@ useSeoMeta({
   <MainLayout>
     <GuestsLayout>
       <template #header>
-        <div class="w-full relative h-[40rem]">
+        <div class="w-full relative h-[48rem]">
           <img
-            class="top-0 left-0 w-full object-cover h-[40rem]"
+            class="top-0 left-0 w-full object-cover h-[48rem]"
             src="/images/brand-images/home.jpg"
             alt="Laravel, Vue, and Nuxt, a Page Builder, Listing Directory, Blog, and Job Board Theme."
           />
-          <div class="bg-black/20 absolute top-0 left-0 w-full h-[40rem]"></div>
+          <div class="bg-black/20 absolute top-0 left-0 w-full h-[48rem]"></div>
 
           <div
             class="absolute text-2xl md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:top-2/4 sm:top-32 top-14 w-full md:px-6 px-4"
