@@ -182,7 +182,7 @@ onMounted(() => {
             "
           >
             <div
-              class="flex justify-center items-center py-0.5 gap-2 text-nowrap pl-2 pr-3 myPrimaryMenuTextButton"
+              class="flex justify-center items-center py-0.5 gap-2 text-nowrap px-0 lg:pl-2 lg:pr-3 myPrimaryMenuTextButton"
             >
               <div class="h-10 w-10 flex-shrink-0">
                 <ThumbnailSmallImageSlider
@@ -200,7 +200,7 @@ onMounted(() => {
           <template v-else>
             <template v-if="!user.isLoadingUser && !user.isErrorUser">
               <div
-                class="flex justify-center items-center py-0.5 gap-2 text-nowrap pl-2 pr-3 myPrimaryMenuTextButton"
+                class="flex justify-center items-center py-0.5 gap-2 text-nowrap px-0 lg:pl-2 lg:pr-3 myPrimaryMenuTextButton"
               >
                 <div
                   class="rounded-l-full min-h-[3rem] flex items-center justify-center"
