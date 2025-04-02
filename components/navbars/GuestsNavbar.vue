@@ -182,35 +182,45 @@ onMounted(() => {
             "
           >
             <div
-              class="rounded-l-full min-h-[3rem] flex items-center justify-center"
+              class="flex justify-center items-center py-0.5 gap-2 text-nowrap pl-2 pr-3 myPrimaryMenuTextButton"
             >
-              <ThumbnailSmallImageSlider
-                :images="user.fetchedDataUser.user_photo"
-                imageSize="thumbnail_path"
-                imageHeight="h-10 min-h-10 max-h-10"
-                imageWidth="w-10 min-w-10 max-w-10 object-cover"
-                :roundedFull="true"
-              ></ThumbnailSmallImageSlider>
+              <div class="h-10 w-10 flex-shrink-0">
+                <ThumbnailSmallImageSlider
+                  :images="user.fetchedDataUser.user_photo"
+                  imageSize="thumbnail_path"
+                  imageHeight="h-10 min-h-10 max-h-10"
+                  imageWidth="w-10 min-w-10 max-w-10 object-cover"
+                  :roundedFull="true"
+                ></ThumbnailSmallImageSlider>
+              </div>
+              <span class="lg:block hidden"> Account </span>
             </div>
           </template>
 
           <template v-else>
             <template v-if="!user.isLoadingUser && !user.isErrorUser">
               <div
-                class="rounded-l-full min-h-[3rem] flex items-center justify-center"
+                class="flex justify-center items-center py-0.5 gap-2 text-nowrap pl-2 pr-3 myPrimaryMenuTextButton"
               >
                 <div
-                  class="text-white flex-shrink-0 gap-0.5 h-10 w-10 rounded-full bg-myPrimaryBrandColor flex justify-center items-center text-xs rounded-l-full"
+                  class="rounded-l-full min-h-[3rem] flex items-center justify-center"
                 >
-                  <span>
-                    {{
-                      user.fetchedDataUser.first_name.charAt(0).toUpperCase()
-                    }}
-                  </span>
-                  <span>
-                    {{ user.fetchedDataUser.last_name.charAt(0).toUpperCase() }}
-                  </span>
+                  <div
+                    class="text-white flex-shrink-0 gap-0.5 h-10 w-10 rounded-full bg-myPrimaryBrandColor flex justify-center items-center text-xs rounded-l-full"
+                  >
+                    <span>
+                      {{
+                        user.fetchedDataUser.first_name.charAt(0).toUpperCase()
+                      }}
+                    </span>
+                    <span>
+                      {{
+                        user.fetchedDataUser.last_name.charAt(0).toUpperCase()
+                      }}
+                    </span>
+                  </div>
                 </div>
+                <span class="lg:block hidden"> Account </span>
               </div>
             </template>
           </template>
