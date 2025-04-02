@@ -132,6 +132,15 @@ onMounted(() => {
       >
         <div class="lg:hidden flex myPrimaryMenuTextButton">Listings</div>
       </NuxtLink>
+      <NuxtLink
+        to="/jobs"
+        class="text-myPrimaryDarkGrayColor"
+        :class="{
+          'text-myPrimaryLinkColor': routeName === 'listings',
+        }"
+      >
+        <div class="lg:hidden flex myPrimaryMenuTextButton">Jobs</div>
+      </NuxtLink>
 
       <template
         v-if="
