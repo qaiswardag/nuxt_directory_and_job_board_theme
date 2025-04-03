@@ -78,7 +78,7 @@ onMounted(() => {
   </SlideOverPrimaryMenu>
   <header class="w-full">
     <nav
-      class="mx-auto flex myPrimaryGap items-center justify-end px-1 lg:px-8"
+      class="mx-auto flex myPrimaryGap items-center justify-end px-2 lg:px-8"
       aria-label="Global"
     >
       <div class="lg:flex hidden myPrimaryGap items-center mx-auto">
