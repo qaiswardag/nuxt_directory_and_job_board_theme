@@ -25,6 +25,30 @@ const primaryMenuSlideOverButton = function () {
   emit('primaryMenuSlideOverButton');
 };
 
+const runtimeConfig = useRuntimeConfig();
+
+const goToTermsService = function () {
+  if (runtimeConfig.public.APP_ENV === 'local') {
+    window.location.href =
+      runtimeConfig.public.LARAVEL_APP_URL + '/terms-of-service';
+  }
+  if (runtimeConfig.public.APP_ENV !== 'local') {
+    window.location.href =
+      runtimeConfig.public.LARAVEL_APP_URL_PRODUCTION + '/terms-of-service';
+  }
+};
+
+const goToPrivacyPolicy = function () {
+  if (runtimeConfig.public.APP_ENV === 'local') {
+    window.location.href =
+      runtimeConfig.public.LARAVEL_APP_URL + '/privacy-policy';
+  }
+  if (runtimeConfig.public.APP_ENV !== 'local') {
+    window.location.href =
+      runtimeConfig.public.LARAVEL_APP_URL_PRODUCTION + '/privacy-policy';
+  }
+};
+
 const navigation = [
   {
     label: 'Listings',
@@ -71,6 +95,14 @@ const navigation = [
           name: 'professional',
           parameters: [],
         },
+      },
+      {
+        label: 'Terms of Service',
+        action: goToTermsService, // Add the goToTermsService function here
+      },
+      {
+        label: 'Privacy Policy',
+        action: goToPrivacyPolicy, // Add the goToPrivacyPolicy function here
       },
     ],
   },
@@ -200,7 +232,8 @@ const navigation = [
                                       v-for="subItem in item.children"
                                       :key="subItem.label"
                                     >
-                                      <DisclosureButton
+                                      <div
+                                        v-if="subItem.route"
                                         class="block w-full hover:bg-myPrimaryLightGrayColor rounded-md text-left"
                                         :class="[
                                           subItem.active
@@ -223,7 +256,18 @@ const navigation = [
                                             {{ subItem.label }}
                                           </div>
                                         </NuxtLink>
-                                      </DisclosureButton>
+                                      </div>
+                                      <div
+                                        v-else-if="subItem.action"
+                                        class="block w-full hover:bg-myPrimaryLightGrayColor rounded-md text-left"
+                                      >
+                                        <button
+                                          @click="subItem.action"
+                                          class="w-full text-myPrimaryDarkGrayColor text-left py-3 pl-3 pr-1"
+                                        >
+                                          {{ subItem.label }}
+                                        </button>
+                                      </div>
                                     </li>
                                   </DisclosurePanel>
                                 </Disclosure>

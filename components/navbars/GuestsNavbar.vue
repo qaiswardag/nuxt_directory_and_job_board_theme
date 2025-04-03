@@ -193,7 +193,7 @@ onMounted(() => {
                   :roundedFull="true"
                 ></ThumbnailSmallImageSlider>
               </div>
-              <span class="lg:block hidden"> Account </span>
+              <span class="lg:block hidden"> Dashboard </span>
             </div>
           </template>
 
@@ -220,7 +220,7 @@ onMounted(() => {
                     </span>
                   </div>
                 </div>
-                <span class="lg:block hidden"> Account </span>
+                <span class="lg:block hidden"> Dashboard </span>
               </div>
             </template>
           </template>
